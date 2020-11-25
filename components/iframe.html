@@ -1,0 +1,30 @@
+<article>
+    <div class="iframe-wrapper">
+        <iframe src="https://www.youtube.com" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+</article>
+
+<style>
+.iframe-wrapper{
+    position: relative;
+    width: 560px;
+    height: 315px;
+}
+
+iframe { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .iframe-container{
+    padding-top: 56.25%;
+    width: initial;
+    height: initial;
+    }
+}
+</style>

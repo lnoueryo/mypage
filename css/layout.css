@@ -1,0 +1,70 @@
+/* 最初に設定ある程度 */
+#wrapper{width: 100%; position: relative; background-image: url(); background-size: cover;}
+#header-wrapper{width: 100%; position: relative; background-image: url(../../images/background/header-main.png); background-size: cover;}
+#main-wrapper{width: 100%; position: relative; background-color: #ffffff; padding-bottom: 180px; background-size: cover;}
+
+.content-wrapper{
+    width: 100%;
+    position: relative;
+}
+
+.container{
+    position: relative;
+    padding-left: 240px;
+    width: 100%;
+    padding-right: 0;
+}
+
+.container2{
+    width: 100%;
+    position: relative;
+    padding-left: 240px;
+}
+
+.content-container{
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+a{
+	color: #0090d2;
+	text-decoration: none;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+/* a:hover{opacity: .85;} */
+a:hover img{opacity: .85;}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+
+
+/* 特別なレイアウト */
+header .content-container{
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        position: relative;
+        padding-left: 0px;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .container2{
+        width: 100%;
+        position: relative;
+        padding-left: 0px;
+    }
+}
