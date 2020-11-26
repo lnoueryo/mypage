@@ -8,55 +8,117 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
-    <div id="wrapper">
-        <header>
-            <div id="header-wrapper" style="height: 500px;">
-                <video class="header-bg3" src="img/02.mp4" autoplay muted loop playsinline></video>
-                <video class="header-bg" src="img/01.mp4" autoplay muted loop playsinline></video>
-                <div class="header-bg2"></div>
-                <nav id="mainbar">
-                    <div class="container1">
-                        <div class="flex">
-                        <div id="header-left">
-                            <div><img src="" alt="logo"></div>
-                            <ul class="flex">
-                                <li><a href="#section"></a></li>
-                                <li><a href="#section2"></a></li>
-                                <li><a href="#section3"></a></li>
-                                <li><a href="#section4"></a></li>
-                                <li><a href="#section5"></a></li>
-                            </ul>
+    <div id="app">
+        <div id="wrapper">
+            <header>
+                <div id="header-wrapper">
+                    <video id="video2" class="header-bg3" src="img/02.mp4" autoplay muted loop playsinline></video>
+                    <video id="video1" class="header-bg" src="img/01.mp4" autoplay muted loop playsinline  :style="video1Style"></video>
+                    <div class="header-bg2"></div>
+                    <nav id="mainbar">
+                        <div class="container1">
+                            <div class="flex">
+                            <div id="header-left">
+                                <!-- <div>My Portfolio</div> -->
+                                <ul class="flex">
+                                    <li><a href="#section1"></a></li>
+                                    <li><a href="#section2"></a></li>
+                                    <li><a href="#section3"></a></li>
+                                    <li><a href="#section4"></a></li>
+                                    <li><a href="#section5"></a></li>
+                                </ul>
+                            </div>
+                            <div id="header-right"></div>
+                            </div>
                         </div>
-                        <div id="header-right"></div>
+                    </nav>
+                </div>
+            </header>
+            <!-- <nav id="sidebar"></nav>必要に応じて -->
+            <main>
+                <div id="main-wrapper">
+    
+                    <!-- <section id="section1">
+                        <div class="content-wrapper">
+                            <div class="container">
+                                <div class="content-container">
+                                    <table style="width: 100%; max-width: 700px" class="sm">
+                                        <div class="h2 fw-bold text-center mb-1">大会概要</div>
+                                        <thead>
+                                            <div class="text-center xxxxlg pb-2 fw-bold">「Apex Legends Legion Doujou Cup #5 プロアマ大会編」とは</div>
+                                            <div class="xxxlg text-left ma  w-100" style="margin-bottom: 30px; max-width: 630px">レノボ・ジャパンが主催するPC版「Apex Legends」のオンライン大会です。<br>
+                                            本大会は1日間で完結する大会となっており、全3回の開催を予定しております。
+                                            </div>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="mb-2">
+                                                <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">募集チーム数</th>
+                                                <td class="xxxxlg pb-3">40チーム（1チーム3名＋リザーブ1名）<br>※定員を超えた場合は抽選となります。</td>
+                                            </tr>
+                                            <tr>
+                                                <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">大会形式 </th>
+                                                <td class="xxxxlg pb-3">40チームを20チームずつ2グループに分けて予選を実施<br>各グループ上位10チームが決勝へ進出</td>
+                                            </tr>
+                                            <tr>
+                                                <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">賞金</th>
+                                                <td class="xxxxlg pb-3">優勝：15万円　2位：6万円　3位：3万円</td>
+                                            </tr>
+                                            <tr>
+                                                <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">主催</th>
+                                                <td class="xxxxlg pb-3">レノボ・ジャパン合同会社</td>
+                                            </tr>
+                                            <tr>
+                                                <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">運営</th>
+                                                <td class="xxxxlg pb-3">株式会社テクノブラッド</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- <nav id="sidebar"></nav>必要に応じて -->
-        <main>
-            <div id="main-wrapper">
+                    </section> -->
 
-                <section id="section1">
-                    <div class="content-wrapper">
-                        <div class="container">
-
+                    <section id="section2">
+                        <div class="content-wrapper">
+                            <div class="container2">
+                                <!-- <div class="content-container">
+                                    select component
+                                </div> -->
+                            </div>
                         </div>
-                    </div>
-                </section>
-
-                <section id="section2">
-                    <div class="content-wrapper">
-                        <div class="container2">
-                            <!-- <div class="content-container">
-                                select component
-                            </div> -->
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-        </main>
+                    </section>
+                </div>
+            </main>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script>
+var app = new Vue({
+    el: '#app',
+    data: {
+        video1: document.getElementById('video1'),
+        hueValue: 0,
+    },
+    computed: {
+        video1Style(){
+            var video1Filter = this.video1.style.filter;
+            video1Filter = `hue-rotate(${this.hueValue}deg)`;
+            var style = `filter: ${video1Filter}`;
+            return style;
+        }
+    },
+    mounted(){
+        var that = this;
+		setInterval(function() {
+            if(that.hueValue>359){
+                that.hueValue = 0;
+            } else {
+                that.hueValue = that.hueValue + 1;
+            }
+        }, 70);
+    },
+})
+    </script>
 </body>
 </html>
