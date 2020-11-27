@@ -1,26 +1,57 @@
-/* 最初に設定ある程度 */
+最初に設定ある程度
 #wrapper{width: 100%; position: relative; background-image: url(); background-size: cover;}
-#header-wrapper{width: 100%; position: relative; background-image: url(../../images/background/header-main.png); background-size: cover;}
+#header-wrapper{width: 100%; position: relative; background-image: url(); background-size: cover;}
 #main-wrapper{width: 100%; position: relative; background-color: transparent; background-size: cover;}
 
-
-/* #section1 .content-wrapper{
+body{
+    color: white;
+}
+#section1 .content-wrapper{
     width: 100%;
     position: relative;
-    background-image: url(../img/02.jpg);
+    background-image: url(../img/03.jpg);
+    /* filter: blur(1px); */
+    opacity: 0.9;
 }
 
 #section1 .container{
     position: relative;
     max-width: 1100px;
     width: 100%;
+    background-color: rgba(165, 42, 42, 0.39);
+    margin: auto;
 }
 
 #section1 .content-container{
     position: relative;
     max-width: 800px;
     width: 100%;
-} */
+}
+
+
+
+#section2 .content-wrapper{
+    width: 100%;
+    position: relative;
+    background-image: url(../img/02.jpg);
+    opacity: 0.9;
+}
+
+#section2 .container{
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.692);
+    margin: auto;
+}
+
+#section2 .content-container{
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+
 
 .container2{
     width: 100%;
