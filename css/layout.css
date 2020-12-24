@@ -3,7 +3,7 @@
 #header-wrapper{width: 100%; position: relative; background-image: url(); background-size: cover;}
 #main-wrapper{width: 100%; position: relative; background-color: transparent; background-size: cover;}
 
-body{
+body #wrapper{
     color: white;
 }
 #section1 .content-wrapper{
