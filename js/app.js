@@ -2,6 +2,11 @@ var app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
     data: {
+        isMain: false,
+        isLogo2: false,
+        isLogo: false,
+        isName: false,
+        isNav: false,
         video1: document.getElementById('video1'),
         hueValue: 0,
         windowSize: {
@@ -65,8 +70,24 @@ var app = new Vue({
             } else {
                 that.hueValue = that.hueValue + 1;
             }
-        }, 70);
-        window.addEventListener('resize', this.onResize)
+        }, 25);
+
+        setTimeout(function(){
+            that.isMain = true;
+        },200)
+        setTimeout(function(){
+            that.isName = true;
+        },1500)
+        setTimeout(function(){
+            that.isLogo = true;
+        },3000)
+        setTimeout(function(){
+            that.isLogo2 = true;
+        },3500)
+        setTimeout(function(){
+            that.isNav = true;
+        },7000)
+        window.addEventListener('resize', this.onResize);
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize)

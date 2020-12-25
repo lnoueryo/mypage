@@ -123,4 +123,11 @@
     .responsive-wrap img{
         margin: 2% auto;
     }
+    .spw-100 {
+        width: 100%;
+    }
+    .res_nav {
+        width: 100%;
+        max-width: 300px%;
+    }
 }

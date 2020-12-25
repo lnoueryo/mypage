@@ -28,3 +28,30 @@
 #section1 {
     background-color: black; /* カラーフィルタ効果の色を指定 */
 }
+
+nav ul li {
+    position: relative;
+    border: solid 1px #dde664cc;
+    background: linear-gradient(#a9e664e8, #91e5bbea);
+    padding: 0 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.705);
+    color: white;
+}
+
+.v-application nav ul li a{
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 480px) {
+    #video1 {
+        height: 170vw;
+    }
+    .v-application nav ul {
+        padding: 0 20%;
+    }
+}

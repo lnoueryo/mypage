@@ -6,11 +6,15 @@
 body #wrapper{
     color: white;
 }
+main {
+    transform: translate(0, -5px);
+}
 #section1 .content-wrapper{
     width: 100%;
     position: relative;
     background-image: url(../img/03.jpg);
-    /* filter: blur(1px); */
+    background-size:cover;
+    background-position: right 75% bottom 50%;
     opacity: 0.9;
 }
 
@@ -34,6 +38,8 @@ body #wrapper{
     width: 100%;
     position: relative;
     background-image: url(../img/02.jpg);
+    background-size:cover;
+    background-position: right 75% bottom 50%;
     opacity: 0.9;
 }
 
@@ -55,6 +61,8 @@ body #wrapper{
     width: 100%;
     position: relative;
     background-image: url(../img/04.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
     opacity: 0.9;
 }
 
@@ -76,6 +84,7 @@ body #wrapper{
     width: 100%;
     position: relative;
     background-image: url(../img/06.jpg);
+    background-size:cover;
     opacity: 0.9;
 }
 

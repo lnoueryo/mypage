@@ -17,522 +17,489 @@
 <body>
     <div id="app" v-cloak>
         <v-app>
-            <div id="wrapper" v-resize="onResize">
-                <header>
-                    <div id="header-wrapper">
-                        <video id="video2" class="header-bg3" src="img/02.mp4" autoplay muted loop playsinline></video>
-                        <video id="video1" class="header-bg" src="img/01.mp4" autoplay muted loop playsinline :style="video1Style"></video>
-                        <div class="header-bg2"></div>
-                        <div style="position: absolute;top: 0;">
-                            <div class="container1">
-                                <div class="flex">
-                                    <div id="header-left">
-                                        <div style="max-width: 500px;width: 100%;">
-                                            <img src="img/05.png" alt="my portfolio">
+            <transition name="main">
+                <div id="wrapper" v-resize="onResize" v-show="isMain">
+                    <header>
+                        <div id="header-wrapper">
+                            <video id="video2" class="header-bg3" src="img/02.mp4" autoplay muted loop playsinline></video>
+                            <video id="video1" class="header-bg" src="img/01.mp4" autoplay muted loop playsinline :style="video1Style"></video>
+                            <div class="header-bg2"></div>
+                            <div style="width: 100%;">
+                                <div class="container1" style="position: absolute;top: 0;width: 100%;margin-bottom: 5%;">
+                                    <div class="flex">
+                                        <div id="header-left">
+                                            <div style="max-width: 700px;width: 100%;">
+                                                <transition name="name">
+                                                    <img src="img/07.png" alt="my portfolio" v-show="isName">
+                                                </transition>
+                                            </div>
+                                        </div>
+                                        <div id="header-right" style="max-width: 1300px; width: 100%; min-width: 100px;"></div>
+                                    </div>
+                                    <nav id="mainbar" class="px-3" style="margin: auto; width: 100%;max-width: 1100px;overflow: hidden;">
+                                        <div class="mb-5" style="position: relative;margin: auto; max-width: 800px;width: 100%;">
+                                            <transition name="logo">
+                                                    <img src="img/05.png" alt="my portfolio" v-show="isLogo">
+                                            </transition>
+                                            <transition name="logo2">
+                                                    <div class="xxxlg mx-4 px-5" v-show="isLogo2">~introduce myself~</div>
+                                            </transition>
+                                        </div>
+                                        <transition name="main">
+                                            <ul class="flex responsive-wrap res_nav text-center h5 fw-bold" v-show="isNav">
+                                                <li class="spw-100 py-3 mb-3">自己紹介<a class="" href="#section1"></a></li>
+                                                <li class="spw-100 py-3 mb-3">学歴<a href="#section2"></a></li>
+                                                <li class="spw-100 py-3 mb-3">職歴<a href="#section2-2"></a></li>
+                                                <li class="spw-100 py-3 mb-3">PCスキル<a href="#section3"></a></li>
+                                                <li class="spw-100 py-3 mb-3">ポートフォリオ<a href="#section4"></a></a></li>
+                                                <li class="spw-100 py-3 mb-3" :style="video1Style">ポートフォリオ<a href="#section5"></a></li>
+                                            </ul>
+                                        </transition>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- <nav id="sidebar"></nav>必要に応じて -->
+                    <main>
+                        <div id="main-wrapper">
+                            <section id="section1">
+                                <div class="content-wrapper">
+                                    <div class="container">
+                                        <div class="content-container">
+                                            <table class="tbl-r02" style="width: 100%; max-width: 700px" class="sm">
+                                                <div class="h2 fw-bold text-center mb-1">自己紹介</div>
+                                                <tbody>
+                                                    <tr class="mb-2">
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">名前</th>
+                                                        <td class="xxxxlg pb-3">井上領</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">生年月日</th>
+                                                        <td class="xxxxlg pb-3">1990年 9月 8日 30歳</td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">現住所</th>
+                                                        <td class="xxxxlg pb-3">〒156-0043 東京都世田谷区松原1-43-14 メゾン松原102号</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">電話番号</th>
+                                                        <td class="xxxxlg pb-3">070-8338-1624</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">最終学歴</th>
+                                                        <td class="xxxxlg pb-3">2011年 福岡大学工学部化学システム工学科卒業</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">言語</th>
+                                                        <td class="xxxxlg pb-3">html, css, javascript, php</td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">フレームワーク</th>
+                                                        <td class="xxxxlg pb-3">Vue.js, Laravel</td>
+                                                    </tr>
+                                                    <tr class="last">
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">趣味・特技</th>
+                                                        <td class="xxxxlg pb-3">音楽、言語、お笑い</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
-                                    <div id="header-right" style="max-width: 1300px; width: 100%; min-width: 100px;"></div>
                                 </div>
-                            </div>
-                            <nav id="mainbar">
-                                <ul class="flex">
-                                    <li><a href="#section1">自己紹介</a></li>
-                                    <li><a href="#section2">学歴・職歴</a></li>
-                                    <li><a href="#section3">職務経歴</a></li>
-                                    <li><a href="#section4"></a></li>
-                                    <li><a href="#section5"></a></li>
-                                </ul>
-                            </nav>
-                            <div>Let me introduce myself through my website</div>
-                        </div>
-                    </div>
-                </header>
-                <!-- <nav id="sidebar"></nav>必要に応じて -->
-                <main>
-                    <div id="main-wrapper">
-                        <section id="section1">
-                            <div class="content-wrapper">
-                                <div class="container">
-                                    <div class="content-container">
-                                        <table class="tbl-r02" style="width: 100%; max-width: 700px" class="sm">
-                                            <div class="h2 fw-bold text-center mb-1">自己紹介</div></div></div>
-                                            <!-- <thead>
-                                                <div class="text-center xxxxlg pb-2 fw-bold">「Apex Legends Legion Doujou Cup #5 プロアマ大会編」とは</div>
-                                                <div class="xxxlg text-left ma  w-100" style="margin-bottom: 30px; max-width: 630px">レノボ・ジャパンが主催するPC版「Apex Legends」のオンライン大会です。<br>
-                                                本大会は1日間で完結する大会となっており、全3回の開催を予定しております。
-                                                </div>
-                                            </thead> -->
-                                            <tbody>
-                                                <tr class="mb-2">
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">名前</th>
-                                                    <td class="xxxxlg pb-3">井上領</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">生年月日</th>
-                                                    <td class="xxxxlg pb-3">1990年 9月 8日 30歳</td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">現住所</th>
-                                                    <td class="xxxxlg pb-3">〒156-0043 東京都世田谷区松原1-43-14 メゾン松原102号</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">電話番号</th>
-                                                    <td class="xxxxlg pb-3">070-8338-1624</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">最終学歴</th>
-                                                    <td class="xxxxlg pb-3">2011年 福岡大学工学部化学システム工学科卒業</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">言語</th>
-                                                    <td class="xxxxlg pb-3">html, css, javascript, php</td></td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">フレームワーク</th>
-                                                    <td class="xxxxlg pb-3">Vue.js, Laravel</td>
-                                                </tr>
-                                                <tr class="last">
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-5">趣味・特技</th>
-                                                    <td class="xxxxlg pb-3"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="section2">
-                            <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
-                                <div class="container">
-                                    <div class="content-container">
-                                        <table class="" style="width: 100%; max-width: 700px" class="sm">
-                                            <div class="h2 fw-bold text-center mb-1">学歴・職歴</div>
-                                            <thead>
-                                                <div class="text-center xxxxlg pb-2 fw-bold">学歴</div>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="mb-2">
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成18年 3月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">福岡市立多々良中央中学校 卒業</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成18年 4月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">私立九州産業大学付属九州高等学校 入学</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成21年 3月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">私立九州産業大学付属九州高等学校 卒業</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成21年 4月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">私立福岡大学工学部科学システム工学科 入学</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成25年 3月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">私立福岡大学工学部科学システム工学科 卒業</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <table class="" style="width: 100%; max-width: 700px" class="sm">
-                                            <thead>
-                                                <div class="text-center xxxxlg pb-2 fw-bold">職歴</div>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="mb-2">
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成28年 7月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">有限会社 ジェイホッパーズ 入社</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">令和2年 2月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">一身上の都合により退職</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">令和2年 8月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">株式会社 shiftkey 入社</td>
-                                                </tr>
-                                                <tr>
-                                                    <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">令和3年 2月</th>
-                                                    <td class="xxxxlg pb-3 pl-1">現在に至る　以上</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="section3">
-                            <div class="content-wrapper">
-                                <div class="container">
-                                    <div class="content-container">
-                                        <template v-if="windowSize.x>480">
-                                            <table id="skill" style="width: 100%; max-width: 700px" class="sm">
+                            </section>
+                            <section id="section2">
+                                <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
+                                    <div class="container">
+                                        <div class="content-container">
+                                            <table id="section2-1" style="width: 100%; max-width: 700px" class="sm tbl-r02">
+                                                <div class="h2 fw-bold text-center mb-1">学歴・職歴</div>
                                                 <thead>
-                                                    <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
+                                                    <div class="text-center xxxxlg pb-2 fw-bold">学歴</div>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th colspan="2">種類</th>
-                                                        <th>試用期間</th>
-                                                        <th>レベル</th></th>
+                                                    <tr class="mb-2">
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成18年 3月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">福岡市立多々良中央中学校 卒業</td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="text-align: center;" scope="row" rowspan="2">O<br>S</th>
-                                                        <th>Windows10</th>
-                                                        <td>7ヶ月</td>
-                                                        <td></td>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成18年 4月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">私立九州産業大学付属九州高等学校 入学</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>Linux</th>
-                                                        <td>7ヶ月</td>
-                                                        <td></td>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成21年 3月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">私立九州産業大学付属九州高等学校 卒業</td>
                                                     </tr>
                                                     <tr>
-                                                        <th style="text-align: center;" scope="row" rowspan="3">言<br>語</th>
-                                                        <th>javascript</th>
-                                                        <td>10ヶ月</td>
-                                                        <td></td>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成21年 4月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">私立福岡大学工学部科学システム工学科 入学</td>
                                                     </tr>
                                                     <tr>
-                                                        <th>PHP</th>
-                                                        <td>8ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Typescript</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" scope="row" rowspan="6">フ<br>レ<br><span style="writing-mode: vertical-rl;">ー</span><br>ム<br>ワ<br><span style="writing-mode: vertical-rl;">ー</span><br>ク<br>・<br>ラ<br>イ<br>ブ<br>ラ<br>リ</th>
-                                                        <th>Laravel</th>
-                                                        <td>8ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vue.js</th>
-                                                        <td>4ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vuetify</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vue Router</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vuex</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>jQuery</th>
-                                                        <td>2ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" scope="row" rowspan="6">ミ<br>ド<br>ル<br>ウ<br>ェ<br>ア<br><span style="writing-mode: vertical-rl;">、</span><br>サ<br><span style="writing-mode: vertical-rl;">ー</span><br>バ<br></th>
-                                                        <th>MySQL</th>
-                                                        <td>8ヶ月</td>
-                                                        <td>簡単なテーブル作成が可能</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Apache</th>
-                                                        <td>4ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Cloud9</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>EC2</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>S3</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>RDS</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" scope="row" rowspan="4">バ<br><span style="writing-mode: vertical-rl;">ー</span><br>ジ<br>ョ<br>ン<br>管<br>理</th>
-                                                        <th>Git</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                      </tr>
-                                                      <tr>
-                                                        <th>Git Hub</th>
-                                                        <td>10ヶ月</td>
-                                                        <td></td>
-                                                      </tr>
-                                                      <tr>
-                                                        <th>Source Tree</th>
-                                                        <td>5ヶ月</td>
-                                                        <td></td>
-                                                      </tr>
-                                                      <tr>
-                                                        <th>Bit bucket</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                      </tr>
-                                                </tbody>
-                                            </table>
-                                        </template>
-                                        <template v-else>
-                                            <table id="skill" style="width: 100%; max-width: 700px" class="sm">
-                                                <thead>
-                                                    <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th style="text-align: center;" scope="row" colspan="3">OS</th>
-                                                    </tr>
-                                                    <!-- <tr>
-                                                        <th>種類</th>
-                                                        <th>試用期間</th>
-                                                        <th>レベル</th>
-                                                    </tr> -->
-                                                    <tr>
-                                                        <th>Windows10</th>
-                                                        <td>7ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Linux</th>
-                                                        <td>7ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" colspan="3">言語</th>
-                                                    </tr>
-                                                    <!-- <tr>
-                                                        <th>種類</th>
-                                                        <th>試用期間</th>
-                                                        <th>レベル</th>
-                                                    </tr> -->
-                                                    <tr>
-                                                        <th>javascript</th>
-                                                        <td>10ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>PHP</th>
-                                                        <td>8ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Typescript</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" colspan="3">フレームワーク・ライブラリ</th>
-                                                    </tr>
-                                                    <!-- <tr>
-                                                        <th>種類</th>
-                                                        <th>試用期間</th>
-                                                        <th>レベル</th>
-                                                    </tr> -->
-                                                    <tr>
-                                                        <th>Laravel</th>
-                                                        <td>8ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vue.js</th>
-                                                        <td>4ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vuetify</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vue Router</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Vuex</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>jQuery</th>
-                                                        <td>2ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" colspan="3">ミドルウェア、サーバ</th>
-                                                    </tr>
-                                                    <!-- <tr>
-                                                        <th>種類</th>
-                                                        <th>試用期間</th>
-                                                        <th>レベル</th>
-                                                    </tr> -->
-                                                    <tr>
-                                                        <th>MySQL</th>
-                                                        <td>8ヶ月</td>
-                                                        <td>簡単なテーブル作成が可能</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Apache</th>
-                                                        <td>4ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Cloud9</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>EC2</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>S3</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>RDS</th>
-                                                        <td>1ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th style="text-align: center;" scope="row" colspan="3">バージョン管理</th>
-                                                    </tr>
-                                                    <!-- <tr>
-                                                        <th>種類</th>
-                                                        <th>試用期間</th>
-                                                        <th>レベル</th>
-                                                    </tr> -->
-                                                    <tr>
-                                                        <th>Git</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Git Hub</th>
-                                                        <td>10ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Source Tree</th>
-                                                        <td>5ヶ月</td>
-                                                        <td></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>Bit bucket</th>
-                                                        <td>3ヶ月</td>
-                                                        <td></td>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成25年 3月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">私立福岡大学工学部科学システム工学科 卒業</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        </template>
+                                            <table id="section2-2" class="tbl-r02" style="width: 100%; max-width: 700px" class="sm">
+                                                <thead>
+                                                    <div class="text-center xxxxlg pb-2 fw-bold">職歴</div>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="mb-2">
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">平成28年 7月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">有限会社 ジェイホッパーズ 入社</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">令和2年 2月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">一身上の都合により退職</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">令和2年 8月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">株式会社 shiftkey 入社</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th valign="top" class="text-left xxxxlg w25 pb-3 pr-1">令和3年 2月</th>
+                                                        <td class="xxxxlg pb-3 pl-1">現在に至る　以上</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        <section id="section4">
-                            <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
-                                <div class="container">
-                                    <v-card flat tile max-width="500" class="mx-auto bg-primary">
-                                        <v-window v-model="onboarding" continuous>
-                                            <v-window-item v-for="(feature, index) in features" :key="index" style="align-items: flex-end;">
-                                                <v-card color="grey">
-                                                <v-row class="py-5" align="end" justify="center">
-                                                    <h1 style="font-size: 4rem;">
-                                                       {{  feature.type }}
-                                                    </h1>
-                                                </v-row>
-                                                <ul>
-                                                    <li v-for="(list, i) in feature.content" :key="i">{{ list }}</li>
-                                                </ul>
-                                                </v-card>
-                                            </v-window-item>
-                                        </v-window>
-                                        <v-card-actions class="justify-space-between">
-                                        <v-btn text @click="prev">
-                                            <v-icon>mdi-chevron-left</v-icon>
-                                        </v-btn>
-                                        <v-item-group v-model="onboarding" class="text-center" mandatory>
-                                            <v-item v-for="(feature, index) in features" :key="index" v-slot="{ active, toggle }">
-                                            <v-btn :input-value="active" icon @click="toggle">
-                                                <v-icon>mdi-record</v-icon>
+                            </section>
+                            <section id="section3">
+                                <div class="content-wrapper">
+                                    <div class="container">
+                                        <div class="content-container">
+                                            <template v-if="windowSize.x>480">
+                                                <table id="skill" style="width: 100%; max-width: 700px" class="sm">
+                                                    <thead>
+                                                        <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th colspan="2">種類</th>
+                                                            <th>試用期間</th>
+                                                            <th>レベル</th></th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" rowspan="2">O<br>S</th>
+                                                            <th>Windows10</th>
+                                                            <td>7ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Linux</th>
+                                                            <td>7ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" rowspan="3">言<br>語</th>
+                                                            <th>javascript</th>
+                                                            <td>10ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PHP</th>
+                                                            <td>8ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Typescript</th>
+                                                            <td>3ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" rowspan="6">フ<br>レ<br><span style="writing-mode: vertical-rl;">ー</span><br>ム<br>ワ<br><span style="writing-mode: vertical-rl;">ー</span><br>ク<br>・<br>ラ<br>イ<br>ブ<br>ラ<br>リ</th>
+                                                            <th>Laravel</th>
+                                                            <td>8ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vue.js</th>
+                                                            <td>4ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vuetify</th>
+                                                            <td>3ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vue Router</th>
+                                                            <td>1ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vuex</th>
+                                                            <td>1ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>jQuery</th>
+                                                            <td>2ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" rowspan="6">ミ<br>ド<br>ル<br>ウ<br>ェ<br>ア<br><span style="writing-mode: vertical-rl;">、</span><br>サ<br><span style="writing-mode: vertical-rl;">ー</span><br>バ<br></th>
+                                                            <th>MySQL</th>
+                                                            <td>8ヶ月</td>
+                                                            <td>簡単なテーブル作成が可能</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Apache</th>
+                                                            <td>4ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Cloud9</th>
+                                                            <td>1ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>EC2</th>
+                                                            <td>1ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>S3</th>
+                                                            <td>1ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>RDS</th>
+                                                            <td>1ヶ月</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" rowspan="4">バ<br><span style="writing-mode: vertical-rl;">ー</span><br>ジ<br>ョ<br>ン<br>管<br>理</th>
+                                                            <th>Git</th>
+                                                            <td>3ヶ月</td>
+                                                            <td></td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>Git Hub</th>
+                                                            <td>10ヶ月</td>
+                                                            <td></td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>Source Tree</th>
+                                                            <td>5ヶ月</td>
+                                                            <td></td>
+                                                          </tr>
+                                                          <tr>
+                                                            <th>Bit bucket</th>
+                                                            <td>3ヶ月</td>
+                                                            <td></td>
+                                                          </tr>
+                                                    </tbody>
+                                                </table>
+                                            </template>
+                                            <template v-else>
+                                                <table id="skill" style="width: 100%; max-width: 700px" class="sm px-1">
+                                                    <thead>
+                                                        <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
+                                                    </thead>
+                                                    <tbody class="xxxxlg">
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" colspan="3">OS</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="width: 20%;">Windows10</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Linux</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" colspan="3">言語</th>
+                                                        </tr>
+                                                        <!-- <tr>
+                                                            <th>種類</th>
+                                                            <th>試用期間</th>
+                                                            <th>レベル</th>
+                                                        </tr> -->
+                                                        <tr>
+                                                            <th>javascript</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>PHP</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Typescript</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" colspan="3">フレームワーク・ライブラリ</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Laravel</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vue.js</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vuetify</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vue Router</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Vuex</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>jQuery</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" colspan="3">ミドルウェア、サーバ</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>MySQL</th>
+                                                            <td>簡単なテーブル作成が可能</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Apache</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Cloud9</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>EC2</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>S3</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>RDS</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th style="text-align: center;" scope="row" colspan="3">バージョン管理</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Git</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Git Hub</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Source Tree</th>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Bit bucket</th>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="section4">
+                                <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
+                                    <div class="container">
+                                        <v-card flat tile max-width="500" class="mx-auto bg-primary">
+                                            <v-window v-model="onboarding" continuous>
+                                                <v-window-item v-for="(feature, index) in features" :key="index" style="align-items: flex-end;">
+                                                    <v-card color="grey">
+                                                    <v-row class="py-5" align="end" justify="center">
+                                                        <h1 style="font-size: 4rem;">
+                                                           {{  feature.type }}
+                                                        </h1>
+                                                    </v-row>
+                                                    <ul>
+                                                        <li v-for="(list, i) in feature.content" :key="i">{{ list }}</li>
+                                                    </ul>
+                                                    </v-card>
+                                                </v-window-item>
+                                            </v-window>
+                                            <v-card-actions class="justify-space-between">
+                                            <v-btn text @click="prev">
+                                                <v-icon>mdi-chevron-left</v-icon>
                                             </v-btn>
-                                            </v-item>
-                                        </v-item-group>
-                                        <v-btn text @click="next">
-                                            <v-icon>mdi-chevron-right</v-icon>
-                                        </v-btn>
-                                        </v-card-actions>
-                                    </v-card>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="section4">
-                            <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
-                                <div class="container">
-                                    <div class="content-container">
-                                        <h3>ログインページ</h3>
-                                        <ul>
-                                            <li>認証</li>
-                                            <li>会員登録</li>
-                                            <!-- <li>ヴァリデーション</li>
-                                            <li>Ajax通信</li>
-                                            <li>queue、job、work</li> -->
-                                        </ul>
-                                        <h3>メインページ</h3>
-                                        <ul>
-                                            <li>いいね</li>
-                                            <li>いいね閲覧</li>
-                                            <li>コメント</li>
-                                            <li>コメント閲覧</li>
-                                            <li>自分の投稿閲覧</li>
-                                            <li>フォロワーの投稿</li>
-                                            <li>友達検索</li>
-                                        </ul>
-                                        <h3>投稿ページ</h3>
-                                        <ul>
-                                            <li>写真のリサイズ</li>
-                                            <li>描画</li>
-                                            <li>フィルター</li>
-                                            <li>保存</li></li>
-                                        </ul>
-                                        <h3>プロフィールページ</h3>
-                                        <ul>
-                                            <li>いいね</li>
-                                            <li>いいね閲覧</li>
-                                            <li>コメント</li>
-                                            <li>コメント閲覧</li>
-                                            <li>自分の投稿閲覧</li>
-                                            <li>投稿写真の削除</li>
-                                            <li>フォロワー閲覧</li>
-                                            <li>プロフィール写真変更</li>
-                                            <li>アバター写真変更</li>
-                                            <li>ユーザー情報変更</li>
-                                        </ul>
+                                            <v-item-group v-model="onboarding" class="text-center" mandatory>
+                                                <v-item v-for="(feature, index) in features" :key="index" v-slot="{ active, toggle }">
+                                                <v-btn :input-value="active" icon @click="toggle">
+                                                    <v-icon>mdi-record</v-icon>
+                                                </v-btn>
+                                                </v-item>
+                                            </v-item-group>
+                                            <v-btn text @click="next">
+                                                <v-icon>mdi-chevron-right</v-icon>
+                                            </v-btn>
+                                            </v-card-actions>
+                                        </v-card>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                    </div>
-                    <button class="page-btn" @click="scrollTop()"></button>
-                </main>
-            </div>
+                            </section>
+                            <section id="section4">
+                                <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
+                                    <div class="container">
+                                        <div class="content-container">
+                                            <h3>ログインページ</h3>
+                                            <ul>
+                                                <li>認証</li>
+                                                <li>会員登録</li>
+                                                <!-- <li>ヴァリデーション</li>
+                                                <li>Ajax通信</li>
+                                                <li>queue、job、work</li> -->
+                                            </ul>
+                                            <h3>メインページ</h3>
+                                            <ul>
+                                                <li>いいね</li>
+                                                <li>いいね閲覧</li>
+                                                <li>コメント</li>
+                                                <li>コメント閲覧</li>
+                                                <li>自分の投稿閲覧</li>
+                                                <li>フォロワーの投稿</li>
+                                                <li>友達検索</li>
+                                            </ul>
+                                            <h3>投稿ページ</h3>
+                                            <ul>
+                                                <li>写真のリサイズ</li>
+                                                <li>描画</li>
+                                                <li>フィルター</li>
+                                                <li>保存</li></li>
+                                            </ul>
+                                            <h3>プロフィールページ</h3>
+                                            <ul>
+                                                <li>いいね</li>
+                                                <li>いいね閲覧</li>
+                                                <li>コメント</li>
+                                                <li>コメント閲覧</li>
+                                                <li>自分の投稿閲覧</li>
+                                                <li>投稿写真の削除</li>
+                                                <li>フォロワー閲覧</li>
+                                                <li>プロフィール写真変更</li>
+                                                <li>アバター写真変更</li>
+                                                <li>ユーザー情報変更</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <button class="page-btn" @click="scrollTop()"></button>
+                    </main>
+                </div>
+            </transition>
         </v-app>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
@@ -541,6 +508,33 @@
 TODO:
     <!-- smooth・instant・auto -->
     <style>
+        .main-enter-active, .main-leave-active {
+            transition: opacity 2s;
+        }
+        .main-enter, .main-leave-to {
+            opacity: 0;
+        }
+        .name-enter-active, .name-leave-active {
+            transition: all 5s;
+        }
+        .name-enter, .name-leave-to {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        .logo-enter-active, .logo-leave-active {
+            transition: all 3s;
+        }
+        .logo-enter, .logo-leave-to {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        .logo2-enter-active, .logo2-leave-active {
+            transition: all 4s;
+        }
+        .logo2-enter, .logo2-leave-to {
+            opacity: 0;
+            transform: translateX(40px);
+        }
         .page-btn{
             position: fixed;
             right: 14px;
@@ -576,7 +570,7 @@ TODO:
         }
         #skill td {
             border: solid 1px #ccc;
-            padding: 10px;
+            padding: 8px;
         }
         table {
             padding: 10px;
