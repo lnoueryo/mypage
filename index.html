@@ -66,10 +66,19 @@
                         <div id="main-wrapper">
                             <section id="section1">
                                 <div class="content-wrapper">
+                                    <!-- <div class="container1 flex"  style="align-items: flex-start;">
+                                        <div class="w-50">
+                                            <img src="img/02.jpg" alt="">
+                                        </div>
+                                        <div class="w-50 flex xxlg">
+                                            <div>01</div>
+                                            <div>ABOUT ME</div>
+                                        </div>
+                                    </div> -->
                                     <div class="container1">
                                         <div>ABOUT ME</div>
                                         <div class="content-container">
-                                            <table class="tbl-r02" style="width: 100%; max-width: 700px" class="sm">
+                                            <table id="about_me" class="tbl-r02" style="width: 100%; max-width: 700px" class="sm">
                                                 <div class="h2 fw-bold text-center mb-1">自己紹介</div>
                                                 <tbody>
                                                     <tr class="mb-2">
@@ -106,11 +115,13 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </section>
                             <section id="section2">
                                 <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
-                                    <div class="container">
+                                    <div class="container1">
                                         <div class="content-container">
                                             <table id="section2-1" style="width: 100%; max-width: 700px" class="sm tbl-r02">
                                                 <div class="h2 fw-bold text-center mb-1">学歴・職歴</div>
@@ -169,10 +180,10 @@
                             </section>
                             <section id="section3">
                                 <div class="content-wrapper">
-                                    <div class="container">
+                                    <div class="container1">
                                         <div class="content-container">
                                             <template v-if="windowSize.x>480">
-                                                <table id="skill" style="width: 100%; max-width: 700px" class="sm">
+                                                <table id="skill" style="width: 100%; max-width: 700px" class="xlg">
                                                     <thead>
                                                         <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
                                                     </thead>
@@ -300,12 +311,12 @@
                                                     <thead>
                                                         <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
                                                     </thead>
-                                                    <tbody class="xxxxlg">
+                                                    <tbody class="xxlg">
                                                         <tr>
                                                             <th style="text-align: center;" scope="row" colspan="3">OS</th>
                                                         </tr>
                                                         <tr>
-                                                            <th style="width: 20%;">Windows10</th>
+                                                            <th style="width: 33%;">Windows10</th>
                                                             <td></td>
                                                         </tr>
                                                         <tr>
@@ -414,7 +425,7 @@
                             </section>
                             <section id="section4">
                                 <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
-                                    <div class="container">
+                                    <div class="container1">
                                         <v-card flat tile max-width="500" class="mx-auto bg-primary">
                                             <v-window v-model="onboarding" continuous>
                                                 <v-window-item v-for="(feature, index) in features" :key="index" style="align-items: flex-end;">
@@ -451,7 +462,7 @@
                             </section>
                             <section id="section4">
                                 <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
-                                    <div class="container">
+                                    <div class="container1">
                                         <div class="content-container">
                                             <h3>ログインページ</h3>
                                             <ul>
@@ -553,10 +564,15 @@ TODO:
             margin: 60px auto 40px;
         }
         .tbl-r02 th {
-            background: #ff00193f;
             border: solid 1px #ccc;
             color: #fff;
             padding: 10px;
+        }
+        #about_me.tbl-r02 th {
+            border: solid 1px #ccc;
+            color: #fff;
+            padding: 10px;
+            background: #ff00193f;
         }
         .tbl-r02 td {
             border: solid 1px #ccc;
@@ -566,7 +582,9 @@ TODO:
             background: #5900ff3f;
             border: solid 1px #ccc;
             color: #fff;
-            padding: 10px;
+            height: 10px;
+            vertical-align: middle;
+            height: 40px;
         }
         #skill td {
             border: solid 1px #ccc;
@@ -588,6 +606,7 @@ TODO:
             　　border-bottom: none;
                 display: block;
                 width: 100%;
+                padding: 5%;
             }
         }
     </style>

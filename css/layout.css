@@ -29,7 +29,7 @@ main {
     width: 100%;
     margin: auto; */
     background-color: rgba(0, 0, 0, 0.646);
-    padding: 20px 9.375vw 0 6.25vw;
+    padding: 20px 6.25vw 0 6.25vw;
     flex-direction: row-reverse;
 
 }
@@ -45,23 +45,21 @@ main {
 #section2 .content-wrapper{
     width: 100%;
     position: relative;
-    /* background-image: url(../img/02.jpg); */
+    background-image: url(../img/02.jpg);
     background-size:cover;
     background-position: right 75% bottom 50%;
     opacity: 0.9;
 }
 
-#section2 .container{
+#section2 .container1{
     position: relative;
-    max-width: 1100px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.692);
+    background-color: rgba(0, 0, 0, 0.7);
     margin: auto;
+    padding: 20px 6.25vw 0 6.25vw;
 }
 
 #section2 .content-container{
     position: relative;
-    max-width: 800px;
     width: 100%;
 }
 
@@ -75,18 +73,17 @@ main {
     opacity: 0.9;
 }
 
-#section3 .container{
+#section3 .container1{
     position: relative;
-    max-width: 1100px;
-    width: 100%;
-    background-color: rgba(126, 42, 165, 0.39);
-    margin: auto;
+    padding: 20px 6.25vw 0 6.25vw;
+    background-color: rgba(0, 0, 0, 0.673);
 }
 
 #section3 .content-container{
     position: relative;
-    max-width: 800px;
+    max-width: 1100px;
     width: 100%;
+    margin: auto;
 }
 
 #section4 .content-wrapper{
@@ -96,13 +93,13 @@ main {
     background-size:cover;
     background-position: right 50% bottom 50%;
     opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.692);
 }
 
-#section4 .container{
+#section4 .container1{
     position: relative;
     max-width: 1100px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.692);
     margin: auto;
 }
 

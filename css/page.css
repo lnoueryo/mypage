@@ -50,7 +50,9 @@
 .v-application ul li a{
     color: white;
 }
-
+table {
+    margin: auto;
+}
 @media screen and (max-width: 480px) {
     #video1 {
         height: 170vw;
