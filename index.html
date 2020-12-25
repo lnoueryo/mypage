@@ -26,46 +26,48 @@
                             <div class="header-bg2"></div>
                             <div style="width: 100%;">
                                 <div class="container1" style="position: absolute;top: 0;width: 100%;margin-bottom: 5%;">
-                                    <div class="flex">
-                                        <div id="header-left">
-                                            <div style="max-width: 700px;width: 100%;">
+                                    <div class="flex wrap mb-8" style="padding: 40px 40px;">
+                                        <div id="header-left" class="mb-8">
+                                            <div style="max-width: 300px;width: 100%;">
                                                 <transition name="name">
-                                                    <img src="img/07.png" alt="my portfolio" v-show="isName">
+                                                    <img id="name-logo" style="max-width: 300px;" src="img/08.png" alt="my portfolio" v-show="isName">
+                                                </transition>
+                                                <transition name="name">
+                                                    <div class="md px-4" style="max-width: 200px;" v-show="isName">I'm a PHP and JavaScript programmer and aiming to be a full-stack engineer</div>
                                                 </transition>
                                             </div>
                                         </div>
-                                        <div id="header-right" style="max-width: 1300px; width: 100%; min-width: 100px;"></div>
+                                        <div id="header-right" class="flex mb-8" style="max-width: 900px; width: 100%;margin-left: auto;">
+                                            <transition name="nav">
+                                                <ul class="flex responsive-wrap res_nav text-center align-center justify-around" v-show="isNav">
+                                                    <a class="" href="/"><li>TOP</li></a>
+                                                    <a class="" href="#section1"><li>ABOUT ME</li></a>
+                                                    <a href="#section2"><li>BACKGROUND</li></a>
+                                                    <a href="#section2"><li>EDUCATION</li></a>
+                                                    <a href="#section2-2"><li>WORK HISTORY</li></a>
+                                                    <a href="#section3"><li>SKILL</li></a>
+                                                    <a href="#section4"><li>PORTFOLIO</li></a>
+                                                </ul>
+                                            </transition>
+                                        </div>
                                     </div>
                                     <nav id="mainbar" class="px-3" style="margin: auto; width: 100%;max-width: 1100px;overflow: hidden;">
                                         <div class="mb-5" style="position: relative;margin: auto; max-width: 800px;width: 100%;">
-                                            <transition name="logo">
-                                                    <img src="img/05.png" alt="my portfolio" v-show="isLogo">
-                                            </transition>
-                                            <transition name="logo2">
-                                                    <div class="xxxlg mx-4 px-5" v-show="isLogo2">~introduce myself~</div>
+                                            <transition name="main">
+                                                    <img src="img/09.png" alt="my portfolio" v-show="isMainLogo">
                                             </transition>
                                         </div>
-                                        <transition name="main">
-                                            <ul class="flex responsive-wrap res_nav text-center h5 fw-bold" v-show="isNav">
-                                                <li class="spw-100 py-3 mb-3">自己紹介<a class="" href="#section1"></a></li>
-                                                <li class="spw-100 py-3 mb-3">学歴<a href="#section2"></a></li>
-                                                <li class="spw-100 py-3 mb-3">職歴<a href="#section2-2"></a></li>
-                                                <li class="spw-100 py-3 mb-3">PCスキル<a href="#section3"></a></li>
-                                                <li class="spw-100 py-3 mb-3">ポートフォリオ<a href="#section4"></a></a></li>
-                                                <li class="spw-100 py-3 mb-3" :style="video1Style">ポートフォリオ<a href="#section5"></a></li>
-                                            </ul>
-                                        </transition>
                                     </nav>
                                 </div>
                             </div>
                         </div>
                     </header>
-                    <!-- <nav id="sidebar"></nav>必要に応じて -->
                     <main>
                         <div id="main-wrapper">
                             <section id="section1">
                                 <div class="content-wrapper">
-                                    <div class="container">
+                                    <div class="container1">
+                                        <div>ABOUT ME</div>
                                         <div class="content-container">
                                             <table class="tbl-r02" style="width: 100%; max-width: 700px" class="sm">
                                                 <div class="h2 fw-bold text-center mb-1">自己紹介</div>
@@ -521,10 +523,10 @@ TODO:
             opacity: 0;
             transform: translateX(20px);
         }
-        .logo-enter-active, .logo-leave-active {
+        .nav-enter-active, .nav-leave-active {
             transition: all 3s;
         }
-        .logo-enter, .logo-leave-to {
+        .nav-enter, .nav-leave-to {
             opacity: 0;
             transform: translateX(30px);
         }

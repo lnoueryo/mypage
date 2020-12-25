@@ -2,9 +2,13 @@
 #wrapper{width: 100%; position: relative; background-image: url(); background-size: cover;}
 #header-wrapper{width: 100%; position: relative; background-image: url(); background-size: cover;}
 #main-wrapper{width: 100%; position: relative; background-color: transparent; background-size: cover;}
-
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
 body #wrapper{
     color: white;
+    font-family: proxima-nova,sans-serif;
+    letter-spacing: .1em;
+    line-height: 1.5;
+    background-color: black;
 }
 main {
     transform: translate(0, -5px);
@@ -12,21 +16,22 @@ main {
 #section1 .content-wrapper{
     width: 100%;
     position: relative;
-    background-image: url(../img/03.jpg);
+    /* background-image: url(../img/03.jpg); */
     background-size:cover;
     background-position: right 75% bottom 50%;
     opacity: 0.9;
 }
 
-#section1 .container{
-    position: relative;
+#section1 .container1{
+    /* position: relative;
     max-width: 1100px;
     width: 100%;
     background-color: rgba(165, 42, 42, 0.39);
-    margin: auto;
+    margin: auto; */
+    padding: 0 9.375vw 0 6.25vw;
 }
 
-#section1 .content-container{
+#section1 .content-container1{
     position: relative;
     max-width: 800px;
     width: 100%;
@@ -37,7 +42,7 @@ main {
 #section2 .content-wrapper{
     width: 100%;
     position: relative;
-    background-image: url(../img/02.jpg);
+    /* background-image: url(../img/02.jpg); */
     background-size:cover;
     background-position: right 75% bottom 50%;
     opacity: 0.9;

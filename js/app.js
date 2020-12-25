@@ -4,7 +4,7 @@ var app = new Vue({
     data: {
         isMain: false,
         isLogo2: false,
-        isLogo: false,
+        isMainLogo: false,
         isName: false,
         isNav: false,
         video1: document.getElementById('video1'),
@@ -79,13 +79,13 @@ var app = new Vue({
             that.isName = true;
         },1500)
         setTimeout(function(){
-            that.isLogo = true;
+            that.isNav = true;
         },3000)
         setTimeout(function(){
             that.isLogo2 = true;
         },3500)
         setTimeout(function(){
-            that.isNav = true;
+            that.isMainLogo = true;
         },7000)
         window.addEventListener('resize', this.onResize);
     },
