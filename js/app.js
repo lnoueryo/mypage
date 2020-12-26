@@ -70,7 +70,7 @@ var app = new Vue({
             } else {
                 that.hueValue = that.hueValue + 1;
             }
-        }, 25);
+        }, 77);
 
         setTimeout(function(){
             that.isMain = true;
@@ -86,7 +86,7 @@ var app = new Vue({
         },3500)
         setTimeout(function(){
             that.isMainLogo = true;
-        },7000)
+        },6000)
         window.addEventListener('resize', this.onResize);
     },
     beforeDestroy() {

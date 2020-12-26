@@ -115,6 +115,7 @@
 .w25{width: 25%;}
 .w33{width: 33%;}
 .w50{width: 50%;}
+.pc {display: block;}
 
 @media screen and (max-width: 480px) {
     .responsive-wrap{
@@ -130,6 +131,9 @@
     }
     .res_nav {
         width: 100%;
-        max-width: 300px%;
+        max-width: 300px;
+    }
+    .pc {
+        display: none;
     }
 }
