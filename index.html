@@ -10,8 +10,41 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap');
     [v-cloak] {
       display: none;
+    }
+    .filter {
+        /* filter: blur(0.7px) brightness(1.8px); */
+        filter: blur(1px)brightness(2);
+    }
+    .prev {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        font-weight: 400;
+        font-family: trajan-pro-3,serif;
+        font-size: 20px;
+        letter-spacing: .02em;
+        line-height: 1.3;
+        color: white;
+        background-color: transparent;
+        font-style: italic;
+        border: transparent;
+    }
+    .next {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        font-weight: 400;
+        font-family: trajan-pro-3,serif;
+        font-size: 20px;
+        letter-spacing: .02em;
+        line-height: 1.3;
+        color: white;
+        background-color: transparent;
+        font-style: italic;
+        border: transparent;
     }
     </style>
 </head>
@@ -31,7 +64,7 @@
                                         <div id="header-left" class="mb-8">
                                             <div style="max-width: 300px;width: 100%;">
                                                 <transition name="name">
-                                                    <img id="name-logo" style="max-width: 300px;" src="img/08.png" alt="my portfolio" v-show="isName">
+                                                    <img id="name-logo" style="max-width: 300px;" src="img/08.png" alt="my portfolio" v-show="isName" @click="openCarouselModal">
                                                 </transition>
                                                 <transition name="name">
                                                     <div class="md px-4" style="max-width: 200px;" v-show="isName">I'm a PHP and JavaScript programmer and aiming to be a full-stack engineer</div>
@@ -152,38 +185,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="content-container">
-                                        <div class="sec-wrapper">
-                                            <div class="container1">
-                                                <div class="flex align-center title-container">
-                                                    <div class="title_num">02</div>
-                                                    <div class="title">BACKGROUND</div>
-                                                </div>
-                                                <p class="message"><span>WORK HARD ON</span><br class="pc">
-                                                    <span class="ajust">EVERYTHING ANYWAY</span><br class="pc">
-                                                    <span class="ajust2">EVEN THOUGH IT IS HOBBY</span>
-                                                </p>
-                                                <div class="flex" style="margin-bottom: 20px;">
-                                                    <div style="position: relative; z-index: 1;">
-                                                        <div class="content-container1">
-                                                            <div class="sec_title" style="margin-top: 40px;">略歴</div>
-                                                            <p class="para">福岡大学を卒業後、もともと趣味としてやっていた音楽活動を2年ほど行い、その後1年間のカナダ留学を経て、約3年間宿泊施設で勤務。</p>
-                                                            <p class="para">そこで出会った人たち、利用していたOTAサイトや予約管理システムに興味を持ちIT業界へ。</p>
-                                                            <p class="para">今現在WEB制作に関する業務に携わっている。</p>
-                                                        </div>
-                                                    </div>
-                                                    <div style="position: absolute; z-index: 0;right: 5vw; width: 40%;">
-                                                        <img style="filter: grayscale(60%);" src="img/10.jpg" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="content-container2" style="position: relative; z-index: 1;">
-                                                    <div class="sec_title">自己紹介</div>
-                                                    <p class="para">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。</p>
-                                                    <p class="para">趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </section>
                             <section id="section3">
@@ -447,6 +448,65 @@
                                 </div>
                             </section>
                             <section id="section4">
+                                <div class="content-wrapper">
+                                    <!-- <div style="background-color: gray;position: absolute;top: -30px;bottom: 0;left: 0%;right: 30%;"></div><div class="header-bg2"></div> -->
+                                    <div class="container1">
+                                        <p id="special" class="message w-50 text-center" style="padding: 0 4%;font-family: 'Montserrat', sans-serif;"><span>My Memories</span><br class="pc">
+                                        <div class="carousel" style="position: relative;padding: 75px;">
+                                            <!-- <button class="prev" @click="carouselPrev" :disabled="disabled">PREV</button> -->
+                                            <!-- <button class="next" @click="carouselNext" :disabled="disabled">NEXT</button> -->
+                                            <input  @click="carouselPrev" class="prev filter" style="max-width: 30px;" type="image" src="img/carousel/21.png">
+                                            <input @click="carouselNext" class="next filter" style="max-width: 30px;" type="image" src="img/carousel/20.png">
+                                            <div>
+                                                <div ref="carouselFlame" class="flex" style="position: relative;overflow: hidden;filter: grayscale(60%);">
+                                                    <img :src="image" :style="show[srcKey[index]]" v-for="(image, index) in src" :key="index" @click="openCarouselModal">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="section5">
+                                <div class="content-wrapper">
+                                    <!-- <div style="background-color: gray;position: absolute;top: 0;bottom: 0;left: 30%;right: 0;"></div><div class="header-bg2"></div> -->
+                                    <div class="container1 flex" style="justify-content: space-around;">
+                                        <div>
+                                            <div class="tab" @click="tabKey(0)">
+                                                Front-End
+                                            </div>
+                                            <div class="tab" @click="tabKey(1)">
+                                                Back-End
+                                            </div>
+                                            <div class="tab" @click="tabKey(2)">
+                                                Infrastructure
+                                            </div>
+                                        </div>
+                                        <!-- <div class="flex wrap" style="margin-bottom: 20px;position: relative;"> -->
+                                            <div style="position: relative;max-width: 400px;width: 100%">
+                                                <transition name="slide">
+                                                    <ol class="content-container1" style="position: absolute;" v-show="tab[0]">
+                                                        <div class="sec_title">{{ features[0].type }}</div>
+                                                        <li class="para" v-for="(content, i) in features[0].content" :key="i">{{ content }}</li>
+                                                    </ol>
+                                                </transition>
+                                                <transition name="slide">
+                                                    <ol class="content-container1" style="position: absolute;" v-show="tab[1]">
+                                                        <div class="sec_title">{{ features[1].type }}</div>
+                                                        <li class="para" v-for="(content, i) in features[1].content" :key="i">{{ content }}</li>
+                                                    </ol>
+                                                </transition>
+                                                <transition name="slide">
+                                                    <ol class="content-container1" style="position: absolute;" v-show="tab[2]">
+                                                        <div class="sec_title">{{ features[2].type }}</div>
+                                                        <li class="para" v-for="(content, i) in features[2].content" :key="i">{{ content }}</li>
+                                                    </ol>
+                                                </transition>
+                                            </div>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- <section id="section4">
                                 <div class="content-wrapper"><div class="header-bg2"></div>
                                     <div class="container1">
                                         <v-card flat tile max-width="500" class="mx-auto bg-primary">
@@ -482,8 +542,8 @@
                                         </v-card>
                                     </div>
                                 </div>
-                            </section>
-                            <section id="section4">
+                            </section> -->
+                            <!-- <section id="section4">
                                 <div class="content-wrapper" :style="video1Style"><div class="header-bg2"></div>
                                     <div class="container1">
                                         <div class="content-container">
@@ -491,9 +551,6 @@
                                             <ul>
                                                 <li>認証</li>
                                                 <li>会員登録</li>
-                                                <!-- <li>ヴァリデーション</li>
-                                                <li>Ajax通信</li>
-                                                <li>queue、job、work</li> -->
                                             </ul>
                                             <h3>メインページ</h3>
                                             <ul>
@@ -528,10 +585,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </section> -->
                         </div>
-                        <button class="page-btn" @click="scrollTop()"></button>
                     </main>
+                    <button class="page-btn" @click="scrollTop()"></button>
                 </div>
             </transition>
         </v-app>
@@ -539,9 +596,32 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script src="js/app.js"></script>
-TODO:
     <!-- smooth・instant・auto -->
     <style>
+        .slide-appear-to{
+            transform: translateY(100%);
+        }
+        .slide-enter, .slide-leave-to {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        .slide-enter-to, .slide-leave {
+            transform: translateX(0);
+        }
+        .slide-enter-active, .slide-leave-active {
+            transition: opacity 1s, transform 1s;
+        }
+        .tab {
+            color: #e0e4e4;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 16px;
+            font-family: Montserrat;
+            font-weight: 100;
+            font-size: 91px;
+            line-height: 1;
+            letter-spacing: 0;
+        }
         .para {
             font-size: 14px;
             letter-spacing: .1em;
@@ -606,6 +686,21 @@ TODO:
             letter-spacing: .4em;
             line-height: 2;
             white-space: nowrap;
+        }
+        .carousel_modal-enter-active, .carousel_modal-leave-active {
+            transition: opacity 2s;
+        }
+        .carousel_modal-enter, .carousel_modal-leave-to {
+            opacity: 0;
+        }
+        .carousel-enter-active {
+        transition: opacity 2s cubic-bezier(1.0, 0.1, 0.3, 1.0);
+        }
+        .carousel-leave-active {
+        transition: opacity 2s cubic-bezier(0.5, 1.0, 1.0, 1.0);
+        }
+        .carousel-enter, .carousel-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
         }
         .main-enter-active, .main-leave-active {
             transition: opacity 2s;
@@ -696,6 +791,10 @@ TODO:
                 width: 100%;
                 padding: 5%;
             }
+        }
+        #practice{
+            width: 1000px;
+            top: 100px;
         }
     </style>
 </body>

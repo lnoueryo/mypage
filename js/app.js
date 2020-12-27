@@ -2,6 +2,12 @@ var app = new Vue({
     el: '#app',
     vuetify: new Vuetify(),
     data: {
+        isCarouselModal: false,
+        disabled: true,
+        show: [{opacity: 1,transition: 'all 1s',transform: 'translateX(0px)',position: 'relative'},{opacity: 0,transition: 'all 1s',transform: 'translateX(1500px)',position: 'absolute'},{opacity: 0,transition: 'all 1s',transform: 'translateX(-1500px)',position: 'absolute'}],
+        src: ['img/carousel/01.png','img/carousel/02.png','img/carousel/03.png','img/carousel/04.png','img/carousel/05.png','img/carousel/06.png','img/carousel/07.png','img/carousel/08.png','img/carousel/09.png'],
+        srcKey: [0,2,2,2,2,2,2,2,1],
+        carouselKey: 0,
         isMain: false,
         isLogo2: false,
         isMainLogo: false,
@@ -17,7 +23,7 @@ var app = new Vue({
         onboarding: 0,
         features: [
             {
-                type: 'Front-End',
+                type: 'FRONT-END',
                 content: [
                     'vuetifyを使ったUI設計',
                     'レスポンシブ',
@@ -29,7 +35,7 @@ var app = new Vue({
                 ]
             },
             {
-                type: 'Back-End',
+                type: 'BACK-END',
                 content: [
                     'AJAXを使ったREST APIの構築',
                     'laravel標準のもの＋ログイン以外に利用するパスワードチェックのバリデーション作成',
@@ -40,11 +46,10 @@ var app = new Vue({
                     'N+1問題やhttpメソッドのデリートを意識したテーブルの関連付け（関数作成）',
                     'シーダーを使った各テーブルのレコード作成',
                     '複数の画像をストレージとデータベースに保存する機能を実装',
-                    'ユーザー検索機能',
                 ]
             },
             {
-                type: 'infrastructure',
+                type: 'INFRASTRUCTURE',
                 content: [
                     'EC2によるウェブサーバー（パブリックサブネット）の構築',
                     'EC2によるデータベースサーバー（プライベートサブネット）の構築',
@@ -52,7 +57,8 @@ var app = new Vue({
                     'Route53にドメイン登録',
                 ]
             },
-        ]
+        ],
+        tab: [true,false,false],
     },
     computed: {
         video1Style(){
@@ -64,6 +70,21 @@ var app = new Vue({
     },
     mounted(){
         var that = this;
+		that.interval = setInterval(function() {
+            that.$set(that.srcKey,that.carouselKey,1)
+            if(that.carouselKey == 0){
+                that.$set(that.srcKey,that.srcKey.length-1,2)
+            } else {
+                that.$set(that.srcKey,that.carouselKey-1,2)
+            }
+            that.carouselKey++
+            if(that.carouselKey<that.src.length){
+                that.$set(that.srcKey,that.carouselKey,0)
+            } else {
+                that.carouselKey = 0;
+                that.$set(that.srcKey,that.carouselKey,0)
+            }
+        }, 7700);
 		setInterval(function() {
             if(that.hueValue>359){
                 that.hueValue = 0;
@@ -77,6 +98,8 @@ var app = new Vue({
         },200)
         setTimeout(function(){
             that.isName = true;
+            that.getTargetWidth()
+            that.disabled = false;
         },1500)
         setTimeout(function(){
             that.isNav = true;
@@ -93,8 +116,95 @@ var app = new Vue({
         window.removeEventListener('resize', this.onResize)
     },
     methods: {
+        tabKey(key){
+            this.tab = [false,false,false];
+            this.$set(this.tab,key,true);
+        },
+        openCarouselModal(key){
+            this.isCarouselModal = true;
+        },
+        getTargetWidth(){
+            this.show[1].transform = `translateX(${this.$refs.carouselFlame.clientWidth}px)`;
+            this.show[2].transform = `translateX(-${this.$refs.carouselFlame.clientWidth-50}px)`;
+        },
+        carouselNext(){
+            this.disabled = true;
+            clearInterval(this.interval);
+            var that = this;
+            that.$set(that.srcKey,that.carouselKey,1)
+            if(that.carouselKey == 0){
+                that.$set(that.srcKey,that.srcKey.length-1,2)
+            } else {
+                that.$set(that.srcKey,that.carouselKey-1,2)
+            }
+            that.carouselKey++
+            if(that.carouselKey<that.src.length){
+                that.$set(that.srcKey,that.carouselKey,0)
+            } else {
+                that.carouselKey = 0;
+                that.$set(that.srcKey,that.carouselKey,0)
+            }
+            that.interval = setInterval(function() {
+                that.$set(that.srcKey,that.carouselKey,1)
+                if(that.carouselKey == 0){
+                    that.$set(that.srcKey,that.srcKey.length-1,2)
+                } else {
+                    that.$set(that.srcKey,that.carouselKey-1,2)
+                }
+                that.carouselKey++
+                if(that.carouselKey<that.src.length){
+                    that.$set(that.srcKey,that.carouselKey,0)
+                } else {
+                    that.carouselKey = 0;
+                    that.$set(that.srcKey,that.carouselKey,0)
+                }
+            }, 7700);
+            setTimeout(function(){
+                that.disabled = false;
+            },300)
+        },
+        carouselPrev(){
+            this.disabled = true;
+            clearInterval(this.interval);
+            var that = this;
+            that.$set(that.srcKey,that.carouselKey,2)
+            if(that.carouselKey == 0){
+                that.$set(that.srcKey,that.srcKey.length-1,0)
+            } else {
+                that.$set(that.srcKey,that.carouselKey-1,0)
+            }
+            that.carouselKey--
+            if(that.carouselKey == -1){
+                that.carouselKey = that.srcKey.length-1;
+                that.$set(that.srcKey,that.carouselKey-1,1)
+            } else if(that.carouselKey == 0) {
+                that.$set(that.srcKey,that.srcKey.length-1,1)
+            } else {
+                that.$set(that.srcKey,that.carouselKey-1,1)
+            }
+
+            that.interval = setInterval(function() {
+                that.$set(that.srcKey,that.carouselKey,1)
+                if(that.carouselKey == 0){
+                    that.$set(that.srcKey,that.srcKey.length-1,2)
+                } else {
+                    that.$set(that.srcKey,that.carouselKey-1,2)
+                }
+                that.carouselKey++
+                if(that.carouselKey<that.src.length){
+                    that.$set(that.srcKey,that.carouselKey,0)
+                } else {
+                    that.carouselKey = 0;
+                    that.$set(that.srcKey,that.carouselKey,0)
+                }
+            }, 7700);
+            setTimeout(function(){
+                that.disabled = false;
+            },300)
+        },
         onResize () {
             this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+            this.getTargetWidth()
         },
         scrollTop: function(){
             window.scrollTo({
