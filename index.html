@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <meta name="description" content="現在web制作を本業としているエンジニア。今回はウェブアプリケーションのポートフォリオを紹介をさせて頂きます。">
+    <meta property="og:url" content="http://lnoueryo98.sakura.ne.jp/lp/" />
+    <meta property="og:title" content="My Portfolio" />
+    <meta property="og:image" content="img/10.jpg" />
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="common.css">
@@ -60,9 +64,9 @@
                             <div class="header-bg2"></div>
                             <div style="width: 100%;">
                                 <div class="container1" style="position: absolute;top: 0;width: 100%;margin-bottom: 5%;">
-                                    <div class="flex wrap mb-8" style="padding: 4%;">
-                                        <div id="header-left" class="mb-8">
-                                            <div style="max-width: 300px;width: 100%;">
+                                    <div class="flex wrap" style="padding: 4%;">
+                                        <div id="header-left" class="mb-3">
+                                            <div class="mb-4" style="max-width: 300px;width: 100%;">
                                                 <transition name="name">
                                                     <img id="name-logo" style="max-width: 300px;" src="img/08.png" alt="my portfolio" v-show="isName" @click="openCarouselModal">
                                                 </transition>
@@ -71,18 +75,40 @@
                                                 </transition>
                                             </div>
                                         </div>
-                                        <div id="header-right" class="flex mb-8" style="max-width: 700px;width: 100%;margin-left: auto;">
+                                        <div id="header-right" class="flex mb-3" style="max-width: 700px;width: 100%;margin-left: auto;">
                                             <transition name="nav">
-                                                <ul class="flex responsive-wrap res_nav text-center align-center justify-around" v-show="isNav">
-                                                    <a class="" href="/"><li>TOP</li></a>
-                                                    <a class="" href="#section1"><li>ABOUT ME</li></a>
-                                                    <!-- <a href="#section2"><li>BACKGROUND</li></a>
-                                                    <a href="#section2"><li>EDUCATION</li></a>
-                                                    <a href="#section2-2"><li>WORK HISTORY</li></a> -->
+                                                <ul class="flex responsive-wrap res_nav text-center align-center justify-around pc-only" v-show="isNav">
+                                                    <a href="/"><li>TOP</li></a>
+                                                    <a href="#section1"><li>ABOUT ME</li></a>
                                                     <a href="#section2"><li>SKILL</li></a>
                                                     <a href="#section3"><li>PORTFOLIO</li></a>
+                                                    <a href="#section4"><li>PRESENTATION</li></a>
+                                                    <a href="#section5"><li>FOLLOW ME</li></a>
                                                 </ul>
                                             </transition>
+                                            <div class="hamburger-menu sp-only">
+                                                <input type="checkbox" id="menu-btn-check">
+                                                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                                                <div class="menu-content">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="/">TOP</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#section2">SKILL</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#section3">PORTFOLIO</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#section4">PRESENTATION</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#section5">FOLLOW ME</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <nav id="mainbar" class="px-3" style="margin: auto; width: 100%;max-width: 1100px;overflow: hidden;">
@@ -96,9 +122,9 @@
                             </div>
                         </div>
                     </header>
-                    <main>
+                    <main style="margin-bottom: 1000px;">
                         <div id="main-wrapper">
-                            <section id="section1">
+                            <section ref="section1" id="section1">
                                 <div class="content-wrapper">
                                     <div class="sec-wrapper">
                                         <div class="container1">
@@ -106,9 +132,8 @@
                                                 <div class="title_num">01</div>
                                                 <div class="title">ABOUT ME</div>
                                             </div>
-                                            <p class="message"><span >I WILL LET YOU KNOW</span><br class="pc">
-                                                <!-- <span style="margin-left: 300px"></span><br> -->
-                                                <span class="ajust">ABOUT ME.</span>
+                                            <p class="message tra"><span >I WILL LET YOU KNOW</span><br class="pc-only">
+                                                <span class="adjust">ABOUT ME</span>
                                             </p>
                                             <div class="flex" style="margin-bottom: 20px;">
                                                 <div style="position: relative; z-index: 1;">
@@ -119,15 +144,21 @@
                                                         <p class="para">今現在WEB制作に関する業務に携わっている。</p>
                                                     </div>
                                                 </div>
-                                                <div style="position: absolute; z-index: 0;right: 5vw; width: 40%;">
+                                                <div class="pc-only" style="position: absolute; z-index: 0;right: 5vw; width: 40%;">
                                                     <img style="filter: grayscale(60%) brightness(.7);" src="img/10.jpg" alt="">
                                                 </div>
                                             </div>
-                                            <div class="content-container2" style="position: relative; z-index: 1;">
+                                            <div class="content-container2 mb-4 pc-only" style="position: relative; z-index: 1;">
                                                 <div class="sec_title">自己紹介</div>
                                                 <p class="para">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。</p>
                                                 <p class="para">趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
                                             </div>
+                                            <div class="content-container2 mb-4 sp-only" style="position: relative; z-index: 1;">
+                                                <div class="sec_title">自己紹介</div>
+                                                <p class="para"><img style="float: right;filter: grayscale(60%) brightness(.7);max-width: 210px;margin-left: 25px;" src="img/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。</p>
+                                                <p class="para">趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
+                                            </div>
+                                            <p class="tra" style="font-size: 2.5vw;text-align: right;"><a target="_blank" href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">BACKGROUND→</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -143,12 +174,12 @@
                                                     <div class="title_num">02</div>
                                                     <div class="title">SKILL</div>
                                                 </div>
-                                                <p class="message"><span>WORK HARD ON</span><br class="pc">
-                                                    <span class="ajust">EVERYTHING ANYWAY</span><br class="pc">
-                                                    <span class="ajust2">EVEN THOUGH IT IS HOBBY</span>
+                                                <p class="message tra"><span>WORK HARD ON</span><br class="pc-only">
+                                                    <span class="adjust">EVERYTHING ANYWAY</span><br class="pc">
+                                                    <span class="adjust2">EVEN THOUGH IT IS HOBBY</span>
                                                 </p>
                                                 <div class="flex" style="margin-bottom: 20px;position: relative;">
-                                                    <div style="position: relative; z-index: 1;max-width: 700px;margin: auto;padding-right: 15.375vw;">
+                                                    <div style="position: relative; z-index: 1;max-width: 800px;margin: auto;padding-right: 18.375vw;">
                                                         <div class="content-container1">
                                                             <div class="sec_title" style="margin-top: 40px;">フロントエンド</div>
                                                             <p class="para">2020年にHTML、CSS、JavaScriptの学習を開始。</p>
@@ -158,12 +189,11 @@
                                                         </div>
                                                     </div>
                                                     <div style="position: absolute; z-index: 0;bottom: -3vw; right: 7vw; width: 100%;max-width: 300px;">
-                                                        <!-- <img style="filter: grayscale(60%);" src="img/13.png" alt=""> -->
                                                         <img style="filter: grayscale(80%)  brightness(.7);" src="img/12.png" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="flex" style="margin-bottom: 20px;position: relative;">
-                                                    <div style="position: relative; z-index: 1;max-width: 700px;margin: auto;padding-left: 18.375vw;">
+                                                    <div style="position: relative; z-index: 1;max-width: 900px;margin: auto;padding-left: 30.375vw;">
                                                         <div class="content-container1">
                                                             <div class="sec_title" style="margin-top: 40px;">バックエンド</div>
                                                             <p class="para">2020年4月からプログラミングスクールに通い、PHPフレームワークを学習。</p>
@@ -174,14 +204,14 @@
                                                     </div>
                                                     <div style="position: absolute; z-index: 0;bottom: 1vw; left: 2vw; width: 100%;max-width: 400px;transform: rotate3d(10, 20, 20, 30deg);">
                                                         <img style="filter: grayscale(60%)  brightness(.7);" src="img/13.png" alt="">
-                                                        <!-- <img style="filter: grayscale(80%)  brightness(.7);" src="img/12.png" alt=""> -->
                                                     </div>
                                                 </div>
-                                                <div class="content-container2" style="position: relative; z-index: 1; max-width: 500px;margin: auto;">
-                                                    <div class="sec_title">プライベート</div>
+                                                <div class="content-container2 mb-4" style="position: relative; z-index: 1; max-width: 600px;margin: 0 auto 4% auto;">
+                                                    <div class="sec_title" style="margin-top: 40px;">プライベート</div>
                                                     <p class="para">音楽をしていたという事もあり、作曲や弦楽器の演奏ができます。</p>
                                                     <p class="para">海外留学を経験して以来外国語に興味が持ち、日常英会話と少しの中国語が話せます。</p>
                                                 </div>
+                                                <p class="tra" style="font-size: 2.5vw;text-align: right;"><a target="_blank" href="https://docs.google.com/document/d/1579UK49c0QWP622gYk_Tfg0sFzj1-eBTBj6Q2QR6MEQ/edit">CURRICULUM VITAE→</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -190,275 +220,41 @@
                             <section id="section3">
                                 <div class="content-wrapper">
                                     <div class="sec-wrapper">
-                                        <div class="flex" style="margin-bottom: 20px; align-items: center;position: relative;">
+                                        <div class="flex" style="margin-bottom: 20px; align-items: center;position: relative;overflow: hidden;">
+                                            <p class="tra" style="font-size: 2.5vw; position: absolute; right: 6.25vw; bottom: 5%; z-index: 2;"><a target="_blank" href="https://docs.google.com/document/d/1579UK49c0QWP622gYk_Tfg0sFzj1-eBTBj6Q2QR6MEQ/edit">DESCRIPTION→</a></p>
                                             <img src="img/14.png" alt="" style="position: relative;z-index: 0;">
                                             <div class="flex"style="position: absolute; z-index: 1;width: 100%; align-items: center;">
                                                 <div class="content-container1 w-50" style="background-color: black;padding: 7.8125vw 6.25vw 6.953125vw;">
                                                     <div class="flex align-center title-container">
-                                                        <div class="title_num">03</div>
+                                                        <div class="title_num" style="    margin-right: 15%;">03</div>
                                                         <div class="title">PORTFOLIO</div>
                                                     </div>
-                                                    <div class="sec_title" style="margin-top: 40px;">ポートフォリオ</div>
+                                                    <div class="sec_title" style="margin-top: 30px;">ポートフォリオ</div>
                                                     <p class="para">今回JavaScriptフレームワークVue.jsとPHPフレームワークLaravelを使ってソーシャルネットワーキングサービスを作成しました。</p>
                                                     <p class="para">AJAX、REST API、N+1問題をできる限り意識した作りになっております。</p>
                                                 </div>
-                                                <p id="special" class="message w-50 text-center" style="padding: 0 4%;"><span >REACH OUT FOR</span><br class="pc">
-                                                <span >MODERN</span><br class="pc">
-                                                <span >TECHNOLOGY</span><br class="pc">
-                                                </p>
+                                                <div id="special" class="message w-50 text-center tra" style="padding: 0 4%;">
+                                                    <p><span >REACH OUT FOR</span><br class="pc">
+                                                        <span >MODERN</span><br class="pc">
+                                                        <span >TECHNOLOGY</span><br class="pc">
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="container1">
-                                        <div class="content-container">
-                                            <template v-if="windowSize.x>480">
-                                                <table id="skill" style="width: 100%; max-width: 700px" class="xlg">
-                                                    <thead>
-                                                        <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th colspan="2">種類</th>
-                                                            <th>試用期間</th>
-                                                            <th>レベル</th></th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" rowspan="2">O<br>S</th>
-                                                            <th>Windows10</th>
-                                                            <td>7ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Linux</th>
-                                                            <td>7ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" rowspan="3">言<br>語</th>
-                                                            <th>javascript</th>
-                                                            <td>10ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>PHP</th>
-                                                            <td>8ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Typescript</th>
-                                                            <td>3ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" rowspan="6">フ<br>レ<br><span style="writing-mode: vertical-rl;">ー</span><br>ム<br>ワ<br><span style="writing-mode: vertical-rl;">ー</span><br>ク<br>・<br>ラ<br>イ<br>ブ<br>ラ<br>リ</th>
-                                                            <th>Laravel</th>
-                                                            <td>8ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vue.js</th>
-                                                            <td>4ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vuetify</th>
-                                                            <td>3ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vue Router</th>
-                                                            <td>1ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vuex</th>
-                                                            <td>1ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>jQuery</th>
-                                                            <td>2ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" rowspan="6">ミ<br>ド<br>ル<br>ウ<br>ェ<br>ア<br><span style="writing-mode: vertical-rl;">、</span><br>サ<br><span style="writing-mode: vertical-rl;">ー</span><br>バ<br></th>
-                                                            <th>MySQL</th>
-                                                            <td>8ヶ月</td>
-                                                            <td>簡単なテーブル作成が可能</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Apache</th>
-                                                            <td>4ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Cloud9</th>
-                                                            <td>1ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>EC2</th>
-                                                            <td>1ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>S3</th>
-                                                            <td>1ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>RDS</th>
-                                                            <td>1ヶ月</td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" rowspan="4">バ<br><span style="writing-mode: vertical-rl;">ー</span><br>ジ<br>ョ<br>ン<br>管<br>理</th>
-                                                            <th>Git</th>
-                                                            <td>3ヶ月</td>
-                                                            <td></td>
-                                                          </tr>
-                                                          <tr>
-                                                            <th>Git Hub</th>
-                                                            <td>10ヶ月</td>
-                                                            <td></td>
-                                                          </tr>
-                                                          <tr>
-                                                            <th>Source Tree</th>
-                                                            <td>5ヶ月</td>
-                                                            <td></td>
-                                                          </tr>
-                                                          <tr>
-                                                            <th>Bit bucket</th>
-                                                            <td>3ヶ月</td>
-                                                            <td></td>
-                                                          </tr>
-                                                    </tbody>
-                                                </table>
-                                            </template>
-                                            <template v-else>
-                                                <table id="skill" style="width: 100%; max-width: 700px" class="sm px-1">
-                                                    <thead>
-                                                        <div class="text-center xxxxlg pb-2 fw-bold">PCスキル</div>
-                                                    </thead>
-                                                    <tbody class="xxlg">
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" colspan="3">OS</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="width: 33%;">Windows10</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Linux</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" colspan="3">言語</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>javascript</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>PHP</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Typescript</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" colspan="3">フレームワーク・ライブラリ</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Laravel</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vue.js</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vuetify</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vue Router</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Vuex</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>jQuery</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" colspan="3">ミドルウェア、サーバ</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>MySQL</th>
-                                                            <td>簡単なテーブル作成が可能</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Apache</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Cloud9</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>EC2</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>S3</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>RDS</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th style="text-align: center;" scope="row" colspan="3">バージョン管理</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Git</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Git Hub</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Source Tree</th>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>Bit bucket</th>
-                                                            <td></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </template>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </section>
                             <section id="section4">
                                 <div class="content-wrapper">
-                                    <!-- <div style="background-color: gray;position: absolute;top: -30px;bottom: 0;left: 0%;right: 30%;"></div><div class="header-bg2"></div> -->
                                     <div class="container1">
-                                        <p id="special" class="message w-50 text-center" style="padding: 0 4%;font-family: 'Montserrat', sans-serif;"><span>My Memories</span><br class="pc">
-                                        <div class="carousel" style="position: relative;padding: 75px;">
+                                        <p id="special" class="message tra" style="padding: 4%;font-style: italic;"><span>My Memories</span><br class="pc">
+                                        <div class="carousel" style="position: relative;padding: 30px 75px;">
                                             <!-- <button class="prev" @click="carouselPrev" :disabled="disabled">PREV</button> -->
                                             <!-- <button class="next" @click="carouselNext" :disabled="disabled">NEXT</button> -->
-                                            <input  @click="carouselPrev" class="prev filter" style="max-width: 30px;" type="image" src="img/carousel/21.png">
-                                            <input @click="carouselNext" class="next filter" style="max-width: 30px;" type="image" src="img/carousel/20.png">
+                                            <input  @click="carouselPrev" class="prev filter" style="max-width: 30px;" type="image" src="img/carousel/21.png" :disabled="disabled">
+                                            <input @click="carouselNext" class="next filter" style="max-width: 30px;" type="image" src="img/carousel/20.png" :disabled="disabled">
                                             <div>
-                                                <div ref="carouselFlame" class="flex" style="position: relative;overflow: hidden;filter: grayscale(60%);">
+                                                <div ref="carouselFlame" class="flex" style="position: relative;overflow: hidden;filter: grayscale(60%);align-items: flex-start;">
                                                     <img :src="image" :style="show[srcKey[index]]" v-for="(image, index) in src" :key="index" @click="openCarouselModal">
                                                 </div>
                                             </div>
@@ -466,46 +262,78 @@
                                     </div>
                                 </div>
                             </section>
-                            <section id="section5">
+                            <section>
                                 <div class="content-wrapper">
-                                    <!-- <div style="background-color: gray;position: absolute;top: 0;bottom: 0;left: 30%;right: 0;"></div><div class="header-bg2"></div> -->
-                                    <div class="container1 flex" style="justify-content: space-around;">
+                                    <div class="container1 flex pc-only" style="justify-content: space-around;flex-flow: row-reverse;">
                                         <div>
-                                            <div class="tab" @click="tabKey(0)">
+                                            <div class="tab" @mouseover="tabKey(0)">
                                                 Front-End
                                             </div>
-                                            <div class="tab" @click="tabKey(1)">
+                                            <div class="tab" @mouseover="tabKey(1)">
                                                 Back-End
                                             </div>
-                                            <div class="tab" @click="tabKey(2)">
+                                            <div class="tab" @mouseover="tabKey(2)">
                                                 Infrastructure
                                             </div>
                                         </div>
-                                        <!-- <div class="flex wrap" style="margin-bottom: 20px;position: relative;"> -->
-                                            <div style="position: relative;max-width: 400px;width: 100%">
-                                                <transition name="slide">
-                                                    <ol class="content-container1" style="position: absolute;" v-show="tab[0]">
-                                                        <div class="sec_title">{{ features[0].type }}</div>
-                                                        <li class="para" v-for="(content, i) in features[0].content" :key="i">{{ content }}</li>
-                                                    </ol>
-                                                </transition>
-                                                <transition name="slide">
-                                                    <ol class="content-container1" style="position: absolute;" v-show="tab[1]">
-                                                        <div class="sec_title">{{ features[1].type }}</div>
-                                                        <li class="para" v-for="(content, i) in features[1].content" :key="i">{{ content }}</li>
-                                                    </ol>
-                                                </transition>
-                                                <transition name="slide">
-                                                    <ol class="content-container1" style="position: absolute;" v-show="tab[2]">
-                                                        <div class="sec_title">{{ features[2].type }}</div>
-                                                        <li class="para" v-for="(content, i) in features[2].content" :key="i">{{ content }}</li>
-                                                    </ol>
-                                                </transition>
-                                            </div>
-                                        <!-- </div> -->
+                                        <div style="width: 40vw;max-width: 450px;position: relative;">
+                                            <transition name="slide">
+                                                <ol class="content-container1" style="position: absolute" v-show="tab[0]">
+                                                    <div class="sec_title">{{ features[0].type }}</div>
+                                                    <li class="para" v-for="(content, i) in features[0].content" :key="i">{{ content }}</li>
+                                                </ol>
+                                            </transition>
+                                            <transition name="slide">
+                                                <ol class="content-container1" style="position: absolute" v-show="tab[1]">
+                                                    <div class="sec_title">{{ features[1].type }}</div>
+                                                    <li class="para" v-for="(content, i) in features[1].content" :key="i">{{ content }}</li>
+                                                </ol>
+                                            </transition>
+                                            <transition name="slide">
+                                                <ol class="content-container1" style="position: absolute" v-show="tab[2]">
+                                                    <div class="sec_title">{{ features[2].type }}</div>
+                                                    <li class="para" v-for="(content, i) in features[2].content" :key="i">{{ content }}</li>
+                                                </ol>
+                                            </transition>
+                                        </div>
+                                    </div>
+                                    <div class="sp-only tab-items">
+                                        <transition name="slide">
+                                            <ol class="content-container1" style="position: absolute" v-show="tab[0]">
+                                                <div class="sec_title">{{ features[0].type }}</div>
+                                                <li class="para" v-for="(content, i) in features[0].content" :key="i">{{ content }}</li>
+                                            </ol>
+                                        </transition>
+                                        <transition name="slide">
+                                            <ol class="content-container1" style="position: absolute" v-show="tab[1]">
+                                                <div class="sec_title">{{ features[1].type }}</div>
+                                                <li class="para" v-for="(content, i) in features[1].content" :key="i">{{ content }}</li>
+                                            </ol>
+                                        </transition>
+                                        <transition name="slide">
+                                            <ol class="content-container1" style="position: absolute" v-show="tab[2]">
+                                                <div class="sec_title">{{ features[2].type }}</div>
+                                                <li class="para" v-for="(content, i) in features[2].content" :key="i">{{ content }}</li>
+                                            </ol>
+                                        </transition>
+                                    </div>
+                                    <div class="flex sp-only-f" style="justify-content: space-around;">
+                                        <div class="tab" @click="tabKey(0)">
+                                            フロント
+                                        </div>
+                                        <div class="tab" @click="tabKey(1)">
+                                            バック
+                                        </div>
+                                        <div class="tab" @click="tabKey(2)">
+                                            インフラ
+                                        </div>
+                                    </div>
+                                    <div class="sec-wrapper" style="padding: 20px 6.25vw 5% 6.25vw;">
+                                        <p class="tra" style="font-size: 2.5vw;text-align: right;"><a target="_blank" href="http://mymemories.iliwyc.work/">MY MEMORIES→</a></p>
                                     </div>
                                 </div>
                             </section>
+                            <section id="section5"></section>
                             <!-- <section id="section4">
                                 <div class="content-wrapper"><div class="header-bg2"></div>
                                     <div class="container1">
@@ -587,17 +415,114 @@
                                 </div>
                             </section> -->
                         </div>
+                        <!-- <button class="page-btn" @click="scrollTop()"></button> -->
                     </main>
-                    <button class="page-btn" @click="scrollTop()"></button>
+                    <footer>
+                        <div class="footer">
+                            <div class="container1 mb-7">
+                                <div class="flex align-center title-container mb-3">
+                                    <div class="title_num">04</div>
+                                    <div class="title">FOLLOW ME</div>
+                                </div>
+                                <div class="flex mb-6">
+                                    <div class="message text-center">FOLLOW ME</div>
+                                </div>
+                                <hr style="color: white;width: 50%;margin: auto; margin-bottom: 2%;">
+                                <div class="text-center">
+                                    <a href="https://www.facebook.com/profile.php?id=100049811055127" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/18.png" alt="facebook"></a>
+                                    <a href="https://github.com/lnoueryo" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/21.png" alt="github"></a>
+                                    <a href="https://twitter.com/aNp6KjSBlp02cs8" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/19.png" alt="twitter"></a>
+                                </div>
+                            </div>
+                            <div id="header-right" class="flex" style="justify-content: space-around; max-width: 1000px;margin: 0 auto 3% auto;">
+                                <ul class="responsive-wrap res_nav">
+                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Contact</li><br>
+                                    <li>〒156-0043</li>
+                                    <li>東京都世田谷区松原1-43-14</li>
+                                    <li>070-8338-1624</li>
+                                    <li>popo62520908@gmail.com</li>
+                                </ul>
+                                <ul class="responsive-wrap res_nav">
+                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Resume</li>
+                                    <li><a href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">履歴書</a></li>
+                                    <li><a href="https://docs.google.com/document/d/1579UK49c0QWP622gYk_Tfg0sFzj1-eBTBj6Q2QR6MEQ/edit">職務経歴書</a></li>
+                                    <li><a href="https://docs.google.com/presentation/d/16AKBahZMnhDwnSolRcH3vBLlouDwai7lOjLfmX8jdUY/edit#slide=id.ga38c966850_0_6">ポートフォリオ</a></li>
+                                    <li><a href=""></a></li>
+                                </ul>
+                                <ul class="responsive-wrap res_nav">
+                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Github</li>
+                                    <li><a href="https://github.com/lnoueryo/Mymemories">My Memories</a></li>
+                                    <li><a href="https://github.com/lnoueryo/Mymemories/tree/master/app/Http/Controllers">Controller</a></li>
+                                    <li><a href="https://github.com/lnoueryo/Inouegram/tree/master/app">Model</a></li>
+                                    <li><a href="https://github.com/lnoueryo/Mymemories/tree/master/resources/ts/components">View</a></li>
+                                </ul>
+                                <ul class="responsive-wrap res_nav">
+                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Qiita</li>
+                                    <li v-for="(page, index) in qiita" :key="index">
+                                        <a :href="page.url" target="_blank">{{ page.title }}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <ul class="flex responsive-wrap res_nav text-center align-center justify-around" style="width: 100%;">
+                                <a class="" href="/"><li>TOP</li></a>
+                                <a class="" href="#section1"><li>ABOUT ME</li></a>
+                                <a href="#section2"><li>SKILL</li></a>
+                                <a href="#section3"><li>PORTFOLIO</li></a>
+                                <a href="#section4"><li>PRESENTATION</li></a>
+                                <a href="#section6"><li>FOLLOW ME</li></a>
+                            </ul>
+                        </div>
+                    </footer>
                 </div>
             </transition>
         </v-app>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="js/app.js"></script>
     <!-- smooth・instant・auto -->
     <style>
+        #section5 .para {
+            font-size: 14px;
+            letter-spacing: .1em;
+            line-height: 2.3vw;
+            font-weight: 500;
+        }
+        footer .title{
+            display: block;
+            font-weight: 500;
+            font-family: proxima-nova,sans-serif;
+            font-size: 14px;
+            letter-spacing: .1em;
+            line-height: 1;
+        }
+        footer .title_num{
+            margin-right: 60px;
+            font-weight: 400;
+            font-family: trajan-pro-3,serif;
+            font-style: italic;
+            font-size: 20px;
+            letter-spacing: .02em;
+            line-height: 1;
+        }
+        footer .message {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 0;
+            z-index: 1;
+            position: relative;
+            font-weight: 400;
+            font-family: trajan-pro-3,serif;
+            font-size: 3.75vw;
+            letter-spacing: .02em;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .tra{
+            font-family: trajan-pro-3,serif;
+        }
         .slide-appear-to{
             transform: translateY(100%);
         }
@@ -618,9 +543,10 @@
             padding-bottom: 16px;
             font-family: Montserrat;
             font-weight: 100;
-            font-size: 91px;
+            font-size: 6vw;
             line-height: 1;
             letter-spacing: 0;
+            margin-bottom: 30px;
         }
         .para {
             font-size: 14px;
@@ -648,7 +574,6 @@
             z-index: 1;
             position: relative;
             font-weight: 400;
-            font-family: trajan-pro-3,serif;
             font-size: 3.75vw;
             letter-spacing: .02em;
             line-height: 1.3;
@@ -670,7 +595,7 @@
             overflow: hidden;
         }
         .title_num{
-            margin-right: 60px;
+            margin-right: 6%;
             font-weight: 400;
             font-family: trajan-pro-3,serif;
             font-style: italic;
@@ -740,6 +665,28 @@
             border-radius: 50%;
             background: #5bc8ac;
         }
+        .footer{
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            padding-top: 50px;
+        }
+        header{
+            position: relative;
+            z-index: 2;
+        }
+        main{
+            position: relative;
+            z-index: 2;
+            background-color: black;
+        }
+        footer{
+            position: relative;
+            z-index: 1;
+        }
         /* p {
             font-size: 16px;
             font-weight: bold;
@@ -776,20 +723,122 @@
         table {
             padding: 10px;
         }
-        @media screen and (max-width: 640px) {
-            .last td:last-child {
-                border-bottom: solid 1px #ccc;
-                width: 100%;
+        .menu-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            height: 60px;
+            width: 60px;
+            justify-content: center;
+            align-items: center;
+            z-index: 90;
+            /* background-color: #3583bb42; */
+        }
+        .menu-btn span,
+        .menu-btn span:before,
+        .menu-btn span:after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 25px;
+            border-radius: 3px;
+            background-color: #ffffff;
+            position: absolute;
+            transition: all 1s;
+        }
+        .menu-btn span:before {
+            bottom: 8px;
+        }
+        .menu-btn span:after {
+            top: 8px;
+        }
+        #menu-btn-check:checked ~ .menu-btn span {
+            background-color: #183c56c9;
+        }
+        #menu-btn-check:checked ~ .menu-btn span::before {
+            bottom: 0;
+            transform: rotate(45deg);
+            transition: all 1s;
+        }
+        #menu-btn-check:checked ~ .menu-btn span::after {
+            top: 0;
+            transform: rotate(-45deg);
+            transition: all 1s;
+        }
+        .menu-content ul {
+            padding: 70px 10px 0;
+        }
+        .menu-content ul li {
+            border-bottom: solid 1px #ffffff;
+            list-style: none;
+        }
+        .menu-content ul li a {
+            display: block;
+            width: 100%;
+            font-size: 15px;
+            box-sizing: border-box;
+            color:#ffffff;
+            text-decoration: none;
+            padding: 9px 15px 10px 0;
+            position: relative;
+        }
+        .menu-content ul li a::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            border-top: solid 2px #ffffff;
+            border-right: solid 2px #ffffff;
+            transform: rotate(45deg);
+            position: absolute;
+            right: 11px;
+            top: 16px;
+        }
+        .menu-content {
+            width: 50%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: -50%;
+            z-index: 80;
+            background-color: #215376c4;
+            transition: all 0.5s;/*アニメーション設定*/
+        }
+        #menu-btn-check:checked ~ .menu-content {
+            right: 0;/*メニューを画面内へ*/
+        }
+        header {
+            position: relative;
+            z-index: 4;
+        }
+        .hamburger-menu input {
+            display: none;
+        }
+        @media screen and (max-width: 768px) {
+            #section1 .adjust {
+                margin-left: 0;
             }
-            .tbl-r02 {
-                width: 80%;
+            .para {
+                line-height: 2;
             }
-            .tbl-r02 th,
-            .tbl-r02 td {
-            　　border-bottom: none;
-                display: block;
-                width: 100%;
-                padding: 5%;
+            #section2 .adjust {
+                margin-left: 0;
+            }
+            .tab{
+                color: #e0e4e4;
+                position: relative;
+                font-family: "\6E38\660E\671D\4F53",Yu Mincho,YuMincho,"\30D2\30E9\30AE\30CE\660E\671D Pro",Hiragino Mincho Pro,"Noto Serif JP",serif;
+                font-weight: 600;
+                font-size: 20px;
+                letter-spacing: .4em;
+                line-height: 2;
+            }
+            .tab-items{
+                max-width: 450px;
+                position: relative;
+                height: 300px;
+                margin: auto;
+                margin-bottom: 30px;
             }
         }
         #practice{

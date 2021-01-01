@@ -53,6 +53,7 @@
 .mx-0{margin-right: 0;margin-left: 0;}
 .mx-1{margin-right: 10px;margin-left: 10px;}
 .mx-2{margin-right: 20px;margin-left: 20px;}
+.mx-3{margin-right: 3%;margin-left: 3%;}
 .mr-0{margin-right: 0;}
 .ml-0{margin-left: 0;}
 
@@ -102,7 +103,7 @@
 .align-item-center{align-items: center;}
 
 .align-start{align-content: flex-start;}
-.align-center{align-content: center;}
+.align-center{align-items: center;}
 .align-between{align-content: space-between;}
 .align-around{align-content: space-around;}
 
@@ -116,7 +117,13 @@
 .w33{width: 33%;}
 .w50{width: 50%;}
 .pc {display: block;}
-
+.sp-only{display: none;}
+.sp-only-f{display: none;}
+@media screen and (max-width: 768px) {
+    .pc-only{display: none;}
+    .sp-only{display: block;}
+    .sp-only-f{display: flex;}
+}
 @media screen and (max-width: 480px) {
     .responsive-wrap{
         flex-wrap: wrap;

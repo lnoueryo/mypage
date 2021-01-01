@@ -37,15 +37,15 @@ var app = new Vue({
             {
                 type: 'BACK-END',
                 content: [
-                    'AJAXを使ったREST APIの構築',
-                    'laravel標準のもの＋ログイン以外に利用するパスワードチェックのバリデーション作成',
+                    // 'AJAXを使ったREST APIの構築',
+                    // 'laravel標準のもの＋ログイン以外に利用するパスワードチェックのバリデーション作成',
                     'laravel標準のもの＋Oauthの認証を実装',
                     '会員登録時に送信するメールをキュージョブで非同期',
-                    'イベント、リスナー、キュージョブを使ってパスワードハッシュ化する前のデータをメール送信',
+                    // 'イベント、リスナー、キュージョブを使ってパスワードハッシュ化する前のデータをメール送信',
                     'データベース正規化',
-                    'N+1問題やhttpメソッドのデリートを意識したテーブルの関連付け（関数作成）',
+                    'N+1問題を意識したテーブルの関連付け（関数作成）',
                     'シーダーを使った各テーブルのレコード作成',
-                    '複数の画像をストレージとデータベースに保存する機能を実装',
+                    'ストレージ、データベースに複数の画像を保存する機能を実装',
                 ]
             },
             {
@@ -59,6 +59,7 @@ var app = new Vue({
             },
         ],
         tab: [true,false,false],
+        qiita: '',
     },
     computed: {
         video1Style(){
@@ -66,7 +67,16 @@ var app = new Vue({
             video1Filter = `hue-rotate(${this.hueValue}deg)`;
             var style = `filter: ${video1Filter}`;
             return style;
-        }
+        },
+    },
+    created(){
+        axios.get('https://qiita.com/api/v2/users/popo62520908/items')
+        .then((res) => {
+            this.qiita = res.data.slice(0,4);
+        })
+        .catch(function(error){
+            console.log(error)
+        })
     },
     mounted(){
         var that = this;
@@ -109,13 +119,17 @@ var app = new Vue({
         },3500)
         setTimeout(function(){
             that.isMainLogo = true;
-        },6000)
+        },5000)
         window.addEventListener('resize', this.onResize);
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize)
     },
     methods: {
+        sortGithubCode(key){
+            var basicUrl = `https://api.github.com/repos/lnoueryo/${this.github[key].name}/contents/`
+            var modelPath = basicUrl + 'app';
+        },
         tabKey(key){
             this.tab = [false,false,false];
             this.$set(this.tab,key,true);
@@ -161,7 +175,7 @@ var app = new Vue({
             }, 7700);
             setTimeout(function(){
                 that.disabled = false;
-            },300)
+            },400)
         },
         carouselPrev(){
             this.disabled = true;
