@@ -56,23 +56,105 @@
 table {
     margin: auto;
 }
-#section1 .ajust {
+#section1 .adjust {
     margin-left: 30vw;
 }
-#section2 .ajust {
+#section2 .adjust {
     margin-left: 20vw;
 }
-#section2 .ajust2 {
+#section2 .adjust2 {
     margin-left: 5vw;
+}
+
+#dog {
+    float: right;
+    filter: grayscale(60%) brightness(.7);
+    max-width: 210px;
+    margin-left: 25px;
+}
+
+.front-end {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: auto;
+    padding-right: 18.375vw;
+}
+#vue {
+    position: absolute;
+    z-index: 0;
+    bottom: -3vw;
+    right: 7vw;
+    width: 100%;
+    max-width: 300px;
+}
+.back-end {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: auto;
+    padding-left: 30.375vw;
+}
+#section3 .content-container1 {
+    background-color: black;padding: 7.8125vw 6.25vw 6.953125vw;
+}
+#section3 .content-container2 {
+    background-color: black;padding: 7.8125vw 0 0 6.25vw;
+}
+.carousel {
+    position: relative;padding: 30px 75px;
 }
 @media screen and (max-width: 480px) {
     #video1 {
-        height: 170vw;
+        min-height: 300px;
     }
-    /* .v-application nav ul {
-        padding: 0 20%;
-    } */
-    #section1 .ajust {
+    #video2 {
+        min-height: 300px;
+    }
+    #name-logo {
+        width: 40%;
+    }
+    #dog {
+        max-width: 140px;
+        margin-left: 15px;
+    }
+    #section1 .adjust {
         margin: 0;
+    }
+    .front-end {
+        max-width: initial;
+        padding-right: 0;
+    }
+    #vue {
+        right: 0;
+        /* max-width: initial; */
+    }
+    .back-end {
+        max-width: initial;
+        padding-left: 0;
+    }
+    #section3 .content-container1 {
+        background-color: black;padding: 3vw 2vw;
+    }
+    .para {
+        line-height: 6vw;
+        padding: 0 10px;
+    }
+    #special2.message {
+        font-size: 20px!important;
+    }
+    .carousel {
+        padding: 0;
+    }
+    .tab-items {
+        padding: 0 10px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .para {
+        font-size: 3.3vw!important;
+    }
+    .tab {
+        font-size: 16px!important;
     }
 }

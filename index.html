@@ -77,7 +77,7 @@
                                         </div>
                                         <div id="header-right" class="flex mb-3" style="max-width: 700px;width: 100%;margin-left: auto;">
                                             <transition name="nav">
-                                                <ul class="flex responsive-wrap res_nav text-center align-center justify-around pc-only" v-show="isNav">
+                                                <ul class="flex responsive-wrap text-center align-center justify-around pc-only" v-show="isNav">
                                                     <a href="/"><li>TOP</li></a>
                                                     <a href="#section1"><li>ABOUT ME</li></a>
                                                     <a href="#section2"><li>SKILL</li></a>
@@ -155,8 +155,7 @@
                                             </div>
                                             <div class="content-container2 mb-4 sp-only" style="position: relative; z-index: 1;">
                                                 <div class="sec_title">自己紹介</div>
-                                                <p class="para"><img style="float: right;filter: grayscale(60%) brightness(.7);max-width: 210px;margin-left: 25px;" src="img/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。</p>
-                                                <p class="para">趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
+                                                <p class="para"><img id="dog" style="" src="img/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
                                             </div>
                                             <p class="tra" style="font-size: 2.5vw;text-align: right;"><a target="_blank" href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">BACKGROUND→</a></p>
                                         </div>
@@ -175,11 +174,11 @@
                                                     <div class="title">SKILL</div>
                                                 </div>
                                                 <p class="message tra"><span>WORK HARD ON</span><br class="pc-only">
-                                                    <span class="adjust">EVERYTHING ANYWAY</span><br class="pc">
+                                                    <span class="adjust">EVERYTHING ANYWAY</span><br>
                                                     <span class="adjust2">EVEN THOUGH IT IS HOBBY</span>
                                                 </p>
                                                 <div class="flex" style="margin-bottom: 20px;position: relative;">
-                                                    <div style="position: relative; z-index: 1;max-width: 800px;margin: auto;padding-right: 18.375vw;">
+                                                    <div class="front-end">
                                                         <div class="content-container1">
                                                             <div class="sec_title" style="margin-top: 40px;">フロントエンド</div>
                                                             <p class="para">2020年にHTML、CSS、JavaScriptの学習を開始。</p>
@@ -188,12 +187,12 @@
                                                             <p class="para">業務ではランディングページの作成が大半を占めているため、jQueryを使ってJavaScriptを書いている。</p>
                                                         </div>
                                                     </div>
-                                                    <div style="position: absolute; z-index: 0;bottom: -3vw; right: 7vw; width: 100%;max-width: 300px;">
+                                                    <div id="vue">
                                                         <img style="filter: grayscale(80%)  brightness(.7);" src="img/12.png" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="flex" style="margin-bottom: 20px;position: relative;">
-                                                    <div style="position: relative; z-index: 1;max-width: 900px;margin: auto;padding-left: 30.375vw;">
+                                                    <div class="back-end">
                                                         <div class="content-container1">
                                                             <div class="sec_title" style="margin-top: 40px;">バックエンド</div>
                                                             <p class="para">2020年4月からプログラミングスクールに通い、PHPフレームワークを学習。</p>
@@ -220,23 +219,30 @@
                             <section id="section3">
                                 <div class="content-wrapper">
                                     <div class="sec-wrapper">
+                                        <div class="content-container2 w-50 sp-only">
+                                            <div class="flex align-center title-container">
+                                                <div class="title_num" style="    margin-right: 15%;">03</div>
+                                                <div class="title">PORTFOLIO</div>
+                                            </div>
+                                            <div class="sec_title" style="margin-top: 30px;">ポートフォリオ</div>
+                                        </div>
                                         <div class="flex" style="margin-bottom: 20px; align-items: center;position: relative;overflow: hidden;">
                                             <p class="tra" style="font-size: 2.5vw; position: absolute; right: 6.25vw; bottom: 5%; z-index: 2;"><a target="_blank" href="https://docs.google.com/document/d/1579UK49c0QWP622gYk_Tfg0sFzj1-eBTBj6Q2QR6MEQ/edit">DESCRIPTION→</a></p>
                                             <img src="img/14.png" alt="" style="position: relative;z-index: 0;">
                                             <div class="flex"style="position: absolute; z-index: 1;width: 100%; align-items: center;">
-                                                <div class="content-container1 w-50" style="background-color: black;padding: 7.8125vw 6.25vw 6.953125vw;">
-                                                    <div class="flex align-center title-container">
-                                                        <div class="title_num" style="    margin-right: 15%;">03</div>
+                                                <div class="content-container1 w-50">
+                                                    <div class="flex align-center title-container pc-only">
+                                                        <div class="title_num" style="margin-right: 15%;">03</div>
                                                         <div class="title">PORTFOLIO</div>
                                                     </div>
-                                                    <div class="sec_title" style="margin-top: 30px;">ポートフォリオ</div>
+                                                    <div class="sec_title pc-only" style="margin-top: 30px;">ポートフォリオ</div>
                                                     <p class="para">今回JavaScriptフレームワークVue.jsとPHPフレームワークLaravelを使ってソーシャルネットワーキングサービスを作成しました。</p>
                                                     <p class="para">AJAX、REST API、N+1問題をできる限り意識した作りになっております。</p>
                                                 </div>
                                                 <div id="special" class="message w-50 text-center tra" style="padding: 0 4%;">
-                                                    <p><span >REACH OUT FOR</span><br class="pc">
-                                                        <span >MODERN</span><br class="pc">
-                                                        <span >TECHNOLOGY</span><br class="pc">
+                                                    <p><span >REACH OUT FOR</span><br>
+                                                        <span >MODERN</span><br>
+                                                        <span >TECHNOLOGY</span><br>
                                                     </p>
                                                 </div>
                                             </div>
@@ -247,18 +253,20 @@
                             <section id="section4">
                                 <div class="content-wrapper">
                                     <div class="container1">
-                                        <p id="special" class="message tra" style="padding: 4%;font-style: italic;"><span>My Memories</span><br class="pc">
-                                        <div class="carousel" style="position: relative;padding: 30px 75px;">
+                                        <p id="special2" class="message tra" style="padding: 4%;font-style: italic;"><span>My Memories</span><br class="pc">
+                                        <div class="carousel">
                                             <!-- <button class="prev" @click="carouselPrev" :disabled="disabled">PREV</button> -->
                                             <!-- <button class="next" @click="carouselNext" :disabled="disabled">NEXT</button> -->
-                                            <input  @click="carouselPrev" class="prev filter" style="max-width: 30px;" type="image" src="img/carousel/21.png" :disabled="disabled">
-                                            <input @click="carouselNext" class="next filter" style="max-width: 30px;" type="image" src="img/carousel/20.png" :disabled="disabled">
+                                            <input  @click="carouselPrev" class="prev filter pc48-only" style="max-width: 30px;" type="image" src="img/carousel/21.png" :disabled="disabled">
+                                            <input @click="carouselNext" class="next filter pc48-only" style="max-width: 30px;" type="image" src="img/carousel/20.png" :disabled="disabled">
                                             <div>
                                                 <div ref="carouselFlame" class="flex" style="position: relative;overflow: hidden;filter: grayscale(60%);align-items: flex-start;">
                                                     <img :src="image" :style="show[srcKey[index]]" v-for="(image, index) in src" :key="index" @click="openCarouselModal">
                                                 </div>
                                             </div>
                                         </div>
+                                        <input  @click="carouselPrev" class="prev filter sp48-only" style="max-width: 30px;" type="image" src="img/carousel/21.png" :disabled="disabled">
+                                        <input @click="carouselNext" class="next filter sp48-only" style="max-width: 30px;" type="image" src="img/carousel/20.png" :disabled="disabled">
                                     </div>
                                 </div>
                             </section>
@@ -434,42 +442,42 @@
                                     <a href="https://twitter.com/aNp6KjSBlp02cs8" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/19.png" alt="twitter"></a>
                                 </div>
                             </div>
-                            <div id="header-right" class="flex" style="justify-content: space-around; max-width: 1000px;margin: 0 auto 3% auto;">
-                                <ul class="responsive-wrap res_nav">
-                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Contact</li><br>
-                                    <li>〒156-0043</li>
-                                    <li>東京都世田谷区松原1-43-14</li>
-                                    <li>070-8338-1624</li>
-                                    <li>popo62520908@gmail.com</li>
-                                </ul>
-                                <ul class="responsive-wrap res_nav">
-                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Resume</li>
-                                    <li><a href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">履歴書</a></li>
-                                    <li><a href="https://docs.google.com/document/d/1579UK49c0QWP622gYk_Tfg0sFzj1-eBTBj6Q2QR6MEQ/edit">職務経歴書</a></li>
-                                    <li><a href="https://docs.google.com/presentation/d/16AKBahZMnhDwnSolRcH3vBLlouDwai7lOjLfmX8jdUY/edit#slide=id.ga38c966850_0_6">ポートフォリオ</a></li>
-                                    <li><a href=""></a></li>
-                                </ul>
-                                <ul class="responsive-wrap res_nav">
-                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Github</li>
-                                    <li><a href="https://github.com/lnoueryo/Mymemories">My Memories</a></li>
-                                    <li><a href="https://github.com/lnoueryo/Mymemories/tree/master/app/Http/Controllers">Controller</a></li>
-                                    <li><a href="https://github.com/lnoueryo/Inouegram/tree/master/app">Model</a></li>
-                                    <li><a href="https://github.com/lnoueryo/Mymemories/tree/master/resources/ts/components">View</a></li>
-                                </ul>
-                                <ul class="responsive-wrap res_nav">
-                                    <li style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Qiita</li>
-                                    <li v-for="(page, index) in qiita" :key="index">
+                            <div class="footer-content flex" style="justify-content: space-around;margin-bottom: 3%;">
+                                <div id="contact" class="res_nav ul">
+                                    <div class="li" style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Contact</div>
+                                    <div class="li">〒156-0043</div>
+                                    <div class="li">東京都世田谷区松原1-43-14</div>
+                                    <div class="li">070-8338-1624</div>
+                                    <div class="li">popo62520908@gmail.com</div>
+                                </div>
+                                <div class="ul">
+                                    <div style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Resume</div>
+                                    <div class="li"><a href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">履歴書</a></div>
+                                    <div class="li"><a href="https://docs.google.com/document/d/1579UK49c0QWP622gYk_Tfg0sFzj1-eBTBj6Q2QR6MEQ/edit">職務経歴書</a></div>
+                                    <div class="li"><a href="https://docs.google.com/presentation/d/16AKBahZMnhDwnSolRcH3vBLlouDwai7lOjLfmX8jdUY/edit#slide=id.ga38c966850_0_6">ポートフォリオ</a></div>
+                                    <div class="li"><a href=""></a></div>
+                                </div>
+                                <div class="ul">
+                                    <div style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Github</div>
+                                    <div class="li"><a href="https://github.com/lnoueryo/Mymemories">My Memories</a></div>
+                                    <div class="li"><a href="https://github.com/lnoueryo/Mymemories/tree/master/app/Http/Controllers">Controller</a></div>
+                                    <div class="li"><a href="https://github.com/lnoueryo/Inouegram/tree/master/app">Model</a></div>
+                                    <div class="li"><a href="https://github.com/lnoueryo/Mymemories/tree/master/resources/ts/components">View</a></div>
+                                </div>
+                                <div class="ul">
+                                    <div style="font-size: 20px;font-family: proxima-nova,sans-serif;padding-bottom: 10px;">Qiita</div>
+                                    <div class="li" v-for="(page, index) in qiita" :key="index">
                                         <a :href="page.url" target="_blank">{{ page.title }}</a>
-                                    </li>
-                                </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <ul class="flex responsive-wrap res_nav text-center align-center justify-around" style="width: 100%;">
+                            <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around" style="width: 100%;">
                                 <a class="" href="/"><li>TOP</li></a>
                                 <a class="" href="#section1"><li>ABOUT ME</li></a>
                                 <a href="#section2"><li>SKILL</li></a>
                                 <a href="#section3"><li>PORTFOLIO</li></a>
                                 <a href="#section4"><li>PRESENTATION</li></a>
-                                <a href="#section6"><li>FOLLOW ME</li></a>
+                                <a href="#section5"><li>FOLLOW ME</li></a>
                             </ul>
                         </div>
                     </footer>
@@ -498,7 +506,7 @@
             line-height: 1;
         }
         footer .title_num{
-            margin-right: 60px;
+            margin-right: 6%;
             font-weight: 400;
             font-family: trajan-pro-3,serif;
             font-style: italic;
@@ -814,6 +822,12 @@
         .hamburger-menu input {
             display: none;
         }
+        .ul .li {
+            font-size: 14px;
+        }
+        .ul .li a {
+            color: white;
+        }
         @media screen and (max-width: 768px) {
             #section1 .adjust {
                 margin-left: 0;
@@ -840,6 +854,25 @@
                 margin: auto;
                 margin-bottom: 30px;
             }
+            .ul .li {
+                width: 250px;
+            }
+            .footer-content {
+                flex-wrap: wrap;
+            }
+            .footer {
+                padding-top: 0;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            #contact{
+                order: 3;
+                width: 260px;
+            }
+            .ul .li {
+                width: initial;
+            }
+
         }
         #practice{
             width: 1000px;

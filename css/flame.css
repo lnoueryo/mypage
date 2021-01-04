@@ -118,6 +118,7 @@
 .w50{width: 50%;}
 .pc {display: block;}
 .sp-only{display: none;}
+.sp48-only{display: none;}
 .sp-only-f{display: none;}
 @media screen and (max-width: 768px) {
     .pc-only{display: none;}
@@ -143,4 +144,6 @@
     .pc {
         display: none;
     }
+    .sp48-only{display: block;}
+    .pc48-only{display: none;}
 }
