@@ -124,6 +124,11 @@ var app = new Vue({
             that.isMainLogo = true;
         },5000)
         window.addEventListener('resize', this.onResize);
+        // 応急処置　TODO:
+        if(this.windowSize.x < 1500){
+            this.aboutMe1 = true;
+            this.aboutMe2 = true;
+        }
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize)
