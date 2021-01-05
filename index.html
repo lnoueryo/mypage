@@ -128,15 +128,19 @@
                                 <div class="content-wrapper">
                                     <div class="sec-wrapper">
                                         <div class="container1">
-                                            <div class="flex align-center title-container">
-                                                <div class="title_num">01</div>
-                                                <div class="title">ABOUT ME</div>
-                                            </div>
-                                            <p class="message tra"><span >I WILL LET YOU KNOW</span><br class="pc-only">
-                                                <span class="adjust">ABOUT ME</span>
-                                            </p>
+                                            <transition name="bottom">
+                                                <div class="flex align-center title-container" v-show="aboutMe1">
+                                                    <div class="title_num">01</div>
+                                                    <div class="title">ABOUT ME</div>
+                                                </div>
+                                            </transition>
+                                            <transition name="bottom">
+                                                <p class="message tra" v-show="aboutMe1"><span>I WILL LET YOU KNOW</span><br class="pc-only">
+                                                    <span class="adjust">ABOUT ME</span>
+                                                </p>
+                                            </transition>
                                             <div class="flex" style="margin-bottom: 20px;">
-                                                <div style="position: relative; z-index: 1;">
+                                                <div style="position: relative; z-index: 1;" v-show="aboutMe1">
                                                     <div class="content-container1">
                                                         <div class="sec_title" style="margin-top: 40px;">略歴</div>
                                                         <p class="para">福岡大学を卒業後、もともと趣味としてやっていた音楽活動を2年ほど行い、その後1年間のカナダ留学を経て、約3年間宿泊施設で勤務。</p>
@@ -148,11 +152,13 @@
                                                     <img style="filter: grayscale(60%) brightness(.7);" src="img/10.jpg" alt="">
                                                 </div>
                                             </div>
-                                            <div class="content-container2 mb-4 pc-only" style="position: relative; z-index: 1;">
-                                                <div class="sec_title">自己紹介</div>
-                                                <p class="para">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。</p>
-                                                <p class="para">趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
-                                            </div>
+                                            <transition name="bottom">
+                                                <div class="content-container2 mb-4 pc-only" style="position: relative; z-index: 1;" v-show="aboutMe2">
+                                                    <div class="sec_title">自己紹介</div>
+                                                    <p class="para">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。</p>
+                                                    <p class="para">趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
+                                                </div>
+                                            </transition>
                                             <div class="content-container2 mb-4 sp-only" style="position: relative; z-index: 1;">
                                                 <div class="sec_title">自己紹介</div>
                                                 <p class="para"><img id="dog" style="" src="img/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
@@ -462,6 +468,14 @@
         }
         .slide-enter-active, .slide-leave-active {
             transition: opacity 1s, transform 1s;
+        }
+        .bottom-enter-active, .bottom-leave-active {
+            transform: translate(0px, 0px);
+            transition: opacity 2s, transform 1s cubic-bezier(0, 0, 0.2, 1) 0ms;
+        }
+        .bottom-enter, .bottom-leave-to {
+            opacity: 0;
+            transform: translateY(10vh) translateY(0px);
         }
         .tab {
             color: #e0e4e4;

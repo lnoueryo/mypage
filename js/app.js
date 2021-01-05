@@ -60,6 +60,8 @@ var app = new Vue({
         ],
         tab: [true,false,false],
         qiita: '',
+        aboutMe1: false,
+        aboutMe2: false,
     },
     computed: {
         video1Style(){
@@ -79,6 +81,7 @@ var app = new Vue({
         })
     },
     mounted(){
+        window.addEventListener('scroll', this.calculateScrollY);
         var that = this;
 		that.interval = setInterval(function() {
             that.$set(that.srcKey,that.carouselKey,1)
@@ -126,6 +129,16 @@ var app = new Vue({
         window.removeEventListener('resize', this.onResize)
     },
     methods: {
+        calculateScrollY() {
+            var currentPosition = window.scrollY + window.innerHeight;
+            if (currentPosition>1000) {
+                this.aboutMe1 = true;
+            }
+            if (currentPosition>1515) {
+                this.aboutMe2 = true;
+            }
+            console.log(window.scrollY + window.innerHeight);
+        },
         sortGithubCode(key){
             var basicUrl = `https://api.github.com/repos/lnoueryo/${this.github[key].name}/contents/`
             var modelPath = basicUrl + 'app';
