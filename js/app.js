@@ -5,7 +5,7 @@ var app = new Vue({
         isCarouselModal: false,
         disabled: true,
         show: [{opacity: 1,transition: 'all 1s',transform: 'translateX(0px)',position: 'relative'},{opacity: 0,transition: 'all 1s',transform: 'translateX(1500px)',position: 'absolute'},{opacity: 0,transition: 'all 1s',transform: 'translateX(-1500px)',position: 'absolute'}],
-        src: ['img/carousel/01.png','img/carousel/02.png','img/carousel/03.png','img/carousel/04.png','img/carousel/05.png','img/carousel/06.png','img/carousel/07.png','img/carousel/08.png','img/carousel/09.png'],
+        src: ['img/carousel/11.png','img/carousel/01.png','img/carousel/02.png','img/carousel/03.png','img/carousel/04.png','img/carousel/05.png','img/carousel/06.png','img/carousel/07.png','img/carousel/08.png','img/carousel/09.png'],
         srcKey: [0,2,2,2,2,2,2,2,1],
         carouselKey: 0,
         isMain: false,
