@@ -60,8 +60,7 @@ var app = new Vue({
         ],
         tab: [true,false,false],
         qiita: '',
-        aboutMe1: false,
-        aboutMe2: false,
+        obj: {aboutMe1: false,aboutMe2: false,skill1: false,skill2: false,skill3: false,skill4: false,port1: false,mymemo: false}
     },
     computed: {
         video1Style(){
@@ -81,7 +80,6 @@ var app = new Vue({
         })
     },
     mounted(){
-        window.addEventListener('scroll', this.calculateScrollY);
         var that = this;
 		that.interval = setInterval(function() {
             that.$set(that.srcKey,that.carouselKey,1)
@@ -123,7 +121,11 @@ var app = new Vue({
         setTimeout(function(){
             that.isMainLogo = true;
         },5000)
+        window.addEventListener('scroll', this.calculateScrollY);
         window.addEventListener('resize', this.onResize);
+        if(this.windowSize.x < 480){
+            this.obj.aboutMe1 = true;
+        }
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize)
@@ -131,13 +133,25 @@ var app = new Vue({
     methods: {
         calculateScrollY() {
             var currentPosition = window.scrollY + window.innerHeight;
-            if (currentPosition>1000) {
-                this.aboutMe1 = true;
+            var aboutMe1 = this.$refs.aboutMe1.getBoundingClientRect().top;
+            var aboutMe2 = this.$refs.aboutMe2.getBoundingClientRect().top;
+            var skill1 = this.$refs.skill1.getBoundingClientRect().top;
+            var skill2 = this.$refs.skill2.getBoundingClientRect().top;
+            var skill3 = this.$refs.skill3.getBoundingClientRect().top;
+            var skill4 = this.$refs.skill4.getBoundingClientRect().top;
+            var port1 = this.$refs.port1.getBoundingClientRect().top;
+            var mymemo = this.$refs.mymemo.getBoundingClientRect().top;
+
+            var array = [aboutMe1, aboutMe2, skill1, skill2, skill3, skill4,port1,mymemo];
+            var array2 = ['aboutMe1', 'aboutMe2', 'skill1', 'skill2','skill3','skill4','port1','mymemo'];
+            // console.log(this.obj[array[0]])
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] - currentPosition<-300) {
+                    this.$set(this.obj, array2[i],true);
+                } else {
+                    this.$set(this.obj, array2[i],false);
+                }
             }
-            if (currentPosition>1515) {
-                this.aboutMe2 = true;
-            }
-            console.log(window.scrollY + window.innerHeight);
         },
         sortGithubCode(key){
             var basicUrl = `https://api.github.com/repos/lnoueryo/${this.github[key].name}/contents/`
