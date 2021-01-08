@@ -139,14 +139,20 @@ var app = new Vue({
             var skill2 = this.$refs.skill2.getBoundingClientRect().top;
             var skill3 = this.$refs.skill3.getBoundingClientRect().top;
             var skill4 = this.$refs.skill4.getBoundingClientRect().top;
-            var port1 = this.$refs.port1.getBoundingClientRect().top;
-            var mymemo = this.$refs.mymemo.getBoundingClientRect().top;
+            var port1 = this.$refs.port1.getBoundingClientRect().top+1000;
+            var mymemo = this.$refs.mymemo.getBoundingClientRect().top+1000;
 
             var array = [aboutMe1, aboutMe2, skill1, skill2, skill3, skill4,port1,mymemo];
             var array2 = ['aboutMe1', 'aboutMe2', 'skill1', 'skill2','skill3','skill4','port1','mymemo'];
             // console.log(this.obj[array[0]])
+            let adjust;
+            if (this.windowSize.x<768) {
+                adjust = 100;
+            } else {
+                adjust = 300;
+            }
             for (let i = 0; i < array.length; i++) {
-                if (array[i] - currentPosition<-300) {
+                if (array[i] - currentPosition<-adjust) {
                     this.$set(this.obj, array2[i],true);
                 } else {
                     this.$set(this.obj, array2[i],false);
