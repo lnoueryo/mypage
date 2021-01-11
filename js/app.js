@@ -4,7 +4,7 @@ var app = new Vue({
     data: {
         isCarouselModal: false,
         disabled: true,
-        show: [{opacity: 1,transition: 'all 1s',transform: 'translateX(0px)',position: 'relative'},{opacity: 0,transition: 'all 1s',transform: 'translateX(1500px)',position: 'absolute'},{opacity: 0,transition: 'all 1s',transform: 'translateX(-1500px)',position: 'absolute'}],
+        show: [{opacity: 1,transition: 'all 1s',transform: 'translateX(0px)',position: 'relative'},{opacity: 0,transition: 'all 1s',transform: 'translateX(0px)',position: 'absolute'},{opacity: 0,transition: 'all 1s',transform: 'translateX(0px)',position: 'absolute'}],
         src: ['img/carousel/11.png','img/carousel/01.png','img/carousel/02.png','img/carousel/03.png','img/carousel/04.png','img/carousel/05.png','img/carousel/06.png','img/carousel/07.png','img/carousel/08.png','img/carousel/09.png'],
         srcKey: [0,2,2,2,2,2,2,2,1],
         carouselKey: 0,
@@ -30,8 +30,10 @@ var app = new Vue({
                     'AJAX送信後のレスポンスによる非同期処理',
                     'DOMが形成される前のAJAXによるデータの受取',
                     '一部Vueのタイプスクリプト、Vue.extendを用いた開発',
+                    'Vuexを用いた状態管理',
+                    'パフォーマンスを意識し作成した関数型コンポーネント',
                     'ライブラリVueCropperを用いた画像のクロッピング',
-                    'バイナリーデータ、base64やjson文字列などエンコード・デコード'
+                    'バイナリーデータ、base64やjson文字列などエンコード・デコード',
                 ]
             },
             {
@@ -41,7 +43,7 @@ var app = new Vue({
                     // 'laravel標準のもの＋ログイン以外に利用するパスワードチェックのバリデーション作成',
                     'laravel標準のもの＋Oauthの認証を実装',
                     '会員登録時に送信するメールをキュージョブで非同期',
-                    // 'イベント、リスナー、キュージョブを使ってパスワードハッシュ化する前のデータをメール送信',
+                    'イベント、リスナー、キュージョブを使ってパスワードハッシュ化する前のデータをメール送信',
                     'データベース正規化',
                     'N+1問題を意識したテーブルの関連付け（関数作成）',
                     'シーダーを使った各テーブルのレコード作成',
@@ -121,45 +123,45 @@ var app = new Vue({
         setTimeout(function(){
             that.isMainLogo = true;
         },5000)
-        window.addEventListener('scroll', this.calculateScrollY);
+        // window.addEventListener('scroll', this.calculateScrollY);
+        var size = 2000;
         window.addEventListener('resize', this.onResize);
-
-        if(this.windowSize.x < 480){
-            this.obj.aboutMe1 = true;
+        var array = ['aboutMe1', 'aboutMe2', 'skill1', 'skill2','skill3','skill4','port1','mymemo'];
+        if(this.windowSize.x < size){
+            for (let i = 0; i < array.length; i++) {
+                this.$set(this.obj, array[i],true);
+            }
         }
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize)
     },
     methods: {
-        calculateScrollY() {
-            var currentPosition = window.scrollY + window.innerHeight;
-            var aboutMe1 = this.$refs.aboutMe1.getBoundingClientRect().top;
-            var aboutMe2 = this.$refs.aboutMe2.getBoundingClientRect().top;
-            var skill1 = this.$refs.skill1.getBoundingClientRect().top;
-            var skill2 = this.$refs.skill2.getBoundingClientRect().top;
-            var skill3 = this.$refs.skill3.getBoundingClientRect().top;
-            var skill4 = this.$refs.skill4.getBoundingClientRect().top;
-            var port1 = this.$refs.port1.getBoundingClientRect().top+1000;
-            var mymemo = this.$refs.mymemo.getBoundingClientRect().top+1000;
+        // calculateScrollY() {
+        //     var currentPosition = window.scrollY + window.innerHeight;
+        //     var aboutMe1 = this.$refs.aboutMe1.getBoundingClientRect().top;
+        //     var aboutMe2 = this.$refs.aboutMe2.getBoundingClientRect().top;
+        //     var skill1 = this.$refs.skill1.getBoundingClientRect().top;
+        //     var skill2 = this.$refs.skill2.getBoundingClientRect().top;
+        //     var skill3 = this.$refs.skill3.getBoundingClientRect().top;
+        //     var skill4 = this.$refs.skill4.getBoundingClientRect().top;
+        //     var port1 = this.$refs.port1.getBoundingClientRect().top;
+        //     var mymemo = this.$refs.mymemo.getBoundingClientRect().top;
 
-            var array = [aboutMe1, aboutMe2, skill1, skill2, skill3, skill4,port1,mymemo];
-            var array2 = ['aboutMe1', 'aboutMe2', 'skill1', 'skill2','skill3','skill4','port1','mymemo'];
-            // console.log(this.obj[array[0]])
-            let adjust;
-            if (this.windowSize.x<768) {
-                adjust = 100;
-            } else {
-                adjust = 300;
-            }
-            for (let i = 0; i < array.length; i++) {
-                if (array[i] - currentPosition<-adjust) {
-                    this.$set(this.obj, array2[i],true);
-                } else {
-                    this.$set(this.obj, array2[i],false);
-                }
-            }
-        },
+        //     var array = [aboutMe1, aboutMe2, skill1, skill2, skill3, skill4,port1,mymemo];
+        //     var array2 = ['aboutMe1', 'aboutMe2', 'skill1', 'skill2','skill3','skill4','port1','mymemo'];
+        //     let adjust;
+        //     if (this.windowSize.x<768) {
+        //         adjust = 100;
+        //     } else {
+        //         adjust = 300;
+        //     }
+        //     for (let i = 0; i < array.length; i++) {
+        //         if (array[i] - currentPosition<-adjust) {
+        //             this.$set(this.obj, array2[i],true);
+        //         }
+        //     }
+        // },
         sortGithubCode(key){
             var basicUrl = `https://api.github.com/repos/lnoueryo/${this.github[key].name}/contents/`
             var modelPath = basicUrl + 'app';
