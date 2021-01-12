@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap');
+[v-cloak] {
+display: none;
+}
+.filter {
+filter: blur(1px)brightness(2);
+}
+.prev {
+position: absolute;
+top: 50%;
+left: 0;
+font-weight: 400;
+font-family: trajan-pro-3,serif;
+font-size: 20px;
+letter-spacing: .02em;
+line-height: 1.3;
+color: white;
+background-color: transparent;
+font-style: italic;
+border: transparent;
+}
+.next {
+position: absolute;
+top: 50%;
+right: 0;
+font-weight: 400;
+font-family: trajan-pro-3,serif;
+font-size: 20px;
+letter-spacing: .02em;
+line-height: 1.3;
+color: white;
+background-color: transparent;
+font-style: italic;
+border: transparent;
+}
 .header-bg{
     position:relative;
     width:100%;
