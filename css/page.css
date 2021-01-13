@@ -59,6 +59,123 @@ border: transparent;
     opacity: 0.9;
 }
 
+#header-wrapper .item-container1{
+    max-width: 300px;
+    width: 100%;
+}
+
+#header-wrapper .item-container1 p{
+    max-width: 200px;
+}
+/* ドロワー */
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    /* background-color: #3583bb42; */
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+    transition: all 1s;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: #183c56c9;
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+    transition: all 1s;
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition: all 1s;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -50%;
+    z-index: 80;
+    background-color: #215376c4;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    right: 0;/*メニューを画面内へ*/
+}
+.hamburger-menu input {
+    display: none;
+}
+.ul .li {
+    font-size: 14px;
+}
+.ul .li a {
+    color: white;
+}
+
+#main-bar{
+    margin: auto;
+    width: 100%;
+    max-width: 1100px;
+    overflow: hidden;
+}
+
+#main-bar .item-container{
+    position: relative;
+    margin: auto;
+    max-width: 800px;
+    width: 100%;
+}
+
 #section1 {
     background-color: black; /* カラーフィルタ効果の色を指定 */
 }
@@ -140,6 +257,44 @@ table {
 .carousel {
     position: relative;padding: 30px 75px;
 }
+
+
+@media screen and (max-width: 768px) {
+    #section1 .adjust {
+        margin-left: 0;
+    }
+    .para {
+        line-height: 2;
+    }
+    #section2 .adjust {
+        margin-left: 0;
+    }
+    .tab{
+        color: #e0e4e4;
+        position: relative;
+        font-family: "\6E38\660E\671D\4F53",Yu Mincho,YuMincho,"\30D2\30E9\30AE\30CE\660E\671D Pro",Hiragino Mincho Pro,"Noto Serif JP",serif;
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: .4em;
+        line-height: 2;
+    }
+    .tab-items{
+        max-width: 450px;
+        position: relative;
+        height: 300px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .ul .li {
+        width: 250px;
+    }
+    .footer-content {
+        flex-wrap: wrap;
+    }
+    .footer {
+        padding-top: 0;
+    }
+}
 @media screen and (max-width: 480px) {
     #video1 {
         min-height: 300px;
@@ -185,6 +340,13 @@ table {
     .tab-items {
         padding: 0 10px;
     }
+    #contact{
+        order: 3;
+        width: 260px;
+    }
+    .ul .li {
+        width: initial;
+    }
 }
 @media screen and (max-width: 400px) {
     .para {
@@ -193,4 +355,70 @@ table {
     .tab {
         font-size: 16px!important;
     }
+}
+
+/* transition */
+.slide-appear-to{
+    transform: translateY(100%);
+}
+.slide-enter, .slide-leave-to {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.slide-enter-to, .slide-leave {
+    transform: translateX(0);
+}
+.slide-enter-active, .slide-leave-active {
+    transition: opacity 1s, transform 1s;
+}
+.bottom-enter-active, .bottom-leave-active {
+    transform: translate(0px, 0px);
+    transition: opacity 2s, transform 2s cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+.bottom-enter, .bottom-leave-to {
+    opacity: 0;
+    transform: translateY(10vh) translateY(0px);
+}
+
+.carousel_modal-enter-active, .carousel_modal-leave-active {
+    transition: opacity 2s;
+}
+.carousel_modal-enter, .carousel_modal-leave-to {
+    opacity: 0;
+}
+.carousel-enter-active {
+transition: opacity 2s cubic-bezier(1.0, 0.1, 0.3, 1.0);
+}
+.carousel-leave-active {
+transition: opacity 2s cubic-bezier(0.5, 1.0, 1.0, 1.0);
+}
+.carousel-enter, .carousel-leave-to /* .fade-leave-active below version 2.1.8 */ {
+opacity: 0;
+}
+.main-enter-active, .main-leave-active {
+    transition: opacity 2s;
+}
+.main-enter, .main-leave-to {
+    opacity: 0;
+}
+.name-enter-active, .name-leave-active {
+    transition: all 5s;
+}
+.name-enter, .name-leave-to {
+    opacity: 0;
+    transform: translateX(20px);
+}
+.nav-enter-active, .nav-leave-active {
+    transition: all 3s;
+}
+.nav-enter, .nav-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+.logo2-enter-active, .logo2-leave-active {
+    transition: all 4s;
+}
+.logo2-enter, .logo2-leave-to {
+    opacity: 0;
+    transform: translateX(40px);
 }

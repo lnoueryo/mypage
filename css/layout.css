@@ -12,12 +12,46 @@ body #wrapper{
     word-break: break-all;
     overflow: hidden;
 }
+
+header {
+    position: relative;
+    /* ドロワーのインデックス */
+    z-index: 4;
+}
+
 main {
     transform: translate(0, -5px);
+    position: relative;
+    z-index: 2;
+    background-color: black;
+    /* fixedのfooterを見れるようにmargin-bottomで調整 */
+    margin-bottom: 1000px;
 }
+
+footer{
+    position: relative;
+    z-index: 1;
+}
+
+
+/* header */
 #header-wrapper .container1{
-    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-bottom: 5%;
 }
+#header-wrapper .content-container1{
+    padding: 4%;
+}
+#header-right{
+    max-width: 700px;
+    width: 100%;
+    margin-left: auto;
+}
+
+
+/* main */
 #section1 .content-wrapper{
     width: 100%;
     position: relative;
