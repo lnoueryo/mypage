@@ -268,19 +268,19 @@
                                         </div>
                                         <div style="width: 40vw;max-width: 450px;position: relative;">
                                             <transition name="slide">
-                                                <ol class="content-container1" style="position: absolute" v-show="tab[0]">
+                                                <ol class="content-container1 abs" v-show="tab[0]">
                                                     <div class="sec_title">{{ features[0].type }}</div>
                                                     <li class="para" v-for="(content, i) in features[0].content" :key="i">{{ content }}</li>
                                                 </ol>
                                             </transition>
                                             <transition name="slide">
-                                                <ol class="content-container1" style="position: absolute" v-show="tab[1]">
+                                                <ol class="content-container1 abs" v-show="tab[1]">
                                                     <div class="sec_title">{{ features[1].type }}</div>
                                                     <li class="para" v-for="(content, i) in features[1].content" :key="i">{{ content }}</li>
                                                 </ol>
                                             </transition>
                                             <transition name="slide">
-                                                <ol class="content-container1" style="position: absolute" v-show="tab[2]">
+                                                <ol class="content-container1 abs" v-show="tab[2]">
                                                     <div class="sec_title">{{ features[2].type }}</div>
                                                     <li class="para" v-for="(content, i) in features[2].content" :key="i">{{ content }}</li>
                                                 </ol>
@@ -289,19 +289,19 @@
                                     </div>
                                     <div class="sp-only tab-items">
                                         <transition name="slide">
-                                            <ol class="content-container1" style="position: absolute" v-show="tab[0]">
+                                            <ol class="content-container1 abs" v-show="tab[0]">
                                                 <div class="sec_title">{{ features[0].type }}</div>
                                                 <li class="para" v-for="(content, i) in features[0].content" :key="i">{{ content }}</li>
                                             </ol>
                                         </transition>
                                         <transition name="slide">
-                                            <ol class="content-container1" style="position: absolute" v-show="tab[1]">
+                                            <ol class="content-container1 abs" v-show="tab[1]">
                                                 <div class="sec_title">{{ features[1].type }}</div>
                                                 <li class="para" v-for="(content, i) in features[1].content" :key="i">{{ content }}</li>
                                             </ol>
                                         </transition>
                                         <transition name="slide">
-                                            <ol class="content-container1" style="position: absolute" v-show="tab[2]">
+                                            <ol class="content-container1 abs" v-show="tab[2]">
                                                 <div class="sec_title">{{ features[2].type }}</div>
                                                 <li class="para" v-for="(content, i) in features[2].content" :key="i">{{ content }}</li>
                                             </ol>
@@ -392,181 +392,7 @@
     <script src="js/app.js"></script>
     <!-- smooth・instant・auto -->
     <style>
-        #section5 .para {
-            font-size: 14px;
-            letter-spacing: .1em;
-            line-height: 2.3vw;
-            font-weight: 500;
-        }
-        footer .title{
-            display: block;
-            font-weight: 500;
-            font-family: proxima-nova,sans-serif;
-            font-size: 14px;
-            letter-spacing: .1em;
-            line-height: 1;
-        }
-        footer .title_num{
-            margin-right: 6%;
-            font-weight: 400;
-            font-family: trajan-pro-3,serif;
-            font-style: italic;
-            font-size: 20px;
-            letter-spacing: .02em;
-            line-height: 1;
-        }
-        footer .message {
-            width: 100%;
-            margin-left: 0;
-            margin-bottom: 0;
-            z-index: 1;
-            position: relative;
-            font-weight: 400;
-            font-family: trajan-pro-3,serif;
-            font-size: 3.75vw;
-            letter-spacing: .02em;
-            line-height: 1.3;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .tra{
-            font-family: trajan-pro-3,serif;
-        }
 
-        .tab {
-            color: #e0e4e4;
-            position: relative;
-            overflow: hidden;
-            padding-bottom: 16px;
-            font-family: Montserrat;
-            font-weight: 100;
-            font-size: 6vw;
-            line-height: 1;
-            letter-spacing: 0;
-            margin-bottom: 30px;
-        }
-        .para {
-            font-size: 14px;
-            letter-spacing: .1em;
-            line-height: 2.3;
-            text-align: justify;
-            font-family: "\6E38\30B4\30B7\30C3\30AF",YuGothic,"\30D2\30E9\30AE\30CE\89D2\30B4 ProN W3",Hiragino Kaku Gothic ProN,Noto Sans JP,sans-serif;
-            font-weight: 500;
-        }
-        #main-wrapper section .title {
-            display: block;
-            font-weight: 500;
-            font-family: proxima-nova,sans-serif;
-            font-size: 14px;
-            letter-spacing: .1em;
-            line-height: 1;
-        }
-        #main-wrapper section .title-container {
-            margin-bottom: 2.34375vw;
-        }
-        .message {
-            width: 78.125vw;
-            margin-left: 3.4375vw;
-            margin-bottom: 4.375vw;
-            z-index: 1;
-            position: relative;
-            font-weight: 400;
-            font-size: 3.75vw;
-            letter-spacing: .02em;
-            line-height: 1.3;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        #special.message {
-            width: 50%;
-            margin-left: 0;
-            margin-bottom: 0;
-            z-index: 1;
-            position: relative;
-            font-weight: 400;
-            font-family: trajan-pro-3,serif;
-            font-size: 3.75vw;
-            letter-spacing: .02em;
-            line-height: 1.3;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-        .title_num{
-            margin-right: 6%;
-            font-weight: 400;
-            font-family: trajan-pro-3,serif;
-            font-style: italic;
-            font-size: 20px;
-            letter-spacing: .02em;
-            line-height: 1;
-        }
-        .sec_title{
-            margin-bottom: 2.34375vw;
-            font-family: "\6E38\660E\671D\4F53",Yu Mincho,YuMincho,"\30D2\30E9\30AE\30CE\660E\671D Pro",Hiragino Mincho Pro,"Noto Serif JP",serif;
-            font-weight: 600;
-            font-size: 20px;
-            letter-spacing: .4em;
-            line-height: 2;
-            white-space: nowrap;
-        }
-
-        .page-btn{
-            position: fixed;
-            right: 14px;
-            bottom: 14px;
-            width: 32px;
-            height: 32px;
-            line-height: 32px;
-            text-align: center;
-            border-radius: 50%;
-            background: #5bc8ac;
-        }
-        .footer{
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            z-index: -1;
-            padding-top: 50px;
-        }
-
-        /* p {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            margin: 60px auto 40px;
-        } */
-        .tbl-r02 th {
-            border: solid 1px #ccc;
-            color: #fff;
-            padding: 10px;
-        }
-        #about_me.tbl-r02 th {
-            border: solid 1px #ccc;
-            color: #fff;
-            padding: 10px;
-            background: #ff00193f;
-        }
-        .tbl-r02 td {
-            border: solid 1px #ccc;
-            padding: 10px;
-        }
-        #skill th {
-            background: #5900ff3f;
-            border: solid 1px #ccc;
-            color: #fff;
-            height: 10px;
-            vertical-align: middle;
-            height: 40px;
-        }
-        #skill td {
-            border: solid 1px #ccc;
-            padding: 8px;
-        }
-        table {
-            padding: 10px;
-        }
 
     </style>
 </body>
