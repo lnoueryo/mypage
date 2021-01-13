@@ -183,6 +183,11 @@ border: transparent;
     max-width: 400px;
     transform: rotate3d(10, 20, 20, 30deg);
 }
+#section3 .link {
+    font-size: 2.5vw;
+    right: 6.25vw;
+    bottom: 5%;
+}
 
 #main-bar{
     margin: auto;
@@ -305,7 +310,7 @@ table {
         position: relative;
         height: 300px;
         margin: auto;
-        margin-bottom: 30px;
+        margin-bottom: 100px;
     }
     .ul .li {
         width: 250px;
@@ -350,7 +355,7 @@ table {
         background-color: black;padding: 3vw 2vw;
     }
     .para {
-        line-height: 6vw;
+        line-height: 5vw!important;
         padding: 0 10px;
     }
     #special2.message {
@@ -372,7 +377,11 @@ table {
 }
 @media screen and (max-width: 400px) {
     .para {
-        font-size: 3.3vw!important;
+        font-size: 3vw!important;
+    }
+    #section3 .content-container1 {
+        background-color: black;
+        padding: 13vw 2vw;
     }
     .tab {
         font-size: 16px!important;
