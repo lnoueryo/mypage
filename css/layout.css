@@ -103,6 +103,10 @@ footer{
     right: 0;
     left: 0;
   }
+#section2 .content-container2 {
+    max-width: 600px;
+    margin: 0 auto 4% auto;
+  }
 
 #section2 .container1{
     position: relative;

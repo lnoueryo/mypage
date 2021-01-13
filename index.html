@@ -111,7 +111,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="pc-only abs z-0" id="pc-dog">
-                                                    <img style="filter: grayscale(60%) brightness(.7);" src="img/10.jpg" alt="">
+                                                    <img class="img-filter" src="img/10.jpg" alt="">
                                                 </div>
                                             </div>
                                             <transition name="bottom">
@@ -169,20 +169,20 @@
                                                     <div class="flex" style="margin-bottom: 20px;position: relative;" v-show="obj.skill3">
                                                         <div class="back-end">
                                                             <div class="content-container1">
-                                                                <div class="sec_title" style="margin-top: 40px;">バックエンド</div>
+                                                                <div class="sec_title mt-40">バックエンド</div>
                                                                 <p class="para">2020年4月からプログラミングスクールに通い、PHPフレームワークを学習。</p>
                                                                 <p class="para">過去に予約システムやユーザー管理システムを作成。</p>
                                                                 <p class="para">本番環境はレンタルサーバーを借りていたが、今現在はAWSで環境構築を行っている。</p>
                                                                 <p class="para">業務ではCake PHPやWordPressを触る機会が多い。</p>
                                                             </div>
                                                         </div>
-                                                        <div style="position: absolute; z-index: 0;bottom: 1vw; left: 2vw; width: 100%;max-width: 400px;transform: rotate3d(10, 20, 20, 30deg);">
-                                                            <img style="filter: grayscale(60%)  brightness(.7);" src="img/13.png" alt="">
+                                                        <div class="abs z-0" id="lara">
+                                                            <img class="img-filter" src="img/13.png" alt="">
                                                         </div>
                                                     </div>
                                                 </transition>
-                                                <div class="content-container2 mb-4" style="position: relative; z-index: 1; max-width: 600px;margin: 0 auto 4% auto;" v-show="obj.skill4">
-                                                    <div class="sec_title" style="margin-top: 40px;">プライベート</div>
+                                                <div class="content-container2 mb-4 rel z-1" v-show="obj.skill4">
+                                                    <div class="sec_title mt-4">プライベート</div>
                                                     <p class="para">音楽をしていたという事もあり、作曲や弦楽器の演奏ができます。</p>
                                                     <p class="para">海外留学を経験して以来外国語に興味が持ち、日常英会話と少しの中国語が話せます。</p>
                                                 </div>
@@ -201,7 +201,7 @@
                                                     <div class="title_num" style="margin-right: 15%;">03</div>
                                                     <div class="title">PORTFOLIO</div>
                                                 </div>
-                                                <div class="sec_title" style="margin-top: 30px;">ポートフォリオ</div>
+                                                <div class="sec_title mt-4">ポートフォリオ</div>
                                             </div>
                                         </transition>
                                         <div class="flex" style="margin-bottom: 20px; align-items: center;position: relative;overflow: hidden;">

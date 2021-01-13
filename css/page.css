@@ -172,6 +172,18 @@ border: transparent;
     text-align: right;
 }
 
+.img-filter {
+    filter: grayscale(60%) brightness(.7);
+}
+
+#lara {
+    bottom: 1vw;
+    left: 2vw;
+    width: 100%;
+    max-width: 400px;
+    transform: rotate3d(10, 20, 20, 30deg);
+}
+
 #main-bar{
     margin: auto;
     width: 100%;
