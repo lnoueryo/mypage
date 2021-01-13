@@ -57,6 +57,7 @@
 .mr-0{margin-right: 0;}
 .ml-0{margin-left: 0;}
 
+.mt-4{margin-top: 40px;}
 /* font-size */
 .xxsm{font-size: .4em}
 .xsm{font-size: .6em}
@@ -94,6 +95,8 @@
 /* flex */
 .flex{display: flex;}
 .wrap{flex-wrap: wrap;}
+.rel{position: relative;}
+.abs{position: absolute;}
 
 .justify-start{justify-content: start;}
 .justify-center{justify-content: center;}
@@ -109,7 +112,8 @@
 
 /* indent */
 .indent_1{text-indent: -1em; margin-left:1em;}
-
+.z-0{z-index: 0;}
+.z-1{z-index: 1;}
 .w10{width: 10%;}
 .w12{width: 12.5%;}
 .w20{width: 20%;}

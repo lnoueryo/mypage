@@ -162,6 +162,16 @@ border: transparent;
     color: white;
 }
 
+#pc-dog{
+    right: 5vw;
+    width: 40%;
+}
+
+.link {
+    font-size: 2.5vw;
+    text-align: right;
+}
+
 #main-bar{
     margin: auto;
     width: 100%;
