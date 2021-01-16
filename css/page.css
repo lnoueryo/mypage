@@ -189,14 +189,14 @@ border: transparent;
     bottom: 5%;
 }
 
-#main-bar{
+#mainbar{
     margin: auto;
     width: 100%;
     max-width: 1100px;
     overflow: hidden;
 }
 
-#main-bar .item-container{
+#mainbar .item-container{
     position: relative;
     margin: auto;
     max-width: 800px;
