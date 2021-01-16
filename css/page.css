@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+/* @import url('https://fonts.googleapis.com/css?family=Proxima+Nova'); */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap');
 [v-cloak] {
-display: none;
+    display: none;
 }
 .filter {
-filter: blur(1px)brightness(2);
+    filter: blur(1px)brightness(2);
 }
 .prev {
 position: absolute;
