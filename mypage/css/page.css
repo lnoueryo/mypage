@@ -43,7 +43,7 @@ border: transparent;
     min-height: 610px;
 }
 .header-bg2{
-    background-image: url(../img/01.png);
+    background-image: url(/mypage/img/01.png);
     position: absolute;
     width:100%;
     height:100%;

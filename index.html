@@ -6,14 +6,15 @@
     <title>My Portfolio</title>
     <meta name="description" content="現在web制作を本業としているエンジニア。今回はウェブアプリケーションのポートフォリオを紹介をさせて頂きます。">
     <meta name="keyword" content="井上領 自己紹介">
-    <meta property="og:url" content="http://lnoueryo98.sakura.ne.jp/lp/" />
+    <meta property="og:url" content="http://lnoueryo98.sakura.ne.jp" />
     <meta property="og:title" content="My Portfolio" />
-    <meta property="og:image" content="img/10.jpg" />
+    <meta property="og:image" content="/mypage/img/10.jpg" />
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <meta name="google-site-verification" content="Dj609s-gP15Aocfed0WOgIm503sE9umTAAh32N-cf3c" />
     <!-- <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="/mypage/css/common.css">
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="icon" href="/mypage/img/22.png">
 </head>
 <body>
     <div id="app" v-cloak>
@@ -22,8 +23,8 @@
                 <div id="wrapper" v-resize="onResize" v-show="isMain">
                     <header>
                         <div id="header-wrapper">
-                            <video id="video2" class="header-bg3" src="img/02.mp4" autoplay muted loop playsinline></video>
-                            <video id="video1" class="header-bg" src="img/01.mp4" autoplay muted loop playsinline :style="video1Style"></video>
+                            <video id="video2" class="header-bg3" src="/mypage/img/02.mp4" autoplay muted loop playsinline></video>
+                            <video id="video1" class="header-bg" src="/mypage/img/01.mp4" autoplay muted loop playsinline :style="video1Style"></video>
                             <!-- 網点 -->
                             <div class="header-bg2"></div>
                             <div class="container1">
@@ -31,7 +32,7 @@
                                     <div id="header-left" class="mb-3">
                                         <div class="item-container1 mb-4">
                                             <transition name="name">
-                                                <img id="name-logo" src="img/08.png" alt="my portfolio" v-show="isName" @click="openCarouselModal">
+                                                <img id="name-logo" src="/mypage/img/08.png" alt="my portfolio" v-show="isName" @click="openCarouselModal">
                                             </transition>
                                             <transition name="name">
                                                 <p class="md px-4" v-show="isName">I'm a PHP and JavaScript programmer and aiming to be a full-stack engineer</p>
@@ -77,7 +78,7 @@
                                 <nav id="mainbar" class="px-3">
                                     <div class="mb-5 item-container">
                                         <transition name="main">
-                                                <img src="img/09.png" alt="my portfolio" v-show="isMainLogo">
+                                                <img src="/mypage/img/09.png" alt="my portfolio" v-show="isMainLogo">
                                         </transition>
                                     </div>
                                 </nav>
@@ -111,7 +112,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="pc-only abs z-0" id="pc-dog">
-                                                    <img class="img-filter" src="img/10.jpg" alt="">
+                                                    <img class="img-filter" src="/mypage/img/10.jpg" alt="">
                                                 </div>
                                             </div>
                                             <transition name="bottom">
@@ -123,7 +124,7 @@
                                             </transition>
                                             <div class="content-container2 mb-4 sp-only rel z-1">
                                                 <div class="sec_title">自己紹介</div>
-                                                <p class="para"><img id="dog" src="img/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
+                                                <p class="para"><img id="dog" src="/mypage/img/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
                                             </div>
                                             <p class="tra link"><a target="_blank" href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">BACKGROUND→</a></p>
                                         </div>
@@ -161,7 +162,7 @@
                                                             </div>
                                                         </div>
                                                         <div id="vue">
-                                                            <img style="filter: grayscale(80%)  brightness(.7);" src="img/12.png" alt="" >
+                                                            <img style="filter: grayscale(80%)  brightness(.7);" src="/mypage/img/12.png" alt="" >
                                                         </div>
                                                     </div>
                                                 </transition>
@@ -177,7 +178,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="abs z-0" id="lara">
-                                                            <img class="img-filter" src="img/13.png" alt="">
+                                                            <img class="img-filter" src="/mypage/img/13.png" alt="">
                                                         </div>
                                                     </div>
                                                 </transition>
@@ -206,7 +207,7 @@
                                         </transition>
                                         <div class="flex container1 rel">
                                             <p class="tra abs z-2 link"><a target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1">DESCRIPTION→</a></p>
-                                            <img src="img/14.png" class="rel z-0">
+                                            <img src="/mypage/img/14.png" class="rel z-0">
                                             <transition name="bottom">
                                                 <div class="flex abs z-1 w-100 align-item-center" v-show="obj.port1">
                                                     <div class="content-container1 w-50">
@@ -238,16 +239,16 @@
                                             <div class="carousel">
                                                 <!-- <button class="prev" @click="carouselPrev" :disabled="disabled">PREV</button> -->
                                                 <!-- <button class="next" @click="carouselNext" :disabled="disabled">NEXT</button> -->
-                                                <input  @click="carouselPrev" class="prev filter pc48-only" style="max-width: 30px;" type="image" src="img/carousel/21.png" :disabled="disabled">
-                                                <input @click="carouselNext" class="next filter pc48-only" style="max-width: 30px;" type="image" src="img/carousel/20.png" :disabled="disabled">
+                                                <input  @click="carouselPrev" class="prev filter pc48-only" style="max-width: 30px;" type="image" src="/mypage/img/carousel/21.png" :disabled="disabled">
+                                                <input @click="carouselNext" class="next filter pc48-only" style="max-width: 30px;" type="image" src="/mypage/img/carousel/20.png" :disabled="disabled">
                                                 <div>
                                                     <div ref="carouselFlame" class="flex" style="position: relative;overflow: hidden;filter: grayscale(60%);align-items: flex-start;">
                                                         <img :src="image" :style="show[srcKey[index]]" v-for="(image, index) in src" :key="index" @click="openCarouselModal">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input  @click="carouselPrev" class="prev filter sp48-only" style="max-width: 30px;" type="image" src="img/carousel/21.png" :disabled="disabled">
-                                            <input @click="carouselNext" class="next filter sp48-only" style="max-width: 30px;" type="image" src="img/carousel/20.png" :disabled="disabled">
+                                            <input  @click="carouselPrev" class="prev filter sp48-only" style="max-width: 30px;" type="image" src="/mypage/img/carousel/21.png" :disabled="disabled">
+                                            <input @click="carouselNext" class="next filter sp48-only" style="max-width: 30px;" type="image" src="/mypage/img/carousel/20.png" :disabled="disabled">
                                         </div>
                                     </transition>
                                 </div>
@@ -338,9 +339,9 @@
                                 </div>
                                 <hr style="color: white;width: 50%;margin: auto; margin-bottom: 2%;">
                                 <div class="text-center">
-                                    <a href="https://www.facebook.com/profile.php?id=100049811055127" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/18.png" alt="facebook"></a>
-                                    <a href="https://github.com/lnoueryo" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/21.png" alt="github"></a>
-                                    <a href="https://twitter.com/aNp6KjSBlp02cs8" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="img/19.png" alt="twitter"></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100049811055127" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="/mypage/img/18.png" alt="facebook"></a>
+                                    <a href="https://github.com/lnoueryo" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="/mypage/img/21.png" alt="github"></a>
+                                    <a href="https://twitter.com/aNp6KjSBlp02cs8" target="_blank"><img class="mx-3" style="max-width: 64px;max-height: 64px;" src="/mypage/img/19.png" alt="twitter"></a>
                                 </div>
                             </div>
                             <div class="footer-content flex" style="justify-content: space-between;margin-bottom: 3%;padding: 0 5%;">
@@ -389,7 +390,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/mypage/js/app.js"></script>
     <!-- smooth・instant・auto -->
     <style>
 
