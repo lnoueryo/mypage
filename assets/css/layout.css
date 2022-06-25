@@ -1,0 +1,48 @@
+/* 最初に設定ある程度 */
+@import url('https://fonts.googleapis.com/css?family=Proxima+Nova');
+body #wrapper{
+    color: white;
+    font-family: proxima-nova,sans-serif;
+    letter-spacing: .1em;
+    line-height: 1.5;
+    background-color: black;
+    word-break: break-all;
+    overflow: hidden;
+}
+main {
+    transform: translate(0, -5px);
+    position: relative;
+    z-index: 2;
+    background-color: black;
+    /* fixedのfooterを見れるようにmargin-bottomで調整 */
+    margin-bottom: 100vh;
+}
+.tra{
+    font-family: trajan-pro-3,serif;
+}
+
+
+a{
+	color: #0090d2;
+	text-decoration: none;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+/* a:hover{opacity: .85;} */
+a:hover img{opacity: .85;}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+@media screen and (max-width: 768px) {
+    #main-wrapper{
+        padding-bottom: 70px;
+    }
+}
