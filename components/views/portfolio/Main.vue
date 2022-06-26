@@ -28,8 +28,8 @@
           <div>
             <p class="py-4">Puzzlesは組織、プロジェクト、ユーザー単位で分割できるタスク管理ツールです。</p>
             <div class="d-flex justify-end">
-              <v-btn href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4">GO TO SITE</v-btn>
-              <v-btn href="https://github.com/lnoueryo/puzzles" target="_blank">GITHUB</v-btn>
+              <v-btn href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4" @click="onClickSite">GO TO SITE</v-btn>
+              <v-btn href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub">GITHUB</v-btn>
             </div>
           </div>
         </div>
@@ -42,7 +42,21 @@
 export default {
   computed: {
     mainImage() {
-      return require('~/assets/image/portfolio/00.jpg')
+      return '/portfolio/00.jpg'
+    }
+  },
+  methods: {
+    onClickSite() {
+      this.$gtag('event', 'site', {
+        event_category: 'ポートフォリオ',
+        event_label: 'Puzzles',
+      })
+    },
+    onClickGithub() {
+      this.$gtag('event', 'github', {
+        event_category: 'ポートフォリオ',
+        event_label: 'Puzzles',
+      })
     }
   }
 }

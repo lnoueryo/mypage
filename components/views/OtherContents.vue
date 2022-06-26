@@ -16,21 +16,21 @@
         </template>
         <template #content>
           <div class="card-container">
-            <a class="card sec_num" :href="app.url" target="_blank" v-for="(app, i) in apps" :key="i">
+            <a class="card sec_num" :href="otherContent.url" target="_blank" v-for="(otherContent, i) in otherContents" :key="i" @click="onClickSite(otherContent.title)">
               <div>
-                <img class="image" :src="app.image" alt="" :style="{backgroundColor: app.backgroundColor}">
+                <img class="image" :src="otherContent.image" alt="" :style="{backgroundColor: otherContent.backgroundColor}">
               </div>
               <div class="card-title tra">
-                {{ app.title }}
+                {{ otherContent.title }}
               </div>
               <div class="card-content">
                 <div>
-                  <p v-for="(content, j) in app.contents" :key="j"> {{ content }}</p>
+                  <p v-for="(content, j) in otherContent.contents" :key="j"> {{ content }}</p>
                 </div>
               </div>
               <div class="bottom-content">
-                <a :href="app.github" target="_blank">GITHUB</a>
-                <a :href="app.url" target="_blank">Go To Site→</a>
+                <a :href="otherContent.github" target="_blank" @click="onClickGithub(otherContent.title)">GITHUB</a>
+                <a :href="otherContent.url" target="_blank" @click="onClickSite(otherContent.title)">Go To Site→</a>
               </div>
             </a>
           </div>
@@ -43,40 +43,11 @@
 
 <script>
 import Timeline from '../Timeline.vue'
+import otherContents from '~/assets/json/other-contents.json'
 export default {
   components: { Timeline },
   data: () => ({
-    apps: [
-      {
-        title: 'Tap Map',
-        contents: ['マップを使って土地の特徴を調べる。'],
-        position: 'right',
-        image: require('~/assets/image/26.png'),
-        backgroundColor: '#faebd7',
-        github: 'https://github.com/lnoueryo/tap-map/',
-        url: 'https://tap-map.jounetsism.biz',
-      },
-      {
-        title: 'Reservierung',
-        contents: ['美容室用の予約管理システム。'],
-        position: 'left',
-        image: require('~/assets/image/27.png'),
-        backgroundColor: '#c7fdff',
-        github: 'https://github.com/lnoueryo/reservierung/',
-        url: 'https://booking.jounetsism.biz',
-      },
-      {
-        title: 'My Memories',
-        contents: ['Webアプリで写真を投稿できるSNS。'],
-        position: 'left',
-        image: require('~/assets/image/29.png'),
-        backgroundColor: '#c7fdff',
-        github: 'https://github.com/lnoueryo/mymemories/',
-        url: 'https://mymemories.jounetsism.biz',
-      },
-    ],
-    colorSwitch: true,
-    colorValue: 0,
+    otherContents: otherContents,
   }),
   computed: {
     wrapper() {
@@ -105,6 +76,20 @@ export default {
       }
     },
   },
+  methods: {
+    onClickSite(name) {
+      this.$gtag('event', 'site', {
+        event_category: 'ポートフォリオ',
+        event_label: name,
+      })
+    },
+    onClickGithub(name) {
+      this.$gtag('event', 'github', {
+        event_category: 'ポートフォリオ',
+        event_label: name,
+      })
+    }
+  }
 }
 </script>
 

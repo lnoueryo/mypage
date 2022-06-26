@@ -19,44 +19,38 @@
           <div class="content-container">
             <div class="flex rel mb-8">
               <div class="front-end">
-                <div class="sec_title mt-4">フロントエンド</div>
-                <p class="para">主にAngularJSを使うことが多いが、システムの改修に伴い、Vue.jsを使うこともある。</p>
-                <p class="para">Google Maps APIを使ったシステムに携わることが多く、主にMaps、Placesが多い。</p>
-                <p class="para">個人開発ではNuxt.jsを主軸にVuetify、VueRouter、Vuexを使ったSPA開発をTypeScriptを用いて行っている。</p>
+                <div class="sec_title mt-4">{{ skill.frontend.title }}</div>
+                <p class="para" v-for="(content, i) in skill.frontend.contents" :key="i">{{ content }}</p>
               </div>
               <div id="nuxt" class="image">
-                <img src="~/assets/image/icons/vue.png" alt="">
+                <img src="/icons/vue.png" alt="">
               </div>
             </div>
             <div class="flex rel mb-8">
               <div class="back-end">
                 <div>
-                  <div class="sec_title mt-40">バックエンド</div>
-                  <p class="para">Pythonのフレームワーク、Djangoを使用している。</p>
-                  <p class="para">主にデータ連携の部分を担当しており、そのデータは200MBから最大4GB、レコード数にして80万〜800万件ほどの量である。</p>
-                  <p class="para">個人開発ではGoを使用しており、SPAのAPIを作成。</p>
+                  <div class="sec_title mt-40">{{ skill.backend.title }}</div>
+                  <p class="para" v-for="(content, i) in skill.backend.contents" :key="i">{{ content }}</p>
                 </div>
               </div>
               <div class="image" id="go">
-                <img src="~/assets/image/icons/django.png" alt="">
+                <img src="/icons/django.png" alt="">
               </div>
             </div>
             <div class="flex rel mb-8">
               <div class="infrastructure">
                 <div>
-                  <div class="sec_title mt-40">インフラストラクチャ</div>
-                  <p class="para">Googleのパートナー会社ということもあり、ほとんどのリソースがGCPである場合が多い。</p>
-                  <p class="para">GAE、CloudRunなどのサーバーレスでシステムを構築することを得意としており、直近ではサーバーレスのIPを固定し、先方のサーバーにSFTPでファイルを取得しデータ連携を行った。</p>
-                  <p class="para">個人開発ではFirebase、CloudRun、 CloudSQLを使った環境構築が多い。</p>
+                  <div class="sec_title mt-40">{{ skill.infrastructure.title }}</div>
+                  <p class="para" v-for="(content, i) in skill.infrastructure.contents" :key="i">{{ content }}</p>
                 </div>
               </div>
               <div class="image" id="gcp">
-                <img src="~/assets/image/icons/gcp.png" alt="">
+                <img src="/icons/gcp.png" alt="">
               </div>
             </div>
           </div>
           <p class="tra link rel z-1">
-            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0">CURRICULUMVITAE→</a>
+            <a target="_blank" :href="curriculumVitae">CURRICULUM VITAE→</a>
           </p>
         </template>
       </section-container>
@@ -67,7 +61,11 @@
 </template>
 
 <script>
+import skill from '~/assets/json/skill.json'
 export default {
+  data: () => ({
+    skill: skill
+  }),
   computed: {
     hueHalfValue() {
       return this.$store.getters.hueHalfValue;
@@ -97,6 +95,9 @@ export default {
         left: 0,
         backgroundColor: 'rgba(0, 0, 0, 0.546)'
       }
+    },
+    curriculumVitae() {
+      return 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0';
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="about-me">
-    <section-wrapper :wrapper="wrapper" :secWrapper="secWrapper">
-      <section-container>
+    <SectionWrapper :wrapper="wrapper" :secWrapper="secWrapper">
+      <SectionContainer>
         <template #title>
           <transition name="bottom">
             <section-title titleNum="01" title="ABOUT ME" />
@@ -21,40 +21,39 @@
               <img class="img-filter" src="~/assets/image/10.jpg" alt="">
             </div>
             <div class="content-container rel">
-              <div class="sec_title mt-4">略歴</div>
-              <p class="para">福岡大学を卒業後、もともと趣味としてやっていた音楽活動を2年ほど行い、その後1年間のカナダ留学を経て、約3年ほどゲストハウスで勤務。</p>
-              <p class="para">利用していたOTAサイトや予約管理システムに興味を持ったこと、また、そこで出会った人たちに影響を受けたことをきっかけに、IT業界へ転職。</p>
-              <p class="para">ウェブ制作の会社にて、HTML、CSS、PHPを使ったランディングページの作成を6ヶ月ほど行い、アプリ開発の会社へ転職。主にGoogle Maps APIを使ったサービスに携わっており、PythonとJavascriptを使用している。</p>
+              <div class="sec_title mt-4">{{ aboutMe.personalHistory.title }}</div>
+              <p class="para" v-for="(content, i) in aboutMe.personalHistory.contents" :key="i">{{ content }}</p>
             </div>
           </div>
           <transition name="bottom">
             <div class="content-container ml-a mb-4 pc-only rel z-1">
-              <div class="sec_title">自己紹介</div>
-              <p class="para">初めまして、井上領と申します。現在アプリ開発の会社にて、Pythonや、Javascriptでシステムの保守やスクラッチ開発を行っております。</p>
-              <p class="para">フレームワークはバックエンドであればDjango、フロントエンドであれば、AngularまたはVue.jsを使用しており、プライベートではGoや、Laravel、Nuxt.jsを扱うことが多いです。</p>
-              <p class="para">休日はプログラミングや外国語を勉強したり、作曲したりしてます。よろしくお願いします。</p>
+              <div class="sec_title">{{ aboutMe.profile.title }}</div>
+              <p class="para" v-for="(content, i) in aboutMe.profile.contents" :key="i">{{ content }}</p>
             </div>
           </transition>
           <div class="content-container ml-a mb-4 sp-only rel z-1">
-            <div class="sec_title">自己紹介</div>
+            <div class="sec_title">{{ aboutMe.profile.title }}</div>
             <p class="para">
               <img id="dog" src="~/assets/image/10.jpg" alt="">
-              <span>初めまして、井上領と申します。現在アプリ開発の会社にて、Pythonや、Javascriptでシステムの保守やスクラッチ開発を行っております。<br><br></span>
-              <span>フレームワークはバックエンドであればDjango、フロントエンドであれば、AngularまたはVue.jsを使用しており、プライベートではGoや、Laravel、Nuxt.jsを扱うことが多いです。<br><br></span>
-              <span>休日はプログラミングや外国語を勉強したり、作曲したりしてます。よろしくお願いします。</span>
+              <span v-for="(content, i) in aboutMe.profile.contents" :key="i">{{ content }}<br><br></span>
             </p>
           </div>
           <p class="tra link">
-            <a target="_blank" href="https://docs.google.com/presentation/d/12T7tlSXZmJBru31kPOTb-dusfTJAtI-XTWv1qWhmwS4/edit?usp=sharing">PROFILE→</a>
+            <a @click="onClickProfile" target="_blank" :href="profileURL">PROFILE→</a>
           </p>
         </template>
-      </section-container>
-    </section-wrapper>
+      </SectionContainer>
+    </SectionWrapper>
   </div>
 </template>
 
 <script>
+import aboutMe from '~/assets/json/about-me.json'
+
 export default {
+  data: () => ({
+    aboutMe: aboutMe
+  }),
   computed: {
     wrapper() {
       const path = require('~/assets/image/03.jpg')
@@ -69,6 +68,17 @@ export default {
       return {
         backgroundColor: 'rgba(0, 0, 0, 0.646)'
       }
+    },
+    profileURL() {
+      return 'https://docs.google.com/presentation/d/12T7tlSXZmJBru31kPOTb-dusfTJAtI-XTWv1qWhmwS4/edit?usp=sharing';
+    }
+  },
+  methods: {
+    onClickProfile() {
+      this.$gtag('event', 'click', {
+        event_category: '経歴',
+        event_label: 'profile',
+      })
     }
   }
 }

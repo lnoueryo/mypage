@@ -1,7 +1,7 @@
 <template>
   <div id="history" class="rel">
-    <section-wrapper :wrapper="wrapper">
-      <section-container>
+    <SectionWrapper :wrapper="wrapper">
+      <SectionContainer>
         <template #title>
           <transition name="bottom">
             <section-title titleNum="04" title="HISTORY" />
@@ -16,92 +16,24 @@
           </transition>
         </template>
         <template #content>
-          <Timeline class="mb-8" :items="timelineItems" />
+          <Timeline class="mb-8" :items="history" />
           <p class="tra link rel z-1">
-            <a target="_blank" href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit?usp=sharing">BACKGROUND→</a>
+            <a @click="onClickBackground" target="_blank" :href="backgroundURL">BACKGROUND→</a>
           </p>
         </template>
-      </section-container>
+      </SectionContainer>
       <div :style="secWrapper"></div>
-    </section-wrapper>
+    </SectionWrapper>
   </div>
 </template>
 
 <script>
 import Timeline from '../Timeline.vue'
+import history from '~/assets/json/history.json'
 export default {
   components: { Timeline },
   data: () => ({
-    timelineItems: [
-      {
-        date: '2013年 3月',
-        title: '福岡大学工学部化学システム工学科卒業',
-        contents: ['福岡大学を卒業後、高校から続けていたガソリンスタンドのバイトをしながら音楽活動を2年ほど行う。'],
-        position: 'right',
-        color: '#19534a',
-        circleColor: '#19534a',
-        circleIcon: 'mdi-start'
-      },
-      {
-        date: '2015年 10月',
-        title: 'カナダに語学留学',
-        contents: ['語学留学のため、カナダに8か月ほど滞在。語学学校に通い、卒業後日本に帰国。'],
-        position: 'left',
-        color: '#19534a',
-        circleColor: '#19534a',
-        circleIcon: 'mdi-start'
-      },
-      {
-        date: '2016年 6月',
-        title: '有限会社ジェイホッパーズに入社',
-        contents: [
-          '帰国後、外国籍の方と関わる仕事をしたいという思いからゲストハウスに就職。',
-          '仕事を覚えながらプライベートで英語を勉強し、日常会話レベルまで話せるようになる。',
-          'マネージャー業務を半年ほど経験。',
-        ],
-        position: 'right',
-        color: '#19534a',
-        circleColor: '#19534a',
-        circleIcon: 'mdi-start'
-      },
-      {
-        date: '2020年 4月',
-        title: 'プログラミングスクールTech Boostに入学',
-        contents: [
-          'ゲストハウスで使用していた予約管理システムに興味を持ち、自身でソフトウェアを作成できるようになりたいという思いから、WEB系エンジニアに転職を決意。',
-          '有限会社ジェイホッパーズを退社し、プログラミングの学習を始める。',
-        ],
-        position: 'left',
-        color: '#19534a',
-        circleColor: '#19534a',
-        circleIcon: 'mdi-start'
-      },
-      {
-        date: '2021年 9月',
-        title: '株式会社シフトキーに入社',
-        contents: [
-          'WEB制作会社に就職。HTML、CSS、Javascript(JQuery)、PHP(WordPress)を使い、レンタルサーバーで公開することが多かった。',
-          'その間プライベートでVue.jsとLaravelを独学。言語の知識を生かし、業務に貢献。',
-        ],
-        position: 'right',
-        color: '#242e66',
-        circleColor: '#242e66',
-        circleIcon: 'mdi-start'
-      },
-      {
-        date: '2021年 4月',
-        title: '株式会社ゴーガに入社',
-        contents: [
-          'Google Maps APIを使ったアプリ開発の会社に入社。主に店舗検索システム、販売店検索システムの画面、サーバー、インフラを担当。',
-          'サーバーレスに移行する流れがあったため、入社後すぐにDockerとGCPのCloud Runを学習。その後に業務で使われているDjangoと個人的に興味があったGoを習得。',
-          'データ連携に最適なリソースを探し、その方法を提案することで貢献。',
-        ],
-        position: 'left',
-        color: '#242e66',
-        circleColor: '#242e66',
-        circleIcon: 'mdi-start'
-      },
-    ],
+    history: history
   }),
   computed: {
     wrapper() {
@@ -125,7 +57,18 @@ export default {
         zIndex: -1
       }
     },
+    backgroundURL() {
+      return 'https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit?usp=sharing';
+    }
   },
+  methods: {
+    onClickBackground() {
+      this.$gtag('event', 'click', {
+        event_category: '経歴',
+        event_label: 'background',
+      })
+    }
+  }
 }
 </script>
 

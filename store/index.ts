@@ -27,7 +27,6 @@ export const mutations: MutationTree<RootState> = {
   countHueHalfValue(state) {
     if (state.hueHalfValue > 359) return state.hueHalfValue = 0;
     state.hueHalfValue = state.hueHalfValue + 1;
-    console.log(state.hueHalfValue)
   },
   changeBrightness(state) {
     if(state.brightnessSwitch) state.brightnessValue += 1;

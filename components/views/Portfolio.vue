@@ -27,7 +27,7 @@
             </div>
           </transition>
         </div>
-        <section-wrapper :wrapper="wrapper">
+        <section-wrapper>
           <section-container>
             <template #sub-title>
               <transition name="bottom">
@@ -41,15 +41,15 @@
             <template #content>
               <div class="mb-8">
                 <ViewsPortfolioMain />
-                <ViewsPortfolioDescription :items="descriptionItems" />
-                <ViewsPortfolioSystem :features="features"/>
+                <ViewsPortfolioDescription :items="portfolio.descriptions" />
+                <ViewsPortfolioSystem :features="portfolio.features"/>
               </div>
               <p class="tra link rel z-1">
-                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0">CURRICULUMVITAE→</a>
+                <a target="_blank" :href="specificationURL">CURRICULUMVITAE→</a>
               </p>
             </template>
           </section-container>
-          <div :style="secWrapper"></div>
+          <div></div>
         </section-wrapper>
       </div>
     </section>
@@ -57,77 +57,16 @@
 </template>
 
 <script>
+import portfolio from '~/assets/json/portfolio.json'
 export default {
   data: () => ({
-    descriptionItems: [
-      {
-        title: 'チームでタスク管理',
-        contents: [
-          'プロジェクトを作成し、そのプロジェクトに複数のユーザーをアサインすることが可能。',
-          '組織の概要を記入し、メンバーにどういった組織なのか伝えよう。',
-        ],
-        position: 'right',
-        image: require('~/assets/image/portfolio/01.png'),
-      },
-      {
-        title: 'シンプルな検索',
-        contents: [
-          'タスクの絞り込みやソートも簡単。ボックスから絞り込み条件を選んで、テーブルのヘッダーをクリックするだけ。',
-          '違うページに移動しても条件はそのまま残るので便利。',
-        ],
-        position: 'left',
-        image: require('~/assets/image/portfolio/03.png'),
-      },
-      {
-        title: 'ユーザーの権限管理',
-        contents: [
-          'プロジェクトに参加しているメンバーを管理。',
-          'ユーザーの追加や権限の変更、削除が簡単にできる。',
-        ],
-        position: 'right',
-        image: require('~/assets/image/portfolio/04.png'),
-      },
-    ],
-    features: [
-      {
-        type: 'Front-End',
-        content: [
-          'vuetifyを使ったUI設計',
-          'レスポンシブ',
-          'AJAX送信後のレスポンスによる非同期処理',
-          'DOMが形成される前のAJAXによるデータの受取',
-          '一部Vueのタイプスクリプト、Vue.extendを用いた開発',
-          'Vuexを用いた状態管理',
-          'パフォーマンスを意識し作成した関数型コンポーネント',
-          'ライブラリVueCropperを用いた画像のクロッピング',
-          'バイナリーデータ、base64やjson文字列などエンコード・デコード',
-        ]
-      },
-      {
-        type: 'Back-End',
-        content: [
-          // 'AJAXを使ったREST APIの構築',
-          // 'laravel標準のもの＋ログイン以外に利用するパスワードチェックのバリデーション作成',
-          'laravel標準のもの＋Oauthの認証を実装',
-          '会員登録時に送信するメールをキュージョブで非同期',
-          'イベント、リスナー、キュージョブを使ってパスワードハッシュ化する前のデータをメール送信',
-          'データベース正規化',
-          'N+1問題を意識したテーブルの関連付け（関数作成）',
-          'シーダーを使った各テーブルのレコード作成',
-          'ストレージ、データベースに複数の画像を保存する機能を実装',
-        ]
-      },
-      {
-        type: 'Infrastructure',
-        content: [
-          'EC2によるウェブサーバー（パブリックサブネット）の構築',
-          'EC2によるデータベースサーバー（プライベートサブネット）の構築',
-          'VPCを利用したネットワーク設定',
-          'Route53にドメイン登録',
-        ]
-      },
-    ],
+    portfolio: portfolio,
   }),
+  computed: {
+    specificationURL() {
+      return 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0';
+    }
+  },
 }
 </script>
 

@@ -1,0 +1,76 @@
+[
+  {
+    "name": "languages",
+    "position": "left",
+    "contents": [
+      {"capture": "HTML5", "src": "/icons/html.png"},
+      {"capture": "CSS3", "src": "/icons/css.png"},
+      {"capture": "Sass", "src": "/icons/sass.png"},
+      {"capture": "JavaScript", "src": "/icons/javascript.png"},
+      {"capture": "TypeScript", "src": "/icons/typescript.png"},
+      {"capture": "PHP", "src": "/icons/php.png"},
+      {"capture": "Python", "src": "/icons/python.png"},
+      {"capture": "Go", "src": "/icons/go.png"},
+      {"capture": "Bootstrap", "src": "/icons/bootstrap.png"},
+      {"capture": "Nuxt.js", "src": "/icons/nuxt.png"},
+      {"capture": "Vue.js", "src": "/icons/vue.png"},
+      {"capture": "Vuetify.js", "src": "/icons/vuetify.svg"},
+      {"capture": "AngularJS", "src": "/icons/angular.png"},
+      {"capture": "Laravel", "src": "/icons/laravel.png"},
+      {"capture": "Django", "src": "/icons/django.png"}
+    ]
+  },
+  {
+    "name": "environments",
+    "position": "right",
+    "contents": [
+      {"capture": "Windows", "src": "/icons/windows.png"},
+      {"capture": "Linux", "src": "/icons/linux.png"},
+      {"capture": "Ubuntu", "src": "/icons/ubuntu.png"},
+      {"capture": "CentOS", "src": "/icons/centos.svg"},
+      {"capture": "Visual Studio Code", "src": "/icons/vscode.svg"},
+      {"capture": "Git", "src": "/icons/git.png"},
+      {"capture": "GitHub", "src": "/icons/github.png"},
+      {"capture": "Node.js", "src": "/icons/node.js.png"},
+      {"capture": "NPM", "src": "/icons/npm.png"},
+      {"capture": "Yarn", "src": "/icons/yarn.png"},
+      {"capture": "Docker", "src": "/icons/docker.png"},
+      {"capture": "Apache", "src": "/icons/apache.png"},
+      {"capture": "Nginx", "src": "/icons/nginx.png"},
+      {"capture": "Mysql", "src": "/icons/mysql.png"},
+      {"capture": "Postgres", "src": "/icons/postgres.png"},
+      {"capture": "Terraform", "src": "/icons/terraform.png"},
+      {"capture": "Cypress", "src": "/icons/cypress.png"}
+    ]
+  },
+  {
+    "name": "infrastructures",
+    "position": "left",
+    "contents": [
+      {"capture": "Firebase", "src": "/icons/firebase.png"},
+      {"capture": "Compute Engine", "src": "/icons/compute_engine.png"},
+      {"capture": "App Engine", "src": "/icons/app_engine.png"},
+      {"capture": "Cloud Run", "src": "/icons/cloud_run.png"},
+      {"capture": "Cloud Functions", "src": "/icons/cloud_functions.png"},
+      {"capture": "Cloud SQL", "src": "/icons/cloud_sql.png"},
+      {"capture": "Cloud Storage", "src": "/icons/cloud_storage.png"},
+      {"capture": "Google Maps", "src": "/icons/google_maps_platform.png"},
+      {"capture": "Cloud Load \nBalancing", "src": "/icons/cloud_load_balancing.png"},
+      {"capture": "Cloud Armoer", "src": "/icons/cloud_armor.png"},
+      {"capture": "Cloud Build", "src": "/icons/cloud_build.png"},
+      {"capture": "Container Registry", "src": "/icons/container_registry.png"},
+      {"capture": "Big Query", "src": "/icons/bigquery.png"},
+      {"capture": "Debugger", "src": "/icons/debugger.png"},
+      {"capture": "Cloud Logging", "src": "/icons/cloud_logging.png"},
+      {"capture": "Cloud Monitoring", "src": "/icons/cloud_monitoring.png"},
+      {"capture": "Cloud NAT", "src": "/icons/cloud_nat.png"},
+      {"capture": "Cloud Router", "src": "/icons/cloud_router.png"},
+      {"capture": "Cloud Scheduler", "src": "/icons/cloud_scheduler.png"},
+      {"capture": "PubSub", "src": "/icons/pubsub.png"},
+      {"capture": "Cloud Tasks", "src": "/icons/cloud_tasks.png"},
+      {"capture": "DataStore", "src": "/icons/datastore.png"},
+      {"capture": "IAM", "src": "/icons/identity_and_access_management.png"},
+      {"capture": "Secret Manager", "src": "/icons/secret_manager.png"}
+    ]
+  }
+]

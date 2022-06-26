@@ -20,7 +20,7 @@
             <div class="header-right flex mb-3">
               <transition name="nav">
                 <ul class="flex text-center nav" v-show="switches.nav.status">
-                  <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i">
+                  <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.list)">
                     <li>{{ item.list }}</li>
                   </a>
                 </ul>
@@ -31,7 +31,7 @@
                 <div class="menu-content">
                   <ul>
                     <li class="mx-2" v-for="(item, i) in navigationItems" :key="i">
-                      <a v-scroll-to="item.href" href="">{{ item.list }}</a>
+                      <a v-scroll-to="item.href" href="" @click="onClickNav(item.list)">{{ item.list }}</a>
                     </li>
                   </ul>
                 </div>
@@ -77,12 +77,19 @@ export default {
   },
   mounted() {
     Object.keys(this.switches).forEach((key) => {
-      console.log(key)
       setTimeout(() => {
         this.switches[key].status = true;
       }, this.switches[key].time)
     })
   },
+  methods: {
+    onClickNav(name) {
+      this.$gtag('event', 'click', {
+        event_category: 'ナビゲーション',
+        event_label: name,
+      })
+    }
+  }
 }
 
 </script>

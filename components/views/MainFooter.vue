@@ -17,14 +17,14 @@
                 </div>
                 <hr class="bar">
                 <div class="text-center">
-                  <a :href="icon.href" target="_blank" v-for="(icon, i) in icons" :key="i">
+                  <a :href="icon.href" target="_blank" v-for="(icon, i) in icons" :key="i" @click="onClickSNS(icon.alt)">
                     <img class="mx-3 icon" :src="icon.src" :alt="icon.alt">
                   </a>
                 </div>
               </div>
               <FooterContent :contents="contents" />
-              <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around" style="width: 100%;">
-                <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i">
+              <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around w100">
+                <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.list)">
                   <li>{{ item.list }}</li>
                 </a>
               </ul>
@@ -89,6 +89,20 @@ export default {
     // const response = await this.$axios.get('https://qiita.com/api/v2/users/popo62520908/items')
     // this.qiita = response.data.slice(0, 4);
   },
+  methods: {
+    onClickSNS(name) {
+      this.$gtag('event', 'click', {
+        event_category: 'SNS',
+        event_label: name,
+      })
+    },
+    onClickNav(name) {
+      this.$gtag('event', 'click', {
+        event_category: 'ナビゲーション',
+        event_label: name,
+      })
+    }
+  }
 }
 
 </script>

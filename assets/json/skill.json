@@ -1,0 +1,26 @@
+{
+  "frontend": {
+    "title": "フロントエンド",
+    "contents": [
+      "主にAngularJSを使うことが多いが、システムの改修に伴い、Vue.jsを使うこともある。",
+      "Google Maps APIを使ったシステムに携わることが多く、主にMaps、Placesが多い。",
+      "個人開発ではNuxt.jsを主軸にVuetify、VueRouter、Vuexを使ったSPA開発をTypeScriptを用いて行っている。"
+    ]
+  },
+  "backend": {
+    "title": "バックエンド",
+    "contents": [
+      "Pythonのフレームワーク、Djangoを使用している。",
+      "主にデータ連携の部分を担当しており、そのデータは200MBから最大4GB、レコード数にして80万〜800万件ほどの量である。",
+      "個人開発ではGoを使用しており、SPAのAPIを作成。"
+    ]
+  },
+  "infrastructure": {
+    "title": "インフラストラクチャ",
+    "contents": [
+      "Googleのパートナー会社ということもあり、ほとんどのリソースがGCPである場合が多い。",
+      "GAE、CloudRunなどのサーバーレスでシステムを構築することを得意としており、直近ではサーバーレスのIPを固定し、先方のサーバーにSFTPでファイルを取得しデータ連携を行った。",
+      "個人開発ではFirebase、CloudRun、 CloudSQLを使った環境構築が多い。"
+    ]
+  }
+}

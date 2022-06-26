@@ -1,42 +1,12 @@
 <template>
   <div>
-    <!-- <div class="pc">
-      <div class="w50">
-        <div class="tab" @mouseover="tabKey(i)" v-for="(title, i) in titles" :key="i">
-          {{ title }}
-        </div>
-      </div>
-      <div class="tab-items w50">
-        <transition name="list" v-for="(feature, i) in features" :key="i">
-          <ol class="content-container" v-show="tab[i]">
-            <div class="sec_title">{{ feature.type }}</div>
-            <li class="para" v-for="(content, i) in feature.content" :key="i">{{ content }}</li>
-          </ol>
-        </transition>
-      </div>
-    </div> -->
-    <!-- <div class="sp">
-      <div class="sp-only tab-items">
-        <transition name="slide" v-for="(feature, i) in features" :key="i">
-          <ol class="content-container1 abs" v-show="tab[i]">
-            <div class="sec_title">{{ feature.type }}</div>
-            <li class="para" v-for="(content, i) in feature.content" :key="i">{{ content }}</li>
-          </ol>
-        </transition>
-      </div>
-      <div class="titles flex sp-only-f">
-        <div class="tab mx-3" @mouseover="tabKey(i)" v-for="(title, i) in titles" :key="i">
-          {{ title }}
-        </div>
-      </div>
-    </div> -->
     <div class="accordion-container rel" v-for="(feature, i) in features" :key="i">
-      <button ref="button" class="accordion" @click="openAccordion">
+      <button ref="button" class="accordion" @click="openAccordion($event, feature.type)">
         {{ feature.type }}
       </button>
       <div ref="panel" class="panel">
         <div class="acd-content">
-          <p class="para" v-for="(content, j) in feature.content" :key="j">{{ content }}</p>
+          <p class="para" v-for="(content, j) in feature.contents" :key="j">{{ content }}</p>
         </div>
       </div>
     </div>
@@ -48,23 +18,6 @@ export default {
   props: {
     features: Array
   },
-  data: () => ({
-    titles: [
-      'Front-End',
-      'Back-End',
-      'Infrastructure',
-    ],
-    tab: [true, false, false],
-  }),
-  watch: {
-    accordion(oldValue, newValue) {
-      const elements = this.$refs.accordion;
-      elements.forEach((el) => {
-        el.style.maxHeight = null;
-      })
-      elements[newValue].style.maxHeight = elements[newValue].style.scrollHeight + "px";
-    }
-  },
   mounted() {
     const button = this.$refs.button[0]
     const panel = this.$refs.panel[0]
@@ -72,7 +25,7 @@ export default {
     panel.style.maxHeight = panel.scrollHeight + "px";
   },
   methods: {
-    openAccordion(e) {
+    openAccordion(e, name) {
       const buttons = this.$refs.button;
       const panels = this.$refs.panel;
       /** activeを一度全て削除 */
@@ -88,12 +41,12 @@ export default {
       panels.forEach((el) => {
         el.style.maxHeight = null;
       })
-      // e.target.classList.toggle("active");
+
       panel.style.maxHeight = panel.scrollHeight + "px";
-    },
-    tabKey(key) {
-      this.tab = [false, false, false];
-      this.$set(this.tab, key, true);
+      this.$gtag('event', 'github', {
+        event_category: 'アコーディオン',
+        event_label: name,
+      })
     },
   }
 }
@@ -140,79 +93,25 @@ export default {
 }
 */
 .ac-label{
-    background: #454545;
-    color: #fff;
-    display: block;
-    margin-bottom: 1px;
-    padding: 10px;
+  background: #454545;
+  color: #fff;
+  display: block;
+  margin-bottom: 1px;
+  padding: 10px;
 }
 .ac-content{
-    border: 1px solid #454545;
-    max-height: 0;
-    opacity: 0;
-    padding: 0 10px;
-    transition: .5s;
-    visibility: hidden;
+  border: 1px solid #454545;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  transition: .5s;
+  visibility: hidden;
 }
 .ac-check:checked + .ac-label + .ac-content{
-    // height: 50px;
-    opacity: 1;
-    padding: 5px 10px;
-    visibility: visible;
-}
-
-.pc {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: row-reverse;
-
-  .tab {
-    color: #e0e4e4;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 16px;
-    font-family: Montserrat;
-    font-weight: 100;
-    line-height: 1;
-    letter-spacing: 0;
-    font-size: 4.5vw;
-    margin-bottom: 30px;
-    padding-left: 50px;
-  }
-
-  .tab-items {
-    width: 50%;
-    max-width: 450px;
-    position: relative;
-
-    .content-container {
-      padding: 0;
-    }
-  }
-}
-
-.main-container {
-  justify-content: space-around;
-  flex-flow: row-reverse;
-}
-
-.titles {
-  justify-content: space-around;
-  flex-wrap: wrap
-}
-/* transition */
-.slide-appear-to{
-    transform: translateY(100%);
-}
-.slide-enter, .slide-leave-to {
-    opacity: 0;
-    transform: translateX(100%);
-}
-.slide-enter-to, .slide-leave {
-    transform: translateX(0);
-}
-.slide-enter-active, .slide-leave-active {
-    transition: opacity 1s, transform 1s;
+  // height: 50px;
+  opacity: 1;
+  padding: 5px 10px;
+  visibility: visible;
 }
 
 </style>

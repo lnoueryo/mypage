@@ -10,7 +10,7 @@
             <ViewsSkill />
           </div>
           <div>
-            <ViewsLanguageTool />
+            <ViewsLanguagesTools />
           </div>
           <div>
             <ViewsHistory />

@@ -1,11 +1,11 @@
 <template>
   <div class="loop-wrap">
-    <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n">
-      <figure class="mx-4" style="display: flex;flex-direction: column;" v-for="(image, i) in src" :key="i">
-        <div class="d-flex" style="height: 160px;align-items: center">
-          <img style="width: 128px" :src="image.src" :alt="image.capture">
+    <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n" @click="onClickTool(image.capture)">
+      <figure class="mx-4 figure" v-for="(image, i) in src" :key="i">
+        <div class="d-flex image-container">
+          <img style="width: 128px" :src="image.src" :alt="image.capture" />
         </div>
-        <figcaption style="font-size: 14px;word-break: break-word;display: flex;justify-content: center;align-items: center;margin-top: auto;" class="text-center" v-text="image.capture"></figcaption>
+        <figcaption class="caption text-center" v-text="image.capture"></figcaption>
       </figure>
     </div>
   </div>
@@ -17,6 +17,14 @@ export default {
     src: Array,
     direction: String
   },
+  methods: {
+    onClickTool(name) {
+      this.$gtag('event', 'click', {
+        event_category: 'ツール',
+        event_label: name,
+      })
+    },
+  }
 }
 </script>
 
@@ -77,4 +85,24 @@ export default {
 .loop-wrap .right:last-child {
   animation: right2 60s linear infinite;
 }
+
+.caption {
+  font-size: 14px;
+  word-break: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  height: 160px;
+  align-items: center
+}
+
 </style>
