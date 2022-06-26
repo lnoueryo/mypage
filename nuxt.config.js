@@ -9,22 +9,22 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Rio Page',
+    title: 'My Page',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', content: 'Google Maps APIを使ったサービスを扱っているWeb系エンジニア。作成したウェブアプリケーションを紹介いたします。' },
-      { name: 'keyword', content: '井上領,エンジニア' },
+      { name: 'keyword', content: '井上領,エンジニア,django,nuxt' },
       { name: 'google-site-verification', content: 'Dj609s-gP15Aocfed0WOgIm503sE9umTAAh32N-cf3c' },
       { property: 'og:url', content: 'https://lnoueryo.jounetsism.biz' },
-      { property: 'og:title', content: 'My Profile' },
-      { property: 'og:image', content: '~/assets/image/10.jpg' },
+      { hid: 'og:title', property: 'og:title', content: 'My Page' },
+      { hid: 'og:image', property: 'og:image', content: '/10.jpg' },
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.3.1.js' }
     ],
     link: [
       { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' },
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
+      { rel: "icon", type: "image/png", href: "/30.png" }
     ],
   },
 
@@ -58,6 +58,10 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    ['@nuxtjs/google-gtag', {
+      id: 'G-0D9G8D4P9B',
+      debug: true,
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
