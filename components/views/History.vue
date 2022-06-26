@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative">
+  <div id="history" class="rel">
     <section-wrapper :wrapper="wrapper">
       <section-container>
         <template #title>
@@ -9,19 +9,19 @@
         </template>
         <template #sub-title>
           <transition name="bottom">
-            <p class="message tra"><span>LOOK BACK</span><br class="pc-only">
-              <span class="adjust2">ON MY HISTORY</span>
-            </p>
+            <div class="message tra">
+              <div>LOOK BACK<br class="pc-only"></div>
+              <div class="adjust">ON MY HISTORY</div>
+            </div>
           </transition>
         </template>
         <template #content>
-          <Timeline :items="timelineItems" />
+          <Timeline class="mb-8" :items="timelineItems" />
           <p class="tra link rel z-1">
-            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0">CURRICULUMVITAE→</a>
+            <a target="_blank" href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit?usp=sharing">BACKGROUND→</a>
           </p>
         </template>
       </section-container>
-      <!-- <Grain></Grain> -->
       <div :style="secWrapper"></div>
     </section-wrapper>
   </div>
@@ -131,86 +131,6 @@ export default {
 
 
 <style lang="scss" scoped>
-.stick-container {
-  display: flex;
-  width: 6%;
-  justify-content: center;
-  .stick {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.12);
-    width: 2px;
-    min-height: 100px;
-    height: 100%;
-  }
-  .circle-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    .circle {
-      border-radius: 50%;
-      background-color: rgba(0,0,0);
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
-    }
-  }
-}
 
-.card {
-  max-width: 400px;
-  margin: auto;
-  background-color: #191919;
-  border-radius: 8px;
-  // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  box-shadow: rgb(55 88 81) 0px 7px 29px 0px;
-}
-
-.card-title {
-  .sub {
-    text-align: left;
-    font-size: 11px;
-    margin-left: 4px;
-  }
-  border-radius: 8px 8px 0 0;
-  font-size: 18px;
-  padding: 15px 20px;
-  background-color: #364d33;
-  text-align: center;
-}
-
-.card-content {
-  padding: 20px 20px;
-  p {
-    margin: 0 4px;
-    font-size: 14px;
-  }
-}
-
-
-.content-container {
-  max-width: 550px;
-}
-
-.message {
-  margin-left: 40px;
-  position: relative;
-  font-weight: 400;
-  font-size: 40px;
-  letter-spacing: .02em;
-  line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.adjust {
-  margin-left: 20vw;
-}
-.adjust2 {
-  margin-left: 5vw;
-}
 
 </style>

@@ -1,6 +1,6 @@
 
 <template>
-  <div>
+  <div id="follow-me">
     <footer>
       <div class="footer">
         <section-wrapper>
@@ -11,7 +11,7 @@
               </transition>
             </template>
             <template #content>
-              <div class="container mb-7">
+              <div class="footer-main-container">
                 <div class="flex mb-6">
                   <div class="message text-center">FOLLOW ME</div>
                 </div>
@@ -24,7 +24,7 @@
               </div>
               <FooterContent :contents="contents" />
               <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around" style="width: 100%;">
-                <a class="" :href="item.href" v-for="(item, i) in navigationItems" :key="i">
+                <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i">
                   <li>{{ item.list }}</li>
                 </a>
               </ul>
@@ -58,31 +58,31 @@ export default {
           {content: 'popo62520908@gmail.com', href: ''},
         ]
       },
-      {
-        title: 'Resume',
-        items: [
-          {content: '履歴書', href: 'https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit?usp=sharing'},
-          {content: '職務経歴書', href: 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit?usp=sharing'},
-        ]
-      },
-      {
-        title: 'Github',
-        items: [
-          {content: 'Puzzles', href: 'https://github.com/lnoueryo/puzzles'},
-          {content: 'タップマップ', href: 'https://github.com/lnoueryo/tap-map'},
-          {content: 'Reservierung', href: 'https://github.com/lnoueryo/reservierung'},
-          {content: 'My Memories', href: 'https://github.com/lnoueryo/Mymemories'},
-        ]
-      },
-      {
-        title: 'Github',
-        items: [
-          {content: 'Puzzles', href: 'https://github.com/lnoueryo/puzzles'},
-          {content: 'タップマップ', href: 'https://github.com/lnoueryo/tap-map'},
-          {content: 'Reservierung', href: 'https://github.com/lnoueryo/reservierung'},
-          {content: 'My Memories', href: 'https://github.com/lnoueryo/Mymemories'},
-        ]
-      },
+      // {
+      //   title: 'Resume',
+      //   items: [
+      //     {content: '履歴書', href: 'https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit?usp=sharing'},
+      //     {content: '職務経歴書', href: 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit?usp=sharing'},
+      //   ]
+      // },
+      // {
+      //   title: 'Github',
+      //   items: [
+      //     {content: 'Puzzles', href: 'https://github.com/lnoueryo/puzzles'},
+      //     {content: 'Tap Map', href: 'https://github.com/lnoueryo/tap-map'},
+      //     {content: 'Reservierung', href: 'https://github.com/lnoueryo/reservierung'},
+      //     {content: 'My Memories', href: 'https://github.com/lnoueryo/Mymemories'},
+      //   ]
+      // },
+      // {
+      //   title: 'Github',
+      //   items: [
+      //     {content: 'Puzzles', href: 'https://github.com/lnoueryo/puzzles'},
+      //     {content: 'Tap Map', href: 'https://github.com/lnoueryo/tap-map'},
+      //     {content: 'Reservierung', href: 'https://github.com/lnoueryo/reservierung'},
+      //     {content: 'My Memories', href: 'https://github.com/lnoueryo/Mymemories'},
+      //   ]
+      // },
     ]
   }),
   async created() {
@@ -98,6 +98,7 @@ footer {
   position: relative;
   z-index: 1;
 }
+
 .footer{
   position: fixed;
   left: 0;
@@ -105,13 +106,24 @@ footer {
   top: 0;
   bottom: 0;
   z-index: -1;
-  // padding-top: 50px;
+
+  .footer-main-container {
+    margin-bottom: 60px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer-main-container {
+      margin-bottom: 20px;
+    }
+  }
 }
+
 footer .container {
-  padding: 50px 6.25vw 0 6.25vw;
   flex-direction: row-reverse;
   position: relative;
 }
+
 footer .title{
   display: block;
   font-weight: 500;
@@ -120,6 +132,7 @@ footer .title{
   letter-spacing: .1em;
   line-height: 1;
 }
+
 footer .title_num {
   margin-right: 6%;
   font-weight: 400;
@@ -129,6 +142,7 @@ footer .title_num {
   letter-spacing: .02em;
   line-height: 1;
 }
+
 footer .message {
   width: 100%;
   margin-left: 0;
@@ -156,7 +170,4 @@ footer .message {
   margin-bottom: 2%;
 }
 
-@media screen and (max-width: 768px) {
-
-}
 </style>

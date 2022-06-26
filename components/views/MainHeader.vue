@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="top">
     <header>
       <div class="header-wrapper">
         <video class="base-mv" src="~/assets/image/02.mp4" autoplay muted loop playsinline></video>
@@ -19,19 +19,19 @@
             </div>
             <div class="header-right flex mb-3">
               <transition name="nav">
-                <ul class="flex text-center pc-only" v-show="switches.nav.status">
-                  <nuxt-link :to="item.href" v-for="(item, i) in navigationItems" :key="i">
+                <ul class="flex text-center nav" v-show="switches.nav.status">
+                  <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i">
                     <li>{{ item.list }}</li>
-                  </nuxt-link>
+                  </a>
                 </ul>
               </transition>
-              <div class="hamburger-menu sp-only">
+              <div class="hamburger-menu">
                 <input type="checkbox" id="menu-btn-check">
                 <label for="menu-btn-check" class="menu-btn"><span></span></label>
                 <div class="menu-content">
                   <ul>
                     <li class="mx-2" v-for="(item, i) in navigationItems" :key="i">
-                      <nuxt-link :to="item.href">{{ item.list }}</nuxt-link>
+                      <a v-scroll-to="item.href" href="">{{ item.list }}</a>
                     </li>
                   </ul>
                 </div>
@@ -57,7 +57,6 @@ export default {
     navigationItems: Array
   },
   data: () => ({
-    hueValue: 0,
     show: [
       { opacity: 1, transition: 'all 1s', transform: 'translateX(0px)', position: 'relative' },
       { opacity: 0, transition: 'all 1s', transform: 'translateX(0px)', position: 'absolute' },
@@ -76,9 +75,6 @@ export default {
       return filter;
     },
   },
-  created() {
-    this.startHue()
-  },
   mounted() {
     Object.keys(this.switches).forEach((key) => {
       console.log(key)
@@ -87,13 +83,6 @@ export default {
       }, this.switches[key].time)
     })
   },
-  methods: {
-    startHue() {
-      setInterval(() => {
-        this.$store.commit('countHueValue');
-      }, 100);
-    },
-  }
 }
 
 </script>
@@ -208,64 +197,72 @@ header {
     transition: all 1s;
 }
 .menu-btn span:before {
-    bottom: 8px;
+  bottom: 8px;
 }
 .menu-btn span:after {
-    top: 8px;
+  top: 8px;
 }
 #menu-btn-check:checked ~ .menu-btn span {
-    background-color: #183c56c9;
+  background-color: #183c56c9;
 }
 #menu-btn-check:checked ~ .menu-btn span::before {
-    bottom: 0;
-    transform: rotate(45deg);
-    transition: all 1s;
+  bottom: 0;
+  transform: rotate(45deg);
+  transition: all 1s;
 }
 #menu-btn-check:checked ~ .menu-btn span::after {
-    top: 0;
-    transform: rotate(-45deg);
-    transition: all 1s;
+  top: 0;
+  transform: rotate(-45deg);
+  transition: all 1s;
 }
-.menu-content ul {
-    padding: 70px 10px 0;
-}
-.menu-content ul li {
-    border-bottom: solid 1px #ffffff;
-    list-style: none;
-}
-.menu-content ul li a {
-    display: block;
-    width: 100%;
-    font-size: 12px;
-    box-sizing: border-box;
-    color:#ffffff;
-    text-decoration: none;
-    padding: 9px 15px 10px 0;
-    position: relative;
-}
-.menu-content ul li a::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-top: solid 2px #ffffff;
-    border-right: solid 2px #ffffff;
-    transform: rotate(45deg);
-    position: absolute;
-    right: 11px;
-    top: 16px;
-}
+
 .menu-content {
-    width: 50%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: -50%;
-    z-index: 80;
-    background-color: #215376c4;
-    transition: all 0.5s;/*アニメーション設定*/
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: -50%;
+  z-index: 80;
+  background-color: rgb(39 63 55 / 94%);
+  transition: all 0.5s;/*アニメーション設定*/
+
+  ul {
+    padding: 70px 10px 0;
+
+    li {
+      border-bottom: solid 1px #ffffff;
+      list-style: none;
+
+      a {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
+        color:#ffffff;
+        text-decoration: none;
+        padding: 15px 15px 15px 0;
+        position: relative;
+      }
+      a::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-top: solid 2px #ffffff;
+        border-right: solid 2px #ffffff;
+        transform: rotate(45deg);
+        position: absolute;
+        right: 11px;
+        top: 16px;
+      }
+    }
+  }
 }
+
 #menu-btn-check:checked ~ .menu-content {
     right: 0;/*メニューを画面内へ*/
+}
+.hamburger-menu {
+  display: none;
 }
 .hamburger-menu input {
     display: none;
@@ -279,11 +276,33 @@ header {
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   margin: auto;
+
   .item-container{
-      position: relative;
-      margin: auto;
-      max-width: 800px;
-      width: 100%;
+    position: relative;
+    margin: auto;
+    max-width: 800px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1225px) {
+  .nav {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #name-logo {
+    width: 40%;
+  }
+  .menu-content {
+    width: 50%;
+  }
+  #menu-btn-check:checked ~ .menu-content {
+    width: 70%;
   }
 }
 </style>

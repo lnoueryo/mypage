@@ -9,8 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - profile',
-    title: 'profile',
+    title: 'Rio Page',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', content: 'Google Maps APIを使ったサービスを扱っているWeb系エンジニア。作成したウェブアプリケーションを紹介いたします。' },
@@ -24,7 +23,8 @@ export default {
       { src: 'https://code.jquery.com/jquery-3.3.1.js' }
     ],
     link: [
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' }
+      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css' },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
     ],
   },
 
@@ -38,6 +38,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/vue-scrollto'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

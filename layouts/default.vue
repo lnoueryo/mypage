@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       navigationItems: [
-        {list: 'TOP', href: '/'},
+        {list: 'TOP', href: '#top'},
         {list: 'ABOUT ME', href: '#about-me'},
         {list: 'SKILL', href: '#skill'},
         {list: 'LANGUAGES TOOLS', href: '#languages-tools'},
@@ -24,14 +24,25 @@ export default {
     }
   },
   created() {
-    this.startHue
+    this.startHue()
+    this.startHalfHue()
+    this.startBrightness()
   },
   methods: {
     startHue() {
       setInterval(() => {
-        if (this.hueValue > 359) return this.hueValue = 0;
-        this.hueValue = this.hueValue + 1;
+        this.$store.commit('countHueValue');
       }, 100);
+    },
+    startHalfHue() {
+      setInterval(() => {
+        this.$store.commit('countHueHalfValue');
+      }, 200);
+    },
+    startBrightness() {
+      setInterval(() => {
+        this.$store.commit('changeBrightness')
+      }, 150)
     },
   }
 }

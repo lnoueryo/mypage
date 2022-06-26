@@ -1,36 +1,61 @@
 <template>
   <div>
-    <div class="d-flex" style="align-strech" v-for="(item, i) in items" :key="i">
-      <div class="card-container">
-        <div class="card" v-if="item.position == 'left'" :style="{boxShadow: item.color + ' 0px 7px 29px 0px'}">
-          <div v-if="items.length - 1 == i" class="new">New</div>
-          <div class="card-title" :style="{backgroundColor: item.color}">
-            <div class="sub">{{ item.date }}</div>
-            <h6>{{ item.title }}</h6>
-          </div>
-          <div class="card-content">
-            <p v-for="(content, j) in item.contents" :key="j">{{ content }}</p>
+    <div class="" v-for="(item, i) in items" :key="i">
+      <div class="pc_only">
+        <div class="card-container">
+          <div class="card" v-if="item.position == 'left'" :style="{boxShadow: item.color + ' 0px 7px 29px 0px'}">
+            <div v-if="items.length - 1 == i" class="new">New</div>
+            <div class="card-title" :style="{backgroundColor: item.color}">
+              <div class="sub">{{ item.date }}</div>
+              <h6>{{ item.title }}</h6>
+            </div>
+            <div class="card-content">
+              <p v-for="(content, j) in item.contents" :key="j">{{ content }}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="stick-container">
-        <div class="stick">
-          <div class="circle-container">
-            <div class="circle" :style="{backgroundColor: item.circleColor || item.color}">
-              <v-icon v-if="item['circleIcon']">{{ item.circleIcon }}</v-icon>
+        <div class="stick-container">
+          <div class="stick">
+            <div class="circle-container">
+              <div class="circle" :style="{backgroundColor: item.circleColor || item.color}">
+                <v-icon v-if="item['circleIcon']">{{ item.circleIcon }}</v-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card" v-if="item.position == 'right'" :style="{boxShadow: item.color + ' 0px 7px 29px 0px'}">
+            <div v-if="items.length - 1 == i" class="new">New</div>
+            <div class="card-title" :style="{backgroundColor: item.color}">
+              <div class="sub">{{ item.date }}</div>
+              <h6>{{ item.title }}</h6>
+            </div>
+            <div class="card-content">
+              <p v-for="(content, j) in item.contents" :key="j">{{ content }}</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="card-container">
-        <div class="card" v-if="item.position == 'right'" :style="{boxShadow: item.color + ' 0px 7px 29px 0px'}">
-          <div v-if="items.length - 1 == i" class="new">New</div>
-          <div class="card-title" :style="{backgroundColor: item.color}">
-            <div class="sub">{{ item.date }}</div>
-            <h6>{{ item.title }}</h6>
+      <div class="sp_only">
+        <div class="stick-container">
+          <div class="stick">
+            <div class="circle-container">
+              <div class="circle" :style="{backgroundColor: item.circleColor || item.color}">
+                <v-icon v-if="item['circleIcon']">{{ item.circleIcon }}</v-icon>
+              </div>
+            </div>
           </div>
-          <div class="card-content">
-            <p v-for="(content, j) in item.contents" :key="j">{{ content }}</p>
+        </div>
+        <div class="card-container">
+          <div class="card" :style="{boxShadow: item.color + ' 0px 7px 29px 0px'}">
+            <div v-if="items.length - 1 == i" class="new">New</div>
+            <div class="card-title" :style="{backgroundColor: item.color}">
+              <div class="sub">{{ item.date }}</div>
+              <h6>{{ item.title }}</h6>
+            </div>
+            <div class="card-content">
+              <p v-for="(content, j) in item.contents" :key="j">{{ content }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -47,6 +72,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.wrapper {
+  display: flex;
+}
 .stick-container {
   display: flex;
   justify-content: center;
@@ -81,7 +109,7 @@ export default {
   width: 47%;
   display: flex;
   align-items: center;
-  padding: 10px 0;
+  padding: 15px;
   .card {
     position: relative;
     max-width: 400px;
@@ -123,5 +151,42 @@ export default {
     }
   }
 }
+
+.pc_only {
+  display: flex;
+}
+
+.sp_only {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    width: 94%;
+
+    .card {
+      max-width: initial;
+      width: 100%;
+    }
+  }
+  .pc_only{display: none;}
+  .sp_only{display: flex;}
+}
+
+@media screen and (max-width: 480px) {
+  .stick-container {
+    display: none;
+  }
+  .card-container {
+    width: 100%;
+    padding: 10px 0;
+
+    .card {
+      max-width: initial;
+      width: 100%;
+    }
+  }
+}
+
 
 </style>

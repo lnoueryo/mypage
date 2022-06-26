@@ -28,4 +28,10 @@
   margin: 15px;
   position: relative;
 }
+
+@media screen and (max-width: 480px) {
+  .title-container {
+    padding: 30px 0;
+  }
+}
 </style>

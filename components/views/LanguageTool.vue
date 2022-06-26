@@ -1,5 +1,5 @@
 <template>
-  <div style="position: relative">
+  <div id="languages-tools" class="rel">
     <section-wrapper :wrapper="wrapper">
       <section-container>
         <template #title>
@@ -9,22 +9,39 @@
         </template>
         <template #sub-title>
           <transition name="bottom">
-            <p class="message tra"><span>MANY EXPERIENCES</span><br class="pc-only">
-              <span class="adjust2">MAKE YOU GROW UP</span>
-            </p>
+            <div class="message tra">
+              <div>MANY EXPERIENCES<br class="pc-only"></div>
+              <div class="adjust">MAKE YOU GROW UP</div>
+            </div>
           </transition>
         </template>
         <template #content>
-          <div style="overflow: hidden;opacity: 1">
-            <CarouselLoop :src="languages" direction="left"></CarouselLoop>
-            <CarouselLoop :src="environments" direction="right"></CarouselLoop>
-            <CarouselLoop :src="infrastructures" direction="left"></CarouselLoop>
+          <div class="pc-only">
+            <div class="mb-8" style="overflow: hidden;opacity: 1">
+              <CarouselLoop :src="languages" direction="left"></CarouselLoop>
+              <CarouselLoop :src="environments" direction="right"></CarouselLoop>
+              <CarouselLoop :src="infrastructures" direction="left"></CarouselLoop>
+            </div>
+            <p class="tra link rel z-1">
+              <a target="_blank" href="https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0">CURRICULUMVITAE→</a>
+            </p>
           </div>
-          <p class="tra link rel z-1">
-            <a target="_blank" href="https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0">CURRICULUMVITAE→</a>
-          </p>
         </template>
       </section-container>
+      <div class="sp-only">
+        <CarouselLoop :src="languages" direction="left"></CarouselLoop>
+        <CarouselLoop :src="environments" direction="right"></CarouselLoop>
+        <CarouselLoop :src="infrastructures" direction="left"></CarouselLoop>
+        <section-container>
+          <template #content>
+            <div>
+              <p class="tra link rel z-1">
+                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0">CURRICULUMVITAE→</a>
+              </p>
+            </div>
+          </template>
+        </section-container>
+      </div>
       <Grain></Grain>
       <div :style="secWrapper"></div>
     </section-wrapper>
@@ -129,27 +146,17 @@ export default {
 
 
 <style lang="scss" scoped>
-
-.content-container {
-  max-width: 550px;
+.sp-only {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .pc-only {
+    display: none;
+  }
+  .sp-only {
+    display: block;
+  }
 }
 
-.message {
-  margin-left: 40px;
-  position: relative;
-  font-weight: 400;
-  font-size: 40px;
-  letter-spacing: .02em;
-  line-height: 1.3;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.adjust {
-  margin-left: 20vw;
-}
-.adjust2 {
-  margin-left: 5vw;
-}
 
 </style>

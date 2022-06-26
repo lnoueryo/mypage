@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="about-me">
     <section-wrapper :wrapper="wrapper" :secWrapper="secWrapper">
       <section-container>
         <template #title>
@@ -9,39 +9,43 @@
         </template>
         <template #sub-title>
           <transition name="bottom">
-            <p class="message tra"><span>LET YOU KNOW</span><br class="pc-only">
-              <span class="adjust">　ABOUT ME</span>
-            </p>
+            <div class="message tra">
+              <div>A HOTEL RECEPTIONIST<br class="pc-only"></div>
+              <div class="adjust">TO A WEB DEVELOPER</div>
+            </div>
           </transition>
         </template>
         <template #content>
-          <div class="pc-only abs z-0 img-container">
-            <img class="img-filter" src="~/assets/image/10.jpg" alt="">
-          </div>
           <div class="mb-2">
-            <div class="content-container">
+            <div class="pc-only abs z-0 img-container">
+              <img class="img-filter" src="~/assets/image/10.jpg" alt="">
+            </div>
+            <div class="content-container rel">
               <div class="sec_title mt-4">略歴</div>
               <p class="para">福岡大学を卒業後、もともと趣味としてやっていた音楽活動を2年ほど行い、その後1年間のカナダ留学を経て、約3年ほどゲストハウスで勤務。</p>
               <p class="para">利用していたOTAサイトや予約管理システムに興味を持ったこと、また、そこで出会った人たちに影響を受けたことをきっかけに、IT業界へ転職。</p>
               <p class="para">ウェブ制作の会社にて、HTML、CSS、PHPを使ったランディングページの作成を6ヶ月ほど行い、アプリ開発の会社へ転職。主にGoogle Maps APIを使ったサービスに携わっており、PythonとJavascriptを使用している。</p>
-              <p class="para">現在は趣味でGoを使ったアプリ開発などを行っている。</p>
             </div>
           </div>
           <transition name="bottom">
             <div class="content-container ml-a mb-4 pc-only rel z-1">
               <div class="sec_title">自己紹介</div>
-              <p class="para">現在アプリ開発の会社に所属しており、Pythonや、Javascriptを業務で主に使用しております。フレームワークはバックエンドであればDjango、フロントエンドであれば、AngularまたはVue.jsでの保守を行っております。</p>
-              <p class="para">WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。</p>
+              <p class="para">初めまして、井上領と申します。現在アプリ開発の会社にて、Pythonや、Javascriptでシステムの保守やスクラッチ開発を行っております。</p>
+              <p class="para">フレームワークはバックエンドであればDjango、フロントエンドであれば、AngularまたはVue.jsを使用しており、プライベートではGoや、Laravel、Nuxt.jsを扱うことが多いです。</p>
+              <p class="para">休日はプログラミングや外国語を勉強したり、作曲したりしてます。よろしくお願いします。</p>
             </div>
           </transition>
           <div class="content-container ml-a mb-4 sp-only rel z-1">
             <div class="sec_title">自己紹介</div>
             <p class="para">
-              <img id="dog" src="~/assets/image/10.jpg" alt="">初めまして、井上領と申します。現在WEB制作の会社に所属しており、HTML、CSS、JavaScript(jQuery)、PHPを業務で使用しております。趣味でLaravelとVue.jsを用いたアプリ開発をしております。お時間あれば今回作成したポートフォリオをご覧頂ければと思います。
+              <img id="dog" src="~/assets/image/10.jpg" alt="">
+              <span>初めまして、井上領と申します。現在アプリ開発の会社にて、Pythonや、Javascriptでシステムの保守やスクラッチ開発を行っております。<br><br></span>
+              <span>フレームワークはバックエンドであればDjango、フロントエンドであれば、AngularまたはVue.jsを使用しており、プライベートではGoや、Laravel、Nuxt.jsを扱うことが多いです。<br><br></span>
+              <span>休日はプログラミングや外国語を勉強したり、作曲したりしてます。よろしくお願いします。</span>
             </p>
           </div>
           <p class="tra link">
-            <a target="_blank" href="https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit">BACKGROUND→</a>
+            <a target="_blank" href="https://docs.google.com/presentation/d/12T7tlSXZmJBru31kPOTb-dusfTJAtI-XTWv1qWhmwS4/edit?usp=sharing">PROFILE→</a>
           </p>
         </template>
       </section-container>
@@ -72,11 +76,12 @@ export default {
 
 <style lang="scss" scoped>
 .img-container {
-    right: 0;
-    width: 40%;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
 }
 .img-filter {
-    filter: grayscale(60%) brightness(.7);
+  filter: grayscale(60%) brightness(.7);
 }
 
 .content-container {
@@ -84,10 +89,21 @@ export default {
 }
 
 #dog {
-    float: right;
-    filter: grayscale(60%) brightness(.7);
-    max-width: 210px;
-    margin-left: 25px;
+  float: right;
+  filter: grayscale(60%) brightness(.7);
+  max-width: 210px;
+  margin-left: 25px;
+}
+
+@media screen and (max-width: 480px) {
+  #dog {
+    max-width: 0;
+    margin-left: 0;
+    float: initial;
+    max-width: initial;
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 </style>

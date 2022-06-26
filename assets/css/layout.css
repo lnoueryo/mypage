@@ -17,12 +17,12 @@ main {
     /* fixedのfooterを見れるようにmargin-bottomで調整 */
     margin-bottom: 100vh;
 }
-.tra{
+.tra {
     font-family: trajan-pro-3,serif;
 }
 
 
-a{
+a {
 	color: #0090d2;
 	text-decoration: none;
 	-webkit-transition: all .3s;
