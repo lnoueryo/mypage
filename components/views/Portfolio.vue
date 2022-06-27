@@ -36,7 +36,7 @@
               DESCRIPTION→
             </a>
           </p>
-          <div>
+          <div class="w100">
             <img src="~/assets/image/14.png" class="rel z-0">
           </div>
           <div class="abs z-1 w-100 content-wrapper">
