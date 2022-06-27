@@ -4,7 +4,11 @@
       <div class="wrapper">
         <div class="sec-wrapper flex rel">
           <p class="tra abs z-2 link">
-            <a target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1">DESCRIPTION→</a>
+            <!-- 準備中 -->
+            <a class="tooltip" target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1" @click.prevent.stop="onClickDescriptioon">
+              <ToolChip>Sorry, Coming Soon</ToolChip>
+              DESCRIPTION→
+            </a>
           </p>
           <img src="~/assets/image/14.png" class="rel z-0">
           <transition name="bottom">
@@ -45,7 +49,11 @@
                 <ViewsPortfolioSystem :features="portfolio.features"/>
               </div>
               <p class="tra link rel z-1">
-                <a target="_blank" :href="specificationURL">CURRICULUMVITAE→</a>
+                <!-- 準備中 -->
+                <a class="tooltip" target="_blank" :href="specificationURL" @click.prevent.stop="onClickCurriculumVitae">
+                  <ToolChip>Sorry, Coming Soon</ToolChip>
+                  CURRICULUMVITAE→
+                </a>
               </p>
             </template>
           </section-container>
@@ -67,6 +75,20 @@ export default {
       return 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0';
     }
   },
+  methods: {
+    onClickDescriptioon() {
+      this.$gtag("event", "click", {
+        event_category: "経歴",
+        event_label: "description",
+      });
+    },
+    onClickCurriculumVitae() {
+      this.$gtag('event', 'click', {
+        event_category: '経歴',
+        event_label: 'curriculumVitae',
+      })
+    }
+  }
 }
 </script>
 

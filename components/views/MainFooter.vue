@@ -122,7 +122,7 @@ footer {
   z-index: -1;
 
   .footer-main-container {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
     padding: 0;
   }
 

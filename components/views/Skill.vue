@@ -50,7 +50,11 @@
             </div>
           </div>
           <p class="tra link rel z-1">
-            <a target="_blank" :href="curriculumVitae">CURRICULUM VITAE→</a>
+            <!-- 準備中 -->
+            <a class="tooltip" target="_blank" :href="curriculumVitae" @click.prevent.stop="onClickCurriculumVitae">
+              <ToolChip>Sorry, Coming Soon</ToolChip>
+              CURRICULUM VITAE→
+            </a>
           </p>
         </template>
       </section-container>
@@ -98,6 +102,14 @@ export default {
     },
     curriculumVitae() {
       return 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0';
+    }
+  },
+  methods: {
+    onClickCurriculumVitae(e) {
+      this.$gtag('event', 'click', {
+        event_category: '経歴',
+        event_label: 'curriculumVitae',
+      })
     }
   }
 }

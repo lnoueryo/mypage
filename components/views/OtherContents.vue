@@ -16,7 +16,8 @@
         </template>
         <template #content>
           <div class="card-container">
-            <a class="card sec_num" :href="otherContent.url" target="_blank" v-for="(otherContent, i) in otherContents" :key="i" @click="onClickSite(otherContent.title)">
+            <!-- 準備中 -->
+            <a class="card sec_num tooltip" :href="otherContent.url" target="_blank" v-for="(otherContent, i) in otherContents" :key="i" @click.prevent.stop="onClickSite(otherContent.title)">
               <div>
                 <img class="image" :src="otherContent.image" alt="" :style="{backgroundColor: otherContent.backgroundColor}">
               </div>
@@ -29,9 +30,14 @@
                 </div>
               </div>
               <div class="bottom-content">
-                <a :href="otherContent.github" target="_blank" @click="onClickGithub(otherContent.title)">GITHUB</a>
-                <a :href="otherContent.url" target="_blank" @click="onClickSite(otherContent.title)">Go To Site→</a>
+                <a :href="otherContent.github" target="_blank" @click="onClickGithub(otherContent.title)">
+                  GITHUB
+                </a>
+                <a :href="otherContent.url" target="_blank" @click.prevent.stop="onClickSite(otherContent.title)">
+                  Go To Site→
+                </a>
               </div>
+              <ToolChip>Sorry, Only GitHub</ToolChip>
             </a>
           </div>
         </template>

@@ -173,7 +173,7 @@ header {
   }
 
   .header-right {
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;
     margin-left: auto;
   }
@@ -243,7 +243,6 @@ header {
       a {
         display: block;
         width: 100%;
-        font-size: 16px;
         box-sizing: border-box;
         color:#ffffff;
         text-decoration: none;

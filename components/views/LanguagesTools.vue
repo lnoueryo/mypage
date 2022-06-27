@@ -26,9 +26,10 @@
               />
             </div>
             <p class="tra link rel z-1">
-              <a @click="onClickSkill" target="_blank" :href="skillURL"
-                >SKILL→</a
-              >
+                <a class="tooltip" @click.prevent.stop="onClickSkill" target="_blank" :href="skillURL">
+                  <ToolChip>Sorry, Coming Soon</ToolChip>
+                  SKILL→
+                </a>
             </p>
           </div>
         </template>
@@ -44,9 +45,11 @@
           <template #content>
             <div>
               <p class="tra link rel z-1">
-                <a @click="onClickSkill" target="_blank" :href="skillURL"
-                  >SKILL→</a
-                >
+                <!-- 準備中 -->
+                <a class="tooltip" @click.prevent.stop="onClickSkill" target="_blank" :href="skillURL">
+                  <ToolChip>Sorry, Coming Soon</ToolChip>
+                  SKILL→
+                </a>
               </p>
             </div>
           </template>
