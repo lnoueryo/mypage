@@ -86,6 +86,8 @@ export default {
         left: 0,
         opacity: 0.9,
         filter: hue,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
       }
     },
     secWrapper() {
