@@ -5,8 +5,13 @@
         {{ feature.type }}
       </button>
       <div ref="panel" class="panel">
-        <div class="acd-content">
-          <p class="para" v-for="(content, j) in feature.contents" :key="j">{{ content }}</p>
+        <div class="panel-inner">
+          <div class="acd-content">
+            <p class="para" v-for="(content, j) in feature.contents" :key="j">{{ content }}</p>
+          </div>
+          <div class="system-image" :style="{backgroundImage: `url(${feature.image})`}" v-if="feature.image">
+            <div class="filter"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -79,11 +84,15 @@ export default {
 
 .panel {
   border: 2px solid #20272d;
-  padding: 0 18px;
+  // padding: 20px 30px;
   // background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.panel-inner {
+  padding: 30px 40px;
 }
 
 /*非表示をコメントアウトしています*/
@@ -112,6 +121,25 @@ export default {
   opacity: 1;
   padding: 5px 10px;
   visibility: visible;
+}
+
+.system-image {
+  height: 100%;
+  width: 100%;
+  padding-top: 56.25%;
+  position: relative;
+  background-size: 100%;
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #2d3f4d42;
 }
 
 </style>

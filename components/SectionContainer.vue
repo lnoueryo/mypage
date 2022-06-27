@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container">
+  <div class="main-container" :style="mainContainer">
     <slot name="title"></slot>
     <div class="title-container">
       <slot class="rel z-1" name="sub-title"></slot>
@@ -10,6 +10,13 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    mainContainer: Object
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 

@@ -18,7 +18,7 @@
     position: absolute; /* 絶対配置 */
     left: 50%; /* 親に対して中央配置 */
     transform: translateX(-50%); /* 親に対して中央配置 */
-    bottom: -50px; /* 親要素下からの位置 */
+    bottom: -40px; /* 親要素下からの位置 */
     display: inline-block;
     padding: 8px 15px; /* 余白 */
     white-space: nowrap; /* テキストを折り返さない */

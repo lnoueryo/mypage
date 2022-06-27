@@ -2,7 +2,33 @@
   <div id="portfolio">
     <section>
       <div class="wrapper">
-        <div class="sec-wrapper flex rel">
+        <section-wrapper class="sp_only" :wrapper="wrapper">
+          <section-container :mainContainer="mainContainer">
+            <template #title>
+              <transition name="bottom">
+                <section-title class="mt-16" titleNum="05" title="PORTFOLIO" />
+              </transition>
+              <transition name="bottom">
+                <div class="message tra my-16" style="font-size: 7vw">
+                  <div>REACH OUT FOR<br class="pc-only"></div>
+                  <div class="adjust">MODERN TECHNOLOGY</div>
+                </div>
+              </transition>
+              <div class="py-4">
+                <p class="para">Nuxt.jsとGoを使ったタスク管理アプリ。</p>
+                <p class="para">業務であまり利用していないGCPのリソースでインフラを構成。</p>
+              </div>
+            </template>
+          </section-container>
+          <p class="tra link abs z-1" style="bottom: 30px">
+            <!-- 準備中 -->
+            <a class="tooltip" target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1" @click.prevent.stop="onClickDescriptioon">
+              <ToolChip>Sorry, Coming Soon</ToolChip>
+              DESCRIPTION→
+            </a>
+          </p>
+        </section-wrapper>
+        <div class="sec-wrapper flex rel pc_only">
           <p class="tra abs z-2 link">
             <!-- 準備中 -->
             <a class="tooltip" target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1" @click.prevent.stop="onClickDescriptioon">
@@ -10,26 +36,26 @@
               DESCRIPTION→
             </a>
           </p>
-          <img src="~/assets/image/14.png" class="rel z-0">
-          <transition name="bottom">
-            <div class="abs z-1 w-100 content-wrapper">
-              <div class="content-container w-50">
-                <div>
-                  <section-title titleNum="05" title="PORTFOLIO" />
-                  <div class="main-content-container">
-                    <p class="para">Nuxt.jsとGoを使ったタスク管理アプリ。</p>
-                    <p class="para">業務であまり利用していないGCPのリソースでインフラを構成。</p>
-                  </div>
+          <div>
+            <img src="~/assets/image/14.png" class="rel z-0">
+          </div>
+          <div class="abs z-1 w-100 content-wrapper">
+            <div class="content-container w-50">
+              <div>
+                <section-title titleNum="05" title="PORTFOLIO" />
+                <div class="main-content-container">
+                  <p class="para">Nuxt.jsとGoを使ったタスク管理アプリ。</p>
+                  <p class="para">業務であまり利用していないGCPのリソースでインフラを構成。</p>
                 </div>
               </div>
-              <div id="special" class="message w-50 text-center tra px-4">
-                <p><span>REACH OUT FOR</span><br>
-                  <span>MODERN</span><br>
-                  <span>TECHNOLOGY</span><br>
-                </p>
-              </div>
             </div>
-          </transition>
+            <div id="special" class="message w-50 text-center tra px-4">
+              <p><span>REACH OUT FOR</span><br>
+                <span>MODERN</span><br>
+                <span>TECHNOLOGY</span><br>
+              </p>
+            </div>
+          </div>
         </div>
         <section-wrapper>
           <section-container>
@@ -71,6 +97,21 @@ export default {
     portfolio: portfolio,
   }),
   computed: {
+    wrapper() {
+      const path = require('~/assets/image/14.png')
+      return {
+        backgroundImage: 'url("' + path + '")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'right 0% bottom 50%',
+        opacity: 0.9,
+        height: '100vh',
+      }
+    },
+    mainContainer() {
+      return {
+        height: '100vh',
+      }
+    },
     specificationURL() {
       return 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0';
     }
@@ -176,7 +217,17 @@ export default {
   }
 }
 
+.sp_only {
+  display: none;
+}
+
 @media screen and (max-width: 480px) {
+  .pc_only {
+    display: none;
+  }
+  .sp_only {
+    display: block;
+  }
   .content-container {
     padding: 50px 18px;
   }
@@ -188,6 +239,9 @@ export default {
   }
   .adjust {
     margin-left: 0
+  }
+  .link {
+    font-size: 5vw;
   }
 }
 

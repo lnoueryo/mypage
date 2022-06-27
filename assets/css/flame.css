@@ -161,3 +161,26 @@
     .sp48-only{display: block;}
     .pc48-only{display: none;}
 }
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.left {
+    left: 0;
+}
+
+.all-directions {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

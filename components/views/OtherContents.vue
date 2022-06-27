@@ -30,14 +30,15 @@
                 </div>
               </div>
               <div class="bottom-content">
-                <a :href="otherContent.github" target="_blank" @click="onClickGithub(otherContent.title)">
+                <!-- 準備中 -->
+                <a :href="otherContent.github" target="_blank" @click="onClickGithub(otherContent.title, otherContent.github)">
                   GITHUB
                 </a>
                 <a :href="otherContent.url" target="_blank" @click.prevent.stop="onClickSite(otherContent.title)">
                   Go To Site→
                 </a>
               </div>
-              <ToolChip>Sorry, Only GitHub</ToolChip>
+              <ToolChip>Sorry, Now Only GitHub</ToolChip>
             </a>
           </div>
         </template>
@@ -89,11 +90,12 @@ export default {
         event_label: name,
       })
     },
-    onClickGithub(name) {
+    onClickGithub(name, url) {
       this.$gtag('event', 'github', {
         event_category: 'ポートフォリオ',
         event_label: name,
       })
+      window.open(url, '_blank')
     }
   }
 }
@@ -161,6 +163,7 @@ export default {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    margin-bottom: 35px;
     color: white;
 
     a {
