@@ -21,18 +21,14 @@
             </template>
           </section-container>
           <p class="tra link abs z-1" style="bottom: 30px">
-            <!-- 準備中 -->
-            <a class="tooltip" target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1" @click.prevent.stop="onClickDescriptioon">
-              <ToolChip>Sorry, Coming Soon</ToolChip>
+            <a target="_blank" :href="descriptionURL" @click="onClickDescriptioon">
               DESCRIPTION→
             </a>
           </p>
         </section-wrapper>
         <div class="sec-wrapper flex rel pc_only">
           <p class="tra abs z-2 link">
-            <!-- 準備中 -->
-            <a class="tooltip" target="_blank" href="https://docs.google.com/presentation/d/1OWL1rnQQY9D_Vbecd7p7EayQgLnIkIvP15OC0xNNtpY/edit#slide=id.p1" @click.prevent.stop="onClickDescriptioon">
-              <ToolChip>Sorry, Coming Soon</ToolChip>
+            <a target="_blank" :href="descriptionURL" @click="onClickDescriptioon">
               DESCRIPTION→
             </a>
           </p>
@@ -110,9 +106,12 @@ export default {
         height: '100vh',
       }
     },
+    descriptionURL() {
+      return 'https://docs.google.com/presentation/d/1g5rSntUZ59qDyE2z6XdanjGDTUoSTZ7l3ppI-Xk12E4/edit?usp=sharing';
+    },
     personalProjectsURL() {
       return 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.hi106jvsdjvx';
-    }
+    },
   },
   methods: {
     onClickDescriptioon() {
