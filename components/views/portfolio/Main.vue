@@ -8,8 +8,12 @@
             <div>
               <p class="py-4">Puzzlesは組織、プロジェクト、ユーザー単位で分割できるタスク管理ツールです。</p>
               <div class="d-flex justify-end">
-                <v-btn href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4">GO TO SITE</v-btn>
-                <v-btn href="https://github.com/lnoueryo/puzzles" target="_blank">GITHUB</v-btn>
+                <!-- 準備中 -->
+                <v-btn href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
+                <ToolChip>Sorry, Coming Soon</ToolChip>
+                  GO TO SITE
+                </v-btn>
+                <v-btn href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub">GITHUB</v-btn>
               </div>
             </div>
           </div>
@@ -50,7 +54,9 @@ export default {
     }
   },
   methods: {
-    onClickSite() {
+    onClickSite(e) {
+      e.preventDefault();
+      
       this.$gtag('event', 'site', {
         event_category: 'ポートフォリオ',
         event_label: 'Puzzles',
