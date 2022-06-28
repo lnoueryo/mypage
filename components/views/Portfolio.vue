@@ -75,7 +75,7 @@
                 <ViewsPortfolioSystem :features="portfolio.features"/>
               </div>
               <p class="tra link rel z-1">
-                <a target="_blank" :href="specificationURL" @click="onClickPersonalProjects">
+                <a target="_blank" :href="personalProjectsURL" @click="onClickPersonalProjects">
                   PERSONAL PROJECTS→
                 </a>
               </p>
@@ -110,7 +110,7 @@ export default {
         height: '100vh',
       }
     },
-    specificationURL() {
+    personalProjectsURL() {
       return 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.hi106jvsdjvx';
     }
   },
