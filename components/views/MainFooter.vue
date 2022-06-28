@@ -3,8 +3,8 @@
   <div id="follow-me">
     <footer>
       <div class="footer">
-        <section-wrapper>
-          <section-container>
+        <SectionWrapper :wrapper="wrapper">
+          <SectionContainer>
             <template #title>
               <transition name="bottom">
                 <section-title titleNum="07" title="FOLLOW ME" />
@@ -29,8 +29,8 @@
                 </a>
               </ul>
             </template>
-          </section-container>
-        </section-wrapper>
+          </SectionContainer>
+        </SectionWrapper>
       </div>
     </footer>
   </div>
