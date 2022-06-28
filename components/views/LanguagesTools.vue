@@ -26,8 +26,7 @@
               />
             </div>
             <p class="tra link rel z-1">
-                <a class="tooltip" @click.prevent.stop="onClickSkill" target="_blank" :href="skillURL">
-                  <ToolChip>Sorry, Coming Soon</ToolChip>
+                <a @click="onClickSkill" target="_blank" :href="skillURL">
                   SKILL→
                 </a>
             </p>
@@ -45,9 +44,7 @@
           <template #content>
             <div>
               <p class="tra link rel z-1">
-                <!-- 準備中 -->
-                <a class="tooltip" @click.prevent.stop="onClickSkill" target="_blank" :href="skillURL">
-                  <ToolChip>Sorry, Coming Soon</ToolChip>
+                <a @click="onClickSkill" target="_blank" :href="skillURL">
                   SKILL→
                 </a>
               </p>
@@ -90,7 +87,7 @@ export default {
       };
     },
     skillURL() {
-      return "https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit#gid=0";
+      return "https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.de3jguofxwzy";
     },
   },
   methods: {
