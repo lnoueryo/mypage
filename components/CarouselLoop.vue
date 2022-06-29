@@ -1,12 +1,13 @@
 <template>
   <div class="loop-wrap">
-    <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n" @click="onClickTool(image.capture)">
-      <figure class="mx-4 figure" v-for="(image, i) in src" :key="i">
+    <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n" @click="onClickTool(contents.name)">
+      <figure class="mx-4 figure rel" v-for="(content, i) in contents" :key="i">
         <div class="d-flex image-container">
-          <img style="width: 128px" :src="image.src" :alt="image.capture" />
+          <img style="width: 128px" :src="content.image" :alt="content.title" />
         </div>
-        <figcaption class="caption text-center" v-text="image.capture"></figcaption>
-        <ToolRate :rate="image.rate" />
+        <figcaption class="caption text-center" v-text="content.title"></figcaption>
+        <ToolRate :rate="content.rate" />
+        <label for="modal-trigger" class="all-directions abs" @click="$emit('content', content)"></label>
       </figure>
     </div>
   </div>
@@ -15,7 +16,7 @@
 <script>
 export default {
   props: {
-    src: Array,
+    contents: Array,
     direction: String
   },
   methods: {

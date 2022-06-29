@@ -3,7 +3,7 @@
   <div id="follow-me">
     <footer>
       <div class="footer">
-        <SectionWrapper :wrapper="wrapper">
+        <SectionWrapper>
           <SectionContainer>
             <template #title>
               <transition name="bottom">

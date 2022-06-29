@@ -6,6 +6,7 @@ const initialState = () => {
     hueHalfValue: 0,
     brightnessSwitch: true,
     brightnessValue: 0,
+    selectTool: {},
   }
 }
 
@@ -17,6 +18,7 @@ export const getters: GetterTree<RootState, RootState> = {
   hueValue: (state) => state.hueValue,
   hueHalfValue: (state) => state.hueHalfValue,
   brightnessValue: (state) => state.brightnessValue,
+  selectTool: (state) => state.selectTool,
 }
 
 export const mutations: MutationTree<RootState> = {
@@ -32,7 +34,10 @@ export const mutations: MutationTree<RootState> = {
     if(state.brightnessSwitch) state.brightnessValue += 1;
     if(!state.brightnessSwitch) state.brightnessValue -= 1;
     if(state.brightnessValue == 0 || state.brightnessValue == 70) return state.brightnessSwitch = !state.brightnessSwitch;
-  }
+  },
+  selectTool(state, selectTool) {
+    state.selectTool = selectTool;
+  },
 }
 
 export const actions: ActionTree<RootState, RootState> = {

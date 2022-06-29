@@ -15,31 +15,24 @@
           </transition>
         </template>
         <template #content>
+
           <div class="card-container">
+
             <!-- 準備中 -->
-            <a class="card sec_num tooltip" :href="otherContent.url" target="_blank" v-for="(otherContent, i) in otherContents" :key="i" @click.prevent.stop="onClickSite(otherContent.title)">
-              <div>
-                <img class="image" :src="otherContent.image" alt="" :style="{backgroundColor: otherContent.backgroundColor}">
-              </div>
-              <div class="card-title tra">
-                {{ otherContent.title }}
-              </div>
-              <div class="card-content">
-                <div>
-                  <p v-for="(content, j) in otherContent.contents" :key="j"> {{ content }}</p>
-                </div>
-              </div>
-              <div class="bottom-content">
-                <!-- 準備中 -->
-                <a :href="otherContent.github" target="_blank" @click="onClickGithub(otherContent.title, otherContent.github)">
-                  GITHUB
-                </a>
-                <a :href="otherContent.url" target="_blank" @click.prevent.stop="onClickSite(otherContent.title)">
-                  Go To Site→
-                </a>
-              </div>
-              <ToolChip>Sorry, Now Only GitHub</ToolChip>
-            </a>
+            <div v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title)">
+              <CardImage :item="item" max-width="270">
+                <template #bottom>
+                  <!-- 準備中 -->
+                  <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">
+                    GITHUB
+                  </a>
+                  <a :href="item.url" target="_blank" @click.prevent.stop="onClickSite(item.title)">
+                    Go To Site→
+                  </a>
+                  <ToolChip>GITHUB</ToolChip>
+                </template>
+              </CardImage>
+            </div>
           </div>
         </template>
       </section-container>
