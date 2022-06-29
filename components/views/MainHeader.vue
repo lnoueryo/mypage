@@ -277,7 +277,7 @@ header {
 
 #mainbar {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   position: absolute;
   top: 50%;
   left: 50%;
