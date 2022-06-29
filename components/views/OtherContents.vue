@@ -29,7 +29,7 @@
                   <a :href="item.url" target="_blank" @click.prevent.stop="onClickSite(item.title)">
                     Go To Site→
                   </a>
-                  <ToolChip>GITHUB</ToolChip>
+                  <ToolChip>Sorry, Only GITHUB</ToolChip>
                 </template>
               </CardImage>
             </div>
