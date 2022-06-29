@@ -1,13 +1,13 @@
 <template>
   <div class="loop-wrap">
     <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n" @click="onClickTool(contents.name)">
-      <figure class="mx-4 figure rel" v-for="(content, i) in contents" :key="i">
+      <figure class="mx-4 figure rel hover" v-for="(content, i) in contents" :key="i">
         <div class="d-flex image-container">
           <img style="width: 128px" :src="content.image" :alt="content.title" />
         </div>
         <figcaption class="caption text-center" v-text="content.title"></figcaption>
         <ToolRate :rate="content.rate" />
-        <label for="modal-trigger" class="all-directions abs" @click="$emit('content', content)"></label>
+        <label for="modal-trigger" class="all-directions abs hover" @click="$emit('content', content)"></label>
       </figure>
     </div>
   </div>
@@ -104,7 +104,19 @@ export default {
 
 .image-container {
   height: 160px;
-  align-items: center
+  align-items: center;
+}
+
+.hover {
+  cursor: pointer;
+  transition: .5s;
+}
+
+.hover:hover {
+  opacity: .5;
+  transition: .5s;
+  box-shadow: 10ch;
+  background-color: rgba(0, 255, 179, 0.18);
 }
 
 </style>

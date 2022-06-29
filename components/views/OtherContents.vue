@@ -19,8 +19,8 @@
           <div class="card-container">
 
             <!-- 準備中 -->
-            <div v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title)">
-              <CardImage :item="item" max-width="270">
+            <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title)">
+              <CardImage class="d-flex align-strech" :item="item" max-width="270">
                 <template #bottom>
                   <!-- 準備中 -->
                   <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">

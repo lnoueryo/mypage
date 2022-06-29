@@ -154,6 +154,7 @@ header {
       left: 0;
       width: 100%;
       margin: auto;
+      padding: 0 20px;
       margin-bottom: 5%;
       height: 100vh;
     }
@@ -276,7 +277,7 @@ header {
 
 #mainbar {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -290,7 +291,10 @@ header {
     width: 100%;
   }
 }
-
+#name-logo {
+  width: 100%;
+  max-width: 270px;
+}
 @media screen and (max-width: 1225px) {
   .nav {
     display: none;
