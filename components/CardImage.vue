@@ -1,6 +1,6 @@
 <template>
   <div class="card sec_num tooltip" :class="{ 'm-0': marginReset }" :style="{maxWidth: maxWidth + 'px'}">
-    <div class="image-container" :style="{width: imgWidth + 'px', height: imgHeight + 'px', padding: imgHeight ? '10px' : '0'}">
+    <div :class="{'image-container': imgWidth}" :style="{width: imgWidth + 'px', height: imgHeight + 'px', padding: imgHeight ? '10px' : '0'}">
       <img class="image" :src="item.image" :alt="item.title" :style="{backgroundColor: item.backgroundColor}">
     </div>
     <div class="card-title tra d-flex">
@@ -9,13 +9,11 @@
         <slot name="sub" />
       </div>
     </div>
-    <div class="content-container">
-      <div class="card-content">
-        <p v-for="(content, j) in item.contents" :key="j"> {{ content }}</p>
-      </div>
-      <div class="bottom-content">
-        <slot name="bottom"></slot>
-      </div>
+    <div class="card-content">
+      <p v-for="(content, j) in item.contents" :key="j"> {{ content }}</p>
+    </div>
+    <div class="bottom-content">
+      <slot name="bottom"></slot>
     </div>
     <a class="abs all-directions" :href="item.url" target="_blank" v-if="item.url"></a>
   </div>
