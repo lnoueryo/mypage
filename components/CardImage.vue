@@ -42,6 +42,7 @@ export default {
   margin-bottom: 35px;
   color: white;
   width: 100%;
+  transition: all .5s;
 
   .image-container {
     display: flex;
