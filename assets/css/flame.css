@@ -104,6 +104,7 @@
 .wrap{flex-wrap: wrap;}
 .rel{position: relative;}
 .abs{position: absolute;}
+.fixed{position: fixed;}
 
 .justify-start{justify-content: start;}
 .justify-center{justify-content: center;}

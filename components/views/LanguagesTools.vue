@@ -19,26 +19,28 @@
           <div class="pc-only">
             <div class="mb-8 carousel-container">
               <CarouselLoop
-                :src="languagesTool.contents"
+                :contents="languagesTool.items"
                 :direction="languagesTool.position"
                 v-for="(languagesTool, i) in languagesTools"
                 :key="i"
+                @content="onModalOpen($event)"
               />
             </div>
             <p class="tra link rel z-1">
-                <a @click="onClickSkill" target="_blank" :href="skillURL">
-                  SKILL→
-                </a>
+              <a @click="onClickSkill" target="_blank" :href="skillURL">
+                SKILL→
+              </a>
             </p>
           </div>
         </template>
       </SectionContainer>
-      <div class="sp-only">
+      <div class="sp-only rel z-1">
         <CarouselLoop
-          :src="languagesTool.contents"
+          :contents="languagesTool.items"
           :direction="languagesTool.position"
           v-for="(languagesTool, i) in languagesTools"
           :key="i"
+          @content="onModalOpen($event)"
         />
         <SectionContainer>
           <template #content>
@@ -97,6 +99,10 @@ export default {
         event_label: "skill",
       });
     },
+    onModalOpen(e) {
+      this.modalSwitch = !this.modalSwitch;
+      this.$store.commit('selectTool', e)
+    }
   },
 };
 </script>
