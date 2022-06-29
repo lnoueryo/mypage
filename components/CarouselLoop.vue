@@ -6,6 +6,7 @@
           <img style="width: 128px" :src="image.src" :alt="image.capture" />
         </div>
         <figcaption class="caption text-center" v-text="image.capture"></figcaption>
+        <ToolRate :rate="image.rate" />
       </figure>
     </div>
   </div>
