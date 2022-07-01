@@ -1,0 +1,476 @@
+[
+    {
+        "company": "株式会社ゴーガ",
+        "business": "Webアプリ開発・運営事業",
+        "capitalStock": "千五百万円",
+        "employees": 40,
+        "projects": [
+            {
+                "title": "商品販売店検索",
+                "duration": {
+                    "start": "2021-04",
+                    "end": ""
+                },
+                "summaries": [
+                    "クライアントの納品データから、商品が販売されている店舗を検索し、地図上で表示するサービスの画面側の作成、バッチジョブの作成、インフラ構築を担当。"
+                ],
+                "roles": [
+                    "メタ情報の設定",
+                    "GAタグの設置",
+                    "カテゴリーやブランドによる絞り込み機能実装",
+                    "バッチジョブの設計、実装",
+                    "データベース設計の見直し",
+                    "インフラ設計",
+                    "一部Terraformによるインフラのコード化",
+                    "Cloud Runを使用したサービス構築",
+                    "App Engineを使用したサービス構築",
+                    "Cloud Storageスタティックファイルのバケット作成",
+                    "Cloud NAT、Cloud Router、Serverless VPC Accessによるネットワークの構築と外部向けIPアドレスの固定",
+                    "Cloud Logging、BigQuery、Monitoringによる運用管理基盤の構築",
+                    "Cloud Load Balacing、Cloud ArmorによるWAFの構築"
+                ],
+                "achievements": [
+                    "今回の案件では言語、フレームワークはあらかじめ縛りがあったものの、インフラに関しては特に縛りはなく、選択が可能であった。",
+                    "従来では、商品販売店検索システムにカスタマイズ性の優れたIaasを利用していたが、サーバーの管理や、導入コストの面で、サーバーレスのほうが会社的には望ましかった。",
+                    "「大量のデータ処理によるメモリ消費」、「HTTPタイムアウト制限内での処理」、「SFTPによる先方のサーバーとの接続」、以上3つの課題をサーバレスで解決可能か確認し、システム構成図を作成してプロジェクトマネージャーに提案。結果的に下記の内容で実現。",
+                    "・大量データを全てメモリに書き込まない",
+                    "・バルクインサート、バルクアップデート、全レコード削除",
+                    "・大量のレコード数のテーブルはトランケート、インデックスのリセット、バルクインサート、テーブル入れ替え",
+                    "・処理を2分割し、キューに投げ、HTTPタイムアウト制限回避",
+                    "・サーバーレスのIP固定",
+                    "新しい試みであったが、プライベートでもGCPを使っているため、その知識と経験を生かすことができた。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "Python3.7.9"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "AngularJS",
+                            "Django3.2.12"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "MYSQL8.0",
+                            "App Engine",
+                            "Cloud Run",
+                            "Cloud Storage",
+                            "Cloud Load Balacing",
+                            "Cloud Armor",
+                            "Cloud NAT",
+                            "Cloud Router",
+                            "Serverless VPC Access",
+                            "Cloud Tasks",
+                            "Cloud Logging",
+                            "BigQuery",
+                            "Cloud Scheduler",
+                            "Monitoring"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "GMBのデータ連携",
+                "duration": {
+                    "start": "2021-09",
+                    "end": "2021-10"
+                },
+                "summaries": [
+                    "店舗検索システムで変更した店舗情報をGoogle My Business APIで更新し、Google Mapに反映するシステムのバッチジョブ作成。"
+                ],
+                "roles": [
+                    "バッチジョブの設計、実装"
+                ],
+                "achievements": [
+                    "APIの大幅な変更により様々なものが変更され、仕様が記載されているドキュメントを探すのも難しく、 Business APIを利用するまでに申請が必要など、中々うまくいかない事が多かった。",
+                    "Googleに英語で問い合わせたり、海外の記事を読むことで、課題を解決し、貢献。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "Python3.7.9"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "店舗検索システム",
+                "duration": {
+                    "start": "2021-07",
+                    "end": ""
+                },
+                "summaries": [
+                    "クライアントの店舗データを地図に表示、管理するシステムの保守。",
+                    "地図画面はクライアントの要望により随時機能の追加や修正を行っており、管理画面側はリーダーの支持により新たな機能を実装する。",
+                    "E2Eテストやインフラのコード化などのツールを経験。"
+                ],
+                "roles": [
+                    "各クライアントのマップ画面保守",
+                    "Google Maps APIから取得したレビュー表示",
+                    "CSVのインポート、エクスポートの設定を固定する機能実装",
+                    "Terraformを使ってGCPのMonitoringをコードで管理",
+                    "Cypressを使ったE2Eテストをイメージ化し、自動テスト化"
+                ],
+                "achievements": [
+                    "業務でDjangoを使用するのが初めてで、チュートリアルでやるようなものとは違って複雑なものとなっており、記載されているコードの場所の把握が難しかった。",
+                    "プライベートで似たようなサービスのポートフォリオを作成し、短期間でキャッチアップすることで、貢献。",
+                    "また、TerraformやCypressなどのツールも同じくプライベートで使用した。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "Python3.7.9"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "AngularJS",
+                            "Django2.2"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "MYSQL5.7",
+                            "Compute Engine",
+                            "App Engine",
+                            "Cloud Storage",
+                            "Cloud Logging",
+                            "BigQuery",
+                            "Monitoring"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "company": "株式会社シフトキー",
+        "business": "Web制作",
+        "capitalStock": "三千万円",
+        "employees": 80,
+        "projects": [
+            {
+                "title": "LPの作成",
+                "duration": {
+                    "start": "2020-09",
+                    "end": "2021-03"
+                },
+                "summaries": [
+                    "複数の会社のLP作成。"
+                ],
+                "roles": [
+                    "フォトショップを使った素材の加工",
+                    "フルレスポンシブ、IE対応のコーディング"
+                ],
+                "achievements": [
+                    "ページの読み込み速度がもとめられていたため、できる限りCSSのみでUIコンポーネントを作成することで貢献。",
+                    "案件によってはWordPressのページを作成したり、設定することもあった。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "PHP"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "MYSQL5.7",
+                            "レンタルサーバー"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "company": "個人開発",
+        "business": "Webアプリ開発",
+        "capitalStock": "",
+        "employees": 1,
+        "projects": [
+            {
+                "title": "タスク管理アプリ",
+                "duration": {
+                    "start": "2021-11",
+                    "end": ""
+                },
+                "summaries": [
+                    "組織、プロジェクト、ユーザー単位で分割できるタスク管理ツール。",
+                    "プライベートで参画していた開発チームの中で無料の使いやすいタスク管理ツールはないかという話から作成。",
+                    "Go言語に興味があり、実行速度が早いことから今回採用。"
+                ],
+                "roles": [
+                    "タスクの作成、閲覧機能実装",
+                    "タスクの絞り込み機能実装",
+                    "データベース設計"
+                ],
+                "コメント": "/** 大変だったこと、どう乗り越えたかを記載 */",
+                "achievements": [
+                    ""
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "Go"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "Nuxt.js"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "MYSQL8.0",
+                            "App Engine",
+                            "Cloud Run",
+                            "Cloud Storage",
+                            "Cloud Load Balacing",
+                            "Cloud Armor",
+                            "Cloud NAT",
+                            "Cloud Router",
+                            "Serverless VPC Access",
+                            "Cloud Tasks",
+                            "Cloud Logging",
+                            "BigQuery",
+                            "Cloud Scheduler",
+                            "Monitoring"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "観光地検索アプリ",
+                "duration": {
+                    "start": "2021-04",
+                    "end": "2021-10"
+                },
+                "summaries": [
+                    "地図検索した周辺の観光地を探す地図アプリ。",
+                    "業務でDjangoやGoogle maps APIを使うため、学習もかねてpythonを選択。"
+                ],
+                "roles": [
+                    "東京の駅をマップに表示する機能",
+                    "観光地をマップに表示する機能",
+                    "スクレイピングを使ったデータ収集",
+                    "scikit-learnを使ったモデルの作成"
+                ],
+                "achievements": [
+                    "APIの大幅な変更により様々なものが変更され、仕様が記載されているドキュメントを探すのも難しく、 Business APIを利用するまでに申請が必要など、中々うまくいかない事が多かった。",
+                    "Googleに英語で問い合わせたり、海外の記事を読むことで、課題を解決し、貢献。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "Javascript",
+                            "Python"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "Django",
+                            "Vue.js"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "PostgreSQL",
+                            "App Engine",
+                            "Cloud Run",
+                            "Cloud Storage",
+                            "Cloud Load Balacing",
+                            "Cloud Armor",
+                            "Cloud NAT",
+                            "Cloud Router",
+                            "Serverless VPC Access",
+                            "Cloud Tasks",
+                            "Cloud Logging",
+                            "BigQuery",
+                            "Cloud Scheduler",
+                            "Monitoring"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "自己紹介ページの作成",
+                "duration": {
+                    "start": "2021-01",
+                    "end": ""
+                },
+                "summaries": [
+                    "当時所属していたWeb制作での業務経験を活かし、自分自身のキャリアを紹介する自己紹介サイトを作成。",
+                    "現在も更新している。"
+                ],
+                "roles": [
+                    "HTML、CSS、JQueryにて作成",
+                    "Google Maps APIから取得したレビュー表示",
+                    "Nuxt.jsへ移行",
+                    "GAタグの設置"
+                ],
+                "achievements": [
+                    ""
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "Nuxt.js"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "Firebase"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "画像投稿webアプリ",
+                "duration": {
+                    "start": "2020-09",
+                    "end": "2020-12"
+                },
+                "summaries": [
+                    "画像投稿及び加工機能の付いたSNSwebアプリ。",
+                    "Instagramはなぜbrowserから投稿できないのかという疑問から作成。"
+                ],
+                "roles": [
+                    "OAuthの実装",
+                    "Laravel標準搭載の認証をAjax化",
+                    "Laravelのqueue、job、workを使った非同期化",
+                    "5種類のいいね機能実装",
+                    "コメント投稿機能",
+                    "画像クロッピング後のお絵描き機能、エフェクト機能、テキスト描画機能実装",
+                    "ユーザー情報変更機能",
+                    "データベース設計",
+                    "N+1問題を防ぐクエリ",
+                    "EC2によるウェブサーバー（パブリックサブネット）の構築",
+                    "EC2によるデータベースサーバー（プライベートサブネット）の構築",
+                    "Route53にドメイン登録",
+                    "プロセス管理システムSupervisorをデーモン化し、LaravelのQueueタスクを実行"
+                ],
+                "achievements": [
+                    ""
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "Typescript",
+                            "PHP"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "Laravel",
+                            "Vue.js"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "Firebase"
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "美容室の予約管理システム",
+                "duration": {
+                    "start": "2020-05",
+                    "end": "2020-07"
+                },
+                "summaries": [
+                    "美容室のランディングページから予約サイトへ遷移し、カットの種類を選択し、予約するシステム。",
+                    "店舗側も予約や顧客情報を管理したいという要望があり、管理画面も作成。",
+                    "要件を伺い、必要な機能を伺った上で設計し、開発を行った。"
+                ],
+                "roles": [
+                    "画面側の設計",
+                    "予約カレンダーの実装",
+                    "商品選択機能実装",
+                    "予約後のメール通知機能実装",
+                    "管理画面の実装",
+                    "レンタルサーバーにデプロイ",
+                    "Vue.jsでのSPA化",
+                    "画面側ボトルネックの改善",
+                    "ウェブソケットを使ったリアルタイム予約作成、更新機能実装",
+                    "GCEを立てて、Apacheをインストールし、デプロイ"
+                ],
+                "achievements": [
+                    ""
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            "HTML",
+                            "CSS",
+                            "JavaScript",
+                            "PHP"
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            "Laravel",
+                            "Vue.js"
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            "Firebase"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
