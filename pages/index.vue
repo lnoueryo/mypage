@@ -3,23 +3,8 @@
     <div id="wrapper">
       <main>
         <div id="main-wrapper">
-          <div>
-            <ViewsAboutMe />
-          </div>
-          <div>
-            <ViewsSkill />
-          </div>
-          <div>
-            <ViewsLanguagesTools />
-          </div>
-          <div>
-            <ViewsHistory />
-          </div>
-          <div>
-            <ViewsPortfolio />
-          </div>
-          <div>
-            <ViewsOtherContents />
+          <div v-for="(component, i) in components" :key="i">
+            <div :is="component.name" :section="addNumber(component, i)"></div>
           </div>
         </div>
       </main>
@@ -30,10 +15,26 @@
 <script>
 
 export default {
+  data: () => ({
+    components: [
+      {title: 'ABOUT ME', name: 'ViewsAboutMe'},
+      {title: 'SKILL', name: 'ViewsSkill'},
+      {title: 'LANGUAGES TOOLS', name: 'ViewsLanguagesTools'},
+      {title: 'HISTORY', name: 'ViewsHistory'},
+      {title: 'CURRICULUM VITAE', name: 'ViewsCurriculumVitae'},
+      {title: 'PORTFOLIO', name: 'ViewsPortfolio'},
+      {title: 'OTHER CONTENTS', name: 'ViewsOtherContents'},
+    ]
+  }),
   beforeDestroy() {
     window.removeEventListener('resize', this.onResize)
   },
   methods: {
+    addNumber(component, i) {
+      i += 1;
+      component['number'] = '0' + i
+      return component;
+    },
     getTargetWidth() {
       this.show[1].transform = `translateX(${this.$refs.carouselFlame.clientWidth}px)`;
       this.show[2].transform = `translateX(-${this.$refs.carouselFlame.clientWidth - 50}px)`;

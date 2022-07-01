@@ -5,11 +5,6 @@
       <div class="footer">
         <SectionWrapper>
           <SectionContainer>
-            <template #title>
-              <transition name="bottom">
-                <section-title titleNum="07" title="FOLLOW ME" />
-              </transition>
-            </template>
             <template #content>
               <div class="footer-main-container">
                 <div class="flex mb-6">

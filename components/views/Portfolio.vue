@@ -6,7 +6,7 @@
           <section-container :mainContainer="mainContainer">
             <template #title>
               <transition name="bottom">
-                <section-title class="mt-16" titleNum="05" title="PORTFOLIO" />
+                <section-title :titleNum="section.number" :title="section.title" />
               </transition>
               <transition name="bottom">
                 <div class="message tra my-16" style="font-size: 7vw">
@@ -38,7 +38,7 @@
           <div class="abs z-1 w-100 content-wrapper">
             <div class="content-container w-50">
               <div>
-                <section-title titleNum="05" title="PORTFOLIO" />
+                <section-title :titleNum="section.number" :title="section.title" />
                 <div class="main-content-container">
                   <p class="para">Nuxt.jsとGoを使ったタスク管理アプリ。</p>
                   <p class="para">業務であまり利用していないGCPのリソースでインフラを構成。</p>
@@ -87,6 +87,9 @@
 <script>
 import portfolio from '~/assets/json/portfolio.json'
 export default {
+  props: {
+    section: Object
+  },
   data: () => ({
     portfolio: portfolio,
   }),

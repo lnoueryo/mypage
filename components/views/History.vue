@@ -4,7 +4,7 @@
       <SectionContainer>
         <template #title>
           <transition name="bottom">
-            <section-title titleNum="04" title="HISTORY" />
+            <section-title :titleNum="section.number" :title="section.title" />
           </transition>
         </template>
         <template #sub-title>
@@ -32,6 +32,9 @@ import Timeline from '../Timeline.vue'
 import history from '~/assets/json/history.json'
 export default {
   components: { Timeline },
+  props: {
+    section: Object
+  },
   data: () => ({
     history: history
   }),

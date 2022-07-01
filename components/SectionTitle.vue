@@ -29,7 +29,7 @@ export default {
 .page-title {
   display: block;
   font-weight: 500;
-  font-family: proxima-nova,sans-serif;
+  font-family: trajan-pro-3,serif;
   font-size: 14px;
   letter-spacing: .1em;
   line-height: 1;

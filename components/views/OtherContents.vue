@@ -4,7 +4,7 @@
       <section-container>
         <template #title>
           <transition name="bottom">
-            <section-title titleNum="06" title="OTHER CONTENTS" />
+            <section-title :titleNum="section.number" :title="section.title" />
           </transition>
         </template>
         <template #sub-title>
@@ -45,7 +45,9 @@
 import Timeline from '../Timeline.vue'
 import otherContents from '~/assets/json/other-contents.json'
 export default {
-  components: { Timeline },
+  props: {
+    section: Object
+  },
   data: () => ({
     otherContents: otherContents,
   }),
