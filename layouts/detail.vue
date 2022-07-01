@@ -1,9 +1,7 @@
 <template>
   <v-app dark>
-    <ViewsMainHeader :navigationItems="navigationItems" />
     <Nuxt />
-    <ViewsMainFooter :navigationItems="navigationItems" />
-    <ModalContainer v-selectTool="modalSwitch">
+    <!-- <ModalContainer v-selectTool="modalSwitch">
       <CardImage
         class="modal-overlay"
         :item="selectTool"
@@ -16,13 +14,13 @@
           <ToolRate class="ml-4" :rate="selectTool.rate" />
         </template>
       </CardImage>
-    </ModalContainer>
+    </ModalContainer> -->
   </v-app>
 </template>
 
 <script>
 export default {
-  name: "DefaultLayout",
+  name: "DetailLayout",
   data() {
     return {
       modalSwitch: false,
