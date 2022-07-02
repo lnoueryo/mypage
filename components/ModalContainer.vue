@@ -3,8 +3,7 @@
     <input id="modal-trigger" class="checkbox" type="checkbox" v-model="value">
     <div class="modal all-directions">
       <label for="modal-trigger" class="abs all-directions">
-          <label for="modal-trigger" class="close">&#10006;</label>
-          <slot class="modal-overlay" />
+        <slot class="modal-overlay" />
       </label>
     </div>
   </div>

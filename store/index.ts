@@ -7,6 +7,17 @@ const initialState = () => {
     brightnessSwitch: true,
     brightnessValue: 0,
     selectTool: {},
+    navigationItems: [
+      {title: 'TOP', href: 'top'},
+      {title: 'ABOUT ME', name: 'ViewsAboutMe', href: 'about-me'},
+      {title: 'SKILL', name: 'ViewsSkill', href: 'skill'},
+      {title: 'LANGUAGES TOOLS', name: 'ViewsLanguagesTools', href: 'languages-tools'},
+      {title: 'HISTORY', name: 'ViewsHistory', href: 'history'},
+      {title: 'CURRICULUM VITAE', name: 'ViewsCurriculumVitae', href: 'curriculum-vitae'},
+      {title: 'PORTFOLIO', name: 'ViewsPortfolio', href: 'portfolio'},
+      {title: 'OTHER CONTENTS', name: 'ViewsOtherContents', href: 'other-contents'},
+      {title: 'FOLLOW ME', href: 'follow-me'},
+    ]
   }
 }
 
@@ -19,6 +30,8 @@ export const getters: GetterTree<RootState, RootState> = {
   hueHalfValue: (state) => state.hueHalfValue,
   brightnessValue: (state) => state.brightnessValue,
   selectTool: (state) => state.selectTool,
+  navigationItems: (state) => state.navigationItems,
+  components: (state) => state.navigationItems.filter((item) => 'name' in item),
 }
 
 export const mutations: MutationTree<RootState> = {

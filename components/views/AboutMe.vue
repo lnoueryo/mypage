@@ -1,10 +1,10 @@
 <template>
-  <div id="about-me">
+  <div>
     <SectionWrapper :wrapper="wrapper" :secWrapper="secWrapper">
       <SectionContainer>
         <template #title>
           <transition name="bottom">
-            <section-title titleNum="01" title="ABOUT ME" />
+            <section-title :titleNum="section.number" :title="section.title" />
           </transition>
         </template>
         <template #sub-title>
@@ -51,6 +51,9 @@
 import aboutMe from '~/assets/json/about-me.json'
 
 export default {
+  props: {
+    section: Object
+  },
   data: () => ({
     aboutMe: aboutMe
   }),

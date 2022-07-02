@@ -1,10 +1,10 @@
 <template>
-  <div id="skill">
+  <div>
     <section-wrapper>
       <section-container>
         <template #title>
           <transition name="bottom">
-            <section-title titleNum="02" title="SKILL" />
+            <section-title :titleNum="section.number" :title="section.title" />
           </transition>
         </template>
         <template #sub-title>
@@ -65,6 +65,9 @@
 <script>
 import skill from '~/assets/json/skill.json'
 export default {
+  props: {
+    section: Object
+  },
   data: () => ({
     skill: skill
   }),

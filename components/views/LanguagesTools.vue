@@ -1,10 +1,10 @@
 <template>
-  <div id="languages-tools" class="rel">
+  <div class="rel">
     <SectionWrapper :wrapper="wrapper">
       <SectionContainer>
         <template #title>
           <transition name="bottom">
-            <section-title titleNum="03" title="LANGUAGES TOOLS" />
+            <section-title :titleNum="section.number" :title="section.title" />
           </transition>
         </template>
         <template #sub-title>
@@ -17,6 +17,9 @@
         </template>
         <template #content>
           <div class="pc-only">
+            <div class="w100 rel pc-only d-flex justify-end">
+              <v-btn text color="success" class="tra" to="/languages-tools">DETAIL</v-btn>
+            </div>
             <div class="mb-8 carousel-container">
               <CarouselLoop
                 :contents="languagesTool.items"
@@ -63,8 +66,11 @@
 <script>
 import languagesTools from "~/assets/json/languages-tools";
 export default {
+  props: {
+    section: Object
+  },
   data: () => ({
-    languagesTools: languagesTools,
+    languagesTools: [],
   }),
   computed: {
     wrapper() {
@@ -92,6 +98,9 @@ export default {
       return "https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.de3jguofxwzy";
     },
   },
+  created() {
+    this.languagesTools = this.preprocessTools(languagesTools)
+  },
   methods: {
     onClickSkill() {
       this.$gtag("event", "click", {
@@ -102,6 +111,27 @@ export default {
     onModalOpen(e) {
       this.modalSwitch = !this.modalSwitch;
       this.$store.commit('selectTool', e)
+    },
+    preprocessTools(languagesTools) {
+      return languagesTools.map((tools) => {
+        tools.items = tools.items.map((tool) => {
+          let total = 0;
+          tool.durations.forEach(duration => {
+            const start = new Date(duration.start)
+            const end = duration.end ? new Date(duration.end) : new Date()
+            total += this.diffMonth(start, end)
+          });
+          tool['total'] = total
+          return tool;
+        })
+        return tools;
+      });
+    },
+    diffMonth(d1, d2) {
+      let d1Month, d2Month;
+      d1Month = d1.getFullYear() * 12 + d1.getMonth();
+      d2Month = d2.getFullYear() * 12 + d2.getMonth();
+      return d2Month - d1Month;
     }
   },
 };
