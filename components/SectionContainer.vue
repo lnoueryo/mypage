@@ -40,9 +40,15 @@ export default {
   .title-container {
     padding: 30px 0;
   }
-.main-content-container {
-  margin: 0 15px;
+  .main-content-container {
+    margin: 0 15px;
+    position: relative;
+  }
+.main-container[data-v-2206c677] {
+  padding: 50px 20px 0 20px;
+  flex-direction: row-reverse;
   position: relative;
-}
+  z-index: 1;
+  }
 }
 </style>
