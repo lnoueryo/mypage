@@ -9,57 +9,71 @@
         </label>
       </div>
       <div class="tab-wrapper">
+        <div class="sp-only">
+          <div class="d-flex tra justify-between pa-4">
+            <a class="btn btn-flat left" @click="onClickChangeChange(-1)">
+              <i class="fas fa-angle-left fa-position-left"></i>
+              <span>BACK</span>
+            </a>
+            <a class="btn btn-flat right" @click="onClickChangeChange(1)">
+              <span>NEXT</span>
+              <i class="fas fa-angle-right fa-position-right"></i>
+            </a>
+          </div>
+        </div>
         <transition name="main">
           <div class="tab-content d-flex" v-if="content">
-            <div class="tab-container pr-4">
+            <div class="tab-container pr-4 pc-only">
               <label :for="project.title" class="tab-item" v-for="project in selectedCompany.projects" :key="project.title" :class="{'active': tab == project.title}">
                 <input :id="project.title" :name="selectedCompany.company" type="radio" v-model="tab" :value="project.title" class="none">
                 {{ project.title }}
               </label>
             </div>
             <transition name="main">
-              <div class="content-container" v-if="container">
-                <div class="mincho d-flex align-center">
-                  <h3 class="fw-bold">{{ selectedTab.title }}</h3>
-                  <div class="pc-only">
-                    <div class="d-flex mx-4">
-                      <div>
-                        <span class="mx-2">{{ changeFormat(selectedTab.duration.start) }}</span>
-                        <span>～</span>
-                        <span class="mx-2">{{ changeFormat(selectedTab.duration.end)}}</span>
+              <div>
+                <div class="content-container" v-if="container">
+                  <div class="mincho d-flex align-center">
+                    <h3 class="fw-bold">{{ selectedTab.title }}</h3>
+                    <div class="pc-only">
+                      <div class="d-flex mx-4">
+                        <div>
+                          <span class="mx-2">{{ changeFormat(selectedTab.duration.start) }}</span>
+                          <span>～</span>
+                          <span class="mx-2">{{ changeFormat(selectedTab.duration.end)}}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="d-flex">
-                  <div class="summery">
-                    <div class="mb-4">
-                      <h5 class="mincho">【概要】</h5>
-                      <p class="para px-4" v-for="(summery, i) in selectedTab.summaries" :key="i">
-                        {{ summery }}
-                      </p>
-                    </div>
-                    <div class="mb-4">
-                      <h5 class="mincho">【担当業務】</h5>
-                      <div class="para px-4" v-for="(role, i) in selectedTab.roles" :key="i">
-                        ・{{ role }}
+                  <div class="d-flex">
+                    <div class="summery">
+                      <div class="mb-4">
+                        <h5 class="mincho">【概要】</h5>
+                        <p class="para px-4" v-for="(summery, i) in selectedTab.summaries" :key="i">
+                          {{ summery }}
+                        </p>
+                      </div>
+                      <div class="mb-4">
+                        <h5 class="mincho">【担当業務】</h5>
+                        <div class="para px-4" v-for="(role, i) in selectedTab.roles" :key="i">
+                          ・{{ role }}
+                        </div>
+                      </div>
+                      <div class="mb-4">
+                        <h5 class="mincho">【業務実績】</h5>
+                        <div class="para px-4" v-for="(achievement, i) in selectedTab.achievements" :key="i">
+                          {{ achievement }}
+                        </div>
                       </div>
                     </div>
-                    <div class="mb-4">
-                      <h5 class="mincho">【業務実績】</h5>
-                      <div class="para px-4" v-for="(achievement, i) in selectedTab.achievements" :key="i">
-                        {{ achievement }}
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mx-4 pc-only" style="width: 30%">
-                    <h5 class="mincho">【開発環境】</h5>
-                    <div class="px-4">
-                      <div class="mb-4" v-for="(environment, i) in selectedTab.environments" :key="i">
-                        <h5 class="mincho" style="font-size: 18px">{{ environment.type }}</h5>
-                        <div class="para d-flex align-center" v-for="(content, j) in environment.contents" :key="j">
-                          <div class="mr-2 d-flex align-center" style="max-width: 18px"><img :src="content.image || '/30.png'"></div>
-                          <div>{{ content.name }}</div>
+                    <div class="mx-4 pc-only" style="width: 30%">
+                      <h5 class="mincho">【開発環境】</h5>
+                      <div class="px-4">
+                        <div class="mb-4" v-for="(environment, i) in selectedTab.environments" :key="i">
+                          <h5 class="mincho" style="font-size: 18px">{{ environment.type }}</h5>
+                          <div class="para d-flex align-center" v-for="(content, j) in environment.contents" :key="j">
+                            <div class="mr-2 d-flex align-center" style="max-width: 18px"><img :src="content.image || '/30.png'"></div>
+                            <div>{{ content.name }}</div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -134,6 +148,13 @@ export default {
         event_category: "職務経歴",
         event_label: this.companyTab,
       });
+    },
+    onClickChangeChange(num) {
+      const index = this.selectedCompany.projects.findIndex((project) => project.title == this.tab);
+      let nextIndex = index + num;
+      if(nextIndex == -1) nextIndex = this.selectedCompany.projects.length - 1;
+      if(nextIndex > this.selectedCompany.projects.length - 1) nextIndex = 0;
+      this.tab = this.selectedCompany.projects[nextIndex].title;
     },
   }
 }
@@ -231,14 +252,20 @@ export default {
       }
     }
 
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 768px) {
       .tab-content {
         padding: 0;
       }
     }
     .content-container {
-      padding: 40px 0;
+      padding: 0px 20px;
       transition: all .5s ease;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .tab-wrapper {
+      min-height: 400px;
     }
   }
 }
@@ -283,4 +310,84 @@ export default {
     opacity: 0;
     // transform: translateX(0px);
 }
+
+/*その他と主な共通部分は省略*/
+
+a.btn-flat {
+  overflow: hidden;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+}
+
+a.btn-flat span {
+  position: relative;
+}
+
+a.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+a.btn-flat.left:before {
+  -webkit-transform: translateX(96%);
+  transform: translateX(96%);
+  background: #531945;
+}
+
+a.btn-flat.right:before {
+  -webkit-transform: translateX(-96%);
+  transform: translateX(-96%);
+  background: #531945;
+}
+
+a.btn-flat:hover:before {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+a.btn-flat.right:after {
+  -webkit-transform: translateX(96%);
+  transform: translateX(96%);
+  background: #531945;
+}
+
+a.btn-flat.left:after {
+  -webkit-transform: translateX(-96%);
+  transform: translateX(-96%);
+  background: #531945;
+}
+
+a.btn-flat i {
+  position: relative;
+}
+
+@media screen and (max-width: 480px) {
+  .mincho {
+    font-size: 3.5vw;
+    letter-spacing: .2em;
+    line-height: 2;
+  }
+  .mincho h3 {
+    font-size: 4vw;
+    letter-spacing: .2em;
+    line-height: 2;
+  }
+  a.btn-flat {
+    padding: 2vw 4vw;
+    font-size: 2vw;
+  }
+}
+
+
 </style>
