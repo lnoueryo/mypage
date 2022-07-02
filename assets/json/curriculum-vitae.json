@@ -44,36 +44,35 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript",
-                            "Python3.7.9"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "Python3.7.9", "image": "/icons/python.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "AngularJS",
-                            "Django3.2.12"
+                            {"name": "AngularJS", "image": "/icons/angular.png"},
+                            {"name": "Django3.2.12", "image": "/icons/django.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "MYSQL8.0",
-                            "App Engine",
-                            "Cloud Run",
-                            "Cloud Storage",
-                            "Cloud Load Balacing",
-                            "Cloud Armor",
-                            "Cloud NAT",
-                            "Cloud Router",
-                            "Serverless VPC Access",
-                            "Cloud Tasks",
-                            "Cloud Logging",
-                            "BigQuery",
-                            "Cloud Scheduler",
-                            "Monitoring"
+                            {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
+                            {"name": "App Engine", "image": "/icons/app_engine.png"},
+                            {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
+                            {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
+                            {"name": "Cloud Load Balacing", "image": "/icons/cloud_load_balancing.png"},
+                            {"name": "Cloud Armor", "image": "/icons/cloud_armor.png"},
+                            {"name": "Cloud NAT", "image": "/icons/cloud_nat.png"},
+                            {"name": "Cloud Router", "image": "/icons/cloud_router.png"},
+                            {"name": "Cloud Tasks", "image": "/icons/cloud_tasks.png"},
+                            {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
+                            {"name": "BigQuery", "image": "/icons/bigquery.png"},
+                            {"name": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png"},
+                            {"name": "Monitoring", "image": "/icons/cloud_monitoring.png"}
                         ]
                     }
                 ]
@@ -98,7 +97,7 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "Python3.7.9"
+                            {"name": "Python3.7.9", "image": "/icons/python.png"}
                         ]
                     }
                 ]
@@ -130,29 +129,30 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript",
-                            "Python3.7.9"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "Python3.7.9", "image": "/icons/python.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "AngularJS",
-                            "Django2.2"
+                            {"name": "AngularJS", "image": "/icons/angular.png"},
+                            {"name": "Django2.2", "image": "/icons/django.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "MYSQL5.7",
-                            "Compute Engine",
-                            "App Engine",
-                            "Cloud Storage",
-                            "Cloud Logging",
-                            "BigQuery",
-                            "Monitoring"
+                            {"name": "MYSQL5.7", "image": "/icons/cloud_sql.png"},
+                            {"name": "Compute Engine", "image": "/icons/compute_engine.png"},
+                            {"name": "App Engine", "image": "/icons/app_engine.png"},
+                            {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
+                            {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
+                            {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
+                            {"name": "BigQuery", "image": "/icons/bigquery.png"},
+                            {"name": "Monitoring", "image": "/icons/cloud_monitoring.png"}
                         ]
                     }
                 ]
@@ -186,17 +186,17 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript",
-                            "PHP"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "PHP", "image": "/icons/php.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "MYSQL5.7",
-                            "レンタルサーバー"
+                            {"name": "MYSQL5.7", "image": "/icons/mysql.png"},
+                            {"name": "レンタルサーバー", "image": ""}
                         ]
                     }
                 ]
@@ -233,35 +233,34 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript",
-                            "Go"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "Go", "image": "/icons/go.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "Nuxt.js"
+                            {"name": "Nuxt.js", "image": "/icons/nuxt.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "MYSQL8.0",
-                            "App Engine",
-                            "Cloud Run",
-                            "Cloud Storage",
-                            "Cloud Load Balacing",
-                            "Cloud Armor",
-                            "Cloud NAT",
-                            "Cloud Router",
-                            "Serverless VPC Access",
-                            "Cloud Tasks",
-                            "Cloud Logging",
-                            "BigQuery",
-                            "Cloud Scheduler",
-                            "Monitoring"
+                            {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
+                            {"name": "App Engine", "image": "/icons/app_engine.png"},
+                            {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
+                            {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
+                            {"name": "Cloud Load Balacing", "image": "/icons/cloud_load_balancing.png"},
+                            {"name": "Cloud Armor", "image": "/icons/cloud_armor.png"},
+                            {"name": "Cloud NAT", "image": "/icons/cloud_nat.png"},
+                            {"name": "Cloud Router", "image": "/icons/cloud_router.png"},
+                            {"name": "Cloud Tasks", "image": "/icons/cloud_tasks.png"},
+                            {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
+                            {"name": "BigQuery", "image": "/icons/bigquery.png"},
+                            {"name": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png"},
+                            {"name": "Monitoring", "image": "/icons/cloud_monitoring.png"}
                         ]
                     }
                 ]
@@ -290,36 +289,35 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "Javascript",
-                            "Python"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "Python3.7.9", "image": "/icons/python.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "Django",
-                            "Vue.js"
+                            {"name": "Nuxt.js", "image": "/icons/nuxt.png"},
+                            {"name": "Django3.2.12", "image": "/icons/django.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "PostgreSQL",
-                            "App Engine",
-                            "Cloud Run",
-                            "Cloud Storage",
-                            "Cloud Load Balacing",
-                            "Cloud Armor",
-                            "Cloud NAT",
-                            "Cloud Router",
-                            "Serverless VPC Access",
-                            "Cloud Tasks",
-                            "Cloud Logging",
-                            "BigQuery",
-                            "Cloud Scheduler",
-                            "Monitoring"
+                            {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
+                            {"name": "App Engine", "image": "/icons/app_engine.png"},
+                            {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
+                            {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
+                            {"name": "Cloud Load Balacing", "image": "/icons/cloud_load_balancing.png"},
+                            {"name": "Cloud Armor", "image": "/icons/cloud_armor.png"},
+                            {"name": "Cloud NAT", "image": "/icons/cloud_nat.png"},
+                            {"name": "Cloud Router", "image": "/icons/cloud_router.png"},
+                            {"name": "Cloud Tasks", "image": "/icons/cloud_tasks.png"},
+                            {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
+                            {"name": "BigQuery", "image": "/icons/bigquery.png"},
+                            {"name": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png"},
+                            {"name": "Monitoring", "image": "/icons/cloud_monitoring.png"}
                         ]
                     }
                 ]
@@ -347,21 +345,21 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "Nuxt.js"
+                            {"name": "Nuxt.js", "image": "/icons/nuxt.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "Firebase"
+                            {"name": "Firebase", "image": "/icons/firebase.png"}
                         ]
                     }
                 ]
@@ -398,24 +396,24 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript",
-                            "Typescript",
-                            "PHP"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "TypeScript", "image": "/icons/typescript.png"},
+                            {"name": "PHP", "image": "/icons/php.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "Laravel",
-                            "Vue.js"
+                            {"name": "Laravel", "image": "/icons/laravel.png"},
+                            {"name": "Vue.js", "image": "/icons/vue.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "Firebase"
+                            {"name": "Firebase", "image": "/icons/firebase.png"}
                         ]
                     }
                 ]
@@ -450,23 +448,24 @@
                     {
                         "type": "言語",
                         "contents": [
-                            "HTML",
-                            "CSS",
-                            "JavaScript",
-                            "PHP"
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "TypeScript", "image": "/icons/typescript.png"},
+                            {"name": "PHP", "image": "/icons/php.png"}
                         ]
                     },
                     {
                         "type": "フレームワーク",
                         "contents": [
-                            "Laravel",
-                            "Vue.js"
+                            {"name": "Laravel", "image": "/icons/laravel.png"},
+                            {"name": "Vue.js", "image": "/icons/vue.png"}
                         ]
                     },
                     {
                         "type": "インフラ",
                         "contents": [
-                            "Firebase"
+                            {"name": "Firebase", "image": "/icons/firebase.png"}
                         ]
                     }
                 ]
