@@ -16,7 +16,7 @@
           </transition>
         </template>
         <template #content>
-          <div>
+          <div class="mt-4">
             <TabDescription :items="curriculumVitae" />
             <p class="tra link rel z-1">
               <a @click="onClickCurriculumVitae" target="_blank" :href="CurriculumVitaeURL">

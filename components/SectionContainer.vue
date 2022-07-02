@@ -32,7 +32,7 @@ export default {
 }
 
 .main-content-container {
-  margin: 15px;
+  margin: 30px 15px;
   position: relative;
 }
 
@@ -40,5 +40,9 @@ export default {
   .title-container {
     padding: 30px 0;
   }
+.main-content-container {
+  margin: 0 15px;
+  position: relative;
+}
 }
 </style>
