@@ -10,8 +10,8 @@
         <template #sub-title>
           <transition name="bottom">
             <div class="message tra">
-              <div>MANY EXPERIENCES<br class="pc-only" /></div>
-              <div class="adjust">MAKE YOU GROW UP</div>
+              <div>CATCH UP WITH<br class="pc-only" /></div>
+              <div class="adjust">LATEST TECHNOLOGIES</div>
             </div>
           </transition>
         </template>

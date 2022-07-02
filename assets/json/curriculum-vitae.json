@@ -1,6 +1,6 @@
 [
     {
-        "company": "株式会社ゴーガ",
+        "company": "株式会社\nゴーガ",
         "business": "Webアプリ開発・運営事業",
         "capitalStock": "千五百万円",
         "employees": 40,
@@ -160,7 +160,7 @@
         ]
     },
     {
-        "company": "株式会社シフトキー",
+        "company": "株式会社\nシフトキー",
         "business": "Web制作",
         "capitalStock": "三千万円",
         "employees": 80,
