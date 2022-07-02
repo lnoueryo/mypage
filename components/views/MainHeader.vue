@@ -174,7 +174,7 @@ header {
   }
 
   .header-right {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
     margin-left: auto;
   }
