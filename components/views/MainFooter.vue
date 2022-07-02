@@ -19,8 +19,8 @@
               </div>
               <FooterContent :contents="contents" />
               <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around w100">
-                <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.list)">
-                  <li>{{ item.list }}</li>
+                <a v-scroll-to="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.title)">
+                  <li>{{ item.title }}</li>
                 </a>
               </ul>
             </template>

@@ -1,5 +1,5 @@
 <template>
-  <div id="languages-tools" class="rel">
+  <div class="rel">
     <SectionWrapper :wrapper="wrapper">
       <SectionContainer>
         <template #title>

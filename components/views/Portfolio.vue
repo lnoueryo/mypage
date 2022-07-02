@@ -1,5 +1,5 @@
 <template>
-  <div id="portfolio">
+  <div>
     <section>
       <div class="wrapper">
         <section-wrapper class="sp_only" :wrapper="wrapper">

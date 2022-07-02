@@ -1,5 +1,5 @@
 <template>
-  <div id="about-me">
+  <div>
     <SectionWrapper :wrapper="wrapper" :secWrapper="secWrapper">
       <SectionContainer>
         <template #title>
