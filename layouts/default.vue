@@ -26,21 +26,14 @@ export default {
   data() {
     return {
       modalSwitch: false,
-      navigationItems: [
-        { list: "TOP", href: "#top" },
-        { list: "ABOUT ME", href: "#about-me" },
-        { list: "SKILL", href: "#skill" },
-        { list: "LANGUAGES TOOLS", href: "#languages-tools" },
-        { list: "HISTORY", href: "#history" },
-        { list: "PORTFOLIO", href: "#portfolio" },
-        { list: "OTHER CONTENTS", href: "#other-contents" },
-        { list: "FOLLOW ME", href: "#follow-me" },
-      ],
     };
   },
   computed: {
     selectTool() {
       return this.$store.getters.selectTool;
+    },
+    navigationItems() {
+      return this.$store.getters.navigationItems;
     },
   },
   created() {

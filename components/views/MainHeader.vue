@@ -20,8 +20,8 @@
             <div class="header-right flex mb-3">
               <transition name="nav">
                 <ul class="flex text-center nav" v-show="switches.nav.status">
-                  <a v-scroll-to="item.href" href="" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.list)">
-                    <li>{{ item.list }}</li>
+                  <a v-scroll-to="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.title)">
+                    <li>{{ item.title }}</li>
                   </a>
                 </ul>
               </transition>
@@ -31,7 +31,7 @@
                 <div class="menu-content">
                   <ul>
                     <li class="mx-2" v-for="(item, i) in navigationItems" :key="i">
-                      <a v-scroll-to="item.href" href="" @click="onClickNav(item.list)">{{ item.list }}</a>
+                      <a v-scroll-to="'#' + item.href" @click="onClickNav(item.title)">{{ item.title }}</a>
                     </li>
                   </ul>
                 </div>

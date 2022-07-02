@@ -1,5 +1,5 @@
 <template>
-  <div id="skill">
+  <div>
     <section-wrapper>
       <section-container>
         <template #title>

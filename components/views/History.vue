@@ -1,5 +1,5 @@
 <template>
-  <div id="history" class="rel">
+  <div class="rel">
     <SectionWrapper :wrapper="wrapper">
       <SectionContainer>
         <template #title>

@@ -1,5 +1,5 @@
 <template>
-  <div id="other-contents" class="rel">
+  <div class="rel">
     <section-wrapper :wrapper="wrapper">
       <section-container>
         <template #title>
