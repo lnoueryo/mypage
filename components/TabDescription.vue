@@ -331,7 +331,7 @@ a.btn-flat {
   padding: 10px 20px;
   color: #fff;
   border-radius: 0;
-  background: #000;
+  background: #35353545;
   display: inline-block;
   position: relative;
   font-weight: bold;
