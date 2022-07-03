@@ -206,7 +206,7 @@ export default {
     background-color: #191919;
     background-color: #191919a8;
     // background-color: #d9d9d9;
-    min-height: 900px;
+    height: 900px;
     transition: 1s;
 
     /*タブ切り替えの中身のスタイル*/
@@ -250,22 +250,35 @@ export default {
           color: #fff;
         }
       }
+      @media screen and (max-width: 768px) {
+        .tab-container {
+          max-height: 400px;
+        }
+      }
     }
 
+    .content-container {
+      max-height: 900px;
+      overflow-y: scroll;
+      scrollbar-width: none;
+      padding: 20px;
+    }
+    .content-container::-webkit-scrollbar{
+      display: none;
+    }
     @media screen and (max-width: 768px) {
       .tab-content {
         padding: 0;
       }
-    }
-    .content-container {
-      padding: 0px 20px;
-      transition: all .5s ease;
+      .content-container {
+        max-height: 400px;
+      }
     }
   }
 
   @media screen and (max-width: 768px) {
     .tab-wrapper {
-      min-height: 400px;
+      height: 500px;
     }
   }
 }
