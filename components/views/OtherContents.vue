@@ -20,7 +20,7 @@
 
             <!-- 準備中 -->
             <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title)">
-              <CardImage class="d-flex align-strech" :item="item" max-width="270">
+              <CardImage class="d-flex align-strech" :item="item">
                 <template #bottom>
                   <!-- 準備中 -->
                   <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">
@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import Timeline from '../Timeline.vue'
 import otherContents from '~/assets/json/other-contents.json'
 export default {
   props: {
