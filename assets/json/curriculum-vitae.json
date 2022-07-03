@@ -249,14 +249,10 @@
                         "type": "インフラ",
                         "contents": [
                             {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
-                            {"name": "App Engine", "image": "/icons/app_engine.png"},
                             {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
                             {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
                             {"name": "Cloud Load Balacing", "image": "/icons/cloud_load_balancing.png"},
                             {"name": "Cloud Armor", "image": "/icons/cloud_armor.png"},
-                            {"name": "Cloud NAT", "image": "/icons/cloud_nat.png"},
-                            {"name": "Cloud Router", "image": "/icons/cloud_router.png"},
-                            {"name": "Cloud Tasks", "image": "/icons/cloud_tasks.png"},
                             {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
                             {"name": "BigQuery", "image": "/icons/bigquery.png"},
                             {"name": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png"},
@@ -306,17 +302,12 @@
                         "type": "インフラ",
                         "contents": [
                             {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
-                            {"name": "App Engine", "image": "/icons/app_engine.png"},
                             {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
                             {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
-                            {"name": "Cloud Load Balacing", "image": "/icons/cloud_load_balancing.png"},
-                            {"name": "Cloud Armor", "image": "/icons/cloud_armor.png"},
-                            {"name": "Cloud NAT", "image": "/icons/cloud_nat.png"},
-                            {"name": "Cloud Router", "image": "/icons/cloud_router.png"},
-                            {"name": "Cloud Tasks", "image": "/icons/cloud_tasks.png"},
                             {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
                             {"name": "BigQuery", "image": "/icons/bigquery.png"},
                             {"name": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png"},
+                            {"name": "Cloud PubSub", "image": "/icons/pubsub.png"},
                             {"name": "Monitoring", "image": "/icons/cloud_monitoring.png"}
                         ]
                     }
