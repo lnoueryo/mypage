@@ -46,14 +46,23 @@ export default {
     this.$nextTick(function () {
       if (this.hash) {
         const refName = this.hash.replace('#', '')
+        const isRef = this.$store.getters.navigationItems.some((item) => {
+          return item.href == refName;
+        })
+        if(!isRef) return;
         this.scrollToAnchorPoint(refName)
       }
     })
   },
   methods: {
     scrollToAnchorPoint(refName) {
-      const el = document.getElementById(refName)
-      el.scrollIntoView({ behavior: 'smooth' })
+      let timer = setInterval(() => {
+        const el = document.getElementById(refName)
+        if(el) {
+          clearInterval(timer)
+          el.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
     },
     startHue() {
       setInterval(() => {

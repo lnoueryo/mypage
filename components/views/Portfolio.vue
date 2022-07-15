@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section>
+    <section v-if="loadMainImage">
       <div class="wrapper">
         <section-wrapper class="sp_only" :wrapper="wrapper">
           <section-container :mainContainer="mainContainer">
@@ -81,6 +81,7 @@
         </section-wrapper>
       </div>
     </section>
+    <img src="~/assets/image/14.png" v-show="false" @load="loadMainImage = true">
   </div>
 </template>
 
@@ -92,6 +93,7 @@ export default {
   },
   data: () => ({
     portfolio: portfolio,
+    loadMainImage: false,
   }),
   computed: {
     wrapper() {
@@ -117,6 +119,9 @@ export default {
     },
   },
   methods: {
+    hello() {
+      console.log('ABC')
+    },
     onClickDescriptioon() {
       this.$gtag("event", "click", {
         event_category: "経歴",
