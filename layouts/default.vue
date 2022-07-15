@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       modalSwitch: false,
+      hash: this.$route.hash,
     };
   },
   computed: {
@@ -41,7 +42,19 @@ export default {
     this.startHalfHue();
     this.startBrightness();
   },
+  mounted() {
+    this.$nextTick(function () {
+      if (this.hash) {
+        const refName = this.hash.replace('#', '')
+        this.scrollToAnchorPoint(refName)
+      }
+    })
+  },
   methods: {
+    scrollToAnchorPoint(refName) {
+      const el = this.$refs[refName]
+      el.scrollIntoView({ behavior: 'smooth' })
+    },
     startHue() {
       setInterval(() => {
         this.$store.commit("countHueValue");
