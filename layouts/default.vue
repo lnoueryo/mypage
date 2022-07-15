@@ -53,7 +53,7 @@ export default {
   methods: {
     scrollToAnchorPoint(refName) {
       const el = this.$refs[refName]
-      el.scrollIntoView({ behavior: 'smooth' })
+      el?.scrollIntoView({ behavior: 'smooth' })
     },
     startHue() {
       setInterval(() => {
