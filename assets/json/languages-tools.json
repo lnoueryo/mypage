@@ -64,14 +64,15 @@
       {"id": 47, "title": "Debugger", "image": "/icons/debugger.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 3, "contents": ["ソースのバグ発見などに利用。デプロイ失敗時やDjangoのsettings.pyの確認に使用。"]},
       {"id": 48, "title": "Cloud Logging", "image": "/icons/cloud_logging.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Iaasの場合Cloud loggingを仕込まなければならないが、サーバーレスの場合、標準のライブラリでログが吐き出されるため、確認によく用いる。"]},
       {"id": 49, "title": "Cloud Monitoring", "image": "/icons/cloud_monitoring.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 3, "contents": ["入社したての頃に利用。使い道がよくわからなかったが、後に開発後のインフラ構築で必ず使うようになる。メール通知をよく利用している。"]},
-      {"id": 50, "title": "Cloud NAT", "image": "/icons/cloud_nat.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 3, "contents": ["出口IPを固定するために利用。サーバーレスでSFTPを行うことになり、先方のサーバーに特定のIPでのみ接続可能だったため初めての試みだった。"]},
-      {"id": 51, "title": "Cloud Router", "image": "/icons/cloud_router.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 1, "contents": ["サーバーレスの出口IPを固定するために利用。あまり理解していないので、一度確認する必要がある。"]},
+      {"id": 50, "title": "Cloud NAT", "image": "/icons/cloud_nat.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 4, "contents": ["出口IPを固定するために利用。サーバーレスでSFTPを行うことになり、先方のサーバーに特定のIPでのみ接続可能だったため初めての試みだった。"]},
+      {"id": 51, "title": "Cloud Router", "image": "/icons/cloud_router.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 3, "contents": ["サーバーレスの出口IPを固定するために利用。あまり理解していないので、一度確認する必要がある。"]},
       {"id": 52, "title": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 5, "contents": ["業務やプライベートで使用。PubSubやHttpでのりようはあるが、GAEでの利用は今だにない。GAEの場合タイムアウトが長くなるため使える機会があれば利用してみたい。"]},
       {"id": 53, "title": "PubSub", "image": "/icons/pubsub.png", "handson": 0, "durations": [{"start": "2021-08", "end": "2021-10"}], "rate": 3, "contents": ["CloudFunctionsへのメッセージのみ使用。Push型のみの利用のため、Pull型を利用する機会があれば使ってみたい。"]},
       {"id": 54, "title": "Cloud Tasks", "image": "/icons/cloud_tasks.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 4, "contents": ["データ連携時に利用。Cloud SchedulerからCloud RunのHTTP通信のタイムアウトが30分ですべての処理が時間内に終わらない恐れがあったため、タスクを分割し、キューに投げることで、30分以上の通信を実現。"]},
       {"id": 55, "title": "DataStore", "image": "/icons/datastore.png", "handson": 0, "durations": [{"start": "2022-05", "end": ""}], "rate": 4, "contents": ["セッション管理に適したサービスを模索していた時によさそうだったため利用。Nosql初めて利用となる。"]},
       {"id": 56, "title": "IAM", "image": "/icons/identity_and_access_management.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["全てのリソース使用の際に必ず悩まされている。研修時にCloud Run、Cloud SQLではまった原因の一つ。いまだに権限の付与を忘れてしまうことが多く403を見ることになる。チーム開発において重要となるため、ある程度触った記憶がある。"]},
-      {"id": 57, "title": "Secret Manager", "image": "/icons/secret_manager.png", "handson": 1, "durations": [{"start": "2020-08", "end": ""}], "rate": 4, "contents": ["DjangoとCloud Runのチュートリアルで最初に使用。settings.pyにに記載しているAPIキーや、RSAなどのキーに利用。"]}
+      {"id": 57, "title": "Secret Manager", "image": "/icons/secret_manager.png", "handson": 1, "durations": [{"start": "2020-08", "end": ""}], "rate": 4, "contents": ["DjangoとCloud Runのチュートリアルで最初に使用。settings.pyにに記載しているAPIキーや、RSAなどのキーに利用。"]},
+      {"id": 58, "title": "Virtual Private Cloud", "image": "/icons/virtual_private_cloud.png", "handson": 1, "durations": [{"start": "2022-05", "end": ""}], "rate": 4, "contents": ["サーバーレスの外部IPを固定するときに初めて利用。サーバーレスアクセスコネクターを使ってVPCにアクセスし、SQLの接続や外部リクエストなどに使用する事が多い。"]}
     ]
   }
 ]
