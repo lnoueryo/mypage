@@ -48,9 +48,9 @@
                     <div class="summery">
                       <div class="mb-4">
                         <h5 class="mincho">【概要】</h5>
-                        <p class="para px-4" v-for="(summery, i) in selectedTab.summaries" :key="i">
+                        <div class="para px-4" v-for="(summery, i) in selectedTab.summaries" :key="i">
                           {{ summery }}
-                        </p>
+                        </div>
                       </div>
                       <div class="mb-4">
                         <h5 class="mincho">【担当業務】</h5>
