@@ -61,7 +61,7 @@
                       <div class="mb-4">
                         <h5 class="mincho">【業務実績】</h5>
                         <div class="para px-4" v-for="(achievement, i) in selectedTab.achievements" :key="i">
-                          {{ achievement }}
+                          <div v-html="achievement"></div>
                         </div>
                       </div>
                     </div>
@@ -72,7 +72,7 @@
                           <h5 class="mincho" style="font-size: 18px">{{ environment.type }}</h5>
                           <div class="para d-flex align-center" v-for="(content, j) in environment.contents" :key="j">
                             <div class="mr-2 d-flex align-center" style="max-width: 18px"><img :src="content.image || '/30.png'"></div>
-                            <div>{{ content.name }}</div>
+                            <div v-html="content.name"></div>
                           </div>
                         </div>
                       </div>
