@@ -1,12 +1,30 @@
 [
   {
+    "title": "Music",
+    "contents": ["学生時代に作った音楽を紹介。"],
+    "position": "right",
+    "image": "/portfolio/music.jpg",
+    "backgroundColor": "#faebd7",
+    "github": "https://github.com/lnoueryo/mymusic",
+    "url": "https://music.jounetsism.biz"
+  },
+  {
+    "title": "Tech-Blog",
+    "contents": ["プログラミング学習ではまったところなどをメモ。"],
+    "position": "right",
+    "image": "/portfolio/tech-blog.jpg",
+    "backgroundColor": "#faebd7",
+    "github": "https://github.com/lnoueryo/tech-blog",
+    "url": "https://tech-blog.jounetsism.biz"
+  },
+  {
     "title": "Tap Map",
     "contents": ["マップを使って土地の特徴を調べる。"],
     "position": "right",
     "image": "/portfolio/tap-map.png",
     "backgroundColor": "#faebd7",
     "github": "https://github.com/lnoueryo/tap-map/",
-    "url": "https://tap-map.jounetsism.biz"
+    "url": ""
   },
   {
     "title": "Reservierung",
@@ -15,7 +33,7 @@
     "image": "/portfolio/reservierung.png",
     "backgroundColor": "#c7fdff",
     "github": "https://github.com/lnoueryo/reservierung/",
-    "url": "https://booking.jounetsism.biz"
+    "url": ""
   },
   {
     "title": "My Memories",
@@ -24,6 +42,6 @@
     "image": "/portfolio/mymemories.png",
     "backgroundColor": "#c7fdff",
     "github": "https://github.com/lnoueryo/mymemories/",
-    "url": "https://mymemories.jounetsism.biz"
+    "url": ""
   }
 ]

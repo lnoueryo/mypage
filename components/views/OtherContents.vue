@@ -19,20 +19,22 @@
           <div class="card-container">
 
             <!-- 準備中 -->
-            <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title)">
+            <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title, item.url)">
               <CardImage class="d-flex align-strech" :item="item">
                 <template #bottom>
                   <!-- 準備中 -->
                   <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">
                     GITHUB
                   </a>
-                  <a :href="item.url" target="_blank" @click.prevent.stop="onClickSite(item.title)">
+                  <a :href="item.url" target="_blank" @click.prevent.stop="onClickSite(item.title, item.url)">
                     Go To Site→
                   </a>
-                  <ToolChip>Sorry, Only GITHUB</ToolChip>
+                  <ToolChip v-if="!item.url">Sorry, Only GITHUB</ToolChip>
                 </template>
               </CardImage>
             </div>
+            <CardImage class="d-flex align-strech" style="opacity: 0;cursor: pointer;" :item="otherContents[2]" @click.prevent.stop="">
+            </CardImage>
           </div>
         </template>
       </section-container>
@@ -78,11 +80,13 @@ export default {
     },
   },
   methods: {
-    onClickSite(name) {
+    onClickSite(name, url) {
       this.$gtag('event', 'site', {
         event_category: 'ポートフォリオ',
         event_label: name,
       })
+      if(!url) return;
+      window.open(url, '_blank')
     },
     onClickGithub(name, url) {
       this.$gtag('event', 'github', {

@@ -15,6 +15,11 @@
         <template #sub>
           <ToolRate class="ml-4" :rate="selectTool.rate" />
         </template>
+        <template #bottom>
+          <div class="w100 text-right fw-bold tra">
+            <a :href="selectTool.link" target="_blank" style="color: #1976d2">Tech-Blog→</a>
+          </div>
+        </template>
       </CardImage>
     </ModalContainer>
   </v-app>
