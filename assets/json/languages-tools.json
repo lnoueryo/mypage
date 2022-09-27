@@ -18,7 +18,9 @@
       {"id": 13, "title": "Vuetify.js", "image": "/icons/vuetify.svg", "handson": 1, "durations": [{"start": "2020-11", "end": ""}], "rate": 4, "contents": ["vueとCSSを使い、ある程度自分自身でUIコンポーネントを作成できるようになった後に使い始めたUIフレームワーク。簡単に開発を行ったり、プロトタイプの作成によく利用している。しかしながら、少し好みのものとは違い、変更加えるときに中々の時間を使うため、結局自分でコンポーネントを作成するということも多々ある。"]},
       {"id": 14, "title": "AngularJS", "image": "/icons/angular.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 4, "contents": ["社内のメインで使われているフレームワークであり、Vue.jsと共通点がいくつかあるのであまり学習はしていない。ときたまng-showを癖でv-showと書き間違えエラーがでる。"]},
       {"id": 15, "title": "Laravel", "image": "/icons/laravel.png", "handson": 0, "durations": [{"start": "2020-04", "end": "2021-04"}], "rate": 5, "contents": ["プログラミングスクールで勉強したフレームワーク。当時やってる内容が全く理解できず、とても苦労したのだが今となってはむしろ簡単な印象で、後に勉強するDjangoよりもわかりやすく、多機能で、デプロイも簡単にできる使い慣れたフレームワーク。今でも構成が好きで、Goを書いたときにディレクトリ構成を参考にした。"]},
-      {"id": 16, "title": "Django", "image": "/icons/django.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Python自体が今まで勉強した言語と書き方が違い、戸惑っていた中、DjangoはLaravelの知識があまり活かされないフレームワークで、APIの構築やデプロイが思うようにできず、バックエンドエンジニアを諦めようかと考えさせられた。とはいえ開発企業に就職し、その会社が利用していたこともあり必死で勉強。今でも不明な部分はあるが、Web系エンジニアとして成長するきっかけをくれたフレームワーク。"]}
+      {"id": 16, "title": "Django", "image": "/icons/django.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Python自体が今まで勉強した言語と書き方が違い、戸惑っていた中、DjangoはLaravelの知識があまり活かされないフレームワークで、APIの構築やデプロイが思うようにできず、バックエンドエンジニアを諦めようかと考えさせられた。とはいえ開発企業に就職し、その会社が利用していたこともあり必死で勉強。今でも不明な部分はあるが、Web系エンジニアとして成長するきっかけをくれたフレームワーク。"]},
+      {"id": 59, "title": "React", "image": "/icons/react.png", "handson": 0, "durations": [{"start": "2022-08", "end": ""}], "rate": 4, "contents": ["Vue以外にもう一つフレームワークを扱えるようになりたかったため勉強開始。Vueに慣れていたせいか、違和感を感じることが多々あったが、特にはまることはなかった。"]},
+      {"id": 60, "title": "Next.js", "image": "/icons/next.png", "handson": 0, "durations": [{"start": "2022-08", "end": ""}], "rate": 4, "contents": ["Reactを覚えるついでにNextも使ってみた。Nuxtとなんとなく似ていたということもあり特に困ることはなかったが、SSRに挑戦したため、NextでAPIを作成。SQLに意外と手こずった。"]}
     ]
   },
   {
@@ -28,7 +30,7 @@
       {"id": 17, "title": "Windows", "image": "/icons/windows.png", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["昔からプライベートで使用しており、プログラミングの勉強もWindows10で行った。一度クライアントのサーバーがWindows Server 2016だったので、データ連携を行うにあたり、いくつか確認することがあり、GCE上で似た環境を作成しRDPで接続。とても貴重な体験だった。"]},
       {"id": 18, "title": "Linux", "image": "/icons/linux.png", "handson": 1, "durations": [{"start": "2021-01", "end": ""}], "rate": 3, "contents": ["サーバーを扱うにあたり必要な知識であるものの、しっかりと勉強した記憶はない。かと言って業務でたまに使用するため、簡単なコマンドは記憶している。サーバーレスに移行する中で、使用する機会が減っていく可能性はあるかもしれないが、どこかで一度書籍を読みたい。"]},
       {"id": 19, "title": "Ubuntu", "image": "/icons/ubuntu.png", "handson": 1, "durations": [{"start": "2021-06", "end": ""}], "rate": 3, "contents": ["16.04と18.04を使用した経験がある。WSLで使ったのがきっかけで、当時サーバーの知識がなくポートフォリオをEC2にデプロイするさい3日間ほどハマり、使い慣れる必要があると考え利用し始めた。"]},
-      {"id": 20, "title": "CentOS", "image": "/icons/centos.svg", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 2, "contents": ["業務で使うことがあり、側近ではstream9を使用。CentOS8を使ったことなかった為気づかなかったが、7から8で大幅なアップデートがあり、stream9のコマンドが変わっていたため少し戸惑った。"]},
+      {"id": 20, "title": "CentOS", "image": "/icons/centos.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 2, "contents": ["業務で使うことがあり、側近ではstream9を使用。CentOS8を使ったことなかった為気づかなかったが、7から8で大幅なアップデートがあり、stream9のコマンドが変わっていたため少し戸惑った。"]},
       {"id": 21, "title": "Visual Studio Code", "image": "/icons/vscode.svg", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["このエディター以外は基本利用したことがない。プログラミングスクールではcloud9の利用を推奨していたが、業務ではほとんどの人がVSCodeを利用しているとのことだったので、それ以来使い続けている。"]},
       {"id": 22, "title": "Git", "image": "/icons/git.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["勉強し始めた頃によくわからずGitをインストール。ウェブ制作時代あまり使うタイミングがなかった上、周りも使いこなせていなかったようなので、コミットやプッシュのタイミングがいまいちわからなかったが、アプリ開発をたくさん行うことで理解した。"]},
       {"id": 23, "title": "GitHub", "image": "/icons/github.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["Gitとセットで利用を開始。Web制作会社ではBit Bucketを使っていたが、プライベートでは常にGitHubを利用していた。今ではGitHub Actionsなども利用しており、恩恵を受けていると感じる。"]},
@@ -41,7 +43,8 @@
       {"id": 30, "title": "Mysql", "image": "/icons/mysql.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["プログラミングスクールで勉強。laravelのORMを使っていたため、内部的に何が起きているかなどあまりわかっておらずなんとなく使っていたが、業務でデータ連携を行うにあたりバルクインサート、バルクアップデートはもちろんN + 1問題を避けるだけでは処理速度に限界があり、更にもう少し踏み入ったところまで勉強することとなった。今後継続してチューニングの知識を取り入れていきたい。"]},
       {"id": 31, "title": "Postgres", "image": "/icons/postgres.png", "handson": 0, "durations": [{"start": "2021-04", "end": "2021-08"}], "rate": 3, "contents": ["MYSQL以外のRDBを使用したことがなかったため、個人開発に導入。クエリの書き方に違いがあったり、色々と困った部分はあったが、その他違いがあまりわからなかったため、まずはMYSQLをしっかり勉強しようと決めた。"]},
       {"id": 32, "title": "Terraform", "image": "/icons/terraform.png", "handson": 1, "durations": [{"start": "2021-08", "end": ""}], "rate": 3, "contents": ["クラウドの知見がない状態で使い始めたツール。GCPのMonitoringで使ったのが初めてだが、そもそもMonitoringがよくわかっていなかったため、terraformの記述方法があっているかわからなかった。providerの変更とともにアップデートが入るので常に最新の情報を追っかけなきゃいけないイメージ"]},
-      {"id": 33, "title": "Cypress", "image": "/icons/cypress.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 3, "contents": ["社内で自社サービスにE2Eテストを導入することになり、使い始めた。マップに使うことが多く、マーカーのクリックなどに苦戦した記憶がある。CIツールとともによく利用している。"]}
+      {"id": 33, "title": "Cypress", "image": "/icons/cypress.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 3, "contents": ["社内で自社サービスにE2Eテストを導入することになり、使い始めた。マップに使うことが多く、マーカーのクリックなどに苦戦した記憶がある。CIツールとともによく利用している。"]},
+      {"id": 61, "title": "Jest", "image": "/icons/jest.png", "handson": 0, "durations": [{"start": "2022-09", "end": ""}], "rate": 3, "contents": ["テストに興味を持ち始め、Next.jsで技術ブログのサイトを作成しているときに使用。Nuxt.jsで今後利用予定。"]}
     ]
   },
   {
