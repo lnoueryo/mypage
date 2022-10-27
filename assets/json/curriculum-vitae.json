@@ -6,13 +6,114 @@
         "employees": 40,
         "projects": [
             {
-                "title": "商品販売店検索",
+                "title": "商品販売店検索のVue移行",
                 "duration": {
-                    "start": "2021-04",
+                    "start": "2022-09",
                     "end": ""
                 },
                 "summaries": [
-                    "クライアントの納品データから、商品が販売されている店舗を検索し、地図上で表示するサービスの画面側の作成、バッチジョブの作成、インフラ構築を担当。"
+                    "クライアントの納品データから、商品が販売されている店舗を検索し、地図上で表示するサービスの画面側の作成、バッチジョブの作成、インフラ構築を担当。店舗検索システムstore locator v3のリリースに伴い、販売店検索もv3をベースに再開発を行った。"
+                ],
+                "roles": [
+                    "状態管理、コンポーネントの設計",
+                    "データベース設計の見直し",
+                    "APIのレスポンスデータ設計",
+                    "カテゴリーやブランドによる絞り込み機能実装",
+                    "バッチジョブの設計、実装",
+                    "モジュールの分割",
+                    "インフラ設計",
+                    "APIテスト作成",
+                    "モデルの単体テスト作成",
+                    "WireSharkを使ったパケットの確認",
+                    "一部Terraformによるインフラのコード化",
+                    "Cloud Runを使用したコンテナ実行基盤構築",
+                    "Cloud Storageスタティックファイルのバケット作成",
+                    "Cloud Logging、BigQuery、Monitoringによる運用管理基盤の構築",
+                    "Cloud Load Balacing、Cloud ArmorによるWAFの構築"
+                ],
+                "achievements": [
+                    "販売店検索のv3化により、今までのパッケージ開発とは異なり、店舗検索システムに販売店検索システムを埋め込む形となった。",
+                    "従来ではフロントエンドのフレームワークにAngularJSが採用されていたが、フレームワークの変更に伴い、ロジックの部分をVue.jsで書き直すことになった。",
+                    "元々デッドコードや冗長なコード、不用な処理などが多かったので、これを機に可読性、保守性を意識しながら、必要か否かを判断し移行作業に取り組んだ。",
+                    "また、バックエンド側もまた、1000行を超えるコードやデッドコード、SQLの不要な列の呼び出し、N+1問題、不要なレスポンスデータなど様々な課題があったため、リファクタリングを行った。",
+                    "また、社内でテストコードを書く文化がなかったので、核となる部分の単体テストを作成。",
+                    "データ連携部分はテストしやすい関数の設計を行い、副作用のある関数を極力作成しないように心がけた。",
+                    "その結果、パフォーマンスや保守性など、ソフトウェア品質を高めることに貢献した。",
+                    "<br>",
+                    "<strong>具体的な取り組み</strong>",
+                    "・フロントエンド",
+                    "1. 販売店検索システムの埋め込み",
+                    "店舗検索システムと販売店検索システムを混ぜる形でコードを書くと保守性が失われてしまう。",
+                    "バグを埋め込む可能性があると判断し、両方を分けることにした。",
+                    "更に要件によって変更の多い箇所とコアとなる機能の箇所を分離することでパッケージ開発を行いやすくした。",
+                    "<br>",
+                    "2. コード品質の向上",
+                    "例外処理が実装されておらず、デッドコードがあったり不要な処理がはしったりしていた。",
+                    "その中にはサーバーから取得したデータを2つの別々の変数名で管理されており、関数によって参照する変数が違い、バグを埋め込みやすいコードとなっていた。",
+                    "従って、下記の方法で課題解決を試みた。",
+                    "　・早期リターン",
+                    "　・アロー関数の使用",
+                    "　・forEach内でのif文をmapやfilter、someに変更",
+                    "　・部分的に三項演算子の活用",
+                    "　・純粋関数の割合を最大化",
+                    "<br>",
+                    "・バックエンド",
+                    "1. DBの不要なカラムとインデックス",
+                    "使用されていないカラムや検索に使用されていないインデックスなどがあり、リソースの無駄消費となっていたため、必要か否かを判断し削除。",
+                    "<br>",
+                    "2. SQLの不要な呼び出し",
+                    "必要のない列を取得したり、for文によるn+1問題が発生していたので、修正。",
+                    "<br>",
+                    "3. 冗長なコード",
+                    "1000行を超えるファイルが多々あり、別のクラスではあるが、重複した名前のクラスメソッドなどがあっため、ファイルを分割。またネストした条件分岐は早期リターンで対処。",
+                    "<br>",
+                    "・インフラ",
+                    "1. 顧客のサーバーからこちらの環境のストレージにアップロード",
+                    "基本的にはGoogle SDKをインストールしてもらい、gcloudを使ってCSVをアップロードする流れだが、セキュリティの関係上ファイヤーウォールのホワイトリストに通信するドメインを登録しなければならなかった。",
+                    "そのためgcloudコマンドの内部で行われている通信を確認するためにwiresharkを使ってパケットをキャプチャし、ドメインの特定を行った。",
+                    "また、プロキシを使用していたため、プロキシ経由で通信する設定方法を調べ説明するなど、中々大変な作業となった。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "Python3.9.2", "image": "/icons/python.png"}
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            {"name": "Vue.js", "image": "/icons/vue.png"},
+                            {"name": "Django3.2.12", "image": "/icons/django.png"}
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
+                            {"name": "Cloud Run", "image": "/icons/cloud_run.png"},
+                            {"name": "Cloud Storage", "image": "/icons/cloud_storage.png"},
+                            {"name": "Cloud Load Balacing", "image": "/icons/cloud_load_balancing.png"},
+                            {"name": "Cloud Armor", "image": "/icons/cloud_armor.png"},
+                            {"name": "Cloud Logging", "image": "/icons/cloud_logging.png"},
+                            {"name": "BigQuery", "image": "/icons/bigquery.png"},
+                            {"name": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png"},
+                            {"name": "Monitoring", "image": "/icons/cloud_monitoring.png"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "title": "商品販売店検索",
+                "duration": {
+                    "start": "2022-04",
+                    "end": "2022-08"
+                },
+                "summaries": [
+                    "同じく商品販売店検索システムの画面側の作成、バッチジョブの作成、インフラ構築を担当。"
                 ],
                 "roles": [
                     "メタ情報の設定",
@@ -235,6 +336,54 @@
         "capitalStock": "",
         "employees": 1,
         "projects": [
+            {
+                "title": "テックブログ",
+                "duration": {
+                    "start": "2022-06",
+                    "end": "2022-08"
+                },
+                "summaries": [
+                    "Nuxt.jsばかりを使っていたので、React.jsにも興味を持ち、勉強のためにNext.jsでテックブログを作成。"
+                ],
+                "roles": [
+                    "ブログ閲覧",
+                    "ブログ投稿",
+                    "ブログ編集",
+                    "ブログ削除",
+                    "ブログ検索",
+                    "データベース設計",
+                    "コンテナ実行基盤構築"
+                ],
+                "コメント": "/** 大変だったこと、どう乗り越えたかを記載 */",
+                "achievements": [
+                    "業務で少しだけRowSQLを書く機会があるくらいだったので、これを機にORMを使わずにSQLで全て作成。",
+                    "。またFirebaseにデプロイすることがほとんどだったので、コンテナ実行基盤上にSSRで運用。"
+                ],
+                "environments": [
+                    {
+                        "type": "言語",
+                        "contents": [
+                            {"name": "HTML", "image": "/icons/html.png"},
+                            {"name": "CSS", "image": "/icons/css.png"},
+                            {"name": "JavaScript", "image": "/icons/javascript.png"},
+                            {"name": "Node.js", "image": "/icons/node.js.png"}
+                        ]
+                    },
+                    {
+                        "type": "フレームワーク",
+                        "contents": [
+                            {"name": "Next.js", "image": "/icons/next.png"}
+                        ]
+                    },
+                    {
+                        "type": "インフラ",
+                        "contents": [
+                            {"name": "MYSQL8.0", "image": "/icons/cloud_sql.png"},
+                            {"name": "Cloud Run", "image": "/icons/cloud_run.png"}
+                        ]
+                    }
+                ]
+            },
             {
                 "title": "タスク管理アプリ",
                 "duration": {

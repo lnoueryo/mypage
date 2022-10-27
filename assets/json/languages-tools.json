@@ -21,7 +21,7 @@
       {"id": 16, "title": "Django", "image": "/icons/django.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Python自体が今まで勉強した言語と書き方が違い、戸惑っていた中、DjangoはLaravelの知識があまり活かされないフレームワークで、APIの構築やデプロイが思うようにできず、バックエンドエンジニアを諦めようかと考えさせられた。とはいえ開発企業に就職し、その会社が利用していたこともあり必死で勉強。今でも不明な部分はあるが、Web系エンジニアとして成長するきっかけをくれたフレームワーク。"], "link": "https://tech-blog.jounetsism.biz/framework/15/"},
       {"id": 59, "title": "React", "image": "/icons/react.png", "handson": 0, "durations": [{"start": "2022-08", "end": ""}], "rate": 4, "contents": ["Vue以外にもう一つフレームワークを扱えるようになりたかったため勉強開始。Vueに慣れていたせいか、違和感を感じることが多々あったが、特にはまることはなかった。"], "link": "https://tech-blog.jounetsism.biz/framework/12/"},
       {"id": 60, "title": "Next.js", "image": "/icons/next.png", "handson": 0, "durations": [{"start": "2022-08", "end": ""}], "rate": 4, "contents": ["Reactを覚えるついでにNextも使ってみた。Nuxtとなんとなく似ていたということもあり特に困ることはなかったが、SSRに挑戦したため、NextでAPIを作成。SQLに意外と手こずった。"], "link": "https://tech-blog.jounetsism.biz/framework/13/"},
-      {"id": 61, "title": "Svelt", "image": "/icons/svelt.png", "handson": 0, "durations": [{"start": "2022-09", "end": ""}], "rate": 4, "contents": ["リアルDOM操作の時代が終わったという記事に疑問を持ち、流行っているという理由でVueやReactを使っていたため、仮想DOMのメリットを調べるうちにSvelteにいきつき、使い始めた。"], "link": "https://tech-blog.jounetsism.biz/framework/60/"}
+      {"id": 61, "title": "Svelte", "image": "/icons/svelte.png", "handson": 0, "durations": [{"start": "2022-09", "end": ""}], "rate": 4, "contents": ["リアルDOM操作の時代が終わったという記事に疑問を持ち、流行っているという理由でVueやReactを使っていたため、仮想DOMのメリットを調べるうちにSvelteにいきつき、使い始めた。"], "link": "https://tech-blog.jounetsism.biz/framework/60/"}
     ]
   },
   {
