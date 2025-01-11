@@ -32,63 +32,40 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import curriculumVitae from '~/assets/json/curriculum-vitae.json'
-export default {
-  props: {
-    section: Object
-  },
-  data: () => ({
-    curriculumVitae: curriculumVitae
-  }),
-  computed: {
-    wrapper() {
-      const path = require("~/assets/image/23.jpg");
-      return {
-        position: "relative",
-        backgroundImage: 'url("' + path + '")',
-        backgroundSize: "cover",
-        backgroundPosition: "right 75% bottom 50%",
-        opacity: 0.9,
-      };
-    },
-    secWrapper() {
-      return {
-        position: "absolute",
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        backgroundColor: "#00000096",
-        zIndex: -1,
-      };
-    },
-    CurriculumVitaeURL() {
-      return "https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.921gkvoxctf4";
-    },
-    items() {
-      return items.map((item) => {
-        item.projects = item.projects.map((project, i) => {
-          if(i == 0) {
-            project['active'] = true;
-            return project;
-          }
-          project['active'] = false;
-          return project;
-        })
-        return item;
-      })
-    }
-  },
-  methods: {
-    onClickCurriculumVitae() {
-      this.$gtag("event", "click", {
-        event_category: "経歴",
-        event_label: "CurriculumVitae",
-      });
-    },
-  },
-};
+import { defineProps } from 'vue'
+defineProps([
+  'section'
+])
+const wrapper = computed(() => {
+  return {
+    position: "relative",
+    backgroundImage: 'url("/images/25.jpg")',
+    backgroundSize: "cover",
+    backgroundPosition: "right 75% bottom 50%",
+    opacity: 0.9,
+  } as const
+})
+const secWrapper = computed(() => {
+  return {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    backgroundColor: "#00000096",
+    zIndex: -1,
+  } as const
+})
+const CurriculumVitaeURL = computed(() => 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.921gkvoxctf4')
+const onClickCurriculumVitae = () => {
+  // this.$gtag("event", "click", {
+  //   event_category: "経歴",
+  //   event_label: "CurriculumVitae",
+  // });
+}
+
 </script>
 
 

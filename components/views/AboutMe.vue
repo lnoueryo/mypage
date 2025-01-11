@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="aboutMe">
     <SectionWrapper :wrapper="wrapper" :secWrapper="secWrapper">
       <SectionContainer>
         <template #title>
@@ -18,7 +18,7 @@
         <template #content>
           <div class="mb-2">
             <div class="pc-only abs z-0 img-container">
-              <img class="img-filter" src="~/assets/image/10.jpg" alt="">
+              <img class="img-filter" src="/images/10.jpg" alt="">
             </div>
             <div class="content-container rel">
               <div class="sec_title mt-4">{{ aboutMe.personalHistory.title }}</div>
@@ -34,7 +34,7 @@
           <div class="content-container ml-a mb-4 sp-only rel z-1">
             <div class="sec_title">{{ aboutMe.profile.title }}</div>
             <p class="para">
-              <img id="dog" src="~/assets/image/10.jpg" alt="">
+              <img id="dog" src="/images/10.jpg" alt="">
               <span v-for="(content, i) in aboutMe.profile.contents" :key="i">{{ content }}<br><br></span>
             </p>
           </div>
@@ -47,43 +47,32 @@
   </div>
 </template>
 
-<script>
-import aboutMe from '~/assets/json/about-me.json'
-
-export default {
-  props: {
-    section: Object
-  },
-  data: () => ({
-    aboutMe: aboutMe
-  }),
-  computed: {
-    wrapper() {
-      const path = require('~/assets/image/03.jpg')
-      return {
-        backgroundImage: 'url("' + path + '")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'right 75% bottom 50%',
-        opacity: 0.9
-      }
-    },
-    secWrapper() {
-      return {
-        backgroundColor: 'rgba(0, 0, 0, 0.646)'
-      }
-    },
-    profileURL() {
-      return 'https://docs.google.com/presentation/d/12T7tlSXZmJBru31kPOTb-dusfTJAtI-XTWv1qWhmwS4/edit?usp=sharing';
-    }
-  },
-  methods: {
-    onClickProfile() {
-      this.$gtag('event', 'click', {
-        event_category: '経歴',
-        event_label: 'profile',
-      })
-    }
+<script setup lang="ts">
+import aboutMeData from '~/assets/json/about-me.json'
+import { defineProps } from 'vue'
+defineProps([
+  'section'
+])
+const aboutMe = computed(() => aboutMeData)
+const wrapper = computed(() => {
+  return {
+    backgroundImage: 'url("/images/03.jpg")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'right 75% bottom 50%',
+    opacity: 0.9
   }
+})
+const secWrapper = computed(() => {
+  return {
+    backgroundColor: 'rgba(0, 0, 0, 0.646)'
+  }
+})
+const profileURL = computed(() => 'https://docs.google.com/presentation/d/12T7tlSXZmJBru31kPOTb-dusfTJAtI-XTWv1qWhmwS4/edit?usp=sharing')
+const onClickProfile = () => {
+  // this.$gtag('event', 'click', {
+  //       event_category: '経歴',
+  //       event_label: 'profile',
+  //     })
 }
 </script>
 

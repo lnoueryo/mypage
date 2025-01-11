@@ -124,7 +124,6 @@ export default {
         setTimeout(() => {
           this.container = true;
         }, this.timeout);
-        console.log('Hello')
       }
     },
   },

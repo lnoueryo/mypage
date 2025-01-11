@@ -161,7 +161,7 @@ ul li {
 .slide-appear-to{
     transform: translateY(100%);
 }
-.slide-enter, .slide-leave-to {
+.slide-enter-from, .slide-leave-to {
     opacity: 0;
     transform: translateX(100%);
 }
@@ -175,7 +175,7 @@ ul li {
     transform: translate(0px, 0px);
     transition: opacity 2s, transform 2s cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
-.bottom-enter, .bottom-leave-to {
+.bottom-enter-from, .bottom-leave-to {
     opacity: 0;
     transform: translateY(10vh) translateY(0px);
 }
@@ -192,33 +192,33 @@ transition: opacity 2s cubic-bezier(1.0, 0.1, 0.3, 1.0);
 .carousel-leave-active {
 transition: opacity 2s cubic-bezier(0.5, 1.0, 1.0, 1.0);
 }
-.carousel-enter, .carousel-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.carousel-enter-from, .carousel-leave-to /* .fade-leave-active below version 2.1.8 */ {
 opacity: 0;
 }
 .main-enter-active, .main-leave-active {
     transition: opacity 2s;
 }
-.main-enter, .main-leave-to {
+.main-enter-from, .main-leave-to {
     opacity: 0;
 }
 .name-enter-active, .name-leave-active {
     transition: all 5s;
 }
-.name-enter, .name-leave-to {
+.name-enter-from, .name-leave-to {
     opacity: 0;
     transform: translateX(20px);
 }
 .nav-enter-active, .nav-leave-active {
     transition: all 3s;
 }
-.nav-enter, .nav-leave-to {
+.nav-enter-from, .nav-leave-to {
     opacity: 0;
     transform: translateX(30px);
 }
 .logo2-enter-active, .logo2-leave-active {
     transition: all 4s;
 }
-.logo2-enter, .logo2-leave-to {
+.logo2-enter-from, .logo2-leave-to {
     opacity: 0;
     transform: translateX(40px);
 }

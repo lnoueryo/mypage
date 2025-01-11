@@ -43,60 +43,61 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import otherContents from '~/assets/json/other-contents.json'
-export default {
-  props: {
-    section: Object
-  },
-  data: () => ({
-    otherContents: otherContents,
-  }),
-  computed: {
-    wrapper() {
-      const path = require('~/assets/image/22.jpg')
-      return {
-        position: 'relative',
-        backgroundImage: 'url("' + path + '")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'right 75% bottom 50%',
-        opacity: 0.9,
-      }
-    },
-    brightnessValue() {
-      return this.$store.getters.brightnessValue;
-    },
-    secWrapper() {
-      return {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        backgroundColor: `rgb(0 0 0 / ${this.brightnessValue}%)`,
-        // backgroundColor: '#00000096',
-        zIndex: -1
-      }
-    },
-  },
-  methods: {
-    onClickSite(name, url) {
-      this.$gtag('event', 'site', {
-        event_category: 'ポートフォリオ',
-        event_label: name,
-      })
-      if(!url) return;
-      window.open(url, '_blank')
-    },
-    onClickGithub(name, url) {
-      this.$gtag('event', 'github', {
-        event_category: 'ポートフォリオ',
-        event_label: name,
-      })
-      window.open(url, '_blank')
-    }
-  }
+import { defineProps } from 'vue'
+defineProps([
+  'section'
+])
+const brightnessSwitch = ref(false)
+const brightnessValue = ref(90)
+const wrapper = computed(() => {
+  return {
+    backgroundImage: 'url("/images/22.jpg")',
+    position: 'relative',
+    backgroundSize: 'cover',
+    backgroundPosition: 'right 75% bottom 50%',
+    opacity: 0.9,
+  } as const
+})
+const secWrapper = computed(() => {
+  return {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    backgroundColor: `rgb(0 0 0 / ${brightnessValue.value}%)`,
+    // backgroundColor: '#00000096',
+    zIndex: -1
+  } as const
+})
+const onClickSite = (name: string, url: string) => {
+  // this.$gtag('event', 'site', {
+  //       event_category: 'ポートフォリオ',
+  //       event_label: name,
+  //     })
+  if(!url) return;
+  window.open(url, '_blank')
 }
+const onClickGithub = (name: string, url: string) => {
+  // this.$gtag('event', 'github', {
+  //       event_category: 'ポートフォリオ',
+  //       event_label: name,
+  //     })
+  window.open(url, '_blank')
+}
+
+const changeBrightness = () => {
+  if(brightnessSwitch.value) brightnessValue.value += 1;
+  if(!brightnessSwitch.value) brightnessValue.value -= 1;
+  if(brightnessValue.value == 0 || brightnessValue.value == 90) return brightnessSwitch.value = !brightnessSwitch.value;
+}
+onBeforeMount(() => {
+  setInterval(() => {
+    changeBrightness()
+  }, 150)
+})
 </script>
 
 

@@ -3,7 +3,7 @@
 body #wrapper{
     color: white;
     font-family: proxima-nova,sans-serif;
-    letter-spacing: .1em;
+    /* letter-spacing: .1em; */
     line-height: 1.5;
     background-color: black;
     word-break: break-all;

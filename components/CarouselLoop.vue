@@ -13,20 +13,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    contents: Array,
-    direction: String
-  },
-  methods: {
-    onClickTool(name) {
-      this.$gtag('event', 'click', {
-        event_category: 'ツール',
-        event_label: name,
-      })
-    },
-  }
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+defineProps([
+  'contents',
+  'direction',
+])
+const onClickTool = (name: string) => {
+  // this.$gtag('event', 'click', {
+  //   event_category: 'ツール',
+  //   event_label: name,
+  // })
 }
 </script>
 

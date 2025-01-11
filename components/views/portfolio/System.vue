@@ -9,7 +9,7 @@
           <div class="acd-content">
             <p class="para" v-for="(content, j) in feature.contents" :key="j">{{ content }}</p>
           </div>
-          <div class="system-image" :style="{backgroundImage: `url(${feature.image})`}" v-if="feature.image">
+          <div class="system-image" :style="{backgroundImage: `url(${feature.image})`}" v-show="feature.image">
             <div class="filter"></div>
           </div>
         </div>

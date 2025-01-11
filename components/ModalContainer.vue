@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input id="modal-trigger" class="checkbox" type="checkbox" v-model="value">
+    <input id="modal-trigger" class="checkbox" type="checkbox" v-model="modal">
     <div class="modal all-directions">
       <label for="modal-trigger" class="abs all-directions">
         <slot class="modal-overlay" />
@@ -9,23 +9,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    value: Boolean,
-    selectTool: Object
+<script setup lang="ts">
+import { defineProps, defineEmits } from 'vue'
+
+const props = defineProps([
+  'value',
+  'selectTool',
+])
+const emits = defineEmits([
+  'update:modelValue'
+])
+const modal = computed({
+  get() {
+    return props.value
   },
-  computed: {
-    modal: {
-      get() {
-        return this.value;
-      },
-      set(v) {
-        this.value = v;
-      }
-    }
+  set(v: boolean) {
+    emits('update:modelValue', v)
   }
-}
+})
+
 </script>
 
 <style lang="scss" scoped>
@@ -37,7 +39,6 @@ export default {
   opacity: 0;
   transition: .5s;
   z-index: -1;
-  // padding: 50px;
 }
 
 input:checked ~ .modal {

@@ -62,60 +62,55 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import skill from '~/assets/json/skill.json'
-export default {
-  props: {
-    section: Object
-  },
-  data: () => ({
-    skill: skill
-  }),
-  computed: {
-    hueHalfValue() {
-      return this.$store.getters.hueHalfValue;
-    },
-    wrapper() {
-      const path = require('~/assets/image/02.jpg')
-      const hue = `hue-rotate(${this.hueHalfValue}deg)`;
-      return {
-        backgroundImage: 'url("' + path + '")',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        opacity: 0.9,
-        filter: hue,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-      }
-    },
-    secWrapper() {
-      const path = require('~/assets/image/01.png')
-      return {
-        backgroundImage: 'url("' + path + '")',
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.546)'
-      }
-    },
-    curriculumVitae() {
-      return 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.f2k7y63qpla3';
-    }
-  },
-  methods: {
-    onClickCurriculumVitae() {
-      this.$gtag('event', 'click', {
-        event_category: '経歴',
-        event_label: 'curriculumVitae',
-      })
-    }
-  }
+import { defineProps } from 'vue'
+defineProps([
+  'section'
+])
+const hueHalfValue = ref(0)
+const countHueHalfValue = () => {
+  if (hueHalfValue.value > 359) return hueHalfValue.value = 0
+  hueHalfValue.value++
 }
+const wrapper = computed(() => {
+  const hue = `hue-rotate(${hueHalfValue.value}deg)`
+  return {
+    backgroundImage: 'url("/images/02.jpg")',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    opacity: 0.9,
+    filter: hue,
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+  } as const
+})
+const secWrapper = computed(() => {
+  return {
+    backgroundImage: 'url("/images/01.png")',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    right: 0,
+    left: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.546)'
+  } as const
+})
+const curriculumVitae = computed(() => 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.f2k7y63qpla3')
+const onClickCurriculumVitae = () => {
+  // this.$gtag('event', 'click', {
+  //   event_category: '経歴',
+  //   event_label: 'curriculumVitae',
+  // })
+}
+onBeforeMount(() => {
+  setInterval(() => {
+    countHueHalfValue()
+  }, 200)
+})
 </script>
 
 <style lang="scss" scoped>

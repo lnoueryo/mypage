@@ -19,7 +19,7 @@
               </div>
               <FooterContent :contents="contents" />
               <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around w100">
-                <a v-scroll-to="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.title)">
+                <a :href="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click.prevent="onClickNav(item)">
                   <li>{{ item.title }}</li>
                 </a>
               </ul>
@@ -31,75 +31,45 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    navigationItems: Array
-  },
-  data: () => ({
-    qiita: '',
-    icons: [
-      {href: 'https://www.facebook.com/profile.php?id=100049811055127', src: require('~/assets/image/18.png'), alt: 'facebook'},
-      {href: 'https://github.com/lnoueryo', src: require('~/assets/image/21.png'), alt: 'github'},
-      {href: 'https://twitter.com/aNp6KjSBlp02cs8', src: require('~/assets/image/19.png'), alt: 'twitter'},
-    ],
-    contents: [
-      {
-        title: 'Contact',
-        items: [
-          {content: '〒156-0043', href: ''},
-          {content: '東京都世田谷区松原1-43-14', href: ''},
-          {content: '070-8338-1624', href: ''},
-          {content: 'popo62520908@gmail.com', href: ''},
-        ]
-      },
-      // {
-      //   title: 'Resume',
-      //   items: [
-      //     {content: '履歴書', href: 'https://docs.google.com/document/d/14bj2fv6hF8RhSgoRHrEDpfA1eTQt22MNNj3rENHOwvY/edit?usp=sharing'},
-      //     {content: '職務経歴書', href: 'https://docs.google.com/spreadsheets/d/1_ArB3lBxJ12s6uigQRcqyz8yCp15cwNzoGkc2RLIXgA/edit?usp=sharing'},
-      //   ]
-      // },
-      // {
-      //   title: 'Github',
-      //   items: [
-      //     {content: 'Puzzles', href: 'https://github.com/lnoueryo/puzzles'},
-      //     {content: 'Tap Map', href: 'https://github.com/lnoueryo/tap-map'},
-      //     {content: 'Reservierung', href: 'https://github.com/lnoueryo/reservierung'},
-      //     {content: 'My Memories', href: 'https://github.com/lnoueryo/Mymemories'},
-      //   ]
-      // },
-      // {
-      //   title: 'Github',
-      //   items: [
-      //     {content: 'Puzzles', href: 'https://github.com/lnoueryo/puzzles'},
-      //     {content: 'Tap Map', href: 'https://github.com/lnoueryo/tap-map'},
-      //     {content: 'Reservierung', href: 'https://github.com/lnoueryo/reservierung'},
-      //     {content: 'My Memories', href: 'https://github.com/lnoueryo/Mymemories'},
-      //   ]
-      // },
+<script setup lang="ts">
+import { defineProps } from 'vue'
+defineProps([
+  'navigationItems'
+])
+const { scrollToAnchorPoint } = useScrollToAnchorPoint()
+const icons = computed(() => {
+  return [
+      {href: 'https://www.facebook.com/profile.php?id=100049811055127', src: '/images/18.png', alt: 'facebook'},
+      {href: 'https://github.com/lnoueryo', src: '/images/21.png', alt: 'github'},
+      {href: 'https://twitter.com/aNp6KjSBlp02cs8', src: '/images/19.png', alt: 'twitter'},
     ]
-  }),
-  async created() {
-    // const response = await this.$axios.get('https://qiita.com/api/v2/users/popo62520908/items')
-    // this.qiita = response.data.slice(0, 4);
-  },
-  methods: {
-    onClickSNS(name) {
-      this.$gtag('event', 'click', {
-        event_category: 'SNS',
-        event_label: name,
-      })
-    },
-    onClickNav(name) {
-      this.$gtag('event', 'click', {
-        event_category: 'ナビゲーション',
-        event_label: name,
-      })
+})
+const contents = computed(() => {
+  return [
+    {
+      title: 'Contact',
+      items: [
+        {content: '〒156-0043', href: ''},
+        {content: '東京都世田谷区松原1-43-14', href: ''},
+        {content: '070-8338-1624', href: ''},
+        {content: 'popo62520908@gmail.com', href: ''},
+      ]
     }
-  }
+  ]
+})
+const onClickSNS = (name: string) => {
+  // this.$gtag('event', 'click', {
+  //   event_category: 'SNS',
+  //   event_label: name,
+  // })
 }
-
+const onClickNav = (item: {name: string, href: string}) => {
+  // this.$gtag('event', 'click', {
+  //   event_category: 'ナビゲーション',
+  //   event_label: name,
+  // })
+  scrollToAnchorPoint(item.href)
+}
 </script>
 
 <style lang="scss" scoped>

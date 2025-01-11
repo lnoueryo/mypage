@@ -221,7 +221,6 @@ export default {
       const isInvalidDate = (date) => Number.isNaN(date.getTime());
       let sortedTools;
       if(this.recent != '全て') {
-        console.log('hello')
         sortedTools = tools.sort((a, b) => {
           let aDate = new Date(a.durations[a.durations.length - 1].end)
           if(isInvalidDate(aDate)) aDate = new Date()

@@ -2,36 +2,38 @@
   <div id="top">
     <header>
       <div class="header-wrapper">
-        <video class="base-mv" src="~/assets/image/02.mp4" autoplay muted loop playsinline></video>
-        <video class="mv" src="~/assets/image/01.mp4" autoplay muted loop playsinline :style="videoHueFilter"></video>
+        <video class="base-mv" src="/images/02.mp4" autoplay muted loop playsinline></video>
+        <video class="mv" src="/images/01.mp4" autoplay muted loop playsinline :style="videoHueFilter"></video>
         <div class="video-cover"></div>
         <div class="container">
           <div class="content-container flex wrap">
             <div class="mb-3">
               <div class="item-container mb-4">
-                <transition name="name">
-                  <img id="name-logo" src="~/assets/image/08.png" alt="my portfolio" v-show="switches.name.status">
-                </transition>
-                <transition name="name">
+                <Transition name="name">
+                  <img id="name-logo" src="/images/08.png" alt="my portfolio" v-show="switches.name.status">
+                </Transition>
+                <Transition name="name">
                   <p class="md px-4 f-11" v-show="switches.name.status">I'm a Python and Javascript web developer and aiming to be a full-stack developer</p>
-                </transition>
+                </Transition>
               </div>
             </div>
             <div class="header-right flex mb-3">
-              <transition name="nav">
-                <ul class="flex text-center nav" v-show="switches.nav.status">
-                  <a v-scroll-to="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click="onClickNav(item.title)">
-                    <li>{{ item.title }}</li>
-                  </a>
+              <Transition name="nav">
+                <ul class="flex text-center nav" v-if="switches.nav.status">
+                  <li v-for="(item, i) in navigationItems" :key="i">
+                    <a :href="'#' + item.href" @click.prevent="onClickNav(item)">
+                      {{ item.title }}
+                    </a>
+                  </li>
                 </ul>
-              </transition>
+              </Transition>
               <div class="hamburger-menu">
                 <input type="checkbox" id="menu-btn-check">
                 <label for="menu-btn-check" class="menu-btn"><span></span></label>
                 <div class="menu-content">
                   <ul>
                     <li class="mx-2" v-for="(item, i) in navigationItems" :key="i">
-                      <a v-scroll-to="'#' + item.href" @click="onClickNav(item.title)">{{ item.title }}</a>
+                      <a :href="'#' + item.href" @click.prevent="onClickNav(item)">{{ item.title }}</a>
                     </li>
                   </ul>
                 </div>
@@ -40,9 +42,9 @@
           </div>
           <nav id="mainbar" class="px-3">
             <div class="mb-5 item-container">
-              <transition name="main">
-                <img src="~/assets/image/09.png" alt="my portfolio" v-show="switches.logo.status">
-              </transition>
+              <Transition name="main">
+                <img src="/images/09.png" alt="my portfolio" v-show="switches.logo.status">
+              </Transition>
             </div>
           </nav>
         </div>
@@ -51,46 +53,55 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    navigationItems: Array
-  },
-  data: () => ({
-    show: [
-      { opacity: 1, transition: 'all 1s', transform: 'translateX(0px)', position: 'relative' },
-      { opacity: 0, transition: 'all 1s', transform: 'translateX(0px)', position: 'absolute' },
-      { opacity: 0, transition: 'all 1s', transform: 'translateX(0px)', position: 'absolute' }
-    ],
-    switches: {
-      name: {status: false, time: 1500},
-      nav: {status: false, time: 3000},
-      logo: {status: false, time: 5000},
-    },
-  }),
-  computed: {
-    videoHueFilter() {
-      const hue = `hue-rotate(${this.$store.getters.hueValue}deg)`;
-      const filter = `filter: ${hue}`;
-      return filter;
-    },
-  },
-  mounted() {
-    Object.keys(this.switches).forEach((key) => {
-      setTimeout(() => {
-        this.switches[key].status = true;
-      }, this.switches[key].time)
-    })
-  },
-  methods: {
-    onClickNav(name) {
-      this.$gtag('event', 'click', {
-        event_category: 'ナビゲーション',
-        event_label: name,
-      })
-    }
-  }
+<script setup lang="ts">
+import { defineProps } from 'vue'
+
+defineProps([
+  'navigationItems'
+])
+type ShowItemSwitch = {
+  status: boolean
+  time: number
 }
+type Switches = {
+  name: ShowItemSwitch
+  nav: ShowItemSwitch
+  logo: ShowItemSwitch
+}
+const { scrollToAnchorPoint } = useScrollToAnchorPoint()
+const switches = ref<Switches>({
+  name: {status: false, time: 1500},
+  nav: {status: false, time: 3000},
+  logo: {status: false, time: 5000},
+})
+const hueValue = ref(0)
+const countHueValue = () => {
+  if (hueValue.value > 359) return hueValue.value = 0
+  hueValue.value++
+}
+const videoHueFilter = computed(() => {
+  const hue = `hue-rotate(${hueValue.value}deg)`
+  const filter = `filter: ${hue}`
+  return filter
+})
+const onClickNav = (item: {name: string, href: string}) => {
+  // this.$gtag('event', 'click', {
+  //   event_category: 'ナビゲーション',
+  //   event_label: name,
+  // })
+  scrollToAnchorPoint(item.href)
+}
+onMounted(() => {
+  setInterval(() => {
+    countHueValue()
+  }, 100)
+  const keys = getKeys(switches.value)
+  keys.forEach((key) => {
+    setTimeout(() => {
+      switches.value[key].status = true;
+    }, switches.value[key].time)
+  })
+})
 
 </script>
 

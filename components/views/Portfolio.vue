@@ -81,60 +81,44 @@
         </section-wrapper>
       </div>
     </section>
-    <img src="~/assets/image/14.png" v-show="false" @load="loadMainImage = true">
+    <img src="/images/14.png" v-show="false" @load="loadMainImage = true">
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import portfolio from '~/assets/json/portfolio.json'
-export default {
-  props: {
-    section: Object
-  },
-  data: () => ({
-    portfolio: portfolio,
-    loadMainImage: false,
-  }),
-  computed: {
-    wrapper() {
-      const path = require('~/assets/image/14.png')
-      return {
-        backgroundImage: 'url("' + path + '")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'right 0% bottom 50%',
-        opacity: 0.9,
-        height: '100vh',
-      }
-    },
-    mainContainer() {
-      return {
-        height: '100vh',
-      }
-    },
-    descriptionURL() {
-      return 'https://docs.google.com/presentation/d/1g5rSntUZ59qDyE2z6XdanjGDTUoSTZ7l3ppI-Xk12E4/edit?usp=sharing';
-    },
-    personalProjectsURL() {
-      return 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.hi106jvsdjvx';
-    },
-  },
-  methods: {
-    hello() {
-      console.log('ABC')
-    },
-    onClickDescriptioon() {
-      this.$gtag("event", "click", {
-        event_category: "経歴",
-        event_label: "description",
-      });
-    },
-    onClickPersonalProjects() {
-      this.$gtag('event', 'click', {
-        event_category: '経歴',
-        event_label: 'personal projects',
-      })
-    }
-  }
+import { defineProps } from 'vue'
+defineProps([
+  'section'
+])
+const loadMainImage = ref(false)
+const wrapper = computed(() => {
+  return {
+    backgroundImage: 'url("/images/14.png")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'right 0% bottom 50%',
+    opacity: 0.9,
+    height: '100vh',
+  } as const
+})
+const mainContainer = computed(() => {
+  return {
+    height: '100vh'
+  } as const
+})
+const descriptionURL = computed(() => 'https://docs.google.com/presentation/d/1g5rSntUZ59qDyE2z6XdanjGDTUoSTZ7l3ppI-Xk12E4/edit?usp=sharing')
+const personalProjectsURL = computed(() => 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.hi106jvsdjvx')
+const onClickDescriptioon = () => {
+  // this.$gtag("event", "click", {
+  //       event_category: "経歴",
+  //       event_label: "description",
+  //     });
+}
+const onClickPersonalProjects = () => {
+  // this.$gtag('event', 'click', {
+  //       event_category: '経歴',
+  //       event_label: 'personal projects',
+  //     })
 }
 </script>
 
