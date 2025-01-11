@@ -1,10 +1,10 @@
 <template>
   <div class="main-container" :style="mainContainer">
-    <slot name="title"></slot>
+    <slot name="title" />
     <div class="title-container">
-      <slot class="rel z-1" name="sub-title"></slot>
+      <slot class="rel z-1" name="sub-title" />
       <div class="main-content-container">
-        <slot name="content"></slot>
+        <slot name="content" />
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 
 .main-container {
-  padding: 50px 6.25vw 0 6.25vw;
+  padding: 50px 80px 0 80px;
   flex-direction: row-reverse;
   position: relative;
   z-index: 1;
@@ -44,7 +44,7 @@ export default {
     margin: 0 15px;
     position: relative;
   }
-.main-container[data-v-2206c677] {
+.main-container {
   padding: 50px 20px 0 20px;
   flex-direction: row-reverse;
   position: relative;

@@ -1,6 +1,13 @@
 export const useScrollToAnchorPoint = () => {
   const hash = computed(() => window.location.hash)
   const scrollToAnchorPoint = (refName: string) => {
+    if (!refName) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const url = new URL(window.location.href)
+      url.hash = ''
+      history.replaceState(null, document.title, url.toString())
+      return
+    }
     history.pushState(null, '', `#${refName}`)
     let timer = setInterval(() => {
       const el = document.getElementById(refName)
@@ -20,9 +27,18 @@ export const useScrollToAnchorPoint = () => {
       scrollToAnchorPoint(refName);
     }
   }
+  const isArgCurrentHash = (arg: string) => arg === hash.value.replace('#', '')
+  const scrollToEnd = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth' // スムーズなスクロール
+    });
+  }
   return {
     hash,
     scrollToAnchorPoint,
-    loadPage
+    loadPage,
+    isArgCurrentHash,
+    scrollToEnd,
   }
 }

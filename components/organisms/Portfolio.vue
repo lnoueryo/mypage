@@ -2,30 +2,31 @@
   <div>
     <section v-if="loadMainImage">
       <div class="wrapper">
-        <section-wrapper class="sp_only" :wrapper="wrapper">
-          <section-container :mainContainer="mainContainer">
+        <SectionWrapper class="sp_only" :wrapper="wrapper">
+          <SectionContainer :mainContainer="mainContainer">
             <template #title>
-              <transition name="bottom">
-                <section-title :titleNum="section.number" :title="section.title" />
-              </transition>
-              <transition name="bottom">
+              <Transition name="bottom">
+                <SectionTitle :titleNum="section.number" :title="section.title" />
+              </Transition>
+              <Transition name="bottom">
                 <div class="message tra my-16" style="font-size: 7vw">
                   <div>REACH OUT FOR<br class="pc-only"></div>
                   <div class="adjust">MODERN TECHNOLOGY</div>
                 </div>
-              </transition>
+              </Transition>
               <div class="py-4">
                 <p class="para">Nuxt.jsとGoを使ったタスク管理アプリ。</p>
                 <p class="para">業務であまり利用していないGCPのリソースでインフラを構成。</p>
               </div>
             </template>
-          </section-container>
+          </SectionContainer>
           <p class="tra link abs z-1" style="bottom: 30px">
             <a target="_blank" :href="descriptionURL" @click="onClickDescriptioon">
               DESCRIPTION→
             </a>
           </p>
-        </section-wrapper>
+          <Grain />
+        </SectionWrapper>
         <div class="sec-wrapper flex rel pc_only">
           <p class="tra abs z-2 link">
             <a target="_blank" :href="descriptionURL" @click="onClickDescriptioon">
@@ -33,12 +34,13 @@
             </a>
           </p>
           <div class="w100">
-            <img src="~/assets/image/14.png" class="rel z-0">
+            <img src="/public/images/14.png" class="rel z-0">
+            <Grain />
           </div>
           <div class="abs z-1 w-100 content-wrapper">
             <div class="content-container w-50">
               <div>
-                <section-title :titleNum="section.number" :title="section.title" />
+                <SectionTitle :titleNum="section.number" :title="section.title" />
                 <div class="main-content-container">
                   <p class="para">Nuxt.jsとGoを使ったタスク管理アプリ。</p>
                   <p class="para">業務であまり利用していないGCPのリソースでインフラを構成。</p>
@@ -53,22 +55,22 @@
             </div>
           </div>
         </div>
-        <section-wrapper>
-          <section-container>
+        <SectionWrapper>
+          <SectionContainer>
             <template #sub-title>
-              <transition name="bottom">
+              <Transition name="bottom">
                 <div class="message tra">
                   <div class="mb-8">PUZZLES<br class="pc-only"></div>
                   <div class="puzzle-title show">切り分けたタスクを繋げて、</div>
                   <div class="puzzle-title adjust show">プロジェクトを完成</div>
                 </div>
-              </transition>
+              </Transition>
             </template>
             <template #content>
               <div class="mb-8">
-                <ViewsPortfolioMain />
-                <ViewsPortfolioDescription :items="portfolio.descriptions" />
-                <ViewsPortfolioSystem :features="portfolio.features"/>
+                <ViewsMain />
+                <ViewsDescription :items="portfolio.descriptions" />
+                <ViewsSystem :features="portfolio.features"/>
               </div>
               <p class="tra link rel z-1">
                 <a target="_blank" :href="personalProjectsURL" @click="onClickPersonalProjects">
@@ -76,17 +78,21 @@
                 </a>
               </p>
             </template>
-          </section-container>
+          </SectionContainer>
           <div></div>
-        </section-wrapper>
+        </SectionWrapper>
       </div>
     </section>
-    <img src="/images/14.png" v-show="false" @load="loadMainImage = true">
+    <img src="/public/images/14.png" v-show="false" @load="loadMainImage = true">
   </div>
 </template>
 
 <script setup lang="ts">
 import portfolio from '~/assets/json/portfolio.json'
+import SectionWrapper from '~/components/layouts/SectionWrapper.vue'
+import SectionContainer from '~/components/layouts/SectionContainer.vue'
+import SectionTitle from '~/components/atoms/SectionTitle.vue'
+import Grain from '~/components/atoms/Grain.vue'
 import { defineProps } from 'vue'
 defineProps([
   'section'

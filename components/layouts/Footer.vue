@@ -1,42 +1,38 @@
 
 <template>
-  <div id="follow-me">
-    <footer>
-      <div class="footer">
-        <SectionWrapper>
-          <SectionContainer>
-            <template #content>
-              <div class="footer-main-container">
-                <div class="flex mb-6">
-                  <div class="message text-center">FOLLOW ME</div>
-                </div>
-                <hr class="bar">
-                <div class="text-center">
-                  <a :href="icon.href" target="_blank" v-for="(icon, i) in icons" :key="i" @click="onClickSNS(icon.alt)">
-                    <img class="mx-3 icon" :src="icon.src" :alt="icon.alt">
-                  </a>
-                </div>
-              </div>
-              <FooterContent :contents="contents" />
-              <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around w100">
-                <a :href="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click.prevent="onClickNav(item)">
-                  <li>{{ item.title }}</li>
-                </a>
-              </ul>
-            </template>
-          </SectionContainer>
-        </SectionWrapper>
-      </div>
-    </footer>
+  <div id="follow-me" class="footer">
+    <StandardSection>
+      <template #content>
+        <div class="footer-main-container">
+          <div class="flex mb-6">
+            <div class="message text-center">FOLLOW ME</div>
+          </div>
+          <hr class="bar">
+          <div class="text-center">
+            <a :href="icon.href" target="_blank" v-for="(icon, i) in icons" :key="i" @click="onClickSNS(icon.alt)">
+              <img class="mx-3 icon" :src="icon.src" :alt="icon.alt">
+            </a>
+          </div>
+        </div>
+        <Address :contents="contents" />
+        <ul class="flex pc-only responsive-wrap res_nav text-center align-center justify-around w100">
+          <a :href="'#' + item.href" v-for="(item, i) in navigationItems" :key="i" @click.prevent="onClickNav(item)">
+            <li>{{ item.title }}</li>
+          </a>
+        </ul>
+      </template>
+    </StandardSection>
   </div>
 </template>
 
 <script setup lang="ts">
+import StandardSection from '~/components/layouts/StandardSection.vue'
+import Address from '~/components/atoms/Address.vue'
 import { defineProps } from 'vue'
 defineProps([
   'navigationItems'
 ])
-const { scrollToAnchorPoint } = useScrollToAnchorPoint()
+const { scrollToAnchorPoint, isArgCurrentHash, scrollToEnd } = useScrollToAnchorPoint()
 const icons = computed(() => {
   return [
       {href: 'https://www.facebook.com/profile.php?id=100049811055127', src: '/images/18.png', alt: 'facebook'},
@@ -69,16 +65,14 @@ const onClickNav = (item: {name: string, href: string}) => {
   //   event_label: name,
   // })
   scrollToAnchorPoint(item.href)
+  if (isArgCurrentHash('follow-me')) {
+    setTimeout(scrollToEnd, 100)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-footer {
-  position: relative;
-  z-index: 1;
-}
-
-.footer{
+.footer {
   position: fixed;
   left: 0;
   right: 0;
@@ -103,22 +97,12 @@ footer .container {
   position: relative;
 }
 
-footer .title{
+footer .title {
   display: block;
   font-weight: 500;
   font-family: proxima-nova,sans-serif;
   font-size: 14px;
   letter-spacing: .1em;
-  line-height: 1;
-}
-
-footer .title_num {
-  margin-right: 6%;
-  font-weight: 400;
-  font-family: trajan-pro-3,serif;
-  font-style: italic;
-  font-size: 20px;
-  letter-spacing: .02em;
   line-height: 1;
 }
 

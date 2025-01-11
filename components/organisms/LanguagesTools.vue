@@ -1,90 +1,90 @@
 <template>
-  <div class="rel">
-    <SectionWrapper :wrapper="wrapper">
-      <SectionContainer>
-        <template #title>
-          <transition name="bottom">
-            <section-title :titleNum="section.number" :title="section.title" />
-          </transition>
-        </template>
-        <template #sub-title>
-          <transition name="bottom">
-            <div class="message tra">
-              <div>CATCH UP WITH<br class="pc-only" /></div>
-              <div class="adjust">LATEST TECHNOLOGIES</div>
-            </div>
-          </transition>
-        </template>
-        <template #content>
-          <div class="pc-only">
-            <div class="w100 rel pc-only d-flex justify-end">
-              <v-btn variant="text" color="success" class="tra" to="/languages-tools">DETAIL</v-btn>
-            </div>
-            <div class="mb-8 carousel-container">
-              <CarouselLoop
-                :contents="languagesTool.items"
-                :direction="languagesTool.position"
-                v-for="(languagesTool, i) in languagesTools"
-                :key="i"
-                @content="onModalOpen($event)"
-              />
-            </div>
-            <p class="tra link rel z-1">
-              <a @click="onClickSkill" target="_blank" :href="skillURL">
-                SKILL→
-              </a>
-            </p>
+  <SectionWrapper :wrapper="wrapper">
+    <SectionContainer>
+      <template #title>
+        <transition name="bottom">
+          <SectionTitle :titleNum="section.number" :title="section.title" />
+        </transition>
+      </template>
+      <template #sub-title>
+        <transition name="bottom">
+          <div class="message tra">
+            <div>CATCH UP WITH</div>
+            <div class="adjust">LATEST TECHNOLOGIES</div>
           </div>
+        </transition>
+      </template>
+      <template #content>
+        <div class="pc-only">
+          <div class="w100 rel pc-only d-flex justify-end">
+            <v-btn variant="text" color="success" class="tra" to="/languages-tools">DETAIL</v-btn>
+          </div>
+          <div class="mb-8 carousel-container">
+            <CarouselLoop
+              :contents="languagesTool.items"
+              :direction="languagesTool.position"
+              v-for="(languagesTool, i) in languagesTools"
+              :key="i"
+              @content="onModalOpen($event)"
+            />
+          </div>
+          <p class="tra link rel z-1">
+            <a @click="onClickSkill" target="_blank" :href="skillURL">
+              SKILL→
+            </a>
+          </p>
+        </div>
+      </template>
+    </SectionContainer>
+    <div class="sp-only rel z-1">
+      <CarouselLoop
+        :contents="languagesTool.items"
+        :direction="languagesTool.position"
+        v-for="(languagesTool, i) in languagesTools"
+        :key="i"
+        @content="onModalOpen($event)"
+      />
+      <SectionContainer>
+        <template #content>
+          <p class="tra link rel z-1">
+            <a @click="onClickSkill" target="_blank" :href="skillURL">
+              SKILL→
+            </a>
+          </p>
         </template>
       </SectionContainer>
-      <div class="sp-only rel z-1">
-        <CarouselLoop
-          :contents="languagesTool.items"
-          :direction="languagesTool.position"
-          v-for="(languagesTool, i) in languagesTools"
-          :key="i"
-          @content="onModalOpen($event)"
-        />
-        <SectionContainer>
-          <template #content>
-            <div>
-              <p class="tra link rel z-1">
-                <a @click="onClickSkill" target="_blank" :href="skillURL">
-                  SKILL→
-                </a>
-              </p>
-            </div>
-          </template>
-        </SectionContainer>
-      </div>
-      <Grain></Grain>
-      <div :style="secWrapper"></div>
-    </SectionWrapper>
-    <!-- <ModalContainer v-model="modalSwitch" v-if="selectTool">
-      <CardImage
-        class="modal-overlay"
-        :item="selectTool"
-        max-width="330"
-        img-width="170"
-        img-height="170"
-        :margin-reset="true"
-      >
-        <template #sub>
-          <ToolRate class="ml-4" :rate="selectTool.rate" />
-        </template>
-        <template #bottom>
-          <div class="w100 text-right fw-bold tra">
-            <a :href="selectTool.link" target="_blank" style="color: #1976d2">Tech-Blog→</a>
-          </div>
-        </template>
-      </CardImage>
-    </ModalContainer> -->
-  </div>
+    </div>
+    <Grain />
+    <div :style="secWrapper"></div>
+  </SectionWrapper>
+  <!-- <ModalContainer v-model="modalSwitch" v-if="selectTool">
+    <CardImage
+      class="modal-overlay"
+      :item="selectTool"
+      max-width="330"
+      img-width="170"
+      img-height="170"
+      :margin-reset="true"
+    >
+      <template #sub>
+        <ToolRate class="ml-4" :rate="selectTool.rate" />
+      </template>
+      <template #bottom>
+        <div class="w100 text-right fw-bold tra">
+          <a :href="selectTool.link" target="_blank" style="color: #1976d2">Tech-Blog→</a>
+        </div>
+      </template>
+    </CardImage>
+  </ModalContainer> -->
 </template>
 
 <script setup lang="ts">
 import languagesToolsData from '~/assets/json/languages-tools.json'
-
+import CarouselLoop from '~/components/molecules/CarouselLoop.vue'
+import SectionWrapper from '~/components/layouts/SectionWrapper.vue'
+import SectionContainer from '~/components/layouts/SectionContainer.vue'
+import SectionTitle from '~/components/atoms/SectionTitle.vue'
+import Grain from '~/components/atoms/Grain.vue'
 import { defineProps } from 'vue'
 defineProps([
   'section'

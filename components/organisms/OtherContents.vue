@@ -1,63 +1,46 @@
 <template>
-  <div class="rel">
-    <section-wrapper :wrapper="wrapper">
-      <section-container>
-        <template #title>
-          <transition name="bottom">
-            <section-title :titleNum="section.number" :title="section.title" />
-          </transition>
-        </template>
-        <template #sub-title>
-          <transition name="bottom">
-            <p class="message tra"><span>HAVE MADE UP</span><br class="pc-only">
-              <span class="adjust">MY WORKS</span>
-            </p>
-          </transition>
-        </template>
-        <template #content>
-
-          <div class="card-container">
-
-            <!-- 準備中 -->
-            <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title, item.url)">
-              <CardImage class="d-flex align-strech" :item="item">
-                <template #bottom>
-                  <!-- 準備中 -->
-                  <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">
-                    GITHUB
-                  </a>
-                  <a :href="item.url" target="_blank" @click.prevent.stop="onClickSite(item.title, item.url)">
-                    Go To Site→
-                  </a>
-                  <ToolChip v-if="!item.url">Sorry, Only GITHUB</ToolChip>
-                </template>
-              </CardImage>
-            </div>
-            <CardImage class="d-flex align-strech" style="opacity: 0;cursor: pointer;" :item="otherContents[2]" @click.prevent.stop="">
-            </CardImage>
-          </div>
-        </template>
-      </section-container>
-      <div :style="secWrapper"></div>
-    </section-wrapper>
-  </div>
+  <StandardSection :wrapper :section :subTitle>
+    <template #content>
+      <div class="card-container">
+        <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title, item.url)">
+          <CardImage class="d-flex align-strech" :item="item">
+            <template #bottom>
+              <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">
+                GITHUB
+              </a>
+              <a :href="item.url" target="_blank" @click.prevent.stop="onClickSite(item.title, item.url)">
+                Go To Site→
+              </a>
+              <ToolChip v-if="!item.url">Sorry, Only GITHUB</ToolChip>
+            </template>
+          </CardImage>
+        </div>
+        <CardImage class="d-flex align-strech" style="opacity: 0;cursor: default;" :item="otherContents[2]" @click.prevent.stop="" />
+      </div>
+    </template>
+    <template #thd-wrapper>
+      <div :style="secWrapper" />
+    </template>
+  </StandardSection>
 </template>
-
 <script setup lang="ts">
 import otherContents from '~/assets/json/other-contents.json'
+import StandardSection from '~/components/layouts/StandardSection.vue'
+import CardImage from '~/components/molecules/CardImage.vue'
+import ToolChip from '~/components/atoms/ToolChip.vue'
 import { defineProps } from 'vue'
 defineProps([
   'section'
 ])
 const brightnessSwitch = ref(false)
-const brightnessValue = ref(90)
+const brightnessValue = ref(70)
 const wrapper = computed(() => {
   return {
     backgroundImage: 'url("/images/22.jpg")',
     position: 'relative',
     backgroundSize: 'cover',
     backgroundPosition: 'right 75% bottom 50%',
-    opacity: 0.9,
+    opacity: 0.95,
   } as const
 })
 const secWrapper = computed(() => {
@@ -68,9 +51,14 @@ const secWrapper = computed(() => {
     right: 0,
     left: 0,
     backgroundColor: `rgb(0 0 0 / ${brightnessValue.value}%)`,
-    // backgroundColor: '#00000096',
     zIndex: -1
   } as const
+})
+const subTitle = computed(() => {
+  return [
+    `HAVE MADE UP`,
+    `MY WORKS`
+  ]
 })
 const onClickSite = (name: string, url: string) => {
   // this.$gtag('event', 'site', {
@@ -91,13 +79,9 @@ const onClickGithub = (name: string, url: string) => {
 const changeBrightness = () => {
   if(brightnessSwitch.value) brightnessValue.value += 1;
   if(!brightnessSwitch.value) brightnessValue.value -= 1;
-  if(brightnessValue.value == 0 || brightnessValue.value == 90) return brightnessSwitch.value = !brightnessSwitch.value;
+  if(brightnessValue.value == 0 || brightnessValue.value == 70) return brightnessSwitch.value = !brightnessSwitch.value;
 }
-onBeforeMount(() => {
-  setInterval(() => {
-    changeBrightness()
-  }, 150)
-})
+onBeforeMount(() => setInterval(changeBrightness, 150))
 </script>
 
 

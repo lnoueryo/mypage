@@ -15,6 +15,7 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
+import ToolRate from '~/components/atoms/ToolRate.vue'
 
 defineProps([
   'contents',

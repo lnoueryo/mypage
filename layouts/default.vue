@@ -1,25 +1,42 @@
 <template>
   <div id="wrapper">
-    <MainHeader :navigationItems="navigationItems" />
-    <NuxtPage />
-    <MainFooter :navigationItems="navigationItems" />
+    <header>
+      <Header :navigationItems="navigationItems" />
+    </header>
+    <main>
+      <NuxtPage />
+    </main>
+    <footer>
+      <Footer :navigationItems="navigationItems" />
+    </footer>
   </div>
 </template>
 
 <script setup lang="ts">
-import MainHeader from '~/components/views/MainHeader.vue'
-import MainFooter from '~/components/views/MainFooter.vue'
+import Header from '~/components/layouts/Header.vue'
+import Footer from '~/components/layouts/Footer.vue'
 const navigationItems = computed(() => {
   return [
-    {title: 'TOP', href: 'top'},
-    {title: 'ABOUT ME', name: 'ViewsAboutMe', href: 'about-me'},
-    {title: 'SKILL', name: 'ViewsSkill', href: 'skill'},
-    {title: 'LANGUAGES TOOLS', name: 'ViewsLanguagesTools', href: 'languages-tools'},
-    {title: 'HISTORY', name: 'ViewsHistory', href: 'history'},
-    {title: 'CURRICULUM VITAE', name: 'ViewsCurriculumVitae', href: 'curriculum-vitae'},
-    {title: 'PORTFOLIO', name: 'ViewsPortfolio', href: 'portfolio'},
-    {title: 'OTHER CONTENTS', name: 'ViewsOtherContents', href: 'other-contents'},
+    {title: 'TOP'},
+    {title: 'ABOUT ME', href: 'about-me'},
+    {title: 'SKILL', href: 'skill'},
+    {title: 'LANGUAGES TOOLS', href: 'languages-tools'},
+    {title: 'HISTORY', href: 'history'},
+    {title: 'CURRICULUM VITAE', href: 'curriculum-vitae'},
+    {title: 'PORTFOLIO', href: 'portfolio'},
+    {title: 'OTHER CONTENTS', href: 'other-contents'},
     {title: 'FOLLOW ME', href: 'follow-me'},
   ]
 })
 </script>
+
+<style lang="scss" scoped>
+header {
+  position: relative;
+  z-index: 3;
+}
+footer {
+  position: relative;
+  z-index: 1;
+}
+</style>

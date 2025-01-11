@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="" v-for="(item, i) in items" :key="i">
+    <div v-for="(item, i) in items" :key="i">
       <div class="pc_only">
         <div class="card-container">
           <div class="card" v-if="item.position == 'left'" :style="{boxShadow: item.color + ' 0px 7px 29px 0px'}">
@@ -72,9 +72,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  display: flex;
-}
 .stick-container {
   display: flex;
   justify-content: center;

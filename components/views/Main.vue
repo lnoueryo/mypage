@@ -9,11 +9,13 @@
               <p class="py-4">Puzzlesは組織、プロジェクト、ユーザー単位で分割できるタスク管理ツールです。</p>
               <div class="d-flex justify-end">
                 <!-- 準備中 -->
-                <v-btn href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
-                <ToolChip>Sorry, Coming Soon</ToolChip>
+                 <Button href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
+                  <ToolChip>Sorry, Coming Soon</ToolChip>
                   GO TO SITE
-                </v-btn>
-                <v-btn href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub">GITHUB</v-btn>
+                 </Button>
+                 <Button href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub" >
+                  GITHUB
+                 </Button>
               </div>
             </div>
           </div>
@@ -32,12 +34,13 @@
           <div>
             <p class="py-4">Puzzlesは組織、プロジェクト、ユーザー単位で分割できるタスク管理ツールです。</p>
             <div class="d-flex justify-end">
-              <!-- 準備中 -->
-              <v-btn href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
-              <ToolChip>Sorry, Coming Soon</ToolChip>
+              <Button href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
+                <ToolChip>Sorry, Coming Soon</ToolChip>
                 GO TO SITE
-              </v-btn>
-              <v-btn href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub">GITHUB</v-btn>
+              </Button>
+              <Button href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub" >
+                GITHUB
+              </Button>
             </div>
           </div>
         </div>
@@ -47,7 +50,13 @@
 </template>
 
 <script>
+import Button from '~/components/atoms/Button.vue'
+import ToolChip from '~/components/atoms/ToolChip.vue'
 export default {
+  components: {
+    Button,
+    ToolChip,
+  },
   computed: {
     mainImage() {
       return '/portfolio/00.jpg'
