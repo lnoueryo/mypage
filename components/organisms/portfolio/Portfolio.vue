@@ -66,9 +66,9 @@
             </template>
             <template #content>
               <div class="mb-8">
-                <Main />
-                <Description :items="portfolio.descriptions" />
-                <System :features="portfolio.features"/>
+                <PortfolioMain />
+                <PortfolioDescription :items="portfolio.descriptions" />
+                <PortfolioAccordion :features="portfolio.features"/>
               </div>
               <DocumentLink :href="personalProjectsURL" @click="onClickPersonalProjects">
                 PERSONAL PROJECTS→

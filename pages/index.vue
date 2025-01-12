@@ -12,7 +12,7 @@ import Skill from '~/components/organisms/Skill.vue'
 import LanguagesTools from '~/components/organisms/LanguagesTools.vue'
 import History from '~/components/organisms/History.vue'
 import CurriculumVitae from '~/components/organisms/CurriculumVitae.vue'
-import Portfolio from '~/components/organisms/Portfolio.vue'
+import Portfolio from '~/components/organisms/portfolio/Portfolio.vue'
 import OtherContents from '~/components/organisms/OtherContents.vue'
 
 const pageSections = shallowRef(
