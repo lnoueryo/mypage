@@ -45,7 +45,7 @@ export default {
     position: relative;
   }
 .main-container {
-  padding: 50px 20px 0 20px;
+  padding: 50px 12px 0;
   flex-direction: row-reverse;
   position: relative;
   z-index: 1;

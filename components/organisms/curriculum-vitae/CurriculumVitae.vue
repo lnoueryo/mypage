@@ -1,7 +1,7 @@
 <template>
   <StandardSection :wrapper :section :subTitle :document>
     <template #content>
-      <div class="mt-4">
+      <div class="mt-4 mb-8">
         <TabDescription :items="curriculumVitae" />
       </div>
     </template>

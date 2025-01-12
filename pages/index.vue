@@ -11,7 +11,7 @@ import AboutMe from '~/components/organisms/AboutMe.vue'
 import Skill from '~/components/organisms/Skill.vue'
 import LanguagesTools from '~/components/organisms/LanguagesTools.vue'
 import History from '~/components/organisms/History.vue'
-import CurriculumVitae from '~/components/organisms/CurriculumVitae.vue'
+import CurriculumVitae from '~/components/organisms/curriculum-vitae/CurriculumVitae.vue'
 import Portfolio from '~/components/organisms/portfolio/Portfolio.vue'
 import OtherContents from '~/components/organisms/OtherContents.vue'
 

@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  value: {
+  modelValue: {
     type: Boolean,
     default: undefined,
   },
@@ -27,7 +27,7 @@ const emits = defineEmits([
 ])
 const isOpen = computed({
   get() {
-    return props.value
+    return props.modelValue
   },
   set(v: boolean) {
     emits('update:modelValue', v)
