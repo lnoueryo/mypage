@@ -44,8 +44,6 @@
 
 <script setup lang="ts">
 import skill from '~/assets/json/skill.json'
-import StandardSection from '~/components/layouts/StandardSection.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])

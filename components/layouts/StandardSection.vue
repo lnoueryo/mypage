@@ -12,9 +12,9 @@
       </template>
       <template #content>
         <slot name="content" />
-        <p class="tra link" v-if="document">
-          <a @click="onClickDocument" target="_blank" :href="document.href">{{ document.title }}→</a>
-        </p>
+        <DocumentLink :href="document.href" @click="onClickDocument" v-if="document">
+          {{ document.title }}→
+        </DocumentLink>
       </template>
     </SectionContainer>
     <slot name="thd-wrapper" />
@@ -22,9 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import SectionWrapper from '~/components/layouts/SectionWrapper.vue'
-import SectionContainer from '~/components/layouts/SectionContainer.vue'
-import SectionTitle from '~/components/atoms/SectionTitle.vue'
 defineProps([
   'wrapper',
   'secWrapper',

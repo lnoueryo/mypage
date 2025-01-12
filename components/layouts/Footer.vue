@@ -26,9 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import StandardSection from '~/components/layouts/StandardSection.vue'
-import Address from '~/components/atoms/Address.vue'
-import { defineProps } from 'vue'
 defineProps([
   'navigationItems'
 ])

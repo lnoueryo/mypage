@@ -50,13 +50,7 @@
 </template>
 
 <script>
-import Button from '~/components/atoms/Button.vue'
-import ToolChip from '~/components/atoms/ToolChip.vue'
 export default {
-  components: {
-    Button,
-    ToolChip,
-  },
   computed: {
     mainImage() {
       return '/portfolio/00.jpg'

@@ -20,15 +20,13 @@
               </div>
             </template>
           </SectionContainer>
-          <p class="tra link abs z-1" style="bottom: 30px">
-            <a target="_blank" :href="descriptionURL" @click="onClickDescriptioon">
-              DESCRIPTION→
-            </a>
-          </p>
+          <DocumentLink class="abs description" style="bottom: 30px" :href="descriptionURL" @click="onClickDescriptioon">
+            DESCRIPTION→
+          </DocumentLink>
           <Grain />
         </SectionWrapper>
         <div class="sec-wrapper flex rel pc_only">
-          <p class="tra abs z-2 link">
+          <p class="tra abs z-2 description">
             <a target="_blank" :href="descriptionURL" @click="onClickDescriptioon">
               DESCRIPTION→
             </a>
@@ -68,15 +66,13 @@
             </template>
             <template #content>
               <div class="mb-8">
-                <ViewsMain />
-                <ViewsDescription :items="portfolio.descriptions" />
-                <ViewsSystem :features="portfolio.features"/>
+                <Main />
+                <Description :items="portfolio.descriptions" />
+                <System :features="portfolio.features"/>
               </div>
-              <p class="tra link rel z-1">
-                <a target="_blank" :href="personalProjectsURL" @click="onClickPersonalProjects">
-                  PERSONAL PROJECTS→
-                </a>
-              </p>
+              <DocumentLink :href="personalProjectsURL" @click="onClickPersonalProjects">
+                PERSONAL PROJECTS→
+              </DocumentLink>
             </template>
           </SectionContainer>
           <div></div>
@@ -89,11 +85,6 @@
 
 <script setup lang="ts">
 import portfolio from '~/assets/json/portfolio.json'
-import SectionWrapper from '~/components/layouts/SectionWrapper.vue'
-import SectionContainer from '~/components/layouts/SectionContainer.vue'
-import SectionTitle from '~/components/atoms/SectionTitle.vue'
-import Grain from '~/components/atoms/Grain.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])
@@ -167,7 +158,7 @@ const onClickPersonalProjects = () => {
   position: relative;
 }
 
-.link {
+.description {
   font-size: 2.5vw;
   right: 6.25vw;
   bottom: 5%;

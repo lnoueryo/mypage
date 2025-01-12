@@ -25,10 +25,6 @@
 </template>
 <script setup lang="ts">
 import otherContents from '~/assets/json/other-contents.json'
-import StandardSection from '~/components/layouts/StandardSection.vue'
-import CardImage from '~/components/molecules/CardImage.vue'
-import ToolChip from '~/components/atoms/ToolChip.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])

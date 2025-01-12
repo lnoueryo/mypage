@@ -1,15 +1,15 @@
 <template>
-  <div class="d-flex justify-center">
+  <div class="d-flex">
     <div class="star5-rating" :data-rate="rate"></div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    rate: Number
+<script setup lang="ts">
+defineProps({
+  rate: {
+    type: Number
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

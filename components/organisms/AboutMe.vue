@@ -27,8 +27,6 @@
 
 <script setup lang="ts">
 import aboutMe from '~/assets/json/about-me.json'
-import StandardSection from '~/components/layouts/StandardSection.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])

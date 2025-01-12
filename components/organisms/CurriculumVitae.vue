@@ -13,10 +13,6 @@
 </template>
 <script setup lang="ts">
 import curriculumVitae from '~/assets/json/curriculum-vitae.json'
-import StandardSection from '~/components/layouts/StandardSection.vue'
-import TabDescription from '~/components/molecules/TabDescription.vue'
-import Grain from '~/components/atoms/Grain.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])

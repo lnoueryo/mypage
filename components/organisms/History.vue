@@ -11,9 +11,6 @@
 
 <script setup lang="ts">
 import history from '~/assets/json/history.json'
-import StandardSection from '~/components/layouts/StandardSection.vue'
-import Timeline from '../molecules/Timeline.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])

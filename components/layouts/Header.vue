@@ -27,11 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import Logo from '~/components/atoms/Logo.vue'
-import HumburgerMenu from '~/components/molecules/HumburgerMenu.vue'
-import HorizontalTextNavigation from '~/components/molecules/HorizontalTextNavigation.vue'
-
 defineProps([
   'navigationItems'
 ])
