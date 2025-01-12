@@ -1,22 +1,51 @@
 <template>
   <div class="loop-wrap">
     <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n" @click="onClickTool(contents.name)">
-      <figure class="mx-4 figure rel hover" v-for="(content, i) in contents" :key="i">
-        <div class="d-flex image-container">
-          <img style="width: 128px" :src="content.image" :alt="content.title" />
-        </div>
-        <figcaption class="caption text-center" v-text="content.title"></figcaption>
-        <ToolRate :rate="content.rate" />
-        <label for="modal-trigger" class="all-directions abs hover" @click="$emit('content', content)"></label>
-      </figure>
+      <template v-for="(content, i) in contents" :key="i">
+        <Dialog max-width="330px">
+          <template #activator="{ props: activatorProps }">
+            <figure class="mx-4 figure rel hover" v-bind="activatorProps">
+              <div class="d-flex image-container">
+                <img style="width: 128px" :src="content.image" :alt="content.title" />
+              </div>
+              <figcaption class="caption text-center" v-text="content.title" />
+              <ToolRate class="d-flex justify-center" :rate="content.rate" />
+            </figure>
+          </template>
+          <template #default>
+            <ContentCard
+              class="carousel-item"
+              width="330px"
+              color="#191919"
+              header-color="#191919"
+              header-height="150px"
+            >
+              <template #header>
+                <div class="d-flex justify-center w-100 py-4">
+                  <Img
+                    class="align-end"
+                    width="150px"
+                    height="150px"
+                    :src="content.image"
+                  />
+                </div>
+              </template>
+              <template #title>
+                {{ content.title }}
+                <ToolRate :rate="content.rate" />
+              </template>
+              <template #default>
+                <p v-for="(a, j) in content.contents" :key="j"> {{ a }}</p>
+              </template>
+            </ContentCard>
+          </template>
+        </Dialog>
+      </template>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
-import ToolRate from '~/components/atoms/ToolRate.vue'
-
 defineProps([
   'contents',
   'direction',
@@ -68,7 +97,7 @@ const onClickTool = (name: string) => {
 .loop-wrap {
   display: flex;
   width: 100vw;
-  height: 200px;
+  height: 216px;
   overflow: hidden;
 }
 .loop-wrap .left:first-child {
@@ -117,5 +146,7 @@ const onClickTool = (name: string) => {
   box-shadow: 10ch;
   background-color: rgba(0, 255, 179, 0.18);
 }
-
+.carousel-item {
+  box-shadow: rgb(55, 88, 81) 0px 7px 29px 0px!important;
+}
 </style>

@@ -7,32 +7,28 @@
         </transition>
       </template>
       <template #sub-title>
-        <transition name="bottom">
-          <div class="message tra">
-            <div>CATCH UP WITH</div>
-            <div class="adjust">LATEST TECHNOLOGIES</div>
-          </div>
-        </transition>
+        <div class="message tra">
+          <div>CATCH UP WITH</div>
+          <div class="adjust">LATEST TECHNOLOGIES</div>
+        </div>
       </template>
       <template #content>
         <div class="pc-only">
-          <div class="w100 rel pc-only d-flex justify-end">
+          <!-- <div class="w100 rel pc-only d-flex justify-end">
             <v-btn variant="text" color="success" class="tra" to="/languages-tools">DETAIL</v-btn>
-          </div>
+          </div> -->
           <div class="mb-8 carousel-container">
             <CarouselLoop
               :contents="languagesTool.items"
               :direction="languagesTool.position"
               v-for="(languagesTool, i) in languagesTools"
               :key="i"
-              @content="onModalOpen($event)"
+              @content="onModalOpen"
             />
           </div>
-          <p class="tra link rel z-1">
-            <a @click="onClickSkill" target="_blank" :href="skillURL">
-              SKILL→
-            </a>
-          </p>
+          <DocumentLink :href="skillURL" @click="onClickSkill">
+            SKILL→
+          </DocumentLink>
         </div>
       </template>
     </SectionContainer>
@@ -46,46 +42,19 @@
       />
       <SectionContainer>
         <template #content>
-          <p class="tra link rel z-1">
-            <a @click="onClickSkill" target="_blank" :href="skillURL">
-              SKILL→
-            </a>
-          </p>
+          <DocumentLink :href="skillURL" @click="onClickSkill">
+            SKILL→
+          </DocumentLink>
         </template>
       </SectionContainer>
     </div>
     <Grain />
     <div :style="secWrapper"></div>
   </SectionWrapper>
-  <!-- <ModalContainer v-model="modalSwitch" v-if="selectTool">
-    <CardImage
-      class="modal-overlay"
-      :item="selectTool"
-      max-width="330"
-      img-width="170"
-      img-height="170"
-      :margin-reset="true"
-    >
-      <template #sub>
-        <ToolRate class="ml-4" :rate="selectTool.rate" />
-      </template>
-      <template #bottom>
-        <div class="w100 text-right fw-bold tra">
-          <a :href="selectTool.link" target="_blank" style="color: #1976d2">Tech-Blog→</a>
-        </div>
-      </template>
-    </CardImage>
-  </ModalContainer> -->
 </template>
 
 <script setup lang="ts">
 import languagesToolsData from '~/assets/json/languages-tools.json'
-import CarouselLoop from '~/components/molecules/CarouselLoop.vue'
-import SectionWrapper from '~/components/layouts/SectionWrapper.vue'
-import SectionContainer from '~/components/layouts/SectionContainer.vue'
-import SectionTitle from '~/components/atoms/SectionTitle.vue'
-import Grain from '~/components/atoms/Grain.vue'
-import { defineProps } from 'vue'
 defineProps([
   'section'
 ])
