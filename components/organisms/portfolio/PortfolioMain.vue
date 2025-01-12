@@ -9,11 +9,11 @@
               <p class="py-4">Puzzlesは組織、プロジェクト、ユーザー単位で分割できるタスク管理ツールです。</p>
               <div class="d-flex justify-end">
                 <!-- 準備中 -->
-                 <Button href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
+                 <Button class="mr-4 tooltip" href="https://puzzles.jounetsism.biz/login" color="grey-darken-3" target="_blank" @click.prevent.stop="onClickSite">
                   <ToolChip>Sorry, Coming Soon</ToolChip>
                   GO TO SITE
                  </Button>
-                 <Button href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub" >
+                 <Button href="https://github.com/lnoueryo/puzzles" color="grey-darken-3" target="_blank" @click="onClickGithub" >
                   GITHUB
                  </Button>
               </div>
@@ -34,11 +34,11 @@
           <div>
             <p class="py-4">Puzzlesは組織、プロジェクト、ユーザー単位で分割できるタスク管理ツールです。</p>
             <div class="d-flex justify-end">
-              <Button href="https://puzzles.jounetsism.biz/login" target="_blank" class="mr-4 tooltip" @click.prevent.stop="onClickSite">
+              <Button class="mr-4 tooltip grey-darken-3" color="#424242" href="https://puzzles.jounetsism.biz/login" target="_blank" @click.prevent.stop="onClickSite">
                 <ToolChip>Sorry, Coming Soon</ToolChip>
                 GO TO SITE
               </Button>
-              <Button href="https://github.com/lnoueryo/puzzles" target="_blank" @click="onClickGithub" >
+              <Button href="https://github.com/lnoueryo/puzzles" color="#424242" target="_blank" @click="onClickGithub" >
                 GITHUB
               </Button>
             </div>
