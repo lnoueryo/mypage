@@ -43,7 +43,7 @@ const secWrapper = computed(() => {
     backgroundColor: 'rgba(0, 0, 0, 0.646)'
   }
 })
-const subTitle = computed(() => {
+const subTitle: ComputedRef<[string, string]> = computed(() => {
   return [
     'A HOTEL RECEPTIONIST',
     'TO A WEB DEVELOPER',

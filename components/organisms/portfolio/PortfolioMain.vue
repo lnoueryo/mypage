@@ -49,29 +49,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    mainImage() {
-      return '/portfolio/00.jpg'
-    }
-  },
-  methods: {
-    onClickSite(e) {
-      e.preventDefault();
-      
-      this.$gtag('event', 'site', {
-        event_category: 'ポートフォリオ',
-        event_label: 'Puzzles',
-      })
-    },
-    onClickGithub() {
-      this.$gtag('event', 'github', {
-        event_category: 'ポートフォリオ',
-        event_label: 'Puzzles',
-      })
-    }
-  }
+<script setup lang="ts">
+const { sendGtag } = useGtag()
+const mainImage = computed(() => '/portfolio/00.jpg')
+const onClickSite = (e: Event) => {
+  e.preventDefault();
+  sendGtag('click_portfolio_site', {
+    name: 'Puzzles',
+    location: window.location.href,
+  })
+}
+const onClickGithub = () => {
+  sendGtag('click_portfolio_github', {
+    name: 'Puzzles',
+    location: window.location.href,
+  })
 }
 </script>
 

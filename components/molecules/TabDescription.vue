@@ -2,7 +2,7 @@
   <div class="tabs">
     <div>
       <div class="company w100 d-flex">
-        <label :for="item.company" class="company-item" :class="{'active': companyTab == item.company}" v-for="item in items" :key="item.company" :style="{width: `calc(100% / ${items.length})`}" @click="onClickTab">
+        <label :for="item.company" class="company-item" :class="{'active': companyTab == item.company}" v-for="item in items" :key="item.company" :style="{width: `calc(100% / ${items.length})`}" @click="onClickTab(item)">
           <input :id="item.company" name="company" type="radio" v-model="companyTab" :value="item.company" class="none">
           <span class="pc-only">{{ item.company }}</span>
           <span class="sp-only" v-html="divideText(item.company)"></span>
@@ -88,75 +88,142 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    items: Array
-  },
-  data: () => ({
-    companyTab: '',
-    tab: '',
-    content: true,
-    container: false,
-    timeout: 250,
-  }),
-  computed: {
-    selectedCompany() {
-      return this.items.find((item) => item.company == this.companyTab) || {}
-    },
-    selectedTab() {
-      return this.selectedCompany.projects.find((project) => project.title == this.tab) || {}
-    },
-  },
-  watch: {
-    companyTab: {
-      handler() {
-        this.content = false
-        this.tab = this.selectedCompany.projects[0].title;
-        setTimeout(() => {
-          this.content = true;
-        }, this.timeout)
-      }
-    },
-    tab: {
-      handler() {
-        this.container = false
-        setTimeout(() => {
-          this.container = true;
-        }, this.timeout);
-      }
-    },
-  },
-  created() {
-    this.companyTab = this.items[0].company;
-    this.tab = this.selectedCompany.projects[0].title;
-  },
-  methods: {
-    divideText(texts) {
-      const html = texts.replace( /(株式会社)/g, '$1<br>' );
-      return html;
-    },
-    changeFormat(texts) {
-      if(!texts) return '現在';
-      texts = texts.replace('-', '年' );
-      texts += '日';
-      return texts;
-    },
-    onClickTab() {
-      this.$gtag("event", this.tab, {
-        event_category: "職務経歴",
-        event_label: this.companyTab,
-      });
-    },
-    onClickChangeChange(num) {
-      const index = this.selectedCompany.projects.findIndex((project) => project.title == this.tab);
-      let nextIndex = index + num;
-      if(nextIndex == -1) nextIndex = this.selectedCompany.projects.length - 1;
-      if(nextIndex > this.selectedCompany.projects.length - 1) nextIndex = 0;
-      this.tab = this.selectedCompany.projects[nextIndex].title;
-    },
+<script setup lang="ts">
+type Project = {
+  title: string
+  summaries: string[]
+  roles: string[]
+  achievements: string[]
+  duration: {
+    start: string
+    end: string
   }
+  environments: {
+    type: string
+    contents: {
+      name: string
+      image: string
+    }[]
+  }[]
 }
+type CurriculumVitae = {
+  company: string
+  business: string
+  capitalStock: string
+  employees: number
+  projects: Project[]
+}
+const props = defineProps({
+  items: {
+    type: Array as () => CurriculumVitae[],
+    default: () => []
+  }
+})
+const { sendGtag } = useGtag()
+const companyTab = ref(props.items[0].company)
+const tab = ref(props.items[0].projects[0].title)
+const content = ref(true)
+const container = ref(true)
+const timeout = ref(250)
+const selectedCompany = computed(() => {
+  return props.items.find((item) => item.company === companyTab.value)!
+})
+const selectedTab = computed(() => {
+  return selectedCompany.value.projects.find((project) => project.title == tab.value)!
+})
+const divideText = (texts: string) => {
+  return texts.replace( /(株式会社)/g, '$1<br>' );
+}
+const changeFormat = (texts: string) => {
+  if(!texts) return '現在'
+  texts = texts.replace('-', '年' )
+  texts += '日'
+  return texts
+}
+const onClickTab = (item: CurriculumVitae) => {
+  sendGtag('click_curriculum_vitae', {
+    tab: tab.value,
+    companyTab: companyTab.value,
+    location: window.location.href,
+  })
+  tab.value = item.projects[0].title
+}
+const onClickChangeChange = (num: number) => {
+  const index = selectedCompany.value.projects.findIndex((project) => project.title == tab.value)
+  let nextIndex = index + num;
+  if(nextIndex == -1) nextIndex = selectedCompany.value.projects.length - 1;
+  if(nextIndex > selectedCompany.value.projects.length - 1) nextIndex = 0;
+  tab.value = selectedCompany.value.projects[nextIndex].title;
+}
+// export default {
+//   props: {
+//     items: Array
+//   },
+//   data: () => ({
+//     companyTab: '',
+//     tab: '',
+//     content: true,
+//     container: false,
+//     timeout: 250,
+//   }),
+//   computed: {
+//     selectedCompany() {
+//       return this.items.find((item) => item.company == this.companyTab) || {}
+//     },
+//     selectedTab() {
+//       return this.selectedCompany.projects.find((project) => project.title == this.tab) || {}
+//     },
+//   },
+//   watch: {
+//     companyTab: {
+//       handler() {
+//         this.content = false
+//         this.tab = this.selectedCompany.projects[0].title;
+//         setTimeout(() => {
+//           this.content = true;
+//         }, this.timeout)
+//       }
+//     },
+//     tab: {
+//       handler() {
+//         this.container = false
+//         setTimeout(() => {
+//           this.container = true;
+//         }, this.timeout);
+//       }
+//     },
+//   },
+//   created() {
+//     this.companyTab = this.items[0].company;
+//     this.tab = this.selectedCompany.projects[0].title;
+//   },
+//   methods: {
+//     divideText(texts) {
+//       const html = texts.replace( /(株式会社)/g, '$1<br>' );
+//       return html;
+//     },
+//     changeFormat(texts) {
+//       if(!texts) return '現在';
+//       texts = texts.replace('-', '年' );
+//       texts += '日';
+//       return texts;
+//     },
+//     onClickTab() {
+//       sendGtag('click_curriculum_vitae', {
+//         tab: this.tab,
+//         companyTab: this.companyTab,
+//         location: window.location.href,
+//       })
+//     },
+//     onClickChangeChange(num) {
+//       const index = this.selectedCompany.projects.findIndex((project) => project.title == this.tab);
+//       let nextIndex = index + num;
+//       if(nextIndex == -1) nextIndex = this.selectedCompany.projects.length - 1;
+//       if(nextIndex > this.selectedCompany.projects.length - 1) nextIndex = 0;
+//       this.tab = this.selectedCompany.projects[nextIndex].title;
+//     },
+//   }
+// }
 </script>
 
 <style lang="scss" scoped>

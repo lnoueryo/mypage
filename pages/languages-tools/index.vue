@@ -165,10 +165,14 @@ export default {
   },
   methods: {
     onClickTool(name) {
-      this.$gtag('event', 'click', {
-        event_category: 'ツール',
-        event_label: name,
-      })
+      // this.$gtag('event', 'click', {
+      //   event_category: 'ツール',
+      //   event_label: name,
+      // })
+      // sendGtag('click_portfolio_site', {
+      //   name: 'Puzzles',
+      //   location: window.location.href,
+      // })
     },
     preprocessTools(languagesTools) {
       languagesTools.forEach((tools) => {

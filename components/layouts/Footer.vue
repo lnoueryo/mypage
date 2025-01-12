@@ -30,6 +30,7 @@ defineProps([
   'navigationItems'
 ])
 const { scrollToAnchorPoint, isArgCurrentHash, scrollToEnd } = useScrollToAnchorPoint()
+const { sendGtag } = useGtag()
 const icons = computed(() => {
   return [
       {href: 'https://www.facebook.com/profile.php?id=100049811055127', src: '/images/18.png', alt: 'facebook'},
@@ -51,16 +52,17 @@ const contents = computed(() => {
   ]
 })
 const onClickSNS = (name: string) => {
-  // this.$gtag('event', 'click', {
-  //   event_category: 'SNS',
-  //   event_label: name,
-  // })
+  sendGtag('click_footer_sns', {
+    name,
+    location: window.location.href,
+  })
 }
 const onClickNav = (item: {name: string, href: string}) => {
-  // this.$gtag('event', 'click', {
-  //   event_category: 'ナビゲーション',
-  //   event_label: name,
-  // })
+  sendGtag('click_footer_navigation', {
+    name: item.name,
+    href: item.href,
+    location: window.location.href,
+  })
   scrollToAnchorPoint(item.href)
   if (isArgCurrentHash('follow-me')) {
     setTimeout(scrollToEnd, 100)

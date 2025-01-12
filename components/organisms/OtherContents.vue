@@ -28,6 +28,7 @@ import otherContents from '~/assets/json/other-contents.json'
 defineProps([
   'section'
 ])
+const { sendGtag } = useGtag()
 const brightnessSwitch = ref(false)
 const brightnessValue = ref(70)
 const wrapper = computed(() => {
@@ -50,25 +51,27 @@ const secWrapper = computed(() => {
     zIndex: -1
   } as const
 })
-const subTitle = computed(() => {
+const subTitle: ComputedRef<[string, string]> = computed(() => {
   return [
     `HAVE MADE UP`,
     `MY WORKS`
   ]
 })
 const onClickSite = (name: string, url: string) => {
-  // this.$gtag('event', 'site', {
-  //       event_category: 'ポートフォリオ',
-  //       event_label: name,
-  //     })
+  sendGtag('click_portfolio_site', {
+    name,
+    url,
+    location: window.location.href,
+  })
   if(!url) return;
   window.open(url, '_blank')
 }
 const onClickGithub = (name: string, url: string) => {
-  // this.$gtag('event', 'github', {
-  //       event_category: 'ポートフォリオ',
-  //       event_label: name,
-  //     })
+  sendGtag('click_portfolio_github', {
+    name,
+    url,
+    location: window.location.href,
+  })
   window.open(url, '_blank')
 }
 

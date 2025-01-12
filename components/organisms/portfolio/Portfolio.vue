@@ -88,6 +88,7 @@ import portfolio from '~/assets/json/portfolio.json'
 defineProps([
   'section'
 ])
+const { sendGtag } = useGtag()
 const loadMainImage = ref(false)
 const wrapper = computed(() => {
   return {
@@ -106,16 +107,18 @@ const mainContainer = computed(() => {
 const descriptionURL = computed(() => 'https://docs.google.com/presentation/d/1g5rSntUZ59qDyE2z6XdanjGDTUoSTZ7l3ppI-Xk12E4/edit?usp=sharing')
 const personalProjectsURL = computed(() => 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.hi106jvsdjvx')
 const onClickDescriptioon = () => {
-  // this.$gtag("event", "click", {
-  //       event_category: "経歴",
-  //       event_label: "description",
-  //     });
+  sendGtag('click_document', {
+    name: 'portfolio',
+    title: 'ポートフォリオ',
+    location: window.location.href,
+  })
 }
 const onClickPersonalProjects = () => {
-  // this.$gtag('event', 'click', {
-  //       event_category: '経歴',
-  //       event_label: 'personal projects',
-  //     })
+  // sendGtag('click_document', {
+  //   name: 'portfolio',
+  //   title: 'ポートフォリオ',
+  //   location: window.location.href,
+  // })
 }
 </script>
 

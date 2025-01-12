@@ -1,60 +1,50 @@
 <template>
-  <div>
-    <div class="accordion-container rel" v-for="(feature, i) in features" :key="i">
-      <button ref="button" class="accordion" @click="openAccordion($event, feature.type)">
-        {{ feature.type }}
-      </button>
-      <div ref="panel" class="panel">
-        <div class="panel-inner">
-          <div class="acd-content">
-            <p class="para" v-for="(content, j) in feature.contents" :key="j">{{ content }}</p>
-          </div>
-          <div class="system-image" :style="{backgroundImage: `url(${feature.image})`}" v-show="feature.image">
-            <div class="filter"></div>
-          </div>
+  <div class="accordion-container rel" v-for="(feature, i) in features" :key="i">
+    <button class="accordion" :class="{'active': i === selectedPanel}" @click="openAccordion(i, feature.type)">
+      {{ feature.type }}
+    </button>
+    <div ref="panelRefs" class="panel" :style="{maxHeight: i === selectedPanel ? openPanelHeight : ''}">
+      <div class="panel-inner">
+        <div class="acd-content">
+          <p class="para" v-for="(content, j) in feature.contents" :key="j">{{ content }}</p>
+        </div>
+        <div class="system-image" :style="{backgroundImage: `url(${feature.image})`}" v-show="feature.image">
+          <div class="filter"></div>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    features: Array
-  },
-  mounted() {
-    const button = this.$refs.button[0]
-    const panel = this.$refs.panel[0]
-    button.classList.toggle("active");
-    panel.style.maxHeight = panel.scrollHeight + "px";
-  },
-  methods: {
-    openAccordion(e, name) {
-      const buttons = this.$refs.button;
-      const panels = this.$refs.panel;
-      /** activeを一度全て削除 */
-      buttons.forEach((el) => {
-        el.classList.remove('active');
-      })
-      /** activeだったアコーディオンを再度クリックした場合 */
-      const panel = e.target.nextElementSibling;
-      e.target.classList.toggle("active");
-      if (panel.style.maxHeight) return;
-
-      /** 開く */
-      panels.forEach((el) => {
-        el.style.maxHeight = null;
-      })
-
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      this.$gtag('event', 'github', {
-        event_category: 'アコーディオン',
-        event_label: name,
-      })
-    },
-  }
+<script setup lang="ts">
+type Feature = {
+  type: string
+  image: string,
+  contents: string[]
 }
+defineProps({
+  features: {
+    type: Array as () => Feature[]
+  }
+})
+const { sendGtag } = useGtag()
+const panelRefs = ref<HTMLDivElement[]>([])
+const selectedPanel = ref(0)
+const openPanelHeight = ref('')
+const openAccordion = (i: number, name: string) => {
+  if (selectedPanel.value === i) return // この条件をなくすと全部閉めることが可能になる
+  selectedPanel.value = i
+  const panel = panelRefs.value[i]
+  openPanelHeight.value = panel.scrollHeight + "px"
+  sendGtag('click_portfolio_accordion', {
+    name,
+    location: window.location.href,
+  })
+}
+onMounted(() => {
+  const panel = panelRefs.value[0]
+  openPanelHeight.value = panel.scrollHeight + 'px'
+})
 </script>
 
 <style lang="scss" scoped>

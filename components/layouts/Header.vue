@@ -39,6 +39,7 @@ type Switches = {
   nav: ShowItemSwitch
   logo: ShowItemSwitch
 }
+const { sendGtag} = useGtag()
 const { scrollToAnchorPoint, isArgCurrentHash, scrollToEnd } = useScrollToAnchorPoint()
 const switches = ref<Switches>({
   name: {status: false, time: 1500},
@@ -56,10 +57,11 @@ const videoHueFilter = computed(() => {
   return filter
 })
 const onClickNav = (item: {name: string, href: string}) => {
-  // this.$gtag('event', 'click', {
-  //   event_category: 'ナビゲーション',
-  //   event_label: name,
-  // })
+  sendGtag('click_header_navigation', {
+    name: item.name,
+    href: item.href,
+    location: window.location.href,
+  })
   scrollToAnchorPoint(item.href)
   if (isArgCurrentHash('follow-me')) {
     setTimeout(scrollToEnd, 100)

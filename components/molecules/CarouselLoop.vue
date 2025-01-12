@@ -50,11 +50,12 @@ defineProps([
   'contents',
   'direction',
 ])
+const { sendGtag } = useGtag()
 const onClickTool = (name: string) => {
-  // this.$gtag('event', 'click', {
-  //   event_category: 'ツール',
-  //   event_label: name,
-  // })
+  sendGtag('click_tool', {
+    name,
+    location: window.location.href,
+  })
 }
 </script>
 

@@ -82,6 +82,7 @@ interface Section {
 }
 const modalSwitch = ref(false)
 const selectTool = ref<Item | null>(null)
+const { sendGtag } = useGtag()
 const wrapper = computed(() => {
   return {
     position: "relative",
@@ -104,10 +105,11 @@ const secWrapper = computed(() => {
 })
 const skillURL = computed(() => 'https://docs.google.com/document/d/1Qy3eKSjlN9-Xywc7m06J4Ba5TjqxxA7YqVuXPbtjtLQ/edit#heading=h.de3jguofxwzy')
 const onClickSkill = () => {
-  // this.$gtag("event", "click", {
-  //   event_category: "経歴",
-  //   event_label: "skill",
-  // });
+  sendGtag('click_document', {
+    name: 'skill',
+    title: '職歴',
+    location: window.location.href,
+  })
 }
 const onModalOpen = (item: Item) => {
   modalSwitch.value = !modalSwitch.value;

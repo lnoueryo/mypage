@@ -12,7 +12,7 @@
       </template>
       <template #content>
         <slot name="content" />
-        <DocumentLink :href="document.href" @click="onClickDocument" v-if="document">
+        <DocumentLink :href="document.href" @click="onClickDocument(document)" v-if="document">
           {{ document.title }}→
         </DocumentLink>
       </template>
@@ -22,18 +22,37 @@
 </template>
 
 <script setup lang="ts">
-defineProps([
-  'wrapper',
-  'secWrapper',
-  'section',
-  'subTitle',
-  'document',
-])
-const onClickDocument = () => {
-  // this.$gtag('event', 'click', {
-  //   event_category: document.category,
-  //   event_label: document.label,
-  // })
+defineProps({
+  wrapper: {
+    type: Object
+  },
+  secWrapper: {
+    type: Object
+  },
+  section: {
+    type: Object
+  },
+  subTitle: {
+    type: Object as () => [string, string],
+  },
+  document: {
+    type: Object as () => Document,
+  },
+})
+
+type Document = {
+  href: string
+  title: string
+  category: string
+  label: string
+}
+const { sendGtag } = useGtag()
+const onClickDocument = (document: Document) => {
+  sendGtag('click_document', {
+    name: document.label,
+    title: document.category,
+    location: window.location.href,
+  })
 }
 </script>
 

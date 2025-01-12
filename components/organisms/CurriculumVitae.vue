@@ -36,7 +36,7 @@ const secWrapper = computed(() => {
     zIndex: -1,
   } as const
 })
-const subTitle = computed(() => {
+const subTitle: ComputedRef<[string, string]> = computed(() => {
   return [
     `MANY EXPERIENCES`,
     `MAKE YOU GROW UP`
