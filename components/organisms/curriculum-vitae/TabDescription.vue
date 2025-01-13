@@ -184,6 +184,10 @@ figure {
     font-size: 2vw;
   }
 }
-
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
 
 </style>
