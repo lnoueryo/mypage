@@ -3,80 +3,1088 @@
     "name": "languages",
     "position": "left",
     "items": [
-      {"id": 1, "title": "HTML5", "image": "/icons/html.png", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["一番最初に学んだ言語。過去に一度習得を試みたが、理解できずに諦めたことがある。今となっては一番長く使用している言語でもある。Web制作時代にはアプリ開発であまり見ない要素などを学んだ。"], "link": "https://tech-blog.jounetsism.biz/language/1/"},
-      {"id": 2, "title": "CSS3", "image": "/icons/css.png", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["htmlと同時に学び始めた言語。過去に取得を断念した原因と言っても過言ではない。要素を思い通りに並べることができずかなり苦しんだ記憶がある。後にレスポンシブデザインを作成できるようになったことが奇跡のようである。"], "link": "https://tech-blog.jounetsism.biz/language/2/"},
-      {"id": 3, "title": "Sass", "image": "/icons/sass.png", "handson": 1, "durations": [{"start": "2020-10", "end": ""}], "rate": 4, "contents": ["Web制作時代、classのバッティングを避けるために使い始めた。しかしながらネストしすぎることにより、importantを使うはめになってしまうこともあり、結局ちゃんとした設計が必要だなと考えさせられた。Vue.jsで今でも使用している。"], "link": ""},
-      {"id": 4, "title": "JavaScript", "image": "/icons/javascript.png", "handson": 1, "durations": [{"start": "2020-05", "end": ""}], "rate": 5, "contents": ["一番書いたスクリプト言語。document.getElementByIdを理解するのに時間がかかり、要素のクリックイベントが発火するまでにかなりの時間を要した。本を買って何度も勉強したためか、暇なときにフレームワークを使わず、古い記法のみで書くこともある。"], "link": "https://tech-blog.jounetsism.biz/language/3/"},
-      {"id": 5, "title": "TypeScript", "image": "/icons/typescript.png", "handson": 0, "durations": [{"start": "2020-11", "end": ""}], "rate": 4, "contents": ["実はjavascriptよりも前に勉強した言語。友人のアドバイスによりAngularで書き始めたものの、難しすぎて断念。後に静的型付け言語に興味を持ち、再度学び直す。主にVue.jsと一緒に利用することが多い。型をつけることで何かしら変更があった際、その変更した内容に依存している関数のエラーなどが出てくれるので、かなりの恩恵を受ける反面、anyをいじでも入れないようにしてはまることがある。"], "link": "https://tech-blog.jounetsism.biz/language/4/"},
-      {"id": 6, "title": "PHP", "image": "/icons/php.png", "handson": 0, "durations": [{"start": "2020-04", "end": "2021-04"}], "rate": 3, "contents": ["プログラミングスクールで学んだ初めてのサーバーサイド言語。phpというよりもlaravelについて学習していたので、それほど知見があるわけではない。思い返せば、パソコンでメモを取る際に矢印を書くようになったのはPHPを学び始めてからである。"], "link": "https://tech-blog.jounetsism.biz/language/6/"},
-      {"id": 7, "title": "Python", "image": "/icons/python.png", "handson": 1, "durations": [{"start": "2021-03", "end": ""}], "rate": 5, "contents": ["株式会社ゴーガにて採用されていた言語。環境構築がなかなかできず困った記憶がある。PHPやJavascriptの書き方に慣れいたということもありインデントとセミコロンがないことに違和感でしかなかった。今となっては1番使用しているサーバーサイド言語。ひっそりと機械学習の勉強でサイキット・ラーンを使い線形回帰モデルの作成なんかも行っている。"], "link": "https://tech-blog.jounetsism.biz/language/5/"},
-      {"id": 8, "title": "Go", "image": "/icons/go.png", "handson": 0, "durations": [{"start": "2021-11", "end": ""}], "rate": 4, "contents": ["コンパイラ言語のため実行速度が早く、コンテナが主流になる中で今後流行るであろうという情報を元に学習開始。ポインタという自分にとって新たな概念に一度断念したが、奇跡的に復活。メモリの学習のきっかけとなり、後にPythonやJavascriptのshallow copy、deep copyを知るきっかけとなる"], "link": "https://tech-blog.jounetsism.biz/language/7/"},
-      {"id": 9, "title": "Bootstrap", "image": "/icons/bootstrap.png", "handson": 1, "durations": [{"start": "2020-03", "end": "2021-03"}], "rate": 3, "contents": ["CSSを勉強するにあたり、とりあえず使えるようになっておいたほうがいいということで始めたライブラリ。classの命名はbootstrapの影響をうけているが、結局Web制作でゴリゴリにCSSを書いていたため、使う機会がなくなってしまった。"], "link": ""},
-      {"id": 10, "title": "Nuxt.js", "image": "/icons/nuxt.png", "handson": 0, "durations": [{"start": "2021-03", "end": ""}], "rate": 5, "contents": ["Vue.js、VueRouter、Vuex、Vuetifyでの開発を学習している中、Nuxt.jsの誕生により上記の環境構築がかなり容易になった。利用するのはメリットだと思い使い始める。VueRouterやaxiosの使い方に多少の違いがあり、慣れるのに少し時間を要したが、結果的にはかなり使い慣れたフレームワークとなった。"], "link": "https://tech-blog.jounetsism.biz/framework/10/"},
-      {"id": 11, "title": "Vue.js", "image": "/icons/vue.png", "handson": 1, "durations": [{"start": "2020-08", "end": ""}], "rate": 5, "contents": ["プログラミングスクールなどの誇大広告に影響を受け、沢山の人がWeb系エンジニアを目指し始める中、コロナとなり、今までのカリキュラムだけでは就職できないという状況に陥った。ポートフォリオのハードルもかなり上がり、開発企業に入るためにはAjaxを使ってSPAを作成できるようにならなければならないと考え勉強開始。当時Web制作会社に勤め、遅くまで勉強し、出社を繰り返す毎日であったが、後にJavascriptの知識がその会社と転職に大きく貢献した。"], "link": "https://tech-blog.jounetsism.biz/framework/9/"},
-      {"id": 12, "title": "jQuery", "image": "/icons/jquery.svg", "handson": 1, "durations": [{"start": "2020-05", "end": "2021-03"}], "rate": 3, "contents": ["転職活動用のポートフォリオを作成している時期にスクールで学んだ内容だけでは、転職できないと判断し勉強開始。Javascriptを理解する前に学習を始めたため、Javascriptは書けないが、JQueryなら書けるという状態になった。後にJQueryは時代遅れという記事を見る頻度が多くなり、JQueryをベースにVue.jsに移行。"], "link": ""},
-      {"id": 13, "title": "Vuetify.js", "image": "/icons/vuetify.svg", "handson": 1, "durations": [{"start": "2020-11", "end": ""}], "rate": 4, "contents": ["vueとCSSを使い、ある程度自分自身でUIコンポーネントを作成できるようになった後に使い始めたUIフレームワーク。簡単に開発を行ったり、プロトタイプの作成によく利用している。しかしながら、少し好みのものとは違い、変更加えるときに中々の時間を使うため、結局自分でコンポーネントを作成するということも多々ある。"], "link": "https://tech-blog.jounetsism.biz/framework/11/"},
-      {"id": 14, "title": "AngularJS", "image": "/icons/angular.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 4, "contents": ["社内のメインで使われているフレームワークであり、Vue.jsと共通点がいくつかあるのであまり学習はしていない。ときたまng-showを癖でv-showと書き間違えエラーがでる。"], "link": ""},
-      {"id": 15, "title": "Laravel", "image": "/icons/laravel.png", "handson": 0, "durations": [{"start": "2020-04", "end": "2021-04"}], "rate": 5, "contents": ["プログラミングスクールで勉強したフレームワーク。当時やってる内容が全く理解できず、とても苦労したのだが今となってはむしろ簡単な印象で、後に勉強するDjangoよりもわかりやすく、多機能で、デプロイも簡単にできる使い慣れたフレームワーク。今でも構成が好きで、Goを書いたときにディレクトリ構成を参考にした。"], "link": "https://tech-blog.jounetsism.biz/framework/14/"},
-      {"id": 16, "title": "Django", "image": "/icons/django.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Python自体が今まで勉強した言語と書き方が違い、戸惑っていた中、DjangoはLaravelの知識があまり活かされないフレームワークで、APIの構築やデプロイが思うようにできず、バックエンドエンジニアを諦めようかと考えさせられた。とはいえ開発企業に就職し、その会社が利用していたこともあり必死で勉強。今でも不明な部分はあるが、Web系エンジニアとして成長するきっかけをくれたフレームワーク。"], "link": "https://tech-blog.jounetsism.biz/framework/15/"},
-      {"id": 59, "title": "React", "image": "/icons/react.png", "handson": 0, "durations": [{"start": "2022-08", "end": ""}], "rate": 4, "contents": ["Vue以外にもう一つフレームワークを扱えるようになりたかったため勉強開始。Vueに慣れていたせいか、違和感を感じることが多々あったが、特にはまることはなかった。"], "link": "https://tech-blog.jounetsism.biz/framework/12/"},
-      {"id": 60, "title": "Next.js", "image": "/icons/next.png", "handson": 0, "durations": [{"start": "2022-08", "end": ""}], "rate": 4, "contents": ["Reactを覚えるついでにNextも使ってみた。Nuxtとなんとなく似ていたということもあり特に困ることはなかったが、SSRに挑戦したため、NextでAPIを作成。SQLに意外と手こずった。"], "link": "https://tech-blog.jounetsism.biz/framework/13/"},
-      {"id": 61, "title": "Svelte", "image": "/icons/svelte.png", "handson": 0, "durations": [{"start": "2022-09", "end": ""}], "rate": 4, "contents": ["リアルDOM操作の時代が終わったという記事に疑問を持ち、流行っているという理由でVueやReactを使っていたため、仮想DOMのメリットを調べるうちにSvelteにいきつき、使い始めた。"], "link": "https://tech-blog.jounetsism.biz/framework/60/"}
+      {
+        "id": 1,
+        "title": "HTML5",
+        "image": "/icons/html.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-02",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "一番最初に学んだ言語。過去に一度習得を試みたが、理解できずに諦めたことがある。今となっては一番長く使用している言語でもある。Web制作時代にはアプリ開発であまり見ない要素などを学んだ。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/1/"
+      },
+      {
+        "id": 2,
+        "title": "CSS3",
+        "image": "/icons/css.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-02",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "htmlと同時に学び始めた言語。過去に取得を断念した原因と言っても過言ではない。要素を思い通りに並べることができずかなり苦しんだ記憶がある。後にレスポンシブデザインを作成できるようになったことが奇跡のようである。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/2/"
+      },
+      {
+        "id": 3,
+        "title": "Sass",
+        "image": "/icons/sass.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-10",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "Web制作時代、classのバッティングを避けるために使い始めた。しかしながらネストしすぎることにより、importantを使うはめになってしまうこともあり、結局ちゃんとした設計が必要だなと考えさせられた。Vue.jsで今でも使用している。"
+        ],
+        "link": ""
+      },
+      {
+        "id": 4,
+        "title": "JavaScript",
+        "image": "/icons/javascript.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-05",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "一番書いたスクリプト言語。document.getElementByIdを理解するのに時間がかかり、要素のクリックイベントが発火するまでにかなりの時間を要した。本を買って何度も勉強したためか、暇なときにフレームワークを使わず、古い記法のみで書くこともある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/3/"
+      },
+      {
+        "id": 5,
+        "title": "TypeScript",
+        "image": "/icons/typescript.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2020-11",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "実はjavascriptよりも前に勉強した言語。友人のアドバイスによりAngularで書き始めたものの、難しすぎて断念。後に静的型付け言語に興味を持ち、再度学び直す。主にVue.jsと一緒に利用することが多い。型をつけることで何かしら変更があった際、その変更した内容に依存している関数のエラーなどが出てくれるので、かなりの恩恵を受ける反面、anyをいじでも入れないようにしてはまることがある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/4/"
+      },
+      {
+        "id": 6,
+        "title": "PHP",
+        "image": "/icons/php.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": "2021-04"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "プログラミングスクールで学んだ初めてのサーバーサイド言語。phpというよりもlaravelについて学習していたので、それほど知見があるわけではない。思い返せば、パソコンでメモを取る際に矢印を書くようになったのはPHPを学び始めてからである。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/6/"
+      },
+      {
+        "id": 7,
+        "title": "Python",
+        "image": "/icons/python.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-03",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "株式会社ゴーガにて採用されていた言語。環境構築がなかなかできず困った記憶がある。PHPやJavascriptの書き方に慣れいたということもありインデントとセミコロンがないことに違和感でしかなかった。今となっては1番使用しているサーバーサイド言語。ひっそりと機械学習の勉強でサイキット・ラーンを使い線形回帰モデルの作成なんかも行っている。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/5/"
+      },
+      {
+        "id": 8,
+        "title": "Go",
+        "image": "/icons/go.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-11",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "コンパイラ言語のため実行速度が早く、コンテナが主流になる中で今後流行るであろうという情報を元に学習開始。ポインタという自分にとって新たな概念に一度断念したが、奇跡的に復活。メモリの学習のきっかけとなり、後にPythonやJavascriptのshallow copy、deep copyを知るきっかけとなる"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/language/7/"
+      },
+      {
+        "id": 24,
+        "title": "Node.js",
+        "image": "/icons/node.js.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-03",
+            "end": "2020-04"
+          },
+          {
+            "start": "2020-08",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "Angularの環境構築でインストールしたのが最初でそれ以降はあまり使わなかった。後にVue.jsを使い始めたのをきっかけにNode.jsを使うことになる。バージョンの違いでnpmやyarnがエラーを吐き、よく困ることがある。そのためwindowsにはnodist、macにはnodenvを入れている。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/21/"
+      },
+      {
+        "id": 9,
+        "title": "Bootstrap",
+        "image": "/icons/bootstrap.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-03",
+            "end": "2021-03"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "CSSを勉強するにあたり、とりあえず使えるようになっておいたほうがいいということで始めたライブラリ。classの命名はbootstrapの影響をうけているが、結局Web制作でゴリゴリにCSSを書いていたため、使う機会がなくなってしまった。"
+        ],
+        "link": ""
+      },
+      {
+        "id": 10,
+        "title": "Nuxt.js",
+        "image": "/icons/nuxt.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-03",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "Vue.js、VueRouter、Vuex、Vuetifyでの開発を学習している中、Nuxt.jsの誕生により上記の環境構築がかなり容易になった。利用するのはメリットだと思い使い始める。VueRouterやaxiosの使い方に多少の違いがあり、慣れるのに少し時間を要したが、結果的にはかなり使い慣れたフレームワークとなった。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/10/"
+      },
+      {
+        "id": 11,
+        "title": "Vue.js",
+        "image": "/icons/vue.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-08",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "プログラミングスクールなどの誇大広告に影響を受け、沢山の人がWeb系エンジニアを目指し始める中、コロナとなり、今までのカリキュラムだけでは就職できないという状況に陥った。ポートフォリオのハードルもかなり上がり、開発企業に入るためにはAjaxを使ってSPAを作成できるようにならなければならないと考え勉強開始。当時Web制作会社に勤め、遅くまで勉強し、出社を繰り返す毎日であったが、後にJavascriptの知識がその会社と転職に大きく貢献した。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/9/"
+      },
+      {
+        "id": 12,
+        "title": "jQuery",
+        "image": "/icons/jquery.svg",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-05",
+            "end": "2021-03"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "転職活動用のポートフォリオを作成している時期にスクールで学んだ内容だけでは、転職できないと判断し勉強開始。Javascriptを理解する前に学習を始めたため、Javascriptは書けないが、JQueryなら書けるという状態になった。後にJQueryは時代遅れという記事を見る頻度が多くなり、JQueryをベースにVue.jsに移行。"
+        ],
+        "link": ""
+      },
+      {
+        "id": 13,
+        "title": "Vuetify.js",
+        "image": "/icons/vuetify.svg",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-11",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "vueとCSSを使い、ある程度自分自身でUIコンポーネントを作成できるようになった後に使い始めたUIフレームワーク。簡単に開発を行ったり、プロトタイプの作成によく利用している。しかしながら、少し好みのものとは違い、変更加えるときに中々の時間を使うため、結局自分でコンポーネントを作成するということも多々ある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/11/"
+      },
+      {
+        "id": 14,
+        "title": "AngularJS",
+        "image": "/icons/angular.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "社内のメインで使われているフレームワークであり、Vue.jsと共通点がいくつかあるのであまり学習はしていない。ときたまng-showを癖でv-showと書き間違えエラーがでる。"
+        ],
+        "link": ""
+      },
+      {
+        "id": 15,
+        "title": "Laravel",
+        "image": "/icons/laravel.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": "2021-04"
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "プログラミングスクールで勉強したフレームワーク。当時やってる内容が全く理解できず、とても苦労したのだが今となってはむしろ簡単な印象で、後に勉強するDjangoよりもわかりやすく、多機能で、デプロイも簡単にできる使い慣れたフレームワーク。今でも構成が好きで、Goを書いたときにディレクトリ構成を参考にした。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/14/"
+      },
+      {
+        "id": 16,
+        "title": "Django",
+        "image": "/icons/django.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "Python自体が今まで勉強した言語と書き方が違い、戸惑っていた中、DjangoはLaravelの知識があまり活かされないフレームワークで、APIの構築やデプロイが思うようにできず、バックエンドエンジニアを諦めようかと考えさせられた。とはいえ開発企業に就職し、その会社が利用していたこともあり必死で勉強。今でも不明な部分はあるが、Web系エンジニアとして成長するきっかけをくれたフレームワーク。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/15/"
+      },
+      {
+        "id": 59,
+        "title": "React",
+        "image": "/icons/react.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2022-08",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "Vue以外にもう一つフレームワークを扱えるようになりたかったため勉強開始。Vueに慣れていたせいか、違和感を感じることが多々あったが、特にはまることはなかった。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/12/"
+      },
+      {
+        "id": 60,
+        "title": "Next.js",
+        "image": "/icons/next.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2022-08",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "Reactを覚えるついでにNextも使ってみた。Nuxtとなんとなく似ていたということもあり特に困ることはなかったが、SSRに挑戦したため、NextでAPIを作成。SQLに意外と手こずった。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/13/"
+      },
+      {
+        "id": 61,
+        "title": "Svelte",
+        "image": "/icons/svelte.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2022-09",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "リアルDOM操作の時代が終わったという記事に疑問を持ち、流行っているという理由でVueやReactを使っていたため、仮想DOMのメリットを調べるうちにSvelteにいきつき、使い始めた。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/framework/60/"
+      }
     ]
   },
   {
     "name": "environments",
     "position": "right",
     "items": [
-      {"id": 17, "title": "Windows", "image": "/icons/windows.png", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["昔からプライベートで使用しており、プログラミングの勉強もWindows10で行った。一度クライアントのサーバーがWindows Server 2016だったので、データ連携を行うにあたり、いくつか確認することがあり、GCE上で似た環境を作成しRDPで接続。とても貴重な体験だった。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/25/"},
-      {"id": 18, "title": "Linux", "image": "/icons/linux.png", "handson": 1, "durations": [{"start": "2021-01", "end": ""}], "rate": 3, "contents": ["サーバーを扱うにあたり必要な知識であるものの、しっかりと勉強した記憶はない。かと言って業務でたまに使用するため、簡単なコマンドは記憶している。サーバーレスに移行する中で、使用する機会が減っていく可能性はあるかもしれないが、どこかで一度書籍を読みたい。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/26/"},
-      {"id": 19, "title": "Ubuntu", "image": "/icons/ubuntu.png", "handson": 1, "durations": [{"start": "2021-06", "end": ""}], "rate": 3, "contents": ["16.04と18.04を使用した経験がある。WSLで使ったのがきっかけで、当時サーバーの知識がなくポートフォリオをEC2にデプロイするさい3日間ほどハマり、使い慣れる必要があると考え利用し始めた。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/28/"},
-      {"id": 20, "title": "CentOS", "image": "/icons/centos.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 2, "contents": ["業務で使うことがあり、側近ではstream9を使用。CentOS8を使ったことなかった為気づかなかったが、7から8で大幅なアップデートがあり、stream9のコマンドが変わっていたため少し戸惑った。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/27/"},
-      {"id": 21, "title": "Visual Studio Code", "image": "/icons/vscode.svg", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["このエディター以外は基本利用したことがない。プログラミングスクールではcloud9の利用を推奨していたが、業務ではほとんどの人がVSCodeを利用しているとのことだったので、それ以来使い続けている。"], "link": "https://tech-blog.jounetsism.biz/tool/18/"},
-      {"id": 22, "title": "Git", "image": "/icons/git.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["勉強し始めた頃によくわからずGitをインストール。ウェブ制作時代あまり使うタイミングがなかった上、周りも使いこなせていなかったようなので、コミットやプッシュのタイミングがいまいちわからなかったが、アプリ開発をたくさん行うことで理解した。"], "link": "https://tech-blog.jounetsism.biz/tool/16/"},
-      {"id": 23, "title": "GitHub", "image": "/icons/github.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["Gitとセットで利用を開始。Web制作会社ではBit Bucketを使っていたが、プライベートでは常にGitHubを利用していた。今ではGitHub Actionsなども利用しており、恩恵を受けていると感じる。"], "link": "https://tech-blog.jounetsism.biz/tool/17/"},
-      {"id": 24, "title": "Node.js", "image": "/icons/node.js.png", "handson": 1, "durations": [{"start": "2020-03", "end": "2020-04"}, {"start": "2020-08", "end": ""}], "rate": 5, "contents": ["Angularの環境構築でインストールしたのが最初でそれ以降はあまり使わなかった。後にVue.jsを使い始めたのをきっかけにNode.jsを使うことになる。バージョンの違いでnpmやyarnがエラーを吐き、よく困ることがある。そのためwindowsにはnodist、macにはnodenvを入れている。"], "link": "https://tech-blog.jounetsism.biz/tool/21/"},
-      {"id": 25, "title": "NPM", "image": "/icons/npm.png", "handson": 1, "durations": [{"start": "2020-03", "end": "2020-04"}, {"start": "2020-08", "end": ""}], "rate": 5, "contents": ["最初に使い始めたパッケージ。npmについて調べるうちに、よくyarnを見かけていたものの、違いがわからない上に、ヤーンという音に違和感があったのでnpmを使い続けた。"], "link": ""},
-      {"id": 26, "title": "Yarn", "image": "/icons/yarn.png", "handson": 1, "durations": [{"start": "2020-02", "end": ""}], "rate": 5, "contents": ["社内で使われているパッケージマネージャー。yarnのはnpmの上位互換であるという話を聞いてしばらく使っていたが、後にnpmが進化を遂げたという説もあって結局どうなのかはいまだに定かではない。"], "link": ""},
-      {"id": 27, "title": "Docker", "image": "/icons/docker.png", "handson": 1, "durations": [{"start": "2021-04", "end": "2021-07"}, {"start": "2022-02", "end": ""}], "rate": 4, "contents": ["アプリ開発の企業に転職するのであれば、使えたほうが良いとのことで勉強してみるも断念。転職後、研修で必要となり再び勉強。「基礎からのコンテナ構築」という書籍がとてもわかり易く、今でもたまに読み返す。今後はkubernetesも勉強したい。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/33/"},
-      {"id": 28, "title": "Apache", "image": "/icons/apache.png", "handson": 1, "durations": [{"start": "2020-04", "end": "2021-04"}], "rate": 3, "contents": ["Laravelの環境構築に伴いxamppを使用していたため、それを機に使い始めた。最初はあまりApacheの必要性がわかっていなかったがlaravelのデプロイやWeb制作会社で利用する場面があったため徐々に使えるようになった。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/29/"},
-      {"id": 29, "title": "Nginx", "image": "/icons/nginx.png", "handson": 0, "durations": [{"start": "2021-04", "end": "2021-07"}], "rate": 2, "contents": ["Apache以外の有名なWebサーバーということで、Dockerの勉強も兼ねて、laravelに使用。Nginxのconf事態をあまり触ったことがない。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/30/"},
-      {"id": 30, "title": "Mysql", "image": "/icons/mysql.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["プログラミングスクールで勉強。laravelのORMを使っていたため、内部的に何が起きているかなどあまりわかっておらずなんとなく使っていたが、業務でデータ連携を行うにあたりバルクインサート、バルクアップデートはもちろんN + 1問題を避けるだけでは処理速度に限界があり、更にもう少し踏み入ったところまで勉強することとなった。今後継続してチューニングの知識を取り入れていきたい。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/31/"},
-      {"id": 31, "title": "Postgres", "image": "/icons/postgres.png", "handson": 0, "durations": [{"start": "2021-04", "end": "2021-08"}], "rate": 3, "contents": ["MYSQL以外のRDBを使用したことがなかったため、個人開発に導入。クエリの書き方に違いがあったり、色々と困った部分はあったが、その他違いがあまりわからなかったため、まずはMYSQLをしっかり勉強しようと決めた。"], "link": "https://tech-blog.jounetsism.biz/os・middleware/32/"},
-      {"id": 32, "title": "Terraform", "image": "/icons/terraform.png", "handson": 1, "durations": [{"start": "2021-08", "end": ""}], "rate": 3, "contents": ["クラウドの知見がない状態で使い始めたツール。GCPのMonitoringで使ったのが初めてだが、そもそもMonitoringがよくわかっていなかったため、terraformの記述方法があっているかわからなかった。providerの変更とともにアップデートが入るので常に最新の情報を追っかけなきゃいけないイメージ"], "link": "https://tech-blog.jounetsism.biz/tool/24/"},
-      {"id": 33, "title": "Cypress", "image": "/icons/cypress.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 3, "contents": ["社内で自社サービスにE2Eテストを導入することになり、使い始めた。マップに使うことが多く、マーカーのクリックなどに苦戦した記憶がある。CIツールとともによく利用している。"], "link": "https://tech-blog.jounetsism.biz/tool/22/"},
-      {"id": 61, "title": "Jest", "image": "/icons/jest.png", "handson": 0, "durations": [{"start": "2022-09", "end": ""}], "rate": 3, "contents": ["テストに興味を持ち始め、Next.jsで技術ブログのサイトを作成しているときに使用。Nuxt.jsで今後利用予定。"], "link": "https://tech-blog.jounetsism.biz/tool/24/"}
+      {
+        "id": 17,
+        "title": "Windows",
+        "image": "/icons/windows.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-02",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "昔からプライベートで使用しており、プログラミングの勉強もWindows10で行った。一度クライアントのサーバーがWindows Server 2016だったので、データ連携を行うにあたり、いくつか確認することがあり、GCE上で似た環境を作成しRDPで接続。とても貴重な体験だった。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/25/"
+      },
+      {
+        "id": 18,
+        "title": "Linux",
+        "image": "/icons/linux.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-01",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "サーバーを扱うにあたり必要な知識であるものの、しっかりと勉強した記憶はない。かと言って業務でたまに使用するため、簡単なコマンドは記憶している。サーバーレスに移行する中で、使用する機会が減っていく可能性はあるかもしれないが、どこかで一度書籍を読みたい。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/26/"
+      },
+      {
+        "id": 19,
+        "title": "Ubuntu",
+        "image": "/icons/ubuntu.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-06",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "16.04と18.04を使用した経験がある。WSLで使ったのがきっかけで、当時サーバーの知識がなくポートフォリオをEC2にデプロイするさい3日間ほどハマり、使い慣れる必要があると考え利用し始めた。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/28/"
+      },
+      {
+        "id": 20,
+        "title": "CentOS",
+        "image": "/icons/centos.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [
+          "業務で使うことがあり、側近ではstream9を使用。CentOS8を使ったことなかった為気づかなかったが、7から8で大幅なアップデートがあり、stream9のコマンドが変わっていたため少し戸惑った。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/27/"
+      },
+      {
+        "id": 21,
+        "title": "Visual Studio Code",
+        "image": "/icons/vscode.svg",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-02",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "このエディター以外は基本利用したことがない。プログラミングスクールではcloud9の利用を推奨していたが、業務ではほとんどの人がVSCodeを利用しているとのことだったので、それ以来使い続けている。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/18/"
+      },
+      {
+        "id": 22,
+        "title": "Git",
+        "image": "/icons/git.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "勉強し始めた頃によくわからずGitをインストール。ウェブ制作時代あまり使うタイミングがなかった上、周りも使いこなせていなかったようなので、コミットやプッシュのタイミングがいまいちわからなかったが、アプリ開発をたくさん行うことで理解した。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/16/"
+      },
+      {
+        "id": 23,
+        "title": "GitHub",
+        "image": "/icons/github.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "Gitとセットで利用を開始。Web制作会社ではBit Bucketを使っていたが、プライベートでは常にGitHubを利用していた。今ではGitHub Actionsなども利用しており、恩恵を受けていると感じる。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/17/"
+      },
+      {
+        "id": 25,
+        "title": "NPM",
+        "image": "/icons/npm.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-03",
+            "end": "2020-04"
+          },
+          {
+            "start": "2020-08",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "最初に使い始めたパッケージ。npmについて調べるうちに、よくyarnを見かけていたものの、違いがわからない上に、ヤーンという音に違和感があったのでnpmを使い続けた。"
+        ],
+        "link": ""
+      },
+      {
+        "id": 26,
+        "title": "Yarn",
+        "image": "/icons/yarn.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-02",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "社内で使われているパッケージマネージャー。yarnのはnpmの上位互換であるという話を聞いてしばらく使っていたが、後にnpmが進化を遂げたという説もあって結局どうなのかはいまだに定かではない。"
+        ],
+        "link": ""
+      },
+      {
+        "id": 27,
+        "title": "Docker",
+        "image": "/icons/docker.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": "2021-07"
+          },
+          {
+            "start": "2022-02",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "アプリ開発の企業に転職するのであれば、使えたほうが良いとのことで勉強してみるも断念。転職後、研修で必要となり再び勉強。「基礎からのコンテナ構築」という書籍がとてもわかり易く、今でもたまに読み返す。今後はkubernetesも勉強したい。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/33/"
+      },
+      {
+        "id": 28,
+        "title": "Apache",
+        "image": "/icons/apache.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": "2021-04"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "Laravelの環境構築に伴いxamppを使用していたため、それを機に使い始めた。最初はあまりApacheの必要性がわかっていなかったがlaravelのデプロイやWeb制作会社で利用する場面があったため徐々に使えるようになった。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/29/"
+      },
+      {
+        "id": 29,
+        "title": "Nginx",
+        "image": "/icons/nginx.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": "2021-07"
+          }
+        ],
+        "rate": 2,
+        "contents": [
+          "Apache以外の有名なWebサーバーということで、Dockerの勉強も兼ねて、laravelに使用。Nginxのconf事態をあまり触ったことがない。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/30/"
+      },
+      {
+        "id": 30,
+        "title": "Mysql",
+        "image": "/icons/mysql.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "プログラミングスクールで勉強。laravelのORMを使っていたため、内部的に何が起きているかなどあまりわかっておらずなんとなく使っていたが、業務でデータ連携を行うにあたりバルクインサート、バルクアップデートはもちろんN + 1問題を避けるだけでは処理速度に限界があり、更にもう少し踏み入ったところまで勉強することとなった。今後継続してチューニングの知識を取り入れていきたい。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/31/"
+      },
+      {
+        "id": 31,
+        "title": "Postgres",
+        "image": "/icons/postgres.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": "2021-08"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "MYSQL以外のRDBを使用したことがなかったため、個人開発に導入。クエリの書き方に違いがあったり、色々と困った部分はあったが、その他違いがあまりわからなかったため、まずはMYSQLをしっかり勉強しようと決めた。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/os・middleware/32/"
+      },
+      {
+        "id": 32,
+        "title": "Terraform",
+        "image": "/icons/terraform.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-08",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "クラウドの知見がない状態で使い始めたツール。GCPのMonitoringで使ったのが初めてだが、そもそもMonitoringがよくわかっていなかったため、terraformの記述方法があっているかわからなかった。providerの変更とともにアップデートが入るので常に最新の情報を追っかけなきゃいけないイメージ"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/24/"
+      },
+      {
+        "id": 33,
+        "title": "Cypress",
+        "image": "/icons/cypress.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "社内で自社サービスにE2Eテストを導入することになり、使い始めた。マップに使うことが多く、マーカーのクリックなどに苦戦した記憶がある。CIツールとともによく利用している。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/22/"
+      },
+      {
+        "id": 62,
+        "title": "Jest",
+        "image": "/icons/jest.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2022-09",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "テストに興味を持ち始め、Next.jsで技術ブログのサイトを作成しているときに使用。Nuxt.jsで今後利用予定。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/tool/24/"
+      }
     ]
   },
   {
     "name": "infrastructures",
     "position": "left",
     "items": [
-      {"id": 34, "title": "Firebase", "image": "/icons/firebase.png", "handson": 0, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["主にhostingで利用。以前までstaticファイルを置くサーバーはレンタルサーバーや、Cloud Runを利用していたが、SPA開発を行うようになって以来利用している。また、サーバーサイドはCloud Runを使うことが多いためエッジキャッシュの関係で利用しているのもひとつの理由である。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/43/"},
-      {"id": 35, "title": "Compute Engine", "image": "/icons/compute_engine.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 3, "contents": ["以前ポートフォリオを作成し、EC2にのっけていたが、株式会社ゴーガがAWSよりもGCPを利用しているとのことで、勉強も兼ねて使ったのが始まりである。今では、先方のサーバーに接続する踏み台に使ったり、そのサーバーの環境で動くのか似た環境を作成して試すために使っている。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/34/"},
-      {"id": 36, "title": "App Engine", "image": "/icons/app_engine.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 4, "contents": ["業務でよく利用しており、サービスのデプロイなど行っているが、cronやcdnなどの少し踏み入った設定などはまだ行ったことがなく、フレキシブルも1回くらいしか設定したことがない。ほかのさまざまなリソースと連携されており使い勝手はいいはずではあるが、最大メモリに限界があり、常に稼働しているため、今のプロジェクトではあまり使っていない。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/35/"},
-      {"id": 37, "title": "Cloud Run", "image": "/icons/cloud_run.png", "handson": 1, "durations": [{"start": "2022-04", "end": ""}], "rate": 5, "contents": ["入社の研修で一番はまったリソース。Django、Docker、Cloud SQL、IAMなどその他の知識不足のせいで、ドキュメントを読んでもさっぱりわからず苦しんだ。デプロイはできたものの、結局のところ成功した理由もわからずしばらくは自分が行った過程を振り返って何度もプライベートで利用した。結果的にGCPで一番利用しているリソースとなってしまった。インフラを勉強するきっかけとなったことは間違いない。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/36/"},
-      {"id": 38, "title": "Cloud Functions", "image": "/icons/cloud_functions.png", "handson": 0, "durations": [{"start": "2021-07", "end": "2021-09"}, {"start": "2022-04", "end": ""}], "rate": 4, "contents": ["個人開発であまり運用しないシステムにおいてCloud SQLの料金はかなり高いためどうにか削減できないかと考え、SQLのインスタンスを時間で起動停止し始めたのがきっかけで利用し始めた。基本的にはSchedulerとPubSub一緒に使う。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/37/"},
-      {"id": 39, "title": "Cloud SQL", "image": "/icons/cloud_sql.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["研修時に初めて利用。ローカルからの接続や、Cloud Runとの接続にかなりはまった。主にMYSQLの5.7または8.0を使うことが多い。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/38/"},
-      {"id": 40, "title": "Cloud Storage", "image": "/icons/cloud_storage.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["業務でもプライベートでもよく利用している。業務ではバックアップで、プライベートではupdateファイルに用いる。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/41/"},
-      {"id": 41, "title": "Google Maps", "image": "/icons/google_maps_platform.png", "handson": 1, "durations": [{"start": "2021-03", "end": ""}], "rate": 5, "contents": ["業務で全社員が必ず使用。主にマップ、ジオコーディング、オートコンプリート、ルートを使っている。Google Maps API=マップではなくさまざまなAPIがあり案件によって使用したことのないものもあるが、Googleのテストに合格しなければパートナー会社ではなくなるためある程度は勉強させられた。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/42/"},
-      {"id": 42, "title": "Cloud Load \nBalancing", "image": "/icons/cloud_load_balancing.png", "handson": 1, "durations": [{"start": "2022-05", "end": ""}], "rate": 3, "contents": ["サーバーレスのセキュリティ対策に利用。Cloud Armorを利用するためにロードバランサーを一度経由する必要がある。スケーリングとしての利用ではない。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/44/"},
-      {"id": 43, "title": "Cloud Armor", "image": "/icons/cloud_armor.png", "handson": 1, "durations": [{"start": "2022-05", "end": ""}], "rate": 2, "contents": ["サーバーレスのセキュリティ対策に利用。見様見真似で行ったセッティングのためまだまだブラックボックスである。そのうちセキュリティーの学習もかねて勉強したい。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/45/"},
-      {"id": 44, "title": "Cloud Build", "image": "/icons/cloud_build.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Cloud Runのデプロイや自動テストに利用。最近ではGitHub Actionsを使い始めたため徐々に使う機会が減りつつある。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/49/"},
-      {"id": 45, "title": "Container Registry", "image": "/icons/container_registry.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 4, "contents": ["Cloud Runのデプロイ時にイメージを保存するために利用。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/50/"},
-      {"id": 46, "title": "Big Query", "image": "/icons/bigquery.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 3, "contents": ["Cloud Loggingに期限があるため、ログをためるように利用。データ分析に利用したことはない。また大量レコードのCSVをインポートして検索用に使用した経験がある。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/40/"},
-      {"id": 47, "title": "Debugger", "image": "/icons/debugger.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 3, "contents": ["ソースのバグ発見などに利用。デプロイ失敗時やDjangoのsettings.pyの確認に使用。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/53/"},
-      {"id": 48, "title": "Cloud Logging", "image": "/icons/cloud_logging.png", "handson": 1, "durations": [{"start": "2021-04", "end": ""}], "rate": 5, "contents": ["Iaasの場合Cloud loggingを仕込まなければならないが、サーバーレスの場合、標準のライブラリでログが吐き出されるため、確認によく用いる。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/51/"},
-      {"id": 49, "title": "Cloud Monitoring", "image": "/icons/cloud_monitoring.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 3, "contents": ["入社したての頃に利用。使い道がよくわからなかったが、後に開発後のインフラ構築で必ず使うようになる。メール通知をよく利用している。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/52/"},
-      {"id": 50, "title": "Cloud NAT", "image": "/icons/cloud_nat.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 4, "contents": ["出口IPを固定するために利用。サーバーレスでSFTPを行うことになり、先方のサーバーに特定のIPでのみ接続可能だったため初めての試みだった。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/47/"},
-      {"id": 51, "title": "Cloud Router", "image": "/icons/cloud_router.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 3, "contents": ["サーバーレスの出口IPを固定するために利用。あまり理解していないので、一度確認する必要がある。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/48/"},
-      {"id": 52, "title": "Cloud Scheduler", "image": "/icons/cloud_scheduler.png", "handson": 1, "durations": [{"start": "2021-07", "end": ""}], "rate": 5, "contents": ["業務やプライベートで使用。PubSubやHttpでのりようはあるが、GAEでの利用は今だにない。GAEの場合タイムアウトが長くなるため使える機会があれば利用してみたい。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/54/"},
-      {"id": 53, "title": "PubSub", "image": "/icons/pubsub.png", "handson": 0, "durations": [{"start": "2021-08", "end": "2021-10"}], "rate": 3, "contents": ["CloudFunctionsへのメッセージのみ使用。Push型のみの利用のため、Pull型を利用する機会があれば使ってみたい。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/55/"},
-      {"id": 54, "title": "Cloud Tasks", "image": "/icons/cloud_tasks.png", "handson": 1, "durations": [{"start": "2022-05", "end": "2022-07"}], "rate": 4, "contents": ["データ連携時に利用。Cloud SchedulerからCloud RunのHTTP通信のタイムアウトが30分ですべての処理が時間内に終わらない恐れがあったため、タスクを分割し、キューに投げることで、30分以上の通信を実現。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/56/"},
-      {"id": 55, "title": "DataStore", "image": "/icons/datastore.png", "handson": 0, "durations": [{"start": "2022-05", "end": ""}], "rate": 4, "contents": ["セッション管理に適したサービスを模索していた時によさそうだったため利用。Nosql初めて利用となる。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/39/"},
-      {"id": 56, "title": "IAM", "image": "/icons/identity_and_access_management.png", "handson": 1, "durations": [{"start": "2020-04", "end": ""}], "rate": 5, "contents": ["全てのリソース使用の際に必ず悩まされている。研修時にCloud Run、Cloud SQLではまった原因の一つ。いまだに権限の付与を忘れてしまうことが多く403を見ることになる。チーム開発において重要となるため、ある程度触った記憶がある。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/57/"},
-      {"id": 57, "title": "Secret Manager", "image": "/icons/secret_manager.png", "handson": 1, "durations": [{"start": "2020-08", "end": ""}], "rate": 4, "contents": ["DjangoとCloud Runのチュートリアルで最初に使用。settings.pyにに記載しているAPIキーや、RSAなどのキーに利用。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/58/"},
-      {"id": 58, "title": "Virtual Private Cloud", "image": "/icons/virtual_private_cloud.png", "handson": 1, "durations": [{"start": "2022-05", "end": ""}], "rate": 4, "contents": ["サーバーレスの外部IPを固定するときに初めて利用。サーバーレスアクセスコネクターを使ってVPCにアクセスし、SQLの接続や外部リクエストなどに使用する事が多い。"], "link": "https://tech-blog.jounetsism.biz/Infrastructure/46/"}
+      {
+        "id": 34,
+        "title": "Firebase",
+        "image": "/icons/firebase.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "主にhostingで利用。以前までstaticファイルを置くサーバーはレンタルサーバーや、Cloud Runを利用していたが、SPA開発を行うようになって以来利用している。また、サーバーサイドはCloud Runを使うことが多いためエッジキャッシュの関係で利用しているのもひとつの理由である。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/43/"
+      },
+      {
+        "id": 35,
+        "title": "Compute Engine",
+        "image": "/icons/compute_engine.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "以前ポートフォリオを作成し、EC2にのっけていたが、株式会社ゴーガがAWSよりもGCPを利用しているとのことで、勉強も兼ねて使ったのが始まりである。今では、先方のサーバーに接続する踏み台に使ったり、そのサーバーの環境で動くのか似た環境を作成して試すために使っている。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/34/"
+      },
+      {
+        "id": 36,
+        "title": "App Engine",
+        "image": "/icons/app_engine.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "業務でよく利用しており、サービスのデプロイなど行っているが、cronやcdnなどの少し踏み入った設定などはまだ行ったことがなく、フレキシブルも1回くらいしか設定したことがない。ほかのさまざまなリソースと連携されており使い勝手はいいはずではあるが、最大メモリに限界があり、常に稼働しているため、今のプロジェクトではあまり使っていない。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/35/"
+      },
+      {
+        "id": 37,
+        "title": "Cloud Run",
+        "image": "/icons/cloud_run.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "入社の研修で一番はまったリソース。Django、Docker、Cloud SQL、IAMなどその他の知識不足のせいで、ドキュメントを読んでもさっぱりわからず苦しんだ。デプロイはできたものの、結局のところ成功した理由もわからずしばらくは自分が行った過程を振り返って何度もプライベートで利用した。結果的にGCPで一番利用しているリソースとなってしまった。インフラを勉強するきっかけとなったことは間違いない。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/36/"
+      },
+      {
+        "id": 38,
+        "title": "Cloud Functions",
+        "image": "/icons/cloud_functions.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": "2021-09"
+          },
+          {
+            "start": "2022-04",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "個人開発であまり運用しないシステムにおいてCloud SQLの料金はかなり高いためどうにか削減できないかと考え、SQLのインスタンスを時間で起動停止し始めたのがきっかけで利用し始めた。基本的にはSchedulerとPubSub一緒に使う。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/37/"
+      },
+      {
+        "id": 39,
+        "title": "Cloud SQL",
+        "image": "/icons/cloud_sql.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "研修時に初めて利用。ローカルからの接続や、Cloud Runとの接続にかなりはまった。主にMYSQLの5.7または8.0を使うことが多い。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/38/"
+      },
+      {
+        "id": 40,
+        "title": "Cloud Storage",
+        "image": "/icons/cloud_storage.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "業務でもプライベートでもよく利用している。業務ではバックアップで、プライベートではupdateファイルに用いる。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/41/"
+      },
+      {
+        "id": 41,
+        "title": "Google Maps",
+        "image": "/icons/google_maps_platform.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-03",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "業務で全社員が必ず使用。主にマップ、ジオコーディング、オートコンプリート、ルートを使っている。Google Maps API=マップではなくさまざまなAPIがあり案件によって使用したことのないものもあるが、Googleのテストに合格しなければパートナー会社ではなくなるためある程度は勉強させられた。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/42/"
+      },
+      {
+        "id": 42,
+        "title": "Cloud Load \nBalancing",
+        "image": "/icons/cloud_load_balancing.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "サーバーレスのセキュリティ対策に利用。Cloud Armorを利用するためにロードバランサーを一度経由する必要がある。スケーリングとしての利用ではない。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/44/"
+      },
+      {
+        "id": 43,
+        "title": "Cloud Armor",
+        "image": "/icons/cloud_armor.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [
+          "サーバーレスのセキュリティ対策に利用。見様見真似で行ったセッティングのためまだまだブラックボックスである。そのうちセキュリティーの学習もかねて勉強したい。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/45/"
+      },
+      {
+        "id": 44,
+        "title": "Cloud Build",
+        "image": "/icons/cloud_build.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "Cloud Runのデプロイや自動テストに利用。最近ではGitHub Actionsを使い始めたため徐々に使う機会が減りつつある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/49/"
+      },
+      {
+        "id": 45,
+        "title": "Container Registry",
+        "image": "/icons/container_registry.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "Cloud Runのデプロイ時にイメージを保存するために利用。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/50/"
+      },
+      {
+        "id": 46,
+        "title": "Big Query",
+        "image": "/icons/bigquery.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "Cloud Loggingに期限があるため、ログをためるように利用。データ分析に利用したことはない。また大量レコードのCSVをインポートして検索用に使用した経験がある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/40/"
+      },
+      {
+        "id": 47,
+        "title": "Debugger",
+        "image": "/icons/debugger.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "ソースのバグ発見などに利用。デプロイ失敗時やDjangoのsettings.pyの確認に使用。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/53/"
+      },
+      {
+        "id": 48,
+        "title": "Cloud Logging",
+        "image": "/icons/cloud_logging.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "Iaasの場合Cloud loggingを仕込まなければならないが、サーバーレスの場合、標準のライブラリでログが吐き出されるため、確認によく用いる。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/51/"
+      },
+      {
+        "id": 49,
+        "title": "Cloud Monitoring",
+        "image": "/icons/cloud_monitoring.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "入社したての頃に利用。使い道がよくわからなかったが、後に開発後のインフラ構築で必ず使うようになる。メール通知をよく利用している。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/52/"
+      },
+      {
+        "id": 50,
+        "title": "Cloud NAT",
+        "image": "/icons/cloud_nat.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": "2022-07"
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "出口IPを固定するために利用。サーバーレスでSFTPを行うことになり、先方のサーバーに特定のIPでのみ接続可能だったため初めての試みだった。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/47/"
+      },
+      {
+        "id": 51,
+        "title": "Cloud Router",
+        "image": "/icons/cloud_router.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": "2022-07"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "サーバーレスの出口IPを固定するために利用。あまり理解していないので、一度確認する必要がある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/48/"
+      },
+      {
+        "id": 52,
+        "title": "Cloud Scheduler",
+        "image": "/icons/cloud_scheduler.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2021-07",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "業務やプライベートで使用。PubSubやHttpでのりようはあるが、GAEでの利用は今だにない。GAEの場合タイムアウトが長くなるため使える機会があれば利用してみたい。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/54/"
+      },
+      {
+        "id": 53,
+        "title": "PubSub",
+        "image": "/icons/pubsub.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2021-08",
+            "end": "2021-10"
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "CloudFunctionsへのメッセージのみ使用。Push型のみの利用のため、Pull型を利用する機会があれば使ってみたい。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/55/"
+      },
+      {
+        "id": 54,
+        "title": "Cloud Tasks",
+        "image": "/icons/cloud_tasks.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": "2022-07"
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "データ連携時に利用。Cloud SchedulerからCloud RunのHTTP通信のタイムアウトが30分ですべての処理が時間内に終わらない恐れがあったため、タスクを分割し、キューに投げることで、30分以上の通信を実現。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/56/"
+      },
+      {
+        "id": 55,
+        "title": "DataStore",
+        "image": "/icons/datastore.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "セッション管理に適したサービスを模索していた時によさそうだったため利用。Nosql初めて利用となる。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/39/"
+      },
+      {
+        "id": 56,
+        "title": "IAM",
+        "image": "/icons/identity_and_access_management.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-04",
+            "end": ""
+          }
+        ],
+        "rate": 5,
+        "contents": [
+          "全てのリソース使用の際に必ず悩まされている。研修時にCloud Run、Cloud SQLではまった原因の一つ。いまだに権限の付与を忘れてしまうことが多く403を見ることになる。チーム開発において重要となるため、ある程度触った記憶がある。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/57/"
+      },
+      {
+        "id": 57,
+        "title": "Secret Manager",
+        "image": "/icons/secret_manager.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2020-08",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "DjangoとCloud Runのチュートリアルで最初に使用。settings.pyにに記載しているAPIキーや、RSAなどのキーに利用。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/58/"
+      },
+      {
+        "id": 58,
+        "title": "Virtual Private Cloud",
+        "image": "/icons/virtual_private_cloud.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2022-05",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [
+          "サーバーレスの外部IPを固定するときに初めて利用。サーバーレスアクセスコネクターを使ってVPCにアクセスし、SQLの接続や外部リクエストなどに使用する事が多い。"
+        ],
+        "link": "https://tech-blog.jounetsism.biz/Infrastructure/46/"
+      }
     ]
   }
 ]
