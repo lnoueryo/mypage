@@ -4,6 +4,7 @@
       v-model="tab"
       :grow
       :density
+      :bg-color="bgColor"
     >
       <v-tab
         v-for="item in items"

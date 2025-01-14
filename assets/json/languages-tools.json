@@ -16,7 +16,7 @@
         ],
         "rate": 5,
         "contents": [
-          "一番最初に学んだ言語。過去に一度習得を試みたが、理解できずに諦めたことがある。今となっては一番長く使用している言語でもある。Web制作時代にはアプリ開発であまり見ない要素などを学んだ。"
+          "セマンティックなコーディングを心掛け、アクセシビリティの向上を重視している。"
         ],
         "link": "https://tech-blog.jounetsism.biz/language/1/"
       },
@@ -33,7 +33,7 @@
         ],
         "rate": 5,
         "contents": [
-          "htmlと同時に学び始めた言語。過去に取得を断念した原因と言っても過言ではない。要素を思い通りに並べることができずかなり苦しんだ記憶がある。後にレスポンシブデザインを作成できるようになったことが奇跡のようである。"
+          "設計において、ベース、レイアウト、モジュールで分けてスタイルを当てるように心がけている。"
         ],
         "link": "https://tech-blog.jounetsism.biz/language/2/"
       },
@@ -48,9 +48,9 @@
             "end": ""
           }
         ],
-        "rate": 4,
+        "rate": 2,
         "contents": [
-          "Web制作時代、classのバッティングを避けるために使い始めた。しかしながらネストしすぎることにより、importantを使うはめになってしまうこともあり、結局ちゃんとした設計が必要だなと考えさせられた。Vue.jsで今でも使用している。"
+          "Vue.jsでsassを使用している。たまに変数やミックスインを使用することがあるが、CSSの記法のままがほとんどである。"
         ],
         "link": ""
       },
@@ -67,7 +67,7 @@
         ],
         "rate": 5,
         "contents": [
-          "一番書いたスクリプト言語。document.getElementByIdを理解するのに時間がかかり、要素のクリックイベントが発火するまでにかなりの時間を要した。本を買って何度も勉強したためか、暇なときにフレームワークを使わず、古い記法のみで書くこともある。"
+          "現在ではTypeScriptの使用がほとんどのため、Vanilla JSで書くことはなくなってしまった。"
         ],
         "link": "https://tech-blog.jounetsism.biz/language/3/"
       },
@@ -82,7 +82,7 @@
             "end": ""
           }
         ],
-        "rate": 4,
+        "rate": 5,
         "contents": [
           "実はjavascriptよりも前に勉強した言語。友人のアドバイスによりAngularで書き始めたものの、難しすぎて断念。後に静的型付け言語に興味を持ち、再度学び直す。主にVue.jsと一緒に利用することが多い。型をつけることで何かしら変更があった際、その変更した内容に依存している関数のエラーなどが出てくれるので、かなりの恩恵を受ける反面、anyをいじでも入れないようにしてはまることがある。"
         ],
@@ -99,7 +99,7 @@
             "end": "2021-04"
           }
         ],
-        "rate": 3,
+        "rate": 2,
         "contents": [
           "プログラミングスクールで学んだ初めてのサーバーサイド言語。phpというよりもlaravelについて学習していたので、それほど知見があるわけではない。思い返せば、パソコンでメモを取る際に矢印を書くようになったのはPHPを学び始めてからである。"
         ],
@@ -116,28 +116,11 @@
             "end": ""
           }
         ],
-        "rate": 5,
+        "rate": 4,
         "contents": [
           "株式会社ゴーガにて採用されていた言語。環境構築がなかなかできず困った記憶がある。PHPやJavascriptの書き方に慣れいたということもありインデントとセミコロンがないことに違和感でしかなかった。今となっては1番使用しているサーバーサイド言語。ひっそりと機械学習の勉強でサイキット・ラーンを使い線形回帰モデルの作成なんかも行っている。"
         ],
         "link": "https://tech-blog.jounetsism.biz/language/5/"
-      },
-      {
-        "id": 8,
-        "title": "Go",
-        "image": "/icons/go.png",
-        "handson": 0,
-        "durations": [
-          {
-            "start": "2021-11",
-            "end": ""
-          }
-        ],
-        "rate": 4,
-        "contents": [
-          "コンパイラ言語のため実行速度が早く、コンテナが主流になる中で今後流行るであろうという情報を元に学習開始。ポインタという自分にとって新たな概念に一度断念したが、奇跡的に復活。メモリの学習のきっかけとなり、後にPythonやJavascriptのshallow copy、deep copyを知るきっかけとなる"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/language/7/"
       },
       {
         "id": 24,
@@ -154,28 +137,11 @@
             "end": ""
           }
         ],
-        "rate": 5,
+        "rate": 4,
         "contents": [
           "Angularの環境構築でインストールしたのが最初でそれ以降はあまり使わなかった。後にVue.jsを使い始めたのをきっかけにNode.jsを使うことになる。バージョンの違いでnpmやyarnがエラーを吐き、よく困ることがある。そのためwindowsにはnodist、macにはnodenvを入れている。"
         ],
         "link": "https://tech-blog.jounetsism.biz/tool/21/"
-      },
-      {
-        "id": 9,
-        "title": "Bootstrap",
-        "image": "/icons/bootstrap.png",
-        "handson": 1,
-        "durations": [
-          {
-            "start": "2020-03",
-            "end": "2021-03"
-          }
-        ],
-        "rate": 3,
-        "contents": [
-          "CSSを勉強するにあたり、とりあえず使えるようになっておいたほうがいいということで始めたライブラリ。classの命名はbootstrapの影響をうけているが、結局Web制作でゴリゴリにCSSを書いていたため、使う機会がなくなってしまった。"
-        ],
-        "link": ""
       },
       {
         "id": 10,
@@ -212,23 +178,6 @@
         "link": "https://tech-blog.jounetsism.biz/framework/9/"
       },
       {
-        "id": 12,
-        "title": "jQuery",
-        "image": "/icons/jquery.svg",
-        "handson": 1,
-        "durations": [
-          {
-            "start": "2020-05",
-            "end": "2021-03"
-          }
-        ],
-        "rate": 3,
-        "contents": [
-          "転職活動用のポートフォリオを作成している時期にスクールで学んだ内容だけでは、転職できないと判断し勉強開始。Javascriptを理解する前に学習を始めたため、Javascriptは書けないが、JQueryなら書けるという状態になった。後にJQueryは時代遅れという記事を見る頻度が多くなり、JQueryをベースにVue.jsに移行。"
-        ],
-        "link": ""
-      },
-      {
         "id": 13,
         "title": "Vuetify.js",
         "image": "/icons/vuetify.svg",
@@ -239,7 +188,7 @@
             "end": ""
           }
         ],
-        "rate": 4,
+        "rate": 5,
         "contents": [
           "vueとCSSを使い、ある程度自分自身でUIコンポーネントを作成できるようになった後に使い始めたUIフレームワーク。簡単に開発を行ったり、プロトタイプの作成によく利用している。しかしながら、少し好みのものとは違い、変更加えるときに中々の時間を使うため、結局自分でコンポーネントを作成するということも多々ある。"
         ],
@@ -273,7 +222,7 @@
             "end": "2021-04"
           }
         ],
-        "rate": 5,
+        "rate": 3,
         "contents": [
           "プログラミングスクールで勉強したフレームワーク。当時やってる内容が全く理解できず、とても苦労したのだが今となってはむしろ簡単な印象で、後に勉強するDjangoよりもわかりやすく、多機能で、デプロイも簡単にできる使い慣れたフレームワーク。今でも構成が好きで、Goを書いたときにディレクトリ構成を参考にした。"
         ],
@@ -290,62 +239,41 @@
             "end": ""
           }
         ],
-        "rate": 5,
+        "rate": 4,
         "contents": [
           "Python自体が今まで勉強した言語と書き方が違い、戸惑っていた中、DjangoはLaravelの知識があまり活かされないフレームワークで、APIの構築やデプロイが思うようにできず、バックエンドエンジニアを諦めようかと考えさせられた。とはいえ開発企業に就職し、その会社が利用していたこともあり必死で勉強。今でも不明な部分はあるが、Web系エンジニアとして成長するきっかけをくれたフレームワーク。"
         ],
         "link": "https://tech-blog.jounetsism.biz/framework/15/"
       },
       {
-        "id": 59,
-        "title": "React",
-        "image": "/icons/react.png",
-        "handson": 0,
+        "id": 16,
+        "title": "Fuel PHP",
+        "image": "/icons/fuel_php.png",
+        "handson": 1,
         "durations": [
           {
-            "start": "2022-08",
+            "start": "2024-07",
             "end": ""
           }
         ],
         "rate": 4,
-        "contents": [
-          "Vue以外にもう一つフレームワークを扱えるようになりたかったため勉強開始。Vueに慣れていたせいか、違和感を感じることが多々あったが、特にはまることはなかった。"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/framework/12/"
+        "contents": [],
+        "link": ""
       },
       {
-        "id": 60,
-        "title": "Next.js",
-        "image": "/icons/next.png",
-        "handson": 0,
+        "id": 16,
+        "title": "NestJS",
+        "image": "/icons/nest.png",
+        "handson": 1,
         "durations": [
           {
-            "start": "2022-08",
+            "start": "2024-07",
             "end": ""
           }
         ],
         "rate": 4,
-        "contents": [
-          "Reactを覚えるついでにNextも使ってみた。Nuxtとなんとなく似ていたということもあり特に困ることはなかったが、SSRに挑戦したため、NextでAPIを作成。SQLに意外と手こずった。"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/framework/13/"
-      },
-      {
-        "id": 61,
-        "title": "Svelte",
-        "image": "/icons/svelte.png",
-        "handson": 0,
-        "durations": [
-          {
-            "start": "2022-09",
-            "end": ""
-          }
-        ],
-        "rate": 4,
-        "contents": [
-          "リアルDOM操作の時代が終わったという記事に疑問を持ち、流行っているという理由でVueやReactを使っていたため、仮想DOMのメリットを調べるうちにSvelteにいきつき、使い始めた。"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/framework/60/"
+        "contents": [],
+        "link": ""
       }
     ]
   },
@@ -353,40 +281,6 @@
     "name": "environments",
     "position": "right",
     "items": [
-      {
-        "id": 17,
-        "title": "Windows",
-        "image": "/icons/windows.png",
-        "handson": 1,
-        "durations": [
-          {
-            "start": "2020-02",
-            "end": ""
-          }
-        ],
-        "rate": 5,
-        "contents": [
-          "昔からプライベートで使用しており、プログラミングの勉強もWindows10で行った。一度クライアントのサーバーがWindows Server 2016だったので、データ連携を行うにあたり、いくつか確認することがあり、GCE上で似た環境を作成しRDPで接続。とても貴重な体験だった。"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/os・middleware/25/"
-      },
-      {
-        "id": 18,
-        "title": "Linux",
-        "image": "/icons/linux.png",
-        "handson": 1,
-        "durations": [
-          {
-            "start": "2021-01",
-            "end": ""
-          }
-        ],
-        "rate": 3,
-        "contents": [
-          "サーバーを扱うにあたり必要な知識であるものの、しっかりと勉強した記憶はない。かと言って業務でたまに使用するため、簡単なコマンドは記憶している。サーバーレスに移行する中で、使用する機会が減っていく可能性はあるかもしれないが、どこかで一度書籍を読みたい。"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/os・middleware/26/"
-      },
       {
         "id": 19,
         "title": "Ubuntu",
@@ -487,7 +381,7 @@
             "end": ""
           }
         ],
-        "rate": 5,
+        "rate": 4,
         "contents": [
           "最初に使い始めたパッケージ。npmについて調べるうちに、よくyarnを見かけていたものの、違いがわからない上に、ヤーンという音に違和感があったのでnpmを使い続けた。"
         ],
@@ -504,10 +398,40 @@
             "end": ""
           }
         ],
-        "rate": 5,
+        "rate": 4,
         "contents": [
           "社内で使われているパッケージマネージャー。yarnのはnpmの上位互換であるという話を聞いてしばらく使っていたが、後にnpmが進化を遂げたという説もあって結局どうなのかはいまだに定かではない。"
         ],
+        "link": ""
+      },
+      {
+        "id": 26,
+        "title": "PNPM",
+        "image": "/icons/pnpm.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 26,
+        "title": "Webpack",
+        "image": "/icons/webpack.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 4,
+        "contents": [],
         "link": ""
       },
       {
@@ -583,23 +507,6 @@
         "link": "https://tech-blog.jounetsism.biz/os・middleware/31/"
       },
       {
-        "id": 31,
-        "title": "Postgres",
-        "image": "/icons/postgres.png",
-        "handson": 0,
-        "durations": [
-          {
-            "start": "2021-04",
-            "end": "2021-08"
-          }
-        ],
-        "rate": 3,
-        "contents": [
-          "MYSQL以外のRDBを使用したことがなかったため、個人開発に導入。クエリの書き方に違いがあったり、色々と困った部分はあったが、その他違いがあまりわからなかったため、まずはMYSQLをしっかり勉強しようと決めた。"
-        ],
-        "link": "https://tech-blog.jounetsism.biz/os・middleware/32/"
-      },
-      {
         "id": 32,
         "title": "Terraform",
         "image": "/icons/terraform.png",
@@ -634,6 +541,21 @@
         "link": "https://tech-blog.jounetsism.biz/tool/22/"
       },
       {
+        "id": 33,
+        "title": "Play Wright",
+        "image": "/icons/playwright.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [],
+        "link": ""
+      },
+      {
         "id": 62,
         "title": "Jest",
         "image": "/icons/jest.png",
@@ -649,6 +571,23 @@
           "テストに興味を持ち始め、Next.jsで技術ブログのサイトを作成しているときに使用。Nuxt.jsで今後利用予定。"
         ],
         "link": "https://tech-blog.jounetsism.biz/tool/24/"
+      },
+      {
+        "id": 62,
+        "title": "Vitest",
+        "image": "/icons/vitest.png",
+        "handson": 0,
+        "durations": [
+          {
+            "start": "2024-03",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [
+          "テストに興味を持ち始め、Next.jsで技術ブログのサイトを作成しているときに使用。Nuxt.jsで今後利用予定。"
+        ],
+        "link": ""
       }
     ]
   },
@@ -1084,6 +1023,111 @@
           "サーバーレスの外部IPを固定するときに初めて利用。サーバーレスアクセスコネクターを使ってVPCにアクセスし、SQLの接続や外部リクエストなどに使用する事が多い。"
         ],
         "link": "https://tech-blog.jounetsism.biz/Infrastructure/46/"
+      },
+      {
+        "id": 58,
+        "title": "EC2",
+        "image": "/icons/ec2.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 58,
+        "title": "ECS",
+        "image": "/icons/ecs.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 58,
+        "title": "S3",
+        "image": "/icons/s3.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 58,
+        "title": "Aurora",
+        "image": "/icons/aurora.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 58,
+        "title": "Cloud Watch",
+        "image": "/icons/cloud_watch.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 58,
+        "title": "Cognito",
+        "image": "/icons/cognito.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 2,
+        "contents": [],
+        "link": ""
+      },
+      {
+        "id": 58,
+        "title": "Secrets Manager",
+        "image": "/icons/secrets_manager.png",
+        "handson": 1,
+        "durations": [
+          {
+            "start": "2024-07",
+            "end": ""
+          }
+        ],
+        "rate": 3,
+        "contents": [],
+        "link": ""
       }
     ]
   }

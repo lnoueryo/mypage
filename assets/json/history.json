@@ -63,10 +63,23 @@
     "title": "株式会社ゴーガに入社",
     "contents": [
       "Google Maps APIを使ったアプリ開発の会社に入社。主に店舗検索システム、販売店検索システムの画面、サーバー、インフラを担当。",
-      "サーバーレスに移行する流れがあったため、入社後すぐにDockerとGCPのCloud Runを学習。その後に業務で使われているDjangoと個人的に興味があったGoを習得。",
+      "サーバーレスに移行する流れがあったため、入社後すぐにDockerとGCPのCloud Runを学習し、業務で使われているDjangoを習得。",
       "データ連携に最適なリソースを探し、その方法を提案することで貢献。"
     ],
     "position": "left",
+    "color": "#242e66",
+    "circleColor": "#242e66",
+    "circleIcon": "mdi-start"
+  },
+  {
+    "date": "2024年 7月",
+    "title": "株式会社WithLIVEに入社",
+    "contents": [
+      "ファンとアーティストの1対1オンラインアプリ、WithLIVEに入社。WithLIVE Meet&Greatの社内管理画面のフロントエンド、バックエンドを担当",
+      "システム化されてない業務が多々あり、特定のエンジニアがDBを直接更新していることもある。",
+      "業務を効率化し、非エンジニアでも作業できるよう機能を実装し貢献。"
+    ],
+    "position": "right",
     "color": "#242e66",
     "circleColor": "#242e66",
     "circleIcon": "mdi-start"

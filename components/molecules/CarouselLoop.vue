@@ -1,10 +1,10 @@
 <template>
   <div class="loop-wrap">
-    <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n" @click="onClickTool(contents.name)">
+    <div class="d-flex pa-2" :class="direction" v-for="n in 2" :key="n">
       <template v-for="(content, i) in contents" :key="i">
         <Dialog max-width="330px">
-          <template #activator="{ props: activatorProps }">
-            <figure class="mx-4 figure rel hover" v-bind="activatorProps">
+          <template #activator>
+            <figure class="mx-4 figure rel hover">
               <div class="d-flex image-container">
                 <img style="width: 128px" :src="content.image" :alt="content.title" />
               </div>
@@ -50,13 +50,6 @@ defineProps([
   'contents',
   'direction',
 ])
-const { sendGtag } = useGtag()
-const onClickTool = (name: string) => {
-  sendGtag('click_tool', {
-    name,
-    location: window.location.href,
-  })
-}
 </script>
 
 <style lang="scss">
@@ -137,7 +130,6 @@ const onClickTool = (name: string) => {
 }
 
 .hover {
-  cursor: pointer;
   transition: .5s;
 }
 

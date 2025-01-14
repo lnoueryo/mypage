@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="image" id="go">
-            <img src="/public/icons/django.png" alt="">
+            <img src="/public/icons/nest.png" alt="">
           </div>
         </div>
         <div class="flex rel mb-8">
@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="image" id="gcp">
-            <img src="/public/icons/gcp.png" alt="">
+            <img src="/public/icons/aws.png" alt="">
           </div>
         </div>
       </div>
