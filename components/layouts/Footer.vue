@@ -35,7 +35,7 @@ const icons = computed(() => {
   return [
       {href: 'https://www.facebook.com/profile.php?id=100049811055127', src: '/images/18.png', alt: 'facebook'},
       {href: 'https://github.com/lnoueryo', src: '/images/21.png', alt: 'github'},
-      {href: 'https://twitter.com/aNp6KjSBlp02cs8', src: '/images/19.png', alt: 'twitter'},
+      {href: 'https://x.com/lnoueryo', src: '/images/19.png', alt: 'x'},
     ]
 })
 const contents = computed(() => {
@@ -43,10 +43,10 @@ const contents = computed(() => {
     {
       title: 'Contact',
       items: [
-        {content: '〒156-0043', href: ''},
-        {content: '東京都世田谷区松原1-43-14', href: ''},
+        {content: '〒213-0034', href: ''},
+        {content: '神奈川県川崎市高津区上作延', href: ''},
         {content: '070-8338-1624', href: ''},
-        {content: 'popo62520908@gmail.com', href: ''},
+        {content: 'jounetsism@gmail.com', href: ''},
       ]
     }
   ]
