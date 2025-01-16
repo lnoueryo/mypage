@@ -2,8 +2,8 @@
   <StandardSection :wrapper :section :subTitle>
     <template #content>
       <div class="card-container">
-        <div class="d-flex align-strech" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title, item.url)">
-          <CardImage class="d-flex align-strech" :item="item">
+        <div class="a d-flex align-start" v-for="item in otherContents" :key="item.title" @click.prevent.stop="onClickSite(item.title, item.url)">
+          <CardImage class="d-flex align-strech" :item="item" img-height="190">
             <template #bottom>
               <a :href="item.github" target="_blank" @click="onClickGithub(item.title, item.github)">
                 GITHUB
@@ -15,7 +15,7 @@
             </template>
           </CardImage>
         </div>
-        <CardImage class="d-flex align-strech" style="opacity: 0;cursor: default;" :item="otherContents[2]" @click.prevent.stop="" />
+        <!-- <CardImage class="d-flex align-strech" style="opacity: 0;cursor: default;" :item="otherContents[2]" @click.prevent.stop="" /> -->
       </div>
     </template>
     <template #thd-wrapper>
@@ -80,6 +80,7 @@ const changeBrightness = () => {
   if(!brightnessSwitch.value) brightnessValue.value -= 1;
   if(brightnessValue.value == 0 || brightnessValue.value == 70) return brightnessSwitch.value = !brightnessSwitch.value;
 }
+
 onBeforeMount(() => setInterval(changeBrightness, 150))
 </script>
 
@@ -132,67 +133,17 @@ onBeforeMount(() => setInterval(changeBrightness, 150))
 }
 
 .card-container {
-  display: flex;
-  align-items: strech;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  justify-content: center;
 
-  .card {
-    max-width: 270px;
-    background-color: #191919;
-    border-radius: 8px;
-    box-shadow: rgb(55 88 81) 0px 7px 29px 0px;
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-    margin-bottom: 35px;
+  .a {
+    margin: 0 auto;
+    width: 100%;
+  }
+  a {
     color: white;
-
-    a {
-      color: white;
-    }
-    .image {
-      border-radius: 5px 5px 0 0;
-    }
-
-    .card-title {
-      text-align: left;
-      border-radius: 8px 8px 0 0;
-      font-size: 18px;
-      padding: 10px 15px;
-    }
-
-    .card-content {
-      padding: 15px;
-      padding-bottom: 0;
-      p {
-        font-size: 14px;
-      }
-    }
-
-    .bottom-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding: 10px 15px;
-    }
-
-    a.card {
-        color: white;
-      }
-  }
-
-  .card:hover {
-    opacity: .6;
-    transition: all .5s;
-  }
-
-  @media screen and (max-width: 768px) {
-    .card {
-      max-width: initial;
-      width: 100%
-    }
   }
 }
 

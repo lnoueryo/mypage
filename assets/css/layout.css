@@ -9,6 +9,9 @@ body #wrapper{
     word-break: break-all;
     overflow: hidden;
 }
+body {
+    background-color: black;
+}
 main {
     transform: translate(0, -5px);
     position: relative;
